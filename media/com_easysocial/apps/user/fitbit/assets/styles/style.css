@@ -1,0 +1,56 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+body #es .fitbit-sync {
+	color: #666;
+}
+#es .fitbit-stat {
+	text-align: center;
+	border: 1px solid #e1e1e1;
+	border-radius: 3px;
+	height: 120px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+#es .fitbit-stat--highlight {
+	background-color: #FFF6E8;
+	border: none;
+}
+#es .fitbit-stat__title {
+	margin-bottom: 8px;
+}
+#es .fitbit-stat__step {
+	font-weight: bold;
+	font-size: 1.5em;
+	margin-bottom: 4px;
+}
+#es .fitbit-today {
+	background: #c23616;
+	color: #fff;
+	border-color: #c23616;
+}
+#es .fitbit-average {
+	background: #273c75;
+	color: #fff;
+	border-color: #273c75;
+}
+#es.is-mobile .fitbit-stat .o-media__image {
+	width: 50%;
+}
+
+
+body #es .fitbit-sign-in {
+	background: #f4f4f4;
+	padding: 30px 20px;
+}
+
+body #es .fitbit-sign-in > h3 {
+	font-weight: 700;
+}
+
+body #es .fitbit-sign-in > p {
+	margin-bottom: 30px;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="apps" group="user">
+	<name>FitBit</name>
+	<element>fitbit</element>
+	<author>Stack Ideas Sdn Bhd</author>
+	<url>https://stackideas.com</url>
+	<creationDate>10th November 2019</creationDate>
+	<version>3.2.1</version>
+	<copyright>Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<installable>true</installable>
+	<widget>true</widget>
+	<core>false</core>
+	<system>false</system>
+	<views>
+		<view type="embed">profile</view>
+	</views>
+	<description><![CDATA[Fitbit App]]></description>
+	<files>
+		<folder>assets</folder>
+		<folder>config</folder>
+		<folder>controllers</folder>
+		<folder>libraries</folder>
+		<folder>tables</folder>
+		<folder>themes</folder>
+		<folder>vendor</folder>
+		<folder>views</folder>
+		<folder>widgets</folder>
+		<file>fitbit.php</file>
+		<file>fitbit.xml</file>
+		<sql>install.sql</sql>
+	</files>
+	<languages>
+		<language type="en-GB">en-GB.plg_app_user_fitbit.ini</language>
+	</languages>
+</social>

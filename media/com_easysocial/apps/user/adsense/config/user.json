@@ -1,0 +1,29 @@
+[
+	{
+		"title": "APP_USER_ADSENSE_SETTINGS_USER_PROFILE",
+		"desc": "APP_USER_ADSENSE_SETTINGS_USER_PROFILE_DESC",
+		"fields": [
+			{
+				"label": "APP_USER_ADSENSE_SETTINGS_USER_ADSENSE_CODE",
+				"tooltip": "APP_USER_ADSENSE_SETTINGS_USER_ADSENSE_CODE_DESC",
+				"name": "profile_adsense_code",
+				"type": "textarea",
+				"default": ""
+			},
+			{
+				"label": "APP_USER_ADSENSE_SETTINGS_USER_USE_RESPONSIVE_CODE",
+				"tootltip": "APP_USER_ADSENSE_SETTINGS_USER_USE_RESPONSIVE_CODE_DESC",
+				"name": "profile_adsense_use_responsive",
+				"type": "boolean",
+				"default": false
+			},
+			{
+				"label": "APP_USER_ADSENSE_SETTINGS_USER_RESPONSIVE_CODE",
+				"tooltip": "APP_USER_ADSENSE_SETTINGS_USER_RESPONSIVE_CODE_DESC",
+				"name": "profile_adsense_responsive_code",
+				"type": "textarea",
+				"default": ""
+			}
+		]
+	}
+]

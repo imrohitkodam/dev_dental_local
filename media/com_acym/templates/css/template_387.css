@@ -1,0 +1,265 @@
+table, div, p , td{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+
+hr {
+	border:0;
+	margin: 5px 0 0;
+	color: #ddd;
+	background-color:#ddd;
+}
+
+p{
+	margin: 5px 0 10px;
+	line-height:1.4;
+	color:#565656;
+}
+
+a[class="button"] {
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkitborder-radius:2px;
+	background-color:#308F9B;
+	color:#fff;
+	padding: 5px;
+	display:block;
+	text-align:center;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 0 20px 0;
+	width:100px;
+}
+
+
+.special h2 {
+	font-size:18px;
+	margin:0px;
+	margin-bottom:15px;
+	padding:0px;
+	font-weight:bold;
+	color:#335672;
+	text-transform:none;
+	border:none;
+}
+
+.subs h2 {
+	width:100%;
+}
+
+.links a{
+	color:#ababab;
+}
+
+.a {
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.clientquote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #565656;
+	margin: 0px;
+	font-weight: normal;
+}
+
+.intro p, ul, ol {
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.4;
+	color: #565656;
+        /* padding: 0 5px 0 5px; */
+}
+
+.intro ul {
+        list-style-type: square;
+}
+
+
+.coursesummary .sharelabel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 1.4;
+	color: #565656;
+	margin: margin: 10px 0 0;
+}
+
+.presentationdetails{
+	font-family:Arial, Helvetica, sans-serif;
+	color: #565656;
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+	
+.subs {
+    border-color: #959595;
+    border-style: solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-width: thin;
+    padding: 1em;
+}
+
+.coursesummary .coursepic {
+    text-align:right;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 0 rgba(50, 50, 50, 0.75);
+	height: auto;
+	width: 175px;
+}
+
+.acyeditor_text.w540.pict p .vCPD {
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.presenterName {
+	font-size: 140%;
+	margin-bottom: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	line-height: 1.4;
+	color: #565656;"
+}
+
+.presenterQuals{
+	font-size: 80%;
+	margin-top: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	line-height: 1.4;
+	color: #565656;
+}
+.jobTitle{
+    color: #565656;"
+	font-size: 90%;
+	font-weight: bold;
+    line-height: 1.4;
+	margin-bottom: 3px;
+	margin-top: 10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.organisation {
+	font-size: 75%;
+	margin-top: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	line-height: 1.4;
+	color: #565656;
+}
+
+
+.fwcta {
+	font-weight: bold;
+	color: #2B2F88;
+}
+.coupon {
+	color: #CC3333;
+	font-weight:bold;
+}
+
+.sponsor p {
+	font-size:90%;
+}
+.social img {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+p a .social {
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+.acyeditor_text.special.w540.pict.subs ul li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+
+.sponsor p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	margin: 0px;
+	line-height: 1;
+	color: #565656;
+}
+
+.muted {
+color: #979797;
+}
+
+.sz80 {
+font-size:80%;
+}
+
+@media (max-width:450px){
+	table[class=w600], td[class=w600], table[class=w540], td[class=w540], img[class="w600"], img[class="w540"]{ width:100% !important;}
+img.social {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+	td[class=w30] { width:20px !important;}
+
+	img {max-width:450px;}
+	
+	.pict img, .coursepic img {max-width:150px}
+	
+	a[class="button"] {
+    	border-radius:2px;
+		-moz-border-radius:2px;
+		-webkitborder-radius:2px;
+		background-color:#308F9B;
+		color:#fff!important;
+		padding: 5px;
+		display:block;
+		text-decoration: none;
+		text-transform: uppercase;
+		margin: 0 0 10px 0;
+    }
+	
+	p a .social {
+		padding-left: 10px;
+		padding-right: 10px;
+		float:left;
+	}
+}
+
+@media (min-width: 450px) and (max-width: 600px){
+	table[class=w600], td[class=w600], table[class=w540], td[class=w540], img[class="w600"], img[class="w540"]{ width:100% !important;}
+	td[class=w30] {width:20px !important;}
+	
+	/*img {max-width:450px;margin:0 auto;}*/
+
+	.pict img, .coursepic img {max-width:170px}
+	
+	a[class="button"] {
+      border-radius:2px;
+      -moz-border-radius:2px;
+      -webkitborder-radius:2px;
+      background-color:#308F9B;
+      color:#fff!important;
+      padding: 5px;
+      display:block;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 0 10px 0;
+    }
+}
+
+@media (min-width:600px){
+	body {width:600px !important; margin:auto !important;}
+	
+	.pict img {max-width:175px !important;  height:auto !important;}
+	
+	p a .social {
+		padding-left: 10px;
+		padding-right: 10px;
+		float:left;
+	}
+}h1{font-size:20px; margin-bottom:15px; padding-top:5px; border-top:2px solid #ddd;font-weight:bold; color:#133783;text-align:left;}h2{font-size:12px; font-weight:bold; color:#565656 !important; text-transform:uppercase; margin:10px 0px; padding:0px; padding-bottom:5px; border-bottom:1px solid #ddd;text-align:left;}h3{color: #565656 !important;font-weight: bold;font-size: 12px;margin-top: 0px;margin-right: 0px;margin-left: 10px;margin-bottom: 10px;margin-bottom: 10px;padding: 0px;text-align:left;}a{cursor:pointer;color:#0968b5;text-decoration:none;border:none;}.acymailing_unsub{color:#d2d1d1; cursor:pointer;}.acymailing_online{cursor:pointer; font-weight:bold; color:#fff; background-color:#01bbe5; padding:2px 5px;}.corecpd{color:#2a52d4}

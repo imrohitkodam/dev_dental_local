@@ -1,0 +1,1 @@
+FD31.component("EasyDiscuss", {"environment":"static","source":"local","mode":"compressed","baseUrl":"https:\/\/www.dental-channel.co.uk\/Shktst\/administrator\/index.php?option=com_easydiscuss&lang=none","version":"3.2.9534","scriptVersioning":false,"responsive":false});

@@ -1,0 +1,63 @@
+[
+	{
+		"title" : "General",
+		"fields":
+		[
+			{
+				"label": "Client ID",
+				"tooltip" : "Enter the OAuth 2.0 Client ID that you receive from https://dev.fitbit.com/apps when you were creating the app",
+				"name" : "client_id",
+				"type" : "text",
+				"default" : ""
+			},
+			{
+				"label": "Client Secret",
+				"tooltip" : "Enter the Client Secret that you receive from https://dev.fitbit.com/apps when you were creating the app",
+				"name" : "client_secret",
+				"type" : "text",
+				"default" : ""
+			},
+			{
+				"label": "Days for Coverage",
+				"tooltip": "Set the number of days for coverage of the user's steps. This would be a range from the current day back to the days that is defined here",
+				"name" : "coverage_days",
+				"type" : "text",
+				"default" : "14"
+			},
+			{
+				"label": "Generate Activity Stream When Linking Account",
+				"tooltip": "This option determines if activity stream should be generated when the user links their account with Fitbit",
+				"name": "activity",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"label": "Allow User to Edit Dataset",
+				"tooltip": "This option determines if user's are allowed to edit their activity data set",
+				"name": "data_edit",
+				"type": "boolean",
+				"default": true
+			},
+			{
+				"label": "Limit Edit to Previous Days",
+				"tooltip": "This option determines if user's are allowed to edit all past activities or a specific number of days. To allow editing of all days, set this to 0",
+				"name": "data_edit_days",
+				"type": "text",
+				"default": "0"
+			}
+		]
+	},
+	{
+		"title": "Widget",
+		"fields":
+		[
+			{
+				"label": "Display Average Steps in Profile Cover",
+				"tooltip": "When enabled, user's average steps are displayed on their post cover",
+				"name": "display_widget",
+				"type": "boolean",
+				"default": true
+			}
+		]
+	}
+]

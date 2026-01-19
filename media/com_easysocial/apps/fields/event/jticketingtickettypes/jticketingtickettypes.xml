@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="fields" group="event">
+    <!-- Name of the field that will appear in the application/field listing -->
+    <name>Create Ticket Types</name>
+    <!-- This is the unique element of your app. It must be lowercased -->
+    <element>jticketingtickettypes</element>
+    <!-- Your/author's name/identifier -->
+    <author>TechJoomla</author>
+    <!-- Your/author's website -->
+    <url>www.techjoomla.com</url>
+    <!-- The creation date of this field -->
+    <created>02nd Jun 2017</created>
+    <!-- Field version. Ideal to follow the semantic version guideline, http://semver.org/ -->
+    <version>2.0.0</version>
+    <!-- Copyright message of this field -->
+    <copyright>Copyright(C)2012-13 TechJoomla</copyright>
+    <!-- The license of this field -->
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <!-- Give a description for this field. This can be in a form of a language string -->
+    <description><![CDATA[PLG_FIELDS_JTICKETING_TICKETTYPES_DESCRIPTION]]></description>
+    <!-- Determine if this is a mandatory field, defaults to false -->
+    <core>false</core>
+    <!-- Determine if this is a unique field, defaults to false -->
+    <unique>false</unique>
+    <!-- This is similar to how Joomla looks for files. -->
+    <files>
+        <!-- Defines the folders that the field contains -->
+        <folder>config></folder>
+        <folder>themes</folder>
+        <!-- Defines the files that the field contains -->
+        <file>jticketingtickettypes.php</file>
+        <file>jticketingtickettypes.xml</file>
+    </files>
+    <!--
+        Defines language files of the files.
+        This file needs to be at the root directory of your field and it will be copied to the respective locale folder.
+    -->
+    <languages>
+        <language type="en-GB">en-GB.plg_fields_event_jticketingtickettypes.ini</language>
+         <language type="en-GB">en-GB.plg_fields_event_jticketingtickettypes.sys.ini</language>
+
+    </languages>
+</social>
