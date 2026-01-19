@@ -1,0 +1,25 @@
+<!-- modal-gallery is the modal dialog used for the image gallery -->
+<div id="rbinstaller-modal-gallery" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">						
+	<div ng-switch on="getCount(screenshots)">
+		<div ng-switch-when="1" class="text-center">
+			<div data-ng-repeat="screenshot in screenshots"><img data-ng-src="{{ screenshot }}" /></div>
+		</div>
+		
+		<div ng-switch-default>
+			<div id="rbinstaller-carousel" class="carousel slide">
+				<ol class="carousel-indicators">
+			    	<li data-ng-repeat="screenshot in screenshots" data-target="#rbinstaller-carousel" data-slide-to="{{ $index }}" class="active"></li>
+			    </ol>
+			    
+			    <!-- Carousel items -->
+			    <div class="carousel-inner">
+			    	<div class="item" data-ng-class="{active: screnshot_index == $index}" data-ng-repeat="screenshot in screenshots"><img data-ng-src="{{ screenshot }}" /></div>	    	
+			    </div>
+			    
+			    <!-- Carousel nav -->
+			    <a class="carousel-control left" href="#rbinstaller-carousel" onclick="return false;" data-slide="prev">&lsaquo;</a>
+			    <a class="carousel-control right" href="#rbinstaller-carousel" onclick="return false;" data-slide="next">&rsaquo;</a>
+		    </div>
+		</div>
+    </div>
+</div>

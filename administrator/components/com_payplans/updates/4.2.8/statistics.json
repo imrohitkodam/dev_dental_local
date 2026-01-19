@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_statistics",
+		"index": "idx_stats_type_purpose",
+		"query": "ALTER TABLE `#__payplans_statistics` ADD INDEX `idx_stats_type_purpose` (`statistics_type` (64), `purpose_id_1`, `statistics_date`)"
+	}
+]

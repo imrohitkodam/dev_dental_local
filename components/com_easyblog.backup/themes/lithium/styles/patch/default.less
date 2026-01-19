@@ -1,0 +1,88 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+@theme-post-aside-width : 150px;
+
+.eb-post-title {
+	margin: 0 0 15px;
+}
+
+.eb-post-author-avatar a { 
+	border-width: 1px; 
+}
+
+.eb-post-side {
+	text-align: left;
+	width: @theme-post-aside-width;
+
+	+ .eb-post-content {
+		margin: 0 0 0 @theme-post-aside-width+20;
+	}
+
+	> div {
+		+ div:before {
+			left: auto;
+			right: 19px;
+		}
+	}
+
+	.eb-post-thumb,
+	.eb-post-image-cover {
+		max-width: 100%;
+		margin: 0;
+		float: none;
+	}
+}
+
+.eb-post-type {
+	.fa {
+		background: @eb-box-shade;
+		border-width: 1px;
+		border-radius: @eb-box-radius;
+		color: @eb-text-light;
+		display: block;
+		font-size: 24px !important;
+
+		width: auto;
+		height: 100px;
+		line-height: 100px;
+	}
+}
+
+.eb-post-meta {
+	font-size: 11px;
+
+	&:before { display: none !important; }
+
+	> div {
+		display: block;
+		position: relative;
+		padding: 5px 0 5px 24px;
+		margin: 0;
+		line-height: 20px;
+
+		.fa {
+			color: @eb-text-light;
+			position: absolute;
+			margin: 0;
+			left: 0;
+			line-height: 20px;
+			height: 20px;
+			width: 24px;
+			text-align: center;
+		}
+
+		+ div {
+			border-top: 1px solid @eb-box-border;
+		}
+	}
+}
+
+.eb-post-foot {
+	display: inline-block;
+	width: 100%;
+}

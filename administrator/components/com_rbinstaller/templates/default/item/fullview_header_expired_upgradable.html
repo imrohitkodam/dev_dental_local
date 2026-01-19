@@ -1,0 +1,80 @@
+<div class="item-header-padding">
+	<div class="row-fluid">
+		<div class="span9">
+			<div class="row-fluid">
+				<div class="pull-left item-icon">
+					<img data-ng-src="{{ item.icon }}" alt="">
+				</div>
+				
+				<div class="pull-left">
+					<div class="row-fluid">		
+						<h1>{{ item.title }}</h1>
+					</div>
+					<div class="row-fluid">
+						<span>
+							<span class="muted">Tags :</span>
+							<span data-ng-repeat="tag in tags|fullview_tag_filter : item.item_id : tag_items">				
+								<span>{{ tag.title }}</span><span ng-hide="$last">,</span>
+							</span>
+						</span> 
+				  		<span class="separator"> | </span>  
+				  		<span>
+				  			<span class="muted">
+				  				Hits :	
+				  			</span>			  			
+							<span>
+								{{ item.hits }}
+							</span>
+				  		</span>
+				  		<span class="separator"> | </span> 
+				  		<span>
+				  			<span class="muted">
+				  				Last Updated :	
+				  			</span>			  			
+							<span>
+								{{ mysql_to_date(item.last_modified_date) |   date:'mediumDate' }}
+							</span>
+				  		</span>
+			 		</div>		
+				</div>
+			</div>
+		</div>
+		
+		<div class="span3">
+			<div class="row-fluid">
+				<div class="pull-right">
+					<a href="#" class="muted item-icon-remove" ng-click="hideFullDetailView();"><i class="fa fa-remove fa-2x"></i></a>
+				</div>
+			</div>
+			
+			<div class="row-fluid">			
+				<div class="pull-right">
+					<span class="fullview-item-status fullview-status-active-upgradable">					
+						<i class="fa fa-gear"></i> Upgradable					
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-fluid fullview-item-actions">
+	<div class="span9  fullview-item-compatibility">
+		<div data-ng-include src="compatibility_template;"></div>
+	</div>
+	 
+	 <div class="span3">
+	 	<div class="row-fluid text-center fullview-item-action">	 		 
+		 	<div class="span5">
+		 		<div class="muted">Price</div>
+	 			<div><big>{{ item.price |  currency:"$ " }}</big></div>
+	 		</div>	
+	 		 	
+		 	<div class="span6">
+		 		<button class="btn btn-danger" data-toggle="modal" data-target="#rbinstaller-alert-{{ item.status }}-{{ item.item_id }}" ng-click="trackMessage(item.item_id);">
+		 			<i class="fa fa-bell"></i> Alert/Buy Now
+		 		</button>
+		 	</div>	 	
+	 	</div>
+	 </div>
+</div>

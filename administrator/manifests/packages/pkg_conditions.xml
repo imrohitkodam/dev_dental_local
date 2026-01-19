@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" method="upgrade">
+  <packagename>conditions</packagename>
+  <name>PKG_CONDITIONS</name>
+  <version>25.11.2254</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <scriptfile>script.install.php</scriptfile>
+  <blockChildUninstall>true</blockChildUninstall>
+  <files folder="packages">
+    <file id="com_conditions" type="component" required="true">com_conditions</file>
+    <file id="com_conditions.site" type="component" client="site" required="true">com_conditions</file>
+    <file id="conditions" type="plugin" group="actionlog" required="true">plg_actionlog_conditions</file>
+  </files>
+  <updateservers>
+    <server type="extension" priority="1" name="Regular Labs - Conditions">https://download.regularlabs.com/updates.xml?e=conditions&amp;type=.xml</server>
+  </updateservers>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.pkg_conditions.sys.ini</language>
+  </languages>
+</extension>

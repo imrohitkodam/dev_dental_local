@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4" type="component" method="upgrade">
+  <name>COM_SNIPPETS</name>
+  <description>COM_SNIPPETS_DESC</description>
+  <version>9.3.8</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <namespace path="src">RegularLabs\Component\Snippets</namespace>
+  <scriptfile>script.install.php</scriptfile>
+  <administration>
+    <menu link="option=com_snippets" img="class:regularlabs-snippets">COM_SNIPPETS</menu>
+    <files folder="admin">
+      <file>access.xml</file>
+      <file>config.xml</file>
+      <file>snippets.xml</file>
+      <folder>forms</folder>
+      <folder>language</folder>
+      <folder>services</folder>
+      <folder>src</folder>
+      <folder>tmpl</folder>
+    </files>
+  </administration>
+</extension>

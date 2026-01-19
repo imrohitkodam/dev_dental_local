@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_invoice",
+		"alter": "checked_out",
+		"query": "ALTER TABLE `#__payplans_invoice` CHANGE `checked_out` `checked_out` INT DEFAULT NULL;"
+	}
+]

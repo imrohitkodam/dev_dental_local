@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>RBInstaller</name>
+	<creationDate>2013-09-12</creationDate>
+	<author>Ready Bytes</author>
+	<authorEmail>support@readybytes.in</authorEmail>
+	<authorUrl>http://www.readybytes.net</authorUrl>
+	<copyright>2009-15 Ready Bytes Software Labs Pvt. Ltd.</copyright>
+	<license>This component in released under the GNU/GPL v3 or later license</license>
+	<version>1.4.7</version>
+	<description>COM_RBINSTALLER_DESCRIPTION</description>
+	
+	<!-- Runs on install -->
+        <install>
+	  	 	 <sql>
+	           	 <file driver="mysql" charset="utf8">install/sql/install.mysql.utf8.sql</file>
+	   		 </sql>
+        </install>
+
+	<scriptfile>script.php</scriptfile>
+
+	<!-- Media files -->
+	<media destination="com_rbinstaller" folder="media">
+		<folder>data</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+		<filename>index.html</filename>
+	</media>
+
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu view="item">COM_RBINSTALLER</menu>
+
+		<!-- Back-end files -->
+		<files folder="admin">
+			<filename>rbinstaller.php</filename>
+			<filename>index.html</filename>
+			<folder>controllers</folder>
+			<folder>views</folder>
+			<folder>install</folder>
+			<folder>templates</folder>
+			<folder>rbinstaller</folder>			
+		</files>
+
+		<languages>
+			<language tag="en-GB">languages/admin/en-GB.com_rbinstaller.ini</language>
+			<language tag="en-GB">languages/admin/en-GB.com_rbinstaller.sys.ini</language>
+		</languages>
+	</administration>
+</extension>

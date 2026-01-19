@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" method="upgrade">
+  <packagename>advancedmodules</packagename>
+  <name>PKG_ADVANCEDMODULES</name>
+  <version>10.4.8</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <scriptfile>script.install.php</scriptfile>
+  <blockChildUninstall>true</blockChildUninstall>
+  <files folder="packages/j4">
+    
+    
+    <file id="com_advancedmodules" type="component" required="true">com_advancedmodules</file>
+    <file id="advancedmodules" type="plugin" group="system" required="true">plg_system_advancedmodules</file>
+    <file id="advancedmodules" type="plugin" group="actionlog" required="true">plg_actionlog_advancedmodules</file>
+  </files>
+  
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.pkg_advancedmodules.sys.ini</language>
+  </languages>
+  <updateservers>
+    <server type="extension" priority="1" name="Advanced Module Manager">https://download.regularlabs.com/updates.xml?e=advancedmodulemanager&amp;type=.xml</server>
+  </updateservers>
+</extension>

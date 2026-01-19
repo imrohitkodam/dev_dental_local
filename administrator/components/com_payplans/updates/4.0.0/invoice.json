@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_invoice",
+		"column": "paid_date",
+		"query": "ALTER TABLE `#__payplans_invoice` CHANGE `paid_date` `paid_date` DATETIME NULL DEFAULT NULL"
+	}
+]

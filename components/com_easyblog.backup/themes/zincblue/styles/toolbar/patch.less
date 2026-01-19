@@ -1,0 +1,250 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+.eb-navbar {
+	position: relative;
+
+	li {
+		&.hidden-mobile { display: block !important }
+		&.display-mobile { display: none !important }
+	}
+
+	.eb-navbar-left  > li {
+		border-right: 1px solid @eb-navbar-border !important;
+	}
+	.eb-navbar-right > li {
+		border-left: 1px solid @eb-navbar-border !important;
+
+		> .dropdown-menu {
+			left: auto;
+			right: 0;
+
+			&:before,
+			&:after {
+				left: auto;
+				right: 12px;
+			}
+		}
+	}
+
+	.eb-navbar-nav {
+		> li
+		{
+			border-bottom: 0 !important;
+
+			> a {
+				color: @eb-navbar-color;
+				display: block;
+				line-height: @eb-navbar-link-height !important;
+				width: @eb-navbar-link-width !important;
+				padding: 0 !important;
+				text-shadow: none;
+				&:hover {
+					color: @eb-navbar-hover-color;
+				}
+
+				> i {
+					font-size: @eb-navbar-icon-size;
+					line-height: @eb-navbar-link-height !important;
+					display: block !important;
+					text-align: center;
+					width: auto !important;
+				}
+			}
+		}
+	}
+
+	.open .dropdown-menu {
+		> li {
+			> a {
+				color: @eb-navbar-color;
+
+				&:hover,
+				&:focus {
+					background: @eb-navbar-hover-bg;
+					color: @eb-navbar-hover-color;
+				}
+			}
+		}
+	}
+
+	// TOOLBAR UNDER MOBILE DISPLAY
+
+	&.w600 {
+		li {
+			&.hidden-mobile { display: none !important; }
+			&.display-mobile { display: block !important; }
+		}
+		.eb-navbar-nav {
+			position: static !important;
+
+			> li
+			{
+				border-bottom: 0 !important;
+			}
+		}
+
+		.eb-navbar-left {
+			float: left !important;
+		}
+
+		.eb-navbar-right {
+			float: right !important;
+		}
+
+		.eb-navbar-nav {
+			> li {
+				float: left;
+				width: auto;
+
+				> a {
+					> i {
+						text-align: center;
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+	&.w480 {
+		.eb-text {
+			display: none;
+		}
+	}
+	&.w320 {
+		position: relative;
+
+		.eb-navbar-nav {
+			position: static !important;
+
+			> li.open {
+				position: static !important;
+
+				> .dropdown-menu {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.eb-navbar-dropdown {
+	background: @eb-navbar-bg;
+	border-color: @eb-navbar-border;
+	border-radius: @eb-navbar-border-radius;
+	margin: 2px 0 0;
+	min-width: 180px;
+	position: absolute !important;
+
+	&:before { left: 12px; border-bottom-color: @eb-navbar-border; }
+	&:after  { left: 12px; border-bottom-color: @eb-navbar-bg; }
+
+	> li {
+		> a {
+			color: @eb-navbar-color;
+			padding: 0 12px;
+			line-height: 30px;
+
+			&:hover,
+			&:focus {
+				background: @eb-navbar-hover-bg;
+				color: @eb-navbar-hover-color;
+			}
+
+			.fa {
+				width: 16px;
+				text-align: center;
+				margin-right: 5px;
+			}
+		}
+	}
+	.divider {
+		background: @eb-navbar-border;
+		border: 0 !important;
+	}
+}
+.eb-navbar {
+	&.w480 {
+		.eb-navbar-nav {
+			> li {
+				> a {
+					border-radius: 0px 3px 3px 0px;
+				}
+			}
+		}
+		.eb-navbar-dropdown,
+		.eb-navbar-dropdown-login {
+			border-radius: @eb-navbar-border-radius;
+			width: 100%;
+			position: static;
+			min-width: none;
+			margin-top: 5px;
+
+			> li {
+				> a {
+					padding-left: 10px;
+					
+				}
+			}
+		}
+	}
+}
+
+
+&.popbox-toolbar-settings {
+	width: 240px;
+
+	.popbox-content {
+		background: @eb-navbar-bg;
+		border-color: @eb-navbar-border;
+		border-radius: @eb-navbar-border-radius;
+	}
+	
+}
+.eb-navbar-search {
+	background: lighten(@eb-navbar-bg, 10%);
+	border: 0 !important;
+	border-radius: @eb-box-radius - 1;
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	> div {
+		margin: 0 @eb-navbar-link-width;
+	}
+
+	.fa-search,
+	.fa-close {
+		color: rgba(255, 255, 255, 0.5);
+		width: @eb-navbar-link-width;
+		height: @eb-navbar-height;
+		line-height: @eb-navbar-height;
+		text-align: center;
+		font-size: 14px;
+
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.fa-close {
+		cursor: pointer;
+		left: auto;
+		right: 0;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+
+	.form-control {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

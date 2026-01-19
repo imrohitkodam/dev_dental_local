@@ -1,0 +1,42 @@
+<?php
+/**
+* @package		PayPlans
+* @copyright	Copyright (C) Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* PayPlans is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
+defined('_JEXEC') or die('Unauthorized Access');
+?>
+<div class="pp-checkout-item" data-pp-login>
+	<div class="pp-checkout-item__title">
+		<div class="flex">
+			<div class="flex-grow">
+				<?php echo mb_strtoupper(JText::_('COM_PP_CHECKOUT_LOGIN'));?>
+			</div>
+
+			<?php $isPluginEnabled = JPluginHelper::isEnabled('payplans', 'registration'); ?>
+			<?php if ($isPluginEnabled) { ?>
+				<div class="flex-shrink-0">
+					<div style="font-weight: normal;">
+						<?php echo JText::_('COM_PP_CHECKOUT_NO_ACCOUNT_YET');?> <a href="javascript:void(0);" class="no-underline" data-pp-register-link><?php echo JText::_('COM_PP_CHECKOUT_REGISTER');?></a>
+					</div>
+				</div>
+			<?php } ?>
+		</div>
+	</div>
+	<div class="pp-checkout-item__content space-y-sm">
+		<?php echo $this->html('floatlabel.text', 'COM_PAYPLANS_LOGIN_USERNAME', 'login_username', '', '', ['autocomplete' => 'off', 'data-pp-login-username' => '']); ?>
+
+		<?php echo $this->html('floatlabel.password', 'COM_PAYPLANS_LOGIN_PASSWORD', 'login_password', '', '', ['autocomplete' => 'off', 'data-pp-login-password' => '']); ?>
+
+		<?php if (isset($showTwoFactor) && $showTwoFactor) { ?>
+			<p><?php echo JText::_('COM_PP_TWOFACTOR_INFO');?></p>
+
+			<?php echo $this->html('floatlabel.text', 'COM_PP_TWOFACTOR_SECRET_KEY', 'secretkey', '', '', ['autocomplete' => 'off']); ?>
+		<?php } ?>
+	</div>
+</div>

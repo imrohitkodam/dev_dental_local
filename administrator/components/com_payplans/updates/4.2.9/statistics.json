@@ -1,0 +1,17 @@
+[
+	{
+		"table": "#__payplans_statistics",
+		"alter": "count_2",
+		"query": "ALTER TABLE `#__payplans_statistics` CHANGE `count_2` `count_2` DECIMAL(15,5) NOT NULL DEFAULT '0.00000'"
+	},
+	{
+		"table": "#__payplans_statistics",
+		"alter": "count_5",
+		"query": "ALTER TABLE `#__payplans_statistics` CHANGE `count_5` `count_5` DECIMAL(15,5) NOT NULL DEFAULT '0.00000'"
+	},
+	{
+		"table": "#__payplans_statistics",
+		"alter": "count_6",
+		"query": "ALTER TABLE `#__payplans_statistics` CHANGE `count_6` `count_6` DECIMAL(15,5) NOT NULL DEFAULT '0.00000'"
+	}
+]

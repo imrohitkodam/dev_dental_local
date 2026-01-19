@@ -1,0 +1,33 @@
+<div class="item-header">
+	{{ item.title }}			
+</div>
+	
+<div class="item-content item-content-alert">
+	<span data-ng-init="screenshots = fromJson(item.screenshot);"></span>
+	<img data-ng-src="{{ screenshots[0] }}" class="item-content-back"/>
+	
+	<div class="item-content-front text-warning text-center">
+		<span><i class="fa fa-bell"></i> Alert</span>
+		<ul  class="text-left">
+			<li>Your subscription has been expired.</li>
+			<li>Upgrade is available.</li>
+		</ul>
+		<a href=#" data-toggle="modal" data-target="#rbinstaller-alert-{{ item.status }}-{{ item.item_id }}" ng-click="trackMessage(item.item_id);">Read More >></a>
+	</div>
+	<!-- Load Alert Tempaltes -->
+	<div data-ng-include src="templates.alert.expired_installed;"></div>
+</div>
+		
+<div class="item-footer">    		
+	<div class="item-footer-upper none-buynow row-fluid">
+	   	<span class="item-footer-left">{{ item.price |  currency:"$"}} <sub>Price</sub></span>
+    	<span class="item-footer-right"></span>    	
+	</div>
+	
+	<div class="item-footer-lower">
+		<span class="item-footer-right">
+			<button class="btn btn-primary" ng-click="cart.addToCart(item.item_id);">Buynow</button>
+    		<a href="#/app/{{ item.alias }}" class="btn rbinstaller-item-viewdetail" ng-click="updateFullView(item.item_id, false);find_last_item_block(item.item_id);">Details</a>
+    	</span>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_planaddons_stats",
+		"column": "consumed",
+		"query": "ALTER TABLE `#__payplans_planaddons_stats` ADD `consumed` INT NOT NULL DEFAULT '0' AFTER `status`;"
+	}
+]

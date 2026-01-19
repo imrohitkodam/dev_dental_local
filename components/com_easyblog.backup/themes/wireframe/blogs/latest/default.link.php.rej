@@ -1,0 +1,60 @@
+--- default.link.php
++++ default.link.php
+@@ -10,6 +10,17 @@
+ * See COPYRIGHT.php for copyright notices and details.
+ */
+ defined('_JEXEC') or die('Unauthorized Access');
++// get the post assets
++$assetsTable = EB::table('Assets');
++$assets = $assetsTable->getBlogAssets($blog->id);
++
++$url = $blog->title;
++
++foreach ($assets as $asset) {
++	if ($asset->key == 'link') {
++	$url = $asset->value;
++	}
++}
+ ?>
+ <div itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting" class="eb-post fd-cf" data-blog-posts-item data-id="<?php echo $blog->id;?>">
+ 
+@@ -51,7 +51,9 @@
+ 
+ 			<?php if ($blog->category->getParam('listing_show_title', true)) { ?>
+ 			<h2 itemprop="name headline" class="eb-post-title reset-heading">
+-				<a href="<?php echo $blog->getPermalink();?>"><?php echo $blog->title;?></a>
++			<!-- Temporary -->
++				<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( 'http://stackideas.com', $blog->title); ?>
++
+ 			</h2>
+ 			<?php } ?>
+ 
+@@ -52,7 +63,7 @@
+ 			<div class="eb-blockquote">
+ 				<?php if ($blog->category->getParam('listing_show_title', true)) { ?>
+ 				<h2 itemprop="name headline" class="eb-post-title reset-heading">
+-					<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( 'http://stackideas.com', $blog->title); ?>
++					<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( $url, $blog->title); ?>
+ 
+ 				</h2>
+ 				<?php } ?>
+@@ -95,7 +97,9 @@
+ 
+ 		<div class="blog-link">
+ 			<h1 id="title-<?php echo $blog->id; ?>" class="blog-title<?php echo ($blog->isFeatured) ? ' featured-item' : '';?> rip" itemprop="name">
+-					<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( $blog->title, $blog->title); ?>
++			<!-- Temporary -->
++					<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( 'http://stackideas.com', $blog->title); ?>
++					<?php echo $blog->content; ?>
+ 			</h1>
+ 
+ 		</div>
+@@ -99,7 +110,7 @@
+ 
+ 		<div class="blog-link">
+ 			<h1 id="title-<?php echo $blog->id; ?>" class="blog-title<?php echo ($blog->isFeatured) ? ' featured-item' : '';?> rip" itemprop="name">
+-					<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( 'http://stackideas.com', $blog->title); ?>
++					<?php echo EasyBlogHelper::getHelper('String')->htmlAnchorLink( $url, $blog->title); ?>
+ 					<?php echo $blog->content; ?>
+ 			</h1>
+ 

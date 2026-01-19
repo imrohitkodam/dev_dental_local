@@ -1,0 +1,18 @@
+<div id="rbinstaller-alert-{{ item.status }}-{{ item.item_id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">You do not have active subscription.</h3>
+	</div>
+	
+	<div class="modal-body">
+		<ul>
+			<li>You have purchased this app earlier, but you do not have active subscription of this app.</li>
+			<li>You can see detailed information in <a href="#" onClick="rb.jQuery('#rbinstaller-alert-{{ item.status }}-{{ item.item_id }}').modal('hide'); rb.jQuery('#rbinstaller-modal-myapps').modal('show');">My Apps</a> section.</li>
+			<li>In order to install, re-install, upgrade and get support, you need to buy.</li>
+		</ul>		
+	</div>
+	
+	<div class="modal-footer text-center">
+		<button class="btn btn-primary" data-ng-click="rb.jQuery('#rbinstaller-alert-{{ item.status }}-{{ item.item_id }}').modal('hide'); cart.addToCart(item.item_id);">Buynow</button>
+	</div>
+</div>

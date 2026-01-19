@@ -1,0 +1,31 @@
+[class*='yo-quicklink-'] {
+    -webkit-mask: url(icon.svg) 50% 50% / 100% no-repeat;
+    mask: url(icon.svg) 50% 50% / 100% no-repeat;
+    background-color: currentColor;
+}
+/*
+ * Joomla 4
+ */
+
+.yo-quicklink-menu { aspect-ratio: 1 / 1; }
+
+.yo-quicklink-cpanel {
+    width: 46px;
+    height: 32px;
+}
+
+/*
+ * Joomla 3
+ */
+
+/* .yo-quicklink-menu-j3 {
+    float: left;
+    aspect-ratio: 1/1;
+    width: 22px;
+    margin-left: -10px;
+    margin-right: 5px;
+} */
+
+.no-dropdown:has(.yo-quicklink-menu-j3) { margin-left: -10px; }
+
+.yo-quicklink-cpanel-j3 { vertical-align: text-bottom; }

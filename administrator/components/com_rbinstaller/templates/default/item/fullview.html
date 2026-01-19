@@ -1,0 +1,59 @@
+<div class="span12 fullview-container" data-ng-show="item.item_id" data-ng-init="find_last_item_block(item.item_id);">
+	<div class="row">
+		<span class="span4">
+			<span ng-show="recent_clicked_item == 0" class="fullview-arrow"></span>
+		</span>
+		<span class="span4">
+			<span ng-show="recent_clicked_item == 1" class="fullview-arrow"></span>
+		</span>
+		<span class="span4">
+			<span ng-show="recent_clicked_item == 2" class="fullview-arrow"></span>
+		</span>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="rbinstaller-item-detail">
+		
+			<div data-ng-include src="header_template;"></div>
+		
+			<div class="row-fluid fullview-description-block">
+				 <div class="span12"> 
+				     <div class="tabbable tabs-left row-fluid"> <!-- Only required for left/right tabs -->
+					    <ul class="nav nav-tabs fullview-nav span3">					      					      					    
+						    <li class="active"><a href="#fullview-overview" data-toggle="tab" onClick="return false;"><i class="fa fa-reorder"></i> Overview </a></li>						    
+						    <li><a href="{{ reference.documentation_link }}" target="_blank" ng-click="trackReference('document', item.item_id);"><i class="fa fa-book"></i> Documents </a></li>
+						    <li><a href="{{ reference.support_link }}" target="_blank" ng-click="trackReference('support', item.item_id);"><i class="fa fa-user-md"></i> Support </a></li>
+					    </ul>
+					    
+					    <div class="tab-content span9">
+						    <div class="tab-pane active" id="fullview-overview">
+						    		
+						    	<div data-ng-show="has_data(screenshots);" class="row-fluid">				    	
+							    	<div class="row-fluid text-center muted">
+							    		<span style="line-height:40px;">Screenshots</span>
+							    	</div>
+							    	<div class="row-fluid">
+								    	<div class="row-fluid fullview-screenshots">						    		
+								    		<div class="span2" data-ng-repeat="screenshot in screenshots">
+									    		<a data-ng-show="screenshot" class="thumbnail" href="#rbinstaller-modal-gallery" data-toggle="modal" onClick="return false;" data-ng-click="setScrenshotIndex($index);">
+									    			<img data-ng-src="{{ screenshot }}">
+									    			<span class="fullview-icon-zoom"><i class="fa fa-search-plus fa-2x"></i></span>
+									    		</a>
+								    		</div>
+								    	</div>						    	
+							    	</div>
+									<hr class="rbinstaller-item-hr1">
+								</div>
+				    
+						    	<div class="row-fluid margin-top-10" data-ng-show="item.description"> 
+						    		<p class="muted"><big>Description :</big></p>
+						    		<div ng-bind-html-unsafe="item.description" class="fullview-description-content""></div>
+						    	</div>						    	
+						    </div>						  
+					    </div>
+				    </div>
+				 </div>
+			</div>
+		</div>
+	</div>	
+</div>

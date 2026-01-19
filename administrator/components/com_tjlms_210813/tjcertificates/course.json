@@ -1,0 +1,37 @@
+ [{
+    "name": "enroll.studentname",
+    "description": "Name"
+  },
+  {
+    "name": "enroll.studentusername",
+    "description": "Username"
+  },
+  {
+    "name": "course.title",
+    "description": "Course Title"
+  },
+  {
+    "name": "certificate.granted_date",
+    "description": "Date on which certificate is granted / Date of course Completion"
+  },
+  {
+    "name": "certificate.expiry_date",
+    "description": "Date on which certificate will be expired"
+  },
+  {
+    "name": "course.total_time",
+    "description": "Total time spent"
+  },
+  {
+    "name": "certificate.cert_id",
+    "description": "Unique certificate id"
+  },
+  {
+    "name": "jsfield.FIELD_CODE",
+    "description": "JomSocial Field Value"
+  },
+  {
+    "name": "esfield.unique_key",
+    "description": "Easysocial Field Value"
+  }
+ ]

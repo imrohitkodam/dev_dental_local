@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <extension version="2.5" type="file" method="upgrade">
+      <name>PayPlans Plugins English Language Pack</name>
+      <version>3.7.0</version>
+      <creationDate>November 2012</creationDate>
+      <author>Team PayPlans</author>
+      <authorEmail>payplans@readybytes.in</authorEmail>
+      <authorUrl>www.Jpayplans.com</authorUrl>
+      <copyright>Copyright (C) 2009 - 2012 All rights reserved.</copyright>
+      <license>GNU/GPL</license>
+      <description>English Language pack for plugins of payplans.</description>
+   <fileset>
+       <!--Payplans plugin language files -->
+       <files folder="plg_payplans" target="language/en-GB/">
+           <filename>index.html</filename>
+           <filename>en-GB.com_payplans_plugins.ini</filename>
+       </files>
+    </fileset>
+  <alias>pp-languagepacken</alias>
+<version_number>3.7.0</version_number>
+<version_name>PayPlans Plugins English Language Pack 3.7.0</version_name>
+</extension>

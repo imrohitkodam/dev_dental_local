@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extension method="upgrade" type="library" version="1.0">
+	<name>Extly Framework</name>
+	<libraryname>extly</libraryname>
+	<creationDate>2018-05-07</creationDate>
+
+	<author>Extly.com</author>
+	<authorEmail>team@extly.com</authorEmail>
+	<authorUrl>http://www.extly.com</authorUrl>
+	<copyright>Copyright (C) 2007 - 2017 Extly, CB. All rights reserved.</copyright>
+	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
+
+	<version>5.5.1</version>
+	<description>Extly Framework</description>
+
+	<media destination="lib_extly" folder="media">
+		<folder>css</folder>
+		<folder>font</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>tmp</folder>
+
+		<filename>index.html</filename>
+	</media>
+
+	<files folder=".">
+		<folder>core</folder>
+		<folder>form</folder>
+		<folder>helpers</folder>
+		<folder>html</folder>
+		<folder>mail</folder>
+		<folder>models</folder>
+		<folder>scheduler</folder>
+		<folder>tables</folder>
+
+		<filename>index.html</filename>
+		<filename>extlyframework.php</filename>
+		<filename>CREDITS.php</filename>
+		<filename>checksums</filename>
+		<filename>version.txt</filename>
+	</files>
+
+	<!-- Extension Update Specification -->
+
+<!--
+	<updateservers>
+		<server name="Extly Framework Update Site" priority="1" type="extension">http://www.extly.com/download/lib_extly/extly.xml</server>
+	</updateservers>
+ -->
+
+</extension>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>ppinstaller</name>	
+	<version>3.3.2</version>
+	<creationDate>Jan 2014</creationDate>
+	<author>Team Payplans</author>
+	<authorEmail>payplans@readybytes.com</authorEmail>
+	<authorUrl>http://www.readybytes.net/payplans.html</authorUrl>
+	<copyright>2009-14 Ready Bytes Software Labs Pvt. Ltd.</copyright>
+	<license>GNU General Public License v2</license>
+	<description>PayPlans Installer is used to handling PayPlans installation and migration with older versions.</description>
+	<administration>
+		<menu img="components/com_ppinstaller/assets/images/payplans.png">PayPlans Installer</menu>
+		<files folder="admin">
+			<filename>controller.php</filename>
+			<filename>view.php</filename>
+			<filename>defines.php</filename>			
+			<filename>index.html</filename>
+			<filename>ppinstaller.php</filename>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>controllers</folder>
+			<folder>views</folder>
+			<folder>assets</folder>
+			<folder>sql</folder>
+			<folder>precheck</folder>
+			
+		</files>
+
+		<languages>
+			<language tag="en-GB">languages/admin/en-GB.com_ppinstaller.ini</language>
+		</languages>
+	</administration>
+	
+	<scriptfile>script.ppinstaller.php</scriptfile>
+
+    <install>
+        <sql>
+			<file driver="mysql" charset="utf8">sql/install.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+
+</extension>

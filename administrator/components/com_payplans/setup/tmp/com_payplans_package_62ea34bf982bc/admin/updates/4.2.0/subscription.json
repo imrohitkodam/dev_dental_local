@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_subscription",
+		"index": "idx_params",
+		"query": "ALTER TABLE `#__payplans_subscription` ADD INDEX `idx_params` (`params` (200));"
+	}
+]

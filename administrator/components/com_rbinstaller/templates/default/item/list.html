@@ -1,0 +1,37 @@
+<div id="rbinstaller-list-ctrl">	
+	<div class="item-container">
+		
+		<div ng-include src="templates.fullview;" id="rbinstaller-fulldetail-view"></div>
+	
+		<div class="clearfix  row">
+			<div data-ng-repeat="(counter, item) in pagedItems[currentPage] " class="item-block span4" id="rbinstaller-item-{{ item.item_id }}">
+				<div data-ng-include src="getTemplatePath(item.item_id);"></div>
+	   		</div>
+		</div>
+		
+		 <div class="pagination center">
+            <ul>
+                <li ng-class="{disabled: currentPage == 0}">
+                    <a href="#/app" ng-click="prevPage()">« Prev</a>
+                </li>
+                <li ng-repeat="n in range(pagedItems.length)"
+                    ng-class="{active: n == currentPage}"
+                ng-click="setPage()">
+                    <a href="#/app" ng-bind="n + 1">1</a>
+                </li>
+                <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                    <a href="#/app" ng-click="nextPage()">Next »</a>
+                </li>
+            </ul>
+        </div>
+	
+		<!-- My Apps Section -->
+		<div data-ng-include src="templates.myapps;"></div>
+
+		<div ng-include src="templates.cart;"></div>
+		
+		<div ng-include src="templates.install;"></div>
+	</div>	
+	
+	<div ng-include src="templates.image_modal;"></div>
+</div>

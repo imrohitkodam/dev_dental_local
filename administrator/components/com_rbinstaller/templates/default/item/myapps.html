@@ -1,0 +1,92 @@
+<div id="rbinstaller-modal-myapps" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="My Apps" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<div class="row-fluid">
+			<h3 id="myModalLabel" class="pull-left"><i class="fa fa-puzzle-piece"></i> My Paid Apps Info.</h3>			
+		</div>
+	</div>
+	
+	<div class="modal-body" style="padding: 0px;">
+	<div class="row-fluid myapps-header">	
+		<div class="span1">
+			<div class="row-fluid myapps-header-block text-center">
+				<span>#</span>
+			</div>
+		</div>
+		<div class="span11">
+			<div class="row-fluid">			
+		        <span class="span2 text-center myapps-header-block">Invoice No.</span>
+		      	<span class="span4 text-center myapps-header-block">Apps</span>
+		      	<span class="span2 text-center myapps-header-block">Activated On</span>
+		      	<span class="span2 text-center myapps-header-block">Expired On</span>
+		      	<span class="span2 text-center ">Subscription Status</span>
+     		</div>
+     	</div>
+    </div>
+     
+	<div data-ng-repeat="invoice in invoices | orderBy:paid_date:true | myapp_invoice_filter">
+		<div data-ng-repeat="invoiceitem in invoice.invoiceitems">
+			<span data-ng-init="params = fromJson(invoiceitem.params);"></span>					
+			<div class="row-fluid" style="padding: 10px 0px; border-top: 1px solid #CCCCCC;">
+				<div class="span1">
+					<div class="row-fluid text-center">
+						<span>#</span>
+					</div>
+				</div>
+				
+				<div class="span11">
+					<div class="row-fluid">
+				        <span class="span2 text-center">{{ invoice.serial }}</span>
+				      	<div class="span4">
+				      		<div class="row-fluid">
+					      		<div class="span2 text-center"><img alt="" data-ng-src="{{ items[params.item.item_id].icon }}"></div>
+								<div class="span9">							
+									<div class="row-fluid">
+										<a href="#/app/{{ params.item.alias }}" class="rbinstaller-item-viewdetail" onClick="rb.jQuery('#rbinstaller-modal-myapps').modal('hide');" ng-click="updateFullView(params.item.item_id, false);find_last_item_block(params.item.item_id);">
+											{{ params.item.title }}
+										</a>
+									</div>
+									<div class="row-fluid">Subscription Time : {{ params.item.time | expiration_time_filter }}</div>								
+									<div class="row-fluid">For Domain : {{ invoiceitem.custom2 }}</div>
+									<div class="row-fluid">Price : {{ params.item.price | currency:"$ " }}</div>
+								</div>
+							</div>
+				      	</div>
+				      	<span class="span2 text-center">{{ mysql_to_date(invoice.paid_date) | date:'mediumDate' }}</span>
+				      	
+				      	<span class="span2 text-center" ng-switch on="params.item.time">
+				      		<span ng-switch-when="000000000000">Never</span>
+				      		<span ng-switch-default>{{ add_expiration(invoice.paid_date, params.item.time) | date:'mediumDate' }}</span>
+				      	</span>
+				      		
+				      	<span class="span2 text-center" ng-switch on="get_item_status(invoice.status, invoice.paid_date, params.item.time);">
+							<span ng-switch-when="inprocess" class="item-status-inprocess"><i class="fa fa-spinner"></i> In Process</span>
+							<span ng-switch-when="active" class="text-success"><i class="fa fa-check-circle"></i> Active</span>
+							<span ng-switch-default class="text-error"><i class="fafa-minus-circle"></i> Expired</span>
+						</span>			      	
+			      </div>
+			      </div>
+		      </div>
+      	</div>
+	</div>		
+	</div>
+	
+	<div class="modal-footer">
+		<div class="row-fluid myapps-footer">
+			<div class="span4 myapps-footer-block">
+				<div class="muted"><i class="fa fa-user"></i> User</div>
+				<div>{{ config.email }}</div>
+			</div>
+			
+			<div class="span4 myapps-footer-block">
+				<div class="muted"><i class="fa fa-globe"></i> Current Domain</div>
+				<div>{{ config.current_domain }}</div>	
+			</div>
+			
+			<div class="span4 myapps-footer-block">
+				<div><i class="fa fa-save"></i> Current Product</div>
+				<div>{{ tags[product_tag_alias].title }}</div>
+			</div>
+		</div>
+	</div>
+</div>

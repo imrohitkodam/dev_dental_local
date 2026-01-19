@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="administrator" method="upgrade" version="2.5" position="icon">
+    <name>EDOCMAN Stats (admin)</name>
+    <author>Ossolution</author>
+    <creationDate>January 16th, 2018</creationDate>
+    <copyright>Copyright (c) 2012 - 2018 Ossolution. All rights reserved.</copyright>
+    <authorEmail>services@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.net</authorUrl>
+    <version>1.0</version>
+    <description>This module is used to show Edocman statistic</description>
+    <files>
+        <filename module="mod_edocman_stats">mod_edocman_stats.php</filename>
+        <file>helper.php</file>
+        <folder>tmpl</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="latestItems" type="radio" class="btn-group btn-group-yesno" default="1" label="Latest Documents">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+                <field name="popularItems" type="radio" class="btn-group btn-group-yesno" default="1" label="Popular Documents">
+                    <option value="0">Disable</option>
+                    <option value="1">Endable</option>
+                </field>
+                <field name="mostDownloadItems" class="btn-group btn-group-yesno" type="radio" default="1" label="Most Download Documents">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+                <field name="statistics" type="radio" class="btn-group btn-group-yesno" default="1" label="Statistic">
+                    <option value="0">Disable</option>
+                    <option value="1">Enable</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset>
+    <field name="id" type="Number" default="0" class="readonly" readonly="true" label="JGLOBAL_FIELD_ID_LABEL"/>
+    <field name="name" type="Text" default="" required="true" label="JGLOBAL_TITLE"/>
+    <field name="alias" type="Text" size="45" default="" hint="JFIELD_ALIAS_PLACEHOLDER" label="JFIELD_ALIAS_LABEL" description="SNP_ALIAS_DESC"/>
+  </fieldset>
+  <fieldset name="details">
+    <field name="published" type="List" default="1" size="1" class="form-select-color-state" label="JSTATUS">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="description" type="Textarea" height="160" default="" label="JGLOBAL_DESCRIPTION" description="SNP_DESCRIPTION_DESC"/>
+  </fieldset>
+  <fieldset name="category">
+    <field name="category" type="SimpleCategory" default="" table="snippets" label="JCATEGORY" description="JGLOBAL_CHOOSE_CATEGORY_DESC"/>
+  </fieldset>
+  <fieldset name="-content" addfieldprefix="RegularLabs\Component\Snippets\Administrator\Field">
+    <field name="@dynamic_tags" type="DynamicTags"/>
+    <field name="content" type="Editor" default="" buttons="pagebreak,readmore" hide="true" label="" hiddenLabel="true"/>
+  </fieldset>
+  <fieldset name="variables">
+    <field name="@note__variables" type="Note" class="rl-alert alert alert-info rl-alert-light" text="SNP_VARIABLES_DESC"/>
+    <field name="@note__variables_free" type="OnlyPro"/>
+  </fieldset>
+  <fieldset name="settings">
+    <field name="remove_paragraphs" type="Radio" default="-1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="SNP_REMOVE_PARAGRAPHS" description="SNP_REMOVE_PARAGRAPHS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+      <option value="-1" class="btn btn-outline-info">JDEFAULT</option>
+    </field>
+    <field name="place_comments" type="Radio" default="-1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_PLACE_HTML_COMMENTS" description="RL_PLACE_HTML_COMMENTS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+      <option value="-1" class="btn btn-outline-info">JDEFAULT</option>
+    </field>
+    <field name="enable_in_head" type="List" default="-1" label="SNP_ENABLE_IN_HEAD" description="SNP_ENABLE_IN_HEAD_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+      <option value="-1">JDEFAULT</option>
+      <option value="2">JGLOBAL_FIELD_REMOVE</option>
+    </field>
+    <field name="@note__button_enable" type="OnlyPro" label="SNP_SHOW_IN_EDITOR_BUTTON" description="SNP_SHOW_IN_EDITOR_BUTTON_DESC"/>
+  </fieldset>
+</form>

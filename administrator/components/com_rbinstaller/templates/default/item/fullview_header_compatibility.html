@@ -1,0 +1,36 @@
+<div class="row-fluid fullview-compatibility">
+	<div class="span3 version-selector">	
+		<span data-ng-model="barwidth_model"></span>			
+		<select id="fullview-compatibility-model" class="medium" data-ng-model="version_list_model" ng-change="updateBarWidth();">
+			<option value="">-Select File-</option>			
+			<option ng-show="version.itemversion_id" value="{{ version.itemversion_id }}" data-ng-repeat="version in item.version">{{ version.version_name }}</option>				
+		</select>		
+	</div>
+	
+	<div class="span9">
+		<div class="row-fluid compatibility-info">			
+			<h3 ng-show="version_model">{{ item_compatibilities[version_model][prefix_model].title }} :
+				<span data-ng-repeat="value in item_compatibilities[version_model][prefix_model].values">
+					{{ value }}
+					<span ng-hide="$last">, </span>
+				</span>				
+			</h3>	
+
+			<div ng-hide="version_model" class="row-fluid" style="padding-top:10px;">				
+				<h3><i class="fa fa-arrow-left"></i> Please select file to check the compatibility.</h3>							
+			</div>		
+		</div>
+		
+		<div class="row-fluid compatibility-spectrum">				
+		    <div class="progress" ng-show="version_model">
+		    	<div class="bar" data-ng-show="prefix == product_tag_alias" data-ng-repeat="(prefix, fullview_compatibility) in item_compatibilities[version_model]" ng-mouseover="changeBarMouseHover(prefix);"  ng-mouseleave="changeBarMouseLeave(default_prefix);" style="width: {{ barwidth_model }}%; background:{{ color_codes[prefix] }};">
+			    	<span style="color:#000000;">{{ fullview_compatibility.title }}</span>
+			    </div>
+			    		    			    	
+			    <div class="bar" data-ng-hide="prefix == product_tag_alias" data-ng-repeat="(prefix, fullview_compatibility) in item_compatibilities[version_model]" ng-mouseover="changeBarMouseHover(prefix);"  ng-mouseleave="changeBarMouseLeave(default_prefix);" style="width: {{ barwidth_model }}%; background:{{ color_codes[prefix] }};">
+			    	<span style="color:#000000;">{{ fullview_compatibility.title }}</span>
+			    </div>			    
+		    </div>	
+		</div>
+	</div>	
+</div>

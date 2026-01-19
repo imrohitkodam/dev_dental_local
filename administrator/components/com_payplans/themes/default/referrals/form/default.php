@@ -1,0 +1,37 @@
+<?php
+/**
+* @package		PayPlans
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* PayPlans is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
+defined('_JEXEC') or die('Unauthorized Access');
+?>
+<form class="o-form-horizontal" method="post" name="adminForm" id="adminForm" enctype="multipart/form-data" data-pp-form>
+	<div data-fd-tab-wrapper>
+		<?php echo $this->fd->html('admin.tabs', function() use ($activeTab) {
+			$tabs = [
+				(object) [
+					'id' => 'details',
+					'title' => 'COM_PP_DETAILS',
+					'active' => !$activeTab || $activeTab === 'details'
+				]
+			];
+
+			return $tabs;
+		}); ?>
+
+		<div class="tab-content">
+			<div id="details" class="t-hidden <?php echo !$activeTab || $activeTab === 'details' ? 't-block' : '';?>">
+				<?php echo $this->output('admin/referrals/form/details'); ?>
+			</div>
+		</div>
+	</div>
+
+	<?php echo $this->html('form.action', 'referrals', 'store'); ?>
+	<?php echo $this->html('form.hidden', 'id', $app->getId()); ?>
+</form>

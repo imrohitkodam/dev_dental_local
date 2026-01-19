@@ -1,0 +1,13 @@
+[
+	{
+		"table": "#__payplans_plan",
+		"alter": "checked_out_time",
+		"query": "ALTER TABLE `#__payplans_plan` CHANGE `checked_out_time` `checked_out_time` DATETIME NULL DEFAULT NULL;"
+	},
+	{
+		"table": "#__payplans_plan",
+		"alter": "checked_out",
+		"query": "ALTER TABLE `#__payplans_plan` CHANGE `checked_out` `checked_out` INT DEFAULT NULL;"
+	}
+]
+

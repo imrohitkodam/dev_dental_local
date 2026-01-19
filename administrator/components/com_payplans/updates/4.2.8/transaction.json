@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_transaction",
+		"index": "idx_created_date",
+		"query": "ALTER TABLE `#__payplans_transaction` ADD INDEX `idx_created_date` (`created_date`)"
+	}
+]

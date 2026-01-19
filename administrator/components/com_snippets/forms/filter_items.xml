@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="RegularLabs\Library\Form\Field">
+  <fields name="filter">
+    <field name="search" type="Text" label="JSEARCH_FILTER_LABEL" hint="JSEARCH_FILTER"/>
+    <field name="state" type="Status" optionsFilter="-2,0,1,*" label="JPUBLISHED" onchange="this.form.submit();">
+      <option value="">JOPTION_SELECT_PUBLISHED</option>
+    </field>
+    <field name="category" type="SimpleCategory" table="snippets" show_none="0" show_new="0" label="JCATEGORY" onchange="this.form.submit();">
+      <option value="">RL_SELECT_A_CATEGORY</option>
+    </field>
+  </fields>
+  <fields name="list">
+    <field name="fullordering" type="List" label="RL_LIST_FULL_ORDERING" onchange="this.form.submit();" default="a.ordering ASC">
+      <option value="">JGLOBAL_SORT_BY</option>
+      <option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+      <option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+      <option value="a.published ASC">JSTATUS_ASC</option>
+      <option value="a.published DESC">JSTATUS_DESC</option>
+      <option value="a.alias ASC">RL_HEADING_ALIAS_ASC</option>
+      <option value="a.alias DESC">RL_HEADING_ALIAS_DESC</option>
+      <option value="a.name ASC">JGLOBAL_TITLE_ASC</option>
+      <option value="a.name DESC">JGLOBAL_TITLE_DESC</option>
+      <option value="a.description ASC">RL_HEADING_DESCRIPTION_ASC</option>
+      <option value="a.description DESC">RL_HEADING_DESCRIPTION_DESC</option>
+      <option value="a.category ASC">RL_HEADING_CATEGORY_ASC</option>
+      <option value="a.category DESC">RL_HEADING_CATEGORY_DESC</option>
+      <option value="a.color ASC">RL_HEADING_COLOR_ASC</option>
+      <option value="a.color DESC">RL_HEADING_COLOR_DESC</option>
+      <option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+      <option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+    </field>
+    <field name="limit" type="Limitbox" label="JGLOBAL_LIST_LIMIT" default="25" onchange="this.form.submit();"/>
+  </fields>
+</form>

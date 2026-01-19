@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_country",
+		"column": "published",
+		"query": "ALTER TABLE `#__payplans_country` ADD COLUMN `published` TINYINT(3) NOT NULL DEFAULT '1' AFTER `isocode3n`, ADD INDEX (`published`);"
+	}
+]

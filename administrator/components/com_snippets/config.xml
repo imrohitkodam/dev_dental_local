@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset name="options" label="JOPTIONS">
+    <field name="@load_script_descriptions" type="LoadMedia" filetype="script" file="regularlabs.admin-form-descriptions"/>
+    <field name="@block__button__a" type="Block" start="1" label="RL_SETTINGS_EDITOR_BUTTON"/>
+    <field name="@note__button" type="OnlyPro" label=""/>
+    <field name="@block__button__b" type="Block" end="1"/>
+    <field name="@block__other__a" type="Block" start="1" label="RL_OTHER_SETTINGS"/>
+    <field name="use_categories" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_USE_CATEGORIES" description="RL_USE_CATEGORIES_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="use_colors" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_USE_COLORS" description="RL_USE_COLORS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="main_colors" type="TextArea" rows="4" default="none,#c0c6cf,#000000,#dc2a28,#fb6b14,#ffa813,#eac90a,#18a047,#0f9aa4,#115dda,#761bda,#d319a4" label="RL_COLORS" description="RL_COLORS_DESC" showon="use_colors:1"/>
+    <field name="tag" type="Text" default="snippet" label="SNP_SNIPPET_TAG" description="SNP_SNIPPET_TAG_DESC"/>
+    <field name="tag_characters" type="List" class="font-monospace w-auto" default="{.}" label="RL_TAG_CHARACTERS" description="RL_TAG_CHARACTERS_DESC">
+      <option value="{.}">{...}</option>
+      <option value="[.]">[...]</option>
+      <option value="«.»">«...»</option>
+      <option value="{{.}}">{{...}}</option>
+      <option value="[[.]]">[[...]]</option>
+      <option value="[:.:]">[:...:]</option>
+      <option value="[%.%]">[%...%]</option>
+    </field>
+    <field name="@note__tag_characters_variables" type="OnlyPro" label="SNP_TAG_CHARACTERS_VARIABLES" description="RL_TAG_CHARACTERS_DESC"/>
+    <field name="remove_paragraphs" type="Radio" default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="SNP_REMOVE_PARAGRAPHS" description="SNP_REMOVE_PARAGRAPHS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="strip_surrounding_tags" type="Radio" default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_STRIP_SURROUNDING_TAGS" description="RL_STRIP_SURROUNDING_TAGS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@note__disabled_components" type="OnlyPro" label="RL_DISABLE_ON_COMPONENTS" description="RL_DISABLE_ON_COMPONENTS_DESC"/>
+    <field name="enable_in_head" type="List" default="0" label="SNP_ENABLE_IN_HEAD" description="SNP_ENABLE_IN_HEAD_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+      <option value="2">JGLOBAL_FIELD_REMOVE</option>
+    </field>
+    <field name="fix_html" type="Radio" default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_FIX_HTML" description="RL_FIX_HTML_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="place_comments" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_PLACE_HTML_COMMENTS" description="RL_PLACE_HTML_COMMENTS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="show_update_notification" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_SHOW_UPDATE_NOTIFICATION" description="RL_SHOW_UPDATE_NOTIFICATION_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@show_copyright" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_SHOW_COPYRIGHT">
+      <option value="0" disabled="disabled">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@note__show_copyright" type="OnlyPro" label="" description="RL_SHOW_COPYRIGHT_DESC"/>
+    <field name="@block__other__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="RL_USER_ACTION_LOGS" label="RL_USER_ACTION_LOGS">
+    <field name="enable_actionlog" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_ENABLE_ACTIONLOG" description="RL_ENABLE_ACTIONLOG_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="actionlog_events" type="Checkboxes" multiple="true" default="create,update,delete,change_state" checked="create,update,delete,change_state" class="rl-form-checkboxes-not-inline" label="RL_ACTIONLOG_EVENTS" description="RL_ACTIONLOG_EVENTS_DESC" showon="enable_actionlog:1">
+      <option value="create">RL_ACTION_CREATE</option>
+      <option value="update">RL_ACTION_UPDATE</option>
+      <option value="delete">RL_ACTION_DELETE</option>
+      <option value="change_state">RL_ACTION_CHANGE_STATE</option>
+    </field>
+  </fieldset>
+  <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+    <field name="rules" type="Rules" label="JCONFIG_PERMISSIONS_LABEL" filter="rules" validate="rules" component="com_snippets" section="component"/>
+  </fieldset>
+</config>

@@ -1,0 +1,108 @@
+<div id="rbinstaller-install" class="modal hide fade">	
+		<div id="install-item-details">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<img class="display-inline" data-ng-src="{{ install_item.icon }}" alt="icon">
+			    <p class="display-inline font-size-18">{{ install_item.title }}</p>
+			</div>
+			
+			<div class="modal-body">	
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>File Version</th>
+							<th>Compatible with</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="version in install_item.version">
+							<td>
+								{{ version.version_name }}
+							</td>
+							<td>
+								<div data-ng-repeat="compatibility in item_compatibilities[version.itemversion_id]">{{ compatibility.title }} :
+									<span data-ng-repeat="value in compatibility.values">
+										{{ value }}
+										<span ng-hide="$last">, </span>
+									</span>	
+								</div>	
+							</td>
+							<td>
+								<a href="#" class="btn btn-primary btn-medium" ng-click="install.item(version.itemversion_id);">Install</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>				
+				
+				<div class="margin-top-5 font-size-14 text-center">
+					<p class="display-inline"><i class="fa fa-globe"></i>&nbsp;At Domain :&nbsp;</p>
+					<a class="display-inline" href="#"> {{ config.current_domain }}</a>
+				</div>			
+			</div>			
+		</div>
+		
+		<div class="hide" id="install-item-version">
+			 <div class="modal-header">
+					<img class="display-inline" data-ng-src="{{ install_item.icon }}" alt="icon">
+				    <p class="display-inline font-size-18">{{ install_item.title }}</p>
+				    <p class="display-inline hide" id="install-version-id"></p>
+			</div>
+			
+			<div class="margin-top-2 center font-size-14">	
+				<p>App is Installing...</p>
+				<div class="progress progress-striped active install-progress-bar">
+				  <div class="bar" style="width: 100%;"></div>
+				</div>
+			</div>
+			
+			<div class="margin-top-5 font-size-14 text-center">
+				<p class="display-inline"><i class="fa fa-globe"></i>&nbsp;At Domain :&nbsp;</p>
+				<a class="display-inline" href="#"> {{ config.current_domain }}</a>
+			</div>
+
+			<div class="margin-top-5">&nbsp;</div>
+			
+		</div>
+		
+		<div class="hide" id="install-success">
+			 <div class="modal-header">
+					<img class="display-inline" data-ng-src="{{ install_item.icon }}" alt="icon">
+				    <p class="display-inline font-size-18">{{ install_item.title }}</p>
+				    <p class="display-inline hide" id="install-version-id"></p>
+			</div>
+			
+			<div class="margin-top-5 font-size-14 text-center">
+				<p class="display-inline"><i class="fa fa-globe"></i>&nbsp;At Domain :&nbsp;</p>
+				<a class="display-inline" href="#"> {{ config.current_domain }}</a>
+			</div>
+
+			<div class="modal-footer" style="background-color: #18BC9C;">
+				<span class="font-size-18 pull-left" style="color: #ffffff;margin-top: 10px;"><i class="fa fa-check"></i>&nbsp; Installed Successfully</span>
+				<span><a href="#" class="btn btn-large" data-dismiss="modal">OK</a></span>
+			</div>
+			
+		</div>
+		
+		<div class="hide" id="install-failure">
+			 <div class="modal-header">
+					<img class="display-inline" data-ng-src="{{ install_item.icon }}" alt="icon">
+				    <p class="display-inline font-size-18">{{ install_item.title }}</p>
+				    <p class="display-inline hide" id="install-version-id"></p>
+			</div>
+			<div class="modal-body">
+				<big>Installation of this version is failed, please try again or report this issue to service provider.</big>	
+			</div>
+			<div class="margin-top-5 font-size-14 text-center">
+				<p class="display-inline"><i class="fa fa-globe"></i>&nbsp;At Domain :&nbsp;</p>
+				<a class="display-inline" href="#"> {{ config.current_domain }}</a>
+			</div>
+
+			<div class="modal-footer">
+				<span class="font-size-18 pull-left text-error">
+					<i class="fa fa-warning"></i>&nbsp; Install Failed</span>
+				<span><a href="#" class="btn btn-large" data-dismiss="modal">OK</a></span>
+			</div>
+			
+		</div>	
+</div>

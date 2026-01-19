@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_country",
+		"column": "default",
+		"query": "ALTER TABLE `#__payplans_country` ADD `default` TINYINT(3) NOT NULL DEFAULT '0' AFTER `published`;"
+	}
+]

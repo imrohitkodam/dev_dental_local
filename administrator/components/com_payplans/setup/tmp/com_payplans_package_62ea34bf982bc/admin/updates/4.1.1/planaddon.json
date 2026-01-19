@@ -1,0 +1,7 @@
+[
+	{
+		"table": "#__payplans_planaddons",
+		"column": "ordering",
+		"query": "ALTER TABLE `#__payplans_planaddons` ADD `ordering` INT(11) NOT NULL DEFAULT '0' AFTER `published`;"
+	}
+]

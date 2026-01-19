@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade" client="administrator" >
+    <name>PayPlans Quick Icons</name>
+    <version>3.6.3.3</version>
+    <creationDate>Nov 2012</creationDate>
+    <author>Team JPayplans</author>
+    <authorEmail>payplans@readybytes.in</authorEmail>
+    <authorUrl>http://www.jpayplans.com</authorUrl>
+    <copyright>2009-12 Ready Bytes Software Labs Pvt. Ltd.</copyright>
+    <license>GNU General Public License v2</license>
+	<description>Quick Icons module for PayPlans</description>
+	<files>
+		<filename module="mod_payplans_quickicon">index.html</filename>
+		<filename module="mod_payplans_quickicon">mod_payplans_quickicon.php</filename>
+	</files>
+	<scriptfile>script.php</scriptfile>  
+<alias>pp-payplansquickicons</alias>
+<version_number>3.6.3</version_number>
+<version_name>PayPlans Quick Icons 3.6.3</version_name>
+</extension>

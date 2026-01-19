@@ -1,0 +1,17 @@
+/**
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2013 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License http://stackideas.com/licensing.html
+* @author       Stack Ideas Sdn Bhd
+**/
+
+
+.eb-navbar-left > li {
+    border-right: 0 !important;
+    border-left: 1px solid #1b1b1b !important;
+}
+
+.eb-navbar-left .dropdown-menu-left {
+    left: auto;
+    right: -1px;
+}

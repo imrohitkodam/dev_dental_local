@@ -1,0 +1,17 @@
+<mj-section padding="20px" text-align="center">
+    <mj-column>
+        <mj-image align="center" padding="5px 0 5px 0" width="130px" src="/media/com_payplans/images/logo-payplans-text.png" href="http://localhost" />
+    </mj-column>
+</mj-section>
+<!-- end logo -->
+<mj-section  text-align="center" full-width="full-width" background-color="#F2F4FA">
+      <mj-column width="100%"  padding-top="40px" padding-bottom="40px">
+        <mj-text color="#444444" align="center" line-height="48px" font-size="36px" font-weight="bold">	
+          Congratulation!
+        </mj-text>
+        <mj-text color="#444444" align="center" font-weight="100" font-size="21px" padding-bottom="20px">
+          You've made your first purchase
+        </mj-text>
+      </mj-column>  		
+</mj-section>
+<!-- end section -->

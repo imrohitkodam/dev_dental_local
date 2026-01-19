@@ -1,0 +1,177 @@
+/* NEW ADDED CSS FOR HEADER
+*/
+
+
+.info-rounds {
+    padding 				: 7% 0 7% 0 ;
+}
+.info-rounds ul {
+    background-image 		: linear-gradient(#FFFFFF 50%, #ecf0f1 50%);
+    background-image 		: -webkit-linear-gradient(#FFFFFF 50%, #ecf0f1 50%);
+    background-image 		: -moz-linear-gradient(#FFFFFF 50%, #ecf0f1 50%);
+    background-image 		: -o-linear-gradient(#FFFFFF 50%, #ecf0f1 50%);
+    
+ 
+    background-position 	: 55% 17px;
+    background-repeat 		: no-repeat;
+    background-size 		: 74% 16%;
+    color 					: #FFFFFF;
+    list-style 				: none outside none;
+}
+.info-rounds ul li {
+    float 					: left;
+    text-align 				: center;
+}
+.info-rounds ul li .circle {
+    background-color 		: #ccc;
+    border-radius 			: 30px 30px 30px 30px;
+    color 					: #FFFFFF;
+    display 				: inline-block;
+    font-size 				: 14px;
+    height 					: 50px;
+    text-align 				: center;
+    vertical-align 			: bottom;
+    width 					: 50px;
+}
+.info-rounds ul li .circle b {
+    color 					: #FFFFFF;
+    line-height 			: 50px;
+}
+.info-rounds ul li .nav-text {
+    clear 					: both;
+    color 					: #66666A;
+    display 				: block;
+    font-size 				: 16px;
+    margin-top 				: 10px;
+}
+.active-circle {
+	border 						: 4px solid #F0AD4E;
+    background-color 			: #FFFFFF !important;
+    transition-duration 		: 0.2s;
+    -webkit-transition-duration	: 0.2s;
+    -moz-transition-duration 	: 0.2s;
+    -o-transition-duration 		: 0.2s;
+}
+.active-circle b {
+    color 						: #F0AD4E !important;
+}
+.active-nav-text {
+    color 						: #E07735 !important;
+    font-weight 				: 700;
+    transition-duration 		: 0.2s;
+    -webkit-transition-duration	: 0.2s;
+    -moz-transition-duration 	: 0.2s;
+    -o-transition-duration 		: 0.2s;
+}
+
+.done-circle {
+	border 						: 4px solid #2ecc71;
+    background-color 			: #FFFFFF !important;
+    transition-duration 		: 0.2s;
+    -webkit-transition-duration	: 0.2s;
+    -moz-transition-duration 	: 0.2s;
+    -o-transition-duration 		: 0.2s;
+}
+.done-circle b {
+    color 						: #2ecc71 !important;
+}
+.done-nav-text {
+    color 						: #63B145 !important;
+    font-weight 				: 700;
+    transition-duration 		: 0.2s;
+    -webkit-transition-duration	: 0.2s;
+    -moz-transition-duration 	: 0.2s;
+    -o-transition-duration 		: 0.2s;
+}
+
+.pp-precheck h3 {
+	color 					: #666;
+	cursor 					: pointer;
+}
+.pp-precheck h3:hover{
+	color 					: #111;
+}
+
+#ppInstaller_submit_button {
+/*     white-space 		: normal; */
+/*     border-radius 		: 6px 6px 6px 6px; */
+/*     font-size 			: 17px; */
+/*     line-height 			: 1.471; */
+/*     padding 			: 10px 19px; */
+/*     background-color 	: #3498DB; */
+/*     color 				: #FFFFFF; */
+/*     border 				: medium none; */
+/*     border-radius 		: 4px 4px 4px 4px; */
+/*     font-size 			: 22px; */
+/*     font-weight 		: normal; */
+/*     line-height 			: 1.4; */
+/*     padding 			: 10px 15px; */
+/*     box-shadow 		: 0px 0px 0px 0px black; */
+    
+/*     -webkit-transition 	: box-shadow 1s easy; */
+/* 	-moz-transition 		: box-shadow 1s easy; */
+/* 	-ms-transition 		: box-shadow 1s easy; */
+/* 	-o-transition 			: box-shadow 1s easy; */
+/* 	transition 				: box-shadow 1s easy; */
+}
+#ppInstaller_submit_button:hover {
+/* 	box-shadow 			: 0px 0px 10px -5px #2D91D1; */
+}
+
+.ppinstaller-steps h4{
+	margin 				: 20px 0;
+}
+
+.ppinstaller-steps h4 .activate{
+	
+    display 				: inline-block;
+	-moz-animation 			: spin 2s infinite linear;
+	-o-animation 			: spin 2s infinite linear;
+	-webkit-animation 		: spin 2s infinite linear;
+	animation 				: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+.pp-linkable:hover {
+	color 					: #666;
+	cursor 					: pointer;
+}
+
+.pp-precheck .pp-linkable {
+	color 					: #08c;
+	cursor 					: pointer;
+}
+
+.pp-precheck > div:not(:last-child){
+	padding 				: 10px 0;
+	border-bottom  			: 1px solid #eee;
+}
+
+.pp-linkable + div {
+	padding-top 			: 15px;	
+}
+
+.btn {
+	padding : 5px 20px !important;
+}
+
+.ppinstaller-spin {
+    display                 : inline-block;
+    -moz-animation          : spin 2s infinite linear;
+    -o-animation            : spin 2s infinite linear;
+    -webkit-animation       : spin 2s infinite linear;
+    animation               : spin 2s infinite linear;
+}

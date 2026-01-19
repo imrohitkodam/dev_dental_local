@@ -1,0 +1,49 @@
+<div id="rbinstaller-cart" class="modal hide fade">
+	
+	 <div class="modal-header">
+	 	<div class="row-fluid">
+	 		<div class="span9">				
+				<big><i class="fa fa-shopping-cart fa-2x"></i> My Cart<sup class="muted">{{ tags[product_tag_alias].title }}</sup></big>
+			</div>
+			
+			<div class="span2 pull-right">
+				<strong>{{ get_cart_item_count() }} Items</strong>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+		</div> 
+	</div>
+
+	<div class="modal-body">
+	<div id="rbinstaller-cart-body">
+		<div class="row-fluid">
+			<div class="alert">Note : You are subscribing these Apps for the domain : {{ config.current_domain }}</div>
+		</div>
+	
+		<div data-ng-repeat="item_id in added_items">
+			<div class="row-fluid" style="padding: 10px 0px; border-top: 1px solid #CCCCCC;">
+				<div class="span1 text-center">
+					<span>{{ $index + 1 }}</span>
+				</div>
+				<div class="span2 text-center"><img alt="" data-ng-src="{{ items[item_id].icon }}"></div>
+				
+				<div class="span5">
+					<div class="row-fluid">{{ items[item_id].title }}</div>
+					<div class="row-fluid">Subscription TIme : {{ items[item_id].time | expiration_time_filter }}</div>
+				</div>
+				
+				<div class="span2">{{ items[item_id].price | currency:"$ " }}</div>
+				
+				<div class="span1"><div class="pull-right"><a ng-click="cart.removeFromCart(item_id);" class="remove-cart-item"><icon class="fa fa-times-circle text-error"></icon></a></div></div>			
+			</div>		
+		</div>		
+	</div>
+	</div>
+	
+	<div class="modal-footer">
+		<div class="row-fluid">
+			<div class="span9" style="padding:5px;"><big>{{ get_cart_total() | currency:"$ "}}</big></div>
+			<div class="span2 pull-right"><a href="#" class="btn btn-primary" ng-click="cart.checkout(added_items);">Checkout</a></div>
+		</div>
+	</div>
+	
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<extension version="2.5" type="file" method="upgrade">
+		<name>PayPlans Precheck Pack</name>
+		<version>3.4.0</version>
+		<creationDate>Jan 2016</creationDate>
+		<author>Team Readybytes</author>
+		<authorEmail>support+payplans@readybytes.in</authorEmail>
+		<authorUrl>www.readybytes.net</authorUrl>
+		<copyright>Copyright (C) 2009 - 2016 All rights reserved.</copyright>
+		<license>GNU/GPL</license>
+		<description>PreCheck Files for payplans3.4 .</description>
+		<!--Payplans migration files -->
+		
+		<fileset>
+			<files folder="admin" target="administrator/components/com_ppinstaller/precheck/">
+				<filename>precheck3.4.php</filename>
+			</files>
+		</fileset>
+	</extension>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" client="administrator" method="upgrade">
+    <name>MOD_YOOTHEME_LINK</name>
+    <version>4.5.32</version>
+    <description>MOD_YOOTHEME_LINK_XML_DESCRIPTION</description>
+    <creationDate>November 2025</creationDate>
+    <copyright>Copyright (C) YOOtheme GmbH</copyright>
+    <license>GNU General Public License</license>
+    <author>YOOtheme</author>
+    <authorEmail>info@yootheme.com</authorEmail>
+    <authorUrl>https://yootheme.com</authorUrl>
+    <files>
+        <filename module="mod_yootheme_link">mod_yootheme_link.php</filename>
+        <filename>script.php</filename>
+        <folder>assets</folder>
+        <folder>tmpl</folder>
+        <folder>presets</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">mod_yootheme_link.ini</language>
+        <language tag="en-GB">mod_yootheme_link.sys.ini</language>
+    </languages>
+    <scriptfile>script.php</scriptfile>
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                    class="form-select"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

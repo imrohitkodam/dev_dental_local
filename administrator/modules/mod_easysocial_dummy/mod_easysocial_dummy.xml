@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="administrator" method="upgrade">
+	<name>Dummy Module</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>27th December 2021</creationDate>
+	<copyright>Copyright (C) 2009 - 2016 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>2.0.285</version>
+	<description><![CDATA[This module's sole purpose is to solve issues archiving with phing]]></description>
+</extension>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <extension type="package" version="1.11.6" method="upgrade">
+	 <name>EDocman Package</name>
+	  <packagename>edocman</packagename>
+	  <creationDate>September 2012</creationDate>
+	  <author>Dang Thuc Dam</author>
+	  <authorEmail>damdt@joomservices.com</authorEmail>
+	  <authorUrl>http://www.joomdonation.com</authorUrl>
+	  <copyright>Copyright (C) 2012 - 2019 Ossolution Team</copyright>
+	  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	  <version>1.11.6</version>
+	  <description>EDocman package</description>
+	 <files folder="packages">
+	   <file type="component" id="edocman" >com_edocman.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocman_categories.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocmancalendar.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocman_documents.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocman_search.zip</file>   
+	   <file type="module" id="edocman" client="site">mod_edocman_title_slider.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocman_filtercategories.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocman_tags.zip</file>
+	   <file type="module" id="edocman" client="site">mod_edocman_treecats.zip</file>
+	   <file type="module" id="edocman" client="admin">mod_edocman_stats.zip</file>
+	   <file type="plugin" id="edocman" group="search">plug_search_edocman.zip</file>   
+	   <file type="plugin" id="edocman" group="finder">plug_finder_edocman.zip</file>   
+	   <file type="plugin" id="edocman" group="content">plug_content_edocmancategory.zip</file>
+	   <file type="plugin" id="edocman" group="content">plug_content_edocmanlink.zip</file>
+	   <file type="plugin" id="edocman" group="editors-xtd">plug_editors_xtd_edocman.zip</file>   
+	   <file type="plugin" id="edocman" group="edocman">plug_edocman_notification.zip</file>
+	   <file type="plugin" id="edocman" group="edocman">plug_edocman_dropbox.zip</file>
+	   <file type="plugin" id="edocman" group="edocman">plug_edocman_jcomments.zip</file>
+	   <file type="plugin" id="edocman" group="system">plug_system_edocmanimport.zip</file>
+	   <file type="plugin" id="edocman" group="system">plug_edocman_expiresnotification.zip</file>
+	   <file type="plugin" id="edocman" group="installer">plg_installer_edocman.zip</file>
+	   <file type="plugin" id="edocman" group="acymailing">plg_acymailing_edocman.zip</file>
+	   <file type="plugin" id="edocman" group="edocman">plug_edocman_gallery.zip</file>
+	   <file type="plugin" id="edocman" group="edocman">plug_edocman_limitdownloads.zip</file>
+	   <file type="plugin" id="edocman" group="edocman">plug_edocman_limitupload.zip</file>
+	 </files>
+	 <updateservers>	
+		<server type="extension" priority="1" name="Edocman Extension">https://www.joomdonation.com/updates/edocman.xml</server>
+	 </updateservers>
+ </extension>

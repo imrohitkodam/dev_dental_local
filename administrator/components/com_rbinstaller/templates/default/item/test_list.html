@@ -1,0 +1,22 @@
+<div data-ng-controller="AppController">	
+	<div class="item-container">
+		<div class="clearfix">
+		<div data-ng-init="item = items[1]" >
+<!--			<div data-ng-repeat="(counter,item) in items | item_filter:model_filter" class="rbinstaller-item" id="rbinstaller-item-{{ item.item_id }}">-->
+				<div data-ng-init="statusses = ['not_available','none_addedtocart','none_buynow','active_install','active_installed','active_upgradable','expired_install','expired_installed','expired_upgradable', 'none_installed','none_upgradable']">
+				<div data-ng-repeat="status in statusses" class="item-block">
+				<h3>{{ status }}</h3>
+				<div ng-include src="getTestTemplatePath(item,status );"></div>
+				</div>
+<!--       		</div>	-->
+		</div>
+		</div>
+		
+		<!-- Load Alert Tempaltes -->
+		<div data-ng-include src="templates.alert.expired_installed;"></div>
+		
+		<div ui-view class="" id="rbinstaller-fulldetail-view"></div>
+		
+		<div data-ng-include src="templates.image_modal;"></div>			
+	</div>	
+</div>
