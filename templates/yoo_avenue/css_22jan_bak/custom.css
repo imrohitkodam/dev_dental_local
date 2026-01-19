@@ -1,0 +1,89 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+ 
+ /* APSG's code for the course description */
+.my-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.sz120 {
+  font-size: 120%;
+}
+.sz140 {
+  font-size: 140%;
+}
+.sz150 {
+  font-size: 150%;
+}
+.sz250 {
+  font-size: 250%;
+}
+.txtgrn {
+  color: #778E0B;
+}
+.ls-orgnl:before {
+  content: "Based on the";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+}
+.ls-orgnl:after {
+  content: "live webinar";
+  display: block;
+  font-size:90%;
+}
+.vcpd:before {
+  content: "Verifiable CPD";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+}
+.vcpd:after {
+  content: "hours";
+  display: block;
+  font-size:90%;
+}
+.cpdhrs {
+  display:block;
+  margin-top:20px;
+  margin-bottom:10px;
+  font-size: 400%;
+}
+.gdcprncpls:before {
+  content: "GDC Principles";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+}
+.gdchr:before {
+  content: "GDC Highly Recommended subject";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+}
+.gdcr:before {
+  content: "GDC Recommended subject";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+}
+.ls-trgt:before {
+  content: "Intended audience";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+}
+.ls-crscntnt:before {
+  content: "Course content";
+  display: block;
+  font-size: 90%;
+  font-weight:bold;
+  padding:0px 20px;
+}
+.ls-crscntnt > li {
+  list-style-type: none;
+}

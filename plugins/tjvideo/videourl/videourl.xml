@@ -1,0 +1,44 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<extension version="3.0" type="plugin" group="tjvideo" method="upgrade">
+	<name>PLG_TJVIDEO_VIDEOURL</name>
+	<author>Techjoomla</author>
+	<creationDate>27th Oct 2023</creationDate>
+	<copyright>Copyright (C) 2014 - 2025 Techjoomla. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>https://techjoomla.com</authorUrl>
+	<version>4.1.3</version>
+	<description>PLG_TJVIDEO_VIDEOURL_DESC</description>
+
+	<files>
+		<file plugin="videourl">videourl.php</file>
+		<folder>tmpl</folder>
+		<folder>videourl</folder>
+	</files>
+	<languages folder="en-GB">
+			<language tag="en-GB">en-GB.plg_tjvideo_videourl.ini</language>
+			<language tag="en-GB">en-GB.plg_tjvideo_videourl.sys.ini</language>
+	</languages>
+	<config name="params">
+		<fields name="params">
+			<fieldset name="basic" label="PLG_TJSCORM_NATIVESCORM_BASIC_FIELDSET" >
+				<field name="autoplay" class="btn-group" type="radio" default="1" description="PLG_TJVIDEO_VIDEOURL_AUTOPLAY_DESC" label="PLG_TJVIDEO_VIDEOURL_AUTOPLAY">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="muted" class="btn-group" type="radio" default="1" showon="autoplay:1" description="PLG_TJVIDEO_VIDEOURL_MUTED_DESC" label="PLG_TJVIDEO_VIDEOURL_MUTED">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="download" class="btn-group" type="radio" default="0" description="PLG_TJVIDEO_VIDEOURL_DOWNLOAD_DESC" label="PLG_TJVIDEO_VIDEOURL_DOWNLOAD">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="show_seekbar" type="radio" default="0" label="PLG_TJVIDEO_VIDEOURL_SHOW_SEEKBAR" description="PLG_TJVIDEO_VIDEOURL_SHOW_SEEKBAR_DESC" class="btn-group">
+ 					<option value="1">JYES</option>
+ 					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

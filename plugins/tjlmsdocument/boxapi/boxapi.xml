@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="tjlmsdocument" method="upgrade">
+	<name>Techjoomla-Document Viewer API</name>
+	<author>Techjoomla</author>
+	<creationDate>12th Dec 2013</creationDate>
+	<copyright>(C)techjoomla.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>contact@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<version>1.0</version>
+	<isapplication>true</isapplication>
+	<description>Techjoomla-Document Viewer API</description>
+
+	<files>
+		<file plugin="boxapi">boxapi.php</file>
+		<folder>boxapi</folder>
+	</files>
+	<languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.plg_tjlmsdocument_boxapi.ini</language>
+	</languages>
+
+	<!-- Fields for Joomla 1.6.x and onwards -->
+	<config name="params">
+		<fields name="params">
+			<fieldset name="basic" label="PLG_BOX_API_PARAMETER" addfieldpath="/plugins/tjlmsdocument/boxapi/boxapi/element/pathapi">
+				<field name="pathapi_boxapi" type="pathapi" label="PLG_BOX_API_GET_KEY" description="PLG_BOX_API_GET_KEY_DESC" />
+				<field name="appkey" type="text" default="6gd47kebbzuoua8jivjkbief5k7vjbhk" label="PLG_BOX_API_KEY" description="PLG_BOX_API_KEY" />
+				<field name="doc_layout" type="list" default="pop" label="PLG_BOX_SELECT_LAYOUT" description="PLG_BOX_SELECT_LAYOUT_DESC" >
+						<option value="plain">PLG_TJLMSDOCUMENT_NORMAL_PDF_MODE</option>
+						<option value="pop">PLG_TJLMSDOCUMENT_POP_MODE</option>
+						<option value="fade">PLG_TJLMSDOCUMENT_FADE_MODE</option>
+						<option value="spin">PLG_TJLMSDOCUMENT_SPIN_MODE</option>
+						<option value="slide">PLG_TJLMSDOCUMENT_SLIDE_MODE</option>
+						<option value="carousel">PLG_TJLMSDOCUMENT_CAROUSEL_MODE</option>
+						<option value="book">PLG_TJLMSDOCUMENT_BOOK_MODE</option>
+				</field>
+				<field class="btn-group" name="doc_layout_ft_option" type="radio" default="1" label="PLG_BOX_SELECT_LAYOUT_USER_OPTION" description="PLG_BOX_SELECT_LAYOUT_USER_OPTION_DESC" >
+					<option value="1">COM_TJLMS_PLG_BOX_YES</option>
+					<option value="0">COM_TJLMS_PLG_BOX_NO</option>
+				</field>
+				<field name="plugin_name" type="text" default="box API" label="PLG_TJLMSDOCUMENT_BOXAPI_NAME" description="" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

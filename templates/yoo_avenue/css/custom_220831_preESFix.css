@@ -1,0 +1,135 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+
+.tjlms-course-additionaldata .row-fluid {display: -webkit-flex;    display: -ms-flexbox;  display: flex !important;-webkit-flex-wrap: nowrap;  -ms-flex-wrap: nowrap;  flex-wrap: nowrap; justify-content:space-between; }
+/*--All courses page -- Extra Fields--*/
+.dc-grey{background:#EEE; padding:10px; color:#315264;
+    box-sizing: border-box;}
+@media screen and (max-width:599px){
+.tjlms-course-additionaldata .row-fluid {-webkit-flex-wrap: wrap;  -ms-flex-wrap: wrap;  flex-wrap: wrap; }
+.dc-grey{ width:100%;}
+}
+.course-extra-block .link-tjf{
+	padding: 5px;
+	background: #778e0a;
+	color: #FFF;
+	border-radius: 7px;
+	width: 88% !important;
+}
+.course-extra-block{padding:0 0 15px 0;}
+.course-extra-block:last-child{padding:0;}
+.dc-coursetype {font-size:18px; font-weight:600; margin:15px 5px;color:#315264;}
+.btns-cover{background:#dbdaea;}
+.dc-big{font-size:36px;margin:10px 0;}
+
+.user-image img{border:2px solid #FFF;border-radius:3px;-webkit-box-shadow: 1px 1px 7px 0px #000; -moz-box-shadow: 1px 1px 7px 0px #CCC; box-shadow: 1px 1px 7px 0px #CCC; }
+.dc-user-name{margin:10px 5px;color:#315264;}
+
+div.com_tjlms_content .tjlms_list_item .tjlms_list_layout_element_details {margin-left: 145px !important;}
+
+.tjlms_list_image img{max-width:140px;}
+.tjlms-wrapper #contentarea {
+    border: 4px solid #4e4e4e !important;
+	border-radius: 5px !important;
+}
+.swtchr-scroll {
+	height: 330px;
+    overflow-y: scroll;
+}
+.uk-navbar-nav > li > a.menualt1 {
+color: #E0D59E;
+}
+.table-responsive {overflow-x: scroll;}
+
+/*For the community icons module*/
+.uk-panel.tdcNotices {
+	margin: 13px 10px 0 0;
+}
+/*For the my account module*/
+.uk-panel.tdcMyaccount {
+	margin: -55px 0 0 0;
+}
+#es .btn-es-default-o {
+    background-color: #696969 !important;
+    border-color: #838383 !important;
+    color: #ffffff !important;
+}
+#es .btn-es-default-o:hover {
+    background-color: #696969 !important;
+    border-color: #838383 !important;
+    color: yellow !important;
+}
+.tm-social-icon-buttons > .uk-icon-google-plus:hover { background-color: #4285f4; }
+
+.tjBs3 .tjlms-course-additionaldata .modal{
+	display:unset !important;
+	position:unset !important;
+}
+
+.w-100{
+	width:100%;
+}
+/*---CSS for---Our Experts Page---*/
+.expert-custom-style{
+	padding:15px !important;
+}
+.expert-custom-style .uk-align-right{
+	float:none;
+	margin:0 0 10px 0;
+}
+.expert-custom-style .uk-align-right img{
+    height: 230px;
+    border-radius: 5px;
+}
+/*---CSS for---Login From Support tab---*/
+#com-form-login .input-prepend .add-on,
+#uregform .input-prepend .add-on
+ {
+	padding:5px;
+}
+.faq_search .pagination select{
+	margin: 0 0 0 10px;
+}
+/*---CSS for---Social Login from Community Page---*/
+#loginbox .es-login-social-container .social-login{
+	float:none !important;
+	display:inline-block;
+	margin:5px;
+}
+/*---CSS for---Login From Mobile view---*/
+@media (max-width:767px){
+	#es .register-wrap .btn-lg{
+		width:100%;
+		font-size:9px;
+	}
+}
+/*----CSS for---Login From Tablet view------------*/
+@media (min-width: 768px) and (max-width: 991px){
+	#es .register-wrap .btn-lg{
+		font-size:13px;
+	}
+}
+.tm-article .tm-article-featured-image {
+    margin: -15px -15px 15px -15px;
+}
+.our-experts .expert-custom-style{
+	text-align:center;
+}
+/*--CSS to fix privacy buttons not being displayed in ES edit profile*/
+body #es .es-privacy-cf .btn-es-default-o {
+    color: #333 !important;
+}
+
+body #es .es-privacy-cf .btn-es-default-o:hover {
+    background-color: #fff !important;
+}
+#jt-enterMeeting {
+  font-size: 70px !important;
+  height: 120px !important;
+}
+.event_con{
+	font-size: 30px !important;
+}

@@ -1,0 +1,54 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Component: Slidenav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@slidenav-width:                                50px;
+@slidenav-height:                               @slidenav-width;
+@slidenav-font-size:                            @slidenav-width;
+@slidenav-line-height:                          @slidenav-height;
+
+@slidenav-position-previous:                    @global-grid-gutter-large;
+@slidenav-position-next:                        @slidenav-position-previous;
+
+@slidenav-color:                                fade(@global-color, 30%);
+@slidenav-hover-color:                          fade(@global-color, 50%);
+@slidenav-active-color:                         @global-color;
+
+@slidenav-contrast-color:                       @global-contrast-color;
+@slidenav-contrast-hover-color:                 fade(@slidenav-color, 70%);
+@slidenav-contrast-active-color:                fade(@slidenav-color, 90%);
+
+
+// Component
+// ========================================================================
+
+.hook-slidenav() {
+    -webkit-transition: @global-transition;
+    transition: @global-transition;
+}
+
+.hook-slidenav-hover() {}
+
+.hook-slidenav-active() {
+    -webkit-transform: @global-active-transform;
+    transform: @global-active-transform;
+}
+
+.hook-slidenav-contrast() {}
+
+.hook-slidenav-contrast-hover() {}
+
+.hook-slidenav-contrast-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-slidenav-misc() {}

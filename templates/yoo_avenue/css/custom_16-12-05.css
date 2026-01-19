@@ -1,0 +1,44 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+ ========================================================================== */
+ 
+.tjlms-course-additionaldata .row-fluid {display: -webkit-flex;    display: -ms-flexbox;  display: flex !important;-webkit-flex-wrap: nowrap;  -ms-flex-wrap: nowrap;  flex-wrap: nowrap; justify-content:space-between; }
+.dc-grey{background:#EEE; padding:10px; color:#315264; max-width: 32%;
+    box-sizing: border-box;}
+@media screen and (max-width:599px){
+.tjlms-course-additionaldata .row-fluid {-webkit-flex-wrap: wrap;  -ms-flex-wrap: wrap;  flex-wrap: wrap; }
+.dc-grey{ width:100%;}
+}
+
+.course-extra-block .link-tjf{padding: 5px 10px;  background: #778e0a;  color: #FFF;  border-radius: 7px;  width: 88% !important;}
+.course-extra-block{padding:0 0 15px 0;}
+.course-extra-block:last-child{padding:0;}
+.dc-coursetype {font-size:18px; font-weight:600; margin:15px 5px;color:#315264;}
+.btns-cover{background:#dbdaea; margin:10px 0 0 0;padding:10px;}
+.dc-big{font-size:36px;margin:10px 0;}
+
+.user-image img{border:2px solid #FFF;border-radius:3px;-webkit-box-shadow: 1px 1px 7px 0px #000; -moz-box-shadow: 1px 1px 7px 0px #CCC; box-shadow: 1px 1px 7px 0px #CCC; }
+.dc-user-name{margin:10px 5px;color:#315264;}
+
+div.com_tjlms_content .tjlms_list_item .tjlms_list_layout_element_details {margin-left: 145px !important;}
+
+.tjlms_list_image img{max-width:140px;}
+.tjlms-wrapper #contentarea {
+    border: 4px solid #4e4e4e !important;
+	border-radius: 5px !important;
+}
+.swtchr-scroll {
+	height: 330px;
+    overflow-y: scroll;
+}
+.uk-navbar-nav > li > a.menualt1 {  
+color: #E0D59E;  
+}
+.table-responsive {overflow-x: scroll;}
+
+/*For the my account panel*/
+.uk-panel.tdcmyaccount {
+	margin: 13px 40px 0 0;
+}

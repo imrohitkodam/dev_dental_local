@@ -1,0 +1,36 @@
+# For more information about the robots.txt standard, see:
+# http://www.robotstxt.org/orig.html
+#
+# For syntax checking, see:
+# http://tool.motoricerca.info/robots-checker.phtml
+
+User-agent: *
+Allow: /*.js*
+Allow: /*.css*
+Allow: /*.png*
+Allow: /*.jpg*
+Allow: /*.gif*
+
+User-agent: Twitterbot
+Allow: /images
+
+Disallow: /administrator/
+Disallow: /bin/
+Disallow: /cache/
+Disallow: /cli/
+
+Disallow: /includes/
+Disallow: /installation/
+Disallow: /language/
+Disallow: /layouts/
+Disallow: /libraries/
+Disallow: /logs/
+
+
+Disallow: /tmp/
+
+
+# JMAP entries
+Sitemap: https://www.dental-channel.co.uk/index.php?option=com_jmap&view=sitemap&format=xml
+Sitemap: https://www.dental-channel.co.uk/index.php?option=com_jmap&view=sitemap&format=images
+Sitemap: https://www.dental-channel.co.uk/index.php?option=com_jmap&view=sitemap&format=mobile

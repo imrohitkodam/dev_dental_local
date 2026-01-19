@@ -1,0 +1,82 @@
+.viewer_toolbar
+{
+width: 100%;
+text-align: center;
+height: 45px;
+line-height: 45px;
+background: #4E4E4E;
+border: 1px solid #BCBCBC;
+position:fixed;
+bottom:0px;
+left: 0px;
+
+}
+
+.viewer_controls
+{
+display:inline-block;
+padding:7px;
+height: 45px;
+}
+.viewer_controls .btn, .viewer_controls .pagedetails{
+height: 30px;
+line-height: 30px;
+vertical-align: top;
+padding: 0 10px;
+}
+.view-right
+{
+text-align:right;
+padding-right:2%;
+}
+
+
+
+.view-left
+{
+text-align:left;
+padding-left:2%;
+
+}
+
+.viewer_layouts
+{
+color:white;
+background-color: #4E4E4E;
+margin-bottom:0px !important;
+height: 30px  !important;
+}
+
+.view-center
+{
+text-align:center;
+}
+
+.pagedetails
+{
+cursor: pointer;
+color:white;
+background: transparent;
+}
+
+.viewer_gotopage:focus
+{
+outline: 0;
+border: 1px solid #aaa;
+box-shadow: #ccc 0 0 1px inset;
+margin-bottom:0px !important;
+}
+
+.viewer_gotopage
+{
+max-width:25px;
+}
+
+
+/*VAISHALI */
+.viewer_toolbar .pagedetails{
+	background-color: #aaa;
+	cursor: pointer;
+	color:white;
+	background: transparent;
+}

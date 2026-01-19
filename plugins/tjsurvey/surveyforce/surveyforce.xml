@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<extension version = "3.0" type = "plugin" group = "tjsurvey" method = "upgrade">
+	<name>surveyforce</name>
+	<author>Techjoomla</author>
+	<creationDate>26th Oct 2015</creationDate>
+	<copyright>Copyright(C)2012-17 TechJoomla</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>contact@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<version>1.0</version>
+	<description>PLG_TJSURVEY_DESC</description>
+	<files>
+		<file plugin="surveyforce">surveyforce.php</file>
+		<folder>surveyforce</folder>
+	</files>
+	<languages folder="language">
+			<language tag="en-GB">en-GB.plg_tjsurvey_surveyforce.ini</language>
+	</languages>
+
+		<!-- Fields for Joomla 1.8.x and onwards -->
+	<config name="params">
+		<fields name="params">
+			<fieldset name="basic" label="PLG_TJSURVEY_PARAMETER" >
+				<field name="show_resume" type="radio" default="1" label="PLG_TJSURVEY_SHOW_RESUME_LABEL"
+					description="PLG_TJSURVEY_SHOW_RESUME_DESC" class="btn-group">
+	 				<option value="1">JYES</option>
+	 				<option value="0">JNO</option>
+	 			</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
