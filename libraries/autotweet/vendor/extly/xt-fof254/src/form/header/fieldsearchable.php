@@ -1,0 +1,82 @@
+<?php
+
+/*
+ * @package     XT Transitional Package from FrameworkOnFramework
+ *
+ * @author      Extly, CB. <team@extly.com>
+ * @copyright   Copyright (c)2012-2024 Extly, CB. All rights reserved.
+ *              Based on Akeeba's FrameworkOnFramework
+ * @license     https://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ *
+ * @see         https://www.extly.com
+ */
+
+// Protect from unauthorized access
+defined('XTF0F_INCLUDED') || exit;
+
+/**
+ * Generic field header, with text input (search) filter
+ *
+ * @since    2.0
+ */
+class XTF0FFormHeaderFieldsearchable extends XTF0FFormHeaderField
+{
+    /**
+     * Get the filter field
+     *
+     * @return string The HTML
+     */
+    protected function getFilter()
+    {
+        // Initialize some field attributes.
+        $size = $this->element['size'] ? ' size="'.(int) $this->element['size'].'"' : '';
+        $maxLength = $this->element['maxlength'] ? ' maxlength="'.(int) $this->element['maxlength'].'"' : '';
+        $filterclass = $this->element['filterclass'] ? ' class="'.(string) $this->element['filterclass'].'"' : '';
+        $placeholder = $this->element['placeholder'] ?: $this->getLabel();
+        $name = $this->element['searchfieldname'] ?: $this->name;
+        $placeholder = ' placeholder="'.JText::_($placeholder).'"';
+
+        if ($this->element['searchfieldname']) {
+            $model = $this->form->getModel();
+            $searchvalue = $model->getState((string) $this->element['searchfieldname']);
+        } else {
+            $searchvalue = $this->value;
+        }
+
+        // Initialize JavaScript field attributes.
+        if ($this->element['onchange']) {
+            $onchange = ' onchange="'.(string) $this->element['onchange'].'"';
+        } else {
+            $onchange = ' onchange="document.adminForm.submit();"';
+        }
+
+        return '<input type="text" name="'.$name.'" id="'.$this->id.'" value="'.htmlspecialchars($searchvalue, \ENT_COMPAT, 'UTF-8').'"'.$filterclass.$size.$placeholder.$onchange.$maxLength.'/>';
+    }
+
+    /**
+     * Get the buttons HTML code
+     *
+     * @return string The HTML
+     */
+    protected function getButtons()
+    {
+        $buttonclass = $this->element['buttonclass'] ? (string) $this->element['buttonclass'] : 'btn hasTip hasTooltip';
+        $buttonsState = strtolower($this->element['buttons']);
+        $show_buttons = !in_array($buttonsState, ['no', 'false', '0']);
+
+        if (!$show_buttons) {
+            return '';
+        }
+
+        $html = '';
+
+        $html .= '<button class="'.$buttonclass.'" onclick="this.form.submit();" title="'.JText::_('JSEARCH_FILTER').'" >'."\n";
+        $html .= '<i class="icon-search"></i>';
+        $html .= '</button>'."\n";
+        $html .= '<button class="'.$buttonclass.'" onclick="document.adminForm.'.$this->id.'.value=\'\';this.form.submit();" title="'.JText::_('JSEARCH_RESET').'">'."\n";
+        $html .= '<i class="icon-remove"></i>';
+        $html .= '</button>'."\n";
+
+        return $html;
+    }
+}

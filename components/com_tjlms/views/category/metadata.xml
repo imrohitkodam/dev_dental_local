@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<view title="Courses">
+		<message>
+			<![CDATA[
+				Combined category layout
+			]]>
+		</message>
+<!--
+		<options var="layout">
+ 			<default name="Courses" msg="Courses" />
+	  </options>
+-->
+
+		<options var="layout">
+			<option value="default" name="COMTJLMS_MENUS_COMBINED_CATEGORY_LAYOUT" msg="COMTJLMS_MENUS_CATEGORY" />
+
+		</options>
+	</view>
+</metadata>

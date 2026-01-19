@@ -1,0 +1,445 @@
+<?php
+
+/*
+ * @package     XT Transitional Package from FrameworkOnFramework
+ *
+ * @author      Extly, CB. <team@extly.com>
+ * @copyright   Copyright (c)2012-2024 Extly, CB. All rights reserved.
+ *              Based on Akeeba's FrameworkOnFramework
+ * @license     https://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ *
+ * @see         https://www.extly.com
+ */
+
+// Protect from unauthorized access
+defined('XTF0F_INCLUDED') || exit;
+
+class XTF0FDownload
+{
+    /**
+     * Parameters passed from the GUI when importing from URL
+     *
+     * @var array
+     */
+    private $params = [];
+
+    /**
+     * The download adapter which will be used by this class
+     *
+     * @var XTF0FDownloadInterface
+     */
+    private $xtf0FDownload = null;
+
+    /**
+     * Additional params that will be passed to the adapter while performing the download
+     *
+     * @var array
+     */
+    private $adapterOptions = [];
+
+    /**
+     * Creates a new download object and assigns it the most fitting download adapter
+     */
+    public function __construct()
+    {
+        // Find the best fitting adapter
+        $allAdapters = self::getFiles(__DIR__.'/adapter', [], ['abstract.php']);
+        $priority = 0;
+
+        foreach ($allAdapters as $allAdapter) {
+            if (!class_exists($allAdapter['classname'], true)) {
+                continue;
+            }
+
+            /** @var XTF0FDownloadAdapterAbstract $adapter */
+            $adapter = new $allAdapter['classname']();
+
+            if (!$adapter->isSupported()) {
+                continue;
+            }
+
+            if ($adapter->priority > $priority) {
+                $this->xtf0FDownload = $adapter;
+                $priority = $adapter->priority;
+            }
+        }
+
+        // Load the language strings
+        XTF0FPlatform::getInstance()->loadTranslations('lib_f0f');
+    }
+
+    /**
+     * Forces the use of a specific adapter
+     *
+     * @param string $className The name of the class or the name of the adapter, e.g. 'XTF0FDownloadAdapterCurl' or
+     *                          'curl'
+     */
+    public function setAdapter($className)
+    {
+        $adapter = null;
+
+        if (class_exists($className, true)) {
+            $adapter = new $className();
+        } elseif (class_exists('XTF0FDownloadAdapter'.ucfirst($className))) {
+            $className = 'XTF0FDownloadAdapter'.ucfirst($className);
+            $adapter = new $className();
+        }
+
+        if ($adapter instanceof XTF0FDownloadInterface) {
+            $this->xtf0FDownload = $adapter;
+        }
+    }
+
+    /**
+     * Returns the name of the current adapter
+     *
+     * @return string
+     */
+    public function getAdapterName()
+    {
+        if (is_object($this->xtf0FDownload)) {
+            $class = get_class($this->xtf0FDownload);
+
+            return strtolower(str_ireplace('XTF0FDownloadAdapter', '', $class));
+        }
+
+        return '';
+    }
+
+    /**
+     * Sets the additional options for the adapter
+     */
+    public function setAdapterOptions(array $options)
+    {
+        $this->adapterOptions = $options;
+    }
+
+    /**
+     * Returns the additional options for the adapter
+     *
+     * @return array
+     */
+    public function getAdapterOptions()
+    {
+        return $this->adapterOptions;
+    }
+
+    /**
+     * Download data from a URL and return it
+     *
+     * @param string $url The URL to download from
+     *
+     * @return bool|string The downloaded data or false on failure
+     */
+    public function getFromURL($url)
+    {
+        try {
+            return $this->xtf0FDownload->downloadAndReturn($url, null, null, $this->adapterOptions);
+        } catch (Exception $exception) {
+            return false;
+        }
+    }
+
+    /**
+     * Performs the staggered download of file. The downloaded file will be stored in Joomla!'s temp-path using the
+     * basename of the URL as a filename
+     *
+     * The $params array can have any of the following keys
+     * url			The file being downloaded
+     * frag			Rolling counter of the file fragment being downloaded
+     * totalSize	The total size of the file being downloaded, in bytes
+     * doneSize		How many bytes we have already downloaded
+     * maxExecTime	Maximum execution time downloading file fragments, in seconds
+     * length		How many bytes to download at once
+     *
+     * The array returned is in the following format:
+     *
+     * status		True if there are no errors, false if there are errors
+     * error		A string with the error message if there are errors
+     * frag			The next file fragment to download
+     * totalSize	The total size of the downloaded file in bytes, if the server supports HEAD requests
+     * doneSize		How many bytes have already been downloaded
+     * percent		% of the file already downloaded (if totalSize could be determined)
+     * localfile	The name of the local file, without the path
+     *
+     * @param array $params A parameters array, as sent by the user interface
+     *
+     * @return array A return status array
+     */
+    public function importFromURL($params)
+    {
+        $this->params = $params;
+
+        // Fetch data
+        $url = $this->getParam('url');
+        $localFilename = $this->getParam('localFilename');
+        $frag = $this->getParam('frag', -1);
+        $totalSize = $this->getParam('totalSize', -1);
+        $doneSize = $this->getParam('doneSize', -1);
+        $maxExecTime = $this->getParam('maxExecTime', 5);
+        $runTimeBias = $this->getParam('runTimeBias', 75);
+        $length = $this->getParam('length', 1048576);
+
+        if (empty($localFilename)) {
+            $localFilename = basename($url);
+
+            if (false !== strpos($localFilename, '?')) {
+                $paramsPos = strpos($localFilename, '?');
+                $localFilename = substr($localFilename, 0, $paramsPos - 1);
+            }
+        }
+
+        $tmpDir = JFactory::getConfig()->get('tmp_path', JPATH_ROOT.'/tmp');
+        $tmpDir = rtrim($tmpDir, '/\\');
+
+        // Init retArray
+        $retArray = [
+            'status'    => true,
+            'error'     => '',
+            'frag'      => $frag,
+            'totalSize' => $totalSize,
+            'doneSize'  => $doneSize,
+            'percent'   => 0,
+            'localfile'	=> $localFilename,
+        ];
+
+        try {
+            $xtf0FUtilsTimer = new XTF0FUtilsTimer($maxExecTime, $runTimeBias);
+            $start = $xtf0FUtilsTimer->getRunningTime(); // Mark the start of this download
+            $break = false; // Don't break the step
+
+            // Figure out where on Earth to put that file
+            $local_file = $tmpDir.'/'.$localFilename;
+
+            while (($xtf0FUtilsTimer->getTimeLeft() > 0) && !$break) {
+                // Do we have to initialize the file?
+                if (-1 == $frag) {
+                    // Currently downloaded size
+                    $doneSize = 0;
+
+                    if (@file_exists($local_file)) {
+                        @unlink($local_file);
+                    }
+
+                    // Delete and touch the output file
+                    $fp = @fopen($local_file, 'w');
+
+                    if (false !== $fp) {
+                        @fclose($fp);
+                    }
+
+                    // Init
+                    $frag = 0;
+
+                    // debugMsg("-- First frag, getting the file size");
+                    $retArray['totalSize'] = $this->xtf0FDownload->getFileSize($url);
+                    $totalSize = $retArray['totalSize'];
+                }
+
+                // Calculate from and length
+                $from = $frag * $length;
+                $to = $length + $from - 1;
+
+                // Try to download the first frag
+                $required_time = 1.0;
+
+                try {
+                    $result = $this->xtf0FDownload->downloadAndReturn($url, $from, $to, $this->adapterOptions);
+
+                    if (false === $result) {
+                        throw new Exception(JText::sprintf('LIB_FOF_DOWNLOAD_ERR_COULDNOTDOWNLOADFROMURL', $url), 500);
+                    }
+                } catch (Exception $e) {
+                    $result = false;
+                    $error = $e->getMessage();
+                }
+
+                if (false === $result) {
+                    // Failed download
+                    if (0 == $frag) {
+                        // Failure to download first frag = failure to download. Period.
+                        $retArray['status'] = false;
+                        $retArray['error'] = $error;
+
+                        // debugMsg("-- Download FAILED");
+
+                        return $retArray;
+                    } else {
+                        // Since this is a staggered download, consider this normal and finish
+                        $frag = -1;
+                        // debugMsg("-- Import complete");
+                        $totalSize = $doneSize;
+                        $break = true;
+                    }
+                }
+
+                // Add the currently downloaded frag to the total size of downloaded files
+                if ($result) {
+                    $filesize = strlen($result);
+                    // debugMsg("-- Successful download of $filesize bytes");
+                    $doneSize += $filesize;
+
+                    // Append the file
+                    $fp = @fopen($local_file, 'a');
+
+                    if (false === $fp) {
+                        // debugMsg("-- Can't open local file $local_file for writing");
+                        // Can't open the file for writing
+                        $retArray['status'] = false;
+                        $retArray['error'] = JText::sprintf('LIB_FOF_DOWNLOAD_ERR_COULDNOTWRITELOCALFILE', $local_file);
+
+                        return $retArray;
+                    }
+
+                    fwrite($fp, $result);
+                    fclose($fp);
+
+                    // debugMsg("-- Appended data to local file $local_file");
+
+                    $frag++;
+
+                    // debugMsg("-- Proceeding to next fragment, frag $frag");
+
+                    if (($filesize < $length) || ($filesize > $length)) {
+                        // A partial download or a download larger than the frag size means we are done
+                        $frag = -1;
+                        // debugMsg("-- Import complete (partial download of last frag)");
+                        $totalSize = $doneSize;
+                        $break = true;
+                    }
+                }
+
+                // Advance the frag pointer and mark the end
+                $end = $xtf0FUtilsTimer->getRunningTime();
+
+                // Do we predict that we have enough time?
+                $required_time = max(1.1 * ($end - $start), $required_time);
+
+                if ($required_time > (10 - $end + $start)) {
+                    $break = true;
+                }
+
+                $start = $end;
+            }
+
+            if (-1 == $frag) {
+                $percent = 100;
+            } elseif ($doneSize <= 0) {
+                $percent = 0;
+            } elseif ($totalSize > 0) {
+                $percent = 100 * ($doneSize / $totalSize);
+            } else {
+                $percent = 0;
+            }
+
+            // Update $retArray
+            $retArray = [
+                'status'    => true,
+                'error'     => '',
+                'frag'      => $frag,
+                'totalSize' => $totalSize,
+                'doneSize'  => $doneSize,
+                'percent'   => $percent,
+            ];
+        } catch (Exception $exception) {
+            // debugMsg("EXCEPTION RAISED:");
+            // debugMsg($e->getMessage());
+            $retArray['status'] = false;
+            $retArray['error'] = $exception->getMessage();
+        }
+
+        return $retArray;
+    }
+
+    /**
+     * This method will crawl a starting directory and get all the valid files
+     * that will be analyzed by __construct. Then it organizes them into an
+     * associative array.
+     *
+     * @param string $path          Folder where we should start looking
+     * @param array  $ignoreFolders Folder ignore list
+     * @param array  $ignoreFiles   File ignore list
+     *
+     * @return array Associative array, where the `fullpath` key contains the path to the file,
+     *               and the `classname` key contains the name of the class
+     */
+    protected static function getFiles($path, array $ignoreFolders = [], array $ignoreFiles = [])
+    {
+        $return = [];
+
+        $files = self::scanDirectory($path, $ignoreFolders, $ignoreFiles);
+
+        // Ok, I got the files, now I have to organize them
+        foreach ($files as $file) {
+            $clean = str_replace($path, '', $file);
+            $clean = trim(str_replace('\\', '/', $clean), '/');
+
+            $parts = explode('/', $clean);
+
+            $return[] = [
+                'fullpath'  => $file,
+                'classname' => 'XTF0FDownloadAdapter'.ucfirst(basename($parts[0], '.php')),
+            ];
+        }
+
+        return $return;
+    }
+
+    /**
+     * Recursive function that will scan every directory unless it's in the
+     * ignore list. Files that aren't in the ignore list are returned.
+     *
+     * @param string $path          Folder where we should start looking
+     * @param array  $ignoreFolders Folder ignore list
+     * @param array  $ignoreFiles   File ignore list
+     *
+     * @return array List of all the files
+     */
+    protected static function scanDirectory($path, array $ignoreFolders = [], array $ignoreFiles = [])
+    {
+        $return = [];
+
+        $handle = @opendir($path);
+
+        if (!$handle) {
+            return $return;
+        }
+
+        while (($file = readdir($handle)) !== false) {
+            if ('.' === $file || '..' === $file) {
+                continue;
+            }
+
+            $fullpath = $path.'/'.$file;
+
+            if ((is_dir($fullpath) && in_array($file, $ignoreFolders)) || (is_file($fullpath) && in_array($file, $ignoreFiles))) {
+                continue;
+            }
+
+            if (is_dir($fullpath)) {
+                $return = array_merge(self::scanDirectory($fullpath, $ignoreFolders, $ignoreFiles), $return);
+            } else {
+                $return[] = $path.'/'.$file;
+            }
+        }
+
+        return $return;
+    }
+
+    /**
+     * Used to decode the $params array
+     *
+     * @param string $key     The parameter key you want to retrieve the value for
+     * @param mixed  $default The default value, if none is specified
+     *
+     * @return mixed The value for this parameter key
+     */
+    private function getParam($key, $default = null)
+    {
+        if (array_key_exists($key, $this->params)) {
+            return $this->params[$key];
+        } else {
+            return $default;
+        }
+    }
+}

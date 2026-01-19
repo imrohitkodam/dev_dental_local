@@ -1,0 +1,485 @@
+<?php
+
+/*
+ * @package     XT Transitional Package from FrameworkOnFramework
+ *
+ * @author      Extly, CB. <team@extly.com>
+ * @copyright   Copyright (c)2012-2024 Extly, CB. All rights reserved.
+ *              Based on Akeeba's FrameworkOnFramework
+ * @license     https://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ *
+ * @see         https://www.extly.com
+ */
+
+// Protect from unauthorized access
+defined('XTF0F_INCLUDED') || exit;
+
+/**
+ * SQLite database driver
+ *
+ * @see    http://php.net/pdo
+ * @since  12.1
+ */
+class XTF0FDatabaseDriverSqlite extends XTF0FDatabaseDriverPdo
+{
+    public $charset;
+
+    /**
+     * The name of the database driver.
+     *
+     * @var string
+     *
+     * @since  12.1
+     */
+    public $name = 'sqlite';
+
+    /**
+     * The type of the database server family supported by this driver.
+     *
+     * @var string
+     *
+     * @since  CMS 3.5.0
+     */
+    public $serverType = 'sqlite';
+
+    /**
+     * The character(s) used to quote SQL statement names such as table names or field names,
+     * etc. The child classes should define this as necessary.  If a single character string the
+     * same character is used for both sides of the quoted name, else the first character will be
+     * used for the opening quote and the second for the closing quote.
+     *
+     * @var string
+     *
+     * @since  12.1
+     */
+    protected $nameQuote = '`';
+
+    /**
+     * Destructor.
+     *
+     * @since   12.1
+     */
+    public function __destruct()
+    {
+        $this->freeResult();
+        unset($this->connection);
+    }
+
+    /**
+     * Disconnects the database.
+     *
+     * @return void
+     *
+     * @since   12.1
+     */
+    public function disconnect()
+    {
+        $this->freeResult();
+        unset($this->connection);
+    }
+
+    /**
+     * Drops a table from the database.
+     *
+     * @param string $tableName the name of the database table to drop
+     * @param bool   $ifExists  optionally specify that the table must exist before it is dropped
+     *
+     * @return XTF0FDatabaseDriverSqlite returns this object to support chaining
+     *
+     * @since   12.1
+     */
+    public function dropTable($tableName, $ifExists = true)
+    {
+        $this->connect();
+
+        $xtf0FDatabaseQuery = $this->getQuery(true);
+
+        $this->setQuery('DROP TABLE '.($ifExists ? 'IF EXISTS ' : '').$xtf0FDatabaseQuery->quoteName($tableName));
+
+        $this->execute();
+
+        return $this;
+    }
+
+    /**
+     * Method to escape a string for usage in an SQLite statement.
+     *
+     * Note: Using query objects with bound variables is
+     * preferable to the below.
+     *
+     * @param string $text  the string to be escaped
+     * @param bool   $extra unused optional parameter to provide extra escaping
+     *
+     * @return string the escaped string
+     *
+     * @since   12.1
+     */
+    public function escape($text, $extra = false)
+    {
+        if (is_int($text) || is_float($text)) {
+            return $text;
+        }
+
+        return SQLite3::escapeString($text);
+    }
+
+    /**
+     * Method to get the database collation in use by sampling a text field of a table in the database.
+     *
+     * @return mixed the collation in use by the database or boolean false if not supported
+     *
+     * @since   12.1
+     */
+    public function getCollation()
+    {
+        return $this->charset;
+    }
+
+    /**
+     * Method to get the database connection collation, as reported by the driver. If the connector doesn't support
+     * reporting this value please return an empty string.
+     *
+     * @return string
+     */
+    public function getConnectionCollation()
+    {
+        return $this->charset;
+    }
+
+    /**
+     * Shows the table CREATE statement that creates the given tables.
+     *
+     * Note: Doesn't appear to have support in SQLite
+     *
+     * @param mixed $tables a table name or a list of table names
+     *
+     * @return array a list of the create SQL for the tables
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function getTableCreate($tables)
+    {
+        $this->connect();
+
+        // Sanitize input to an array and iterate over the list.
+        $tables = (array) $tables;
+
+        return $tables;
+    }
+
+    /**
+     * Retrieves field information about a given table.
+     *
+     * @param string $table    the name of the database table
+     * @param bool   $typeOnly true to only return field types
+     *
+     * @return array an array of fields for the database table
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function getTableColumns($table, $typeOnly = true)
+    {
+        $this->connect();
+
+        $columns = [];
+        $xtf0FDatabaseQuery = $this->getQuery(true);
+
+        $fieldCasing = $this->getOption(PDO::ATTR_CASE);
+
+        $this->setOption(PDO::ATTR_CASE, PDO::CASE_UPPER);
+
+        $table = strtoupper($table);
+
+        $xtf0FDatabaseQuery->setQuery('pragma table_info('.$table.')');
+
+        $this->setQuery($xtf0FDatabaseQuery);
+        $fields = $this->loadObjectList();
+
+        if ($typeOnly) {
+            foreach ($fields as $field) {
+                $columns[$field->NAME] = $field->TYPE;
+            }
+        } else {
+            foreach ($fields as $field) {
+                // Do some dirty translation to MySQL output.
+                // TODO: Come up with and implement a standard across databases.
+                $columns[$field->NAME] = (object) [
+                    'Field' => $field->NAME,
+                    'Type' => $field->TYPE,
+                    'Null' => ('1' == $field->NOTNULL ? 'NO' : 'YES'),
+                    'Default' => $field->DFLT_VALUE,
+                    'Key' => ('0' != $field->PK ? 'PRI' : ''),
+                ];
+            }
+        }
+
+        $this->setOption(PDO::ATTR_CASE, $fieldCasing);
+
+        return $columns;
+    }
+
+    /**
+     * Get the details list of keys for a table.
+     *
+     * @param string $table the name of the table
+     *
+     * @return array an array of the column specification for the table
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function getTableKeys($table)
+    {
+        $this->connect();
+
+        $keys = [];
+        $xtf0FDatabaseQuery = $this->getQuery(true);
+
+        $fieldCasing = $this->getOption(PDO::ATTR_CASE);
+
+        $this->setOption(PDO::ATTR_CASE, PDO::CASE_UPPER);
+
+        $table = strtoupper($table);
+        $xtf0FDatabaseQuery->setQuery('pragma table_info( '.$table.')');
+
+        // $query->bind(':tableName', $table);
+
+        $this->setQuery($xtf0FDatabaseQuery);
+        $rows = $this->loadObjectList();
+
+        foreach ($rows as $row) {
+            if (1 == $row->PK) {
+                $keys[$row->NAME] = $row;
+            }
+        }
+
+        $this->setOption(PDO::ATTR_CASE, $fieldCasing);
+
+        return $keys;
+    }
+
+    /**
+     * Method to get an array of all tables in the database (schema).
+     *
+     * @return array an array of all the tables in the database
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function getTableList()
+    {
+        $this->connect();
+
+        $type = 'table';
+
+        $query = $this->getQuery(true)
+            ->select('name')
+            ->from('sqlite_master')
+            ->where('type = :type')
+            ->bind(':type', $type)
+            ->order('name');
+
+        $this->setQuery($query);
+
+        $tables = $this->loadColumn();
+
+        return $tables;
+    }
+
+    /**
+     * Get the version of the database connector.
+     *
+     * @return string the database connector version
+     *
+     * @since   12.1
+     */
+    public function getVersion()
+    {
+        $this->connect();
+
+        $this->setQuery('SELECT sqlite_version()');
+
+        return $this->loadResult();
+    }
+
+    /**
+     * Select a database for use.
+     *
+     * @param string $database the name of the database to select for use
+     *
+     * @return bool true if the database was successfully selected
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function select($database)
+    {
+        $this->connect();
+
+        return true;
+    }
+
+    /**
+     * Set the connection to use UTF-8 character encoding.
+     *
+     * Returns false automatically for the Oracle driver since
+     * you can only set the character set when the connection
+     * is created.
+     *
+     * @return bool true on success
+     *
+     * @since   12.1
+     */
+    public function setUtf()
+    {
+        $this->connect();
+
+        return false;
+    }
+
+    /**
+     * Locks a table in the database.
+     *
+     * @param string $table the name of the table to unlock
+     *
+     * @return XTF0FDatabaseDriverSqlite returns this object to support chaining
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function lockTable($table)
+    {
+        return $this;
+    }
+
+    /**
+     * Renames a table in the database.
+     *
+     * @param string $oldTable The name of the table to be renamed
+     * @param string $newTable the new name for the table
+     * @param string $backup   not used by Sqlite
+     * @param string $prefix   not used by Sqlite
+     *
+     * @return XTF0FDatabaseDriverSqlite returns this object to support chaining
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function renameTable($oldTable, $newTable, $backup = null, $prefix = null)
+    {
+        $this->setQuery('ALTER TABLE '.$oldTable.' RENAME TO '.$newTable)->execute();
+
+        return $this;
+    }
+
+    /**
+     * Unlocks tables in the database.
+     *
+     * @return XTF0FDatabaseDriverSqlite returns this object to support chaining
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function unlockTables()
+    {
+        return $this;
+    }
+
+    /**
+     * Test to see if the PDO ODBC connector is available.
+     *
+     * @return bool true on success, false otherwise
+     *
+     * @since   12.1
+     */
+    public static function isSupported()
+    {
+        return class_exists('PDO') && in_array('sqlite', PDO::getAvailableDrivers());
+    }
+
+    /**
+     * Method to commit a transaction.
+     *
+     * @param bool $toSavepoint if true, commit to the last savepoint
+     *
+     * @return void
+     *
+     * @since   12.3
+     *
+     * @throws RuntimeException
+     */
+    public function transactionCommit($toSavepoint = false)
+    {
+        $this->connect();
+
+        if (!$toSavepoint || $this->transactionDepth <= 1) {
+            parent::transactionCommit($toSavepoint);
+        } else {
+            $this->transactionDepth--;
+        }
+    }
+
+    /**
+     * Method to roll back a transaction.
+     *
+     * @param bool $toSavepoint if true, rollback to the last savepoint
+     *
+     * @return void
+     *
+     * @since   12.3
+     *
+     * @throws RuntimeException
+     */
+    public function transactionRollback($toSavepoint = false)
+    {
+        $this->connect();
+
+        if (!$toSavepoint || $this->transactionDepth <= 1) {
+            parent::transactionRollback($toSavepoint);
+        } else {
+            $savepoint = 'SP_'.($this->transactionDepth - 1);
+            $this->setQuery('ROLLBACK TO '.$this->quoteName($savepoint));
+
+            if ($this->execute()) {
+                $this->transactionDepth--;
+            }
+        }
+    }
+
+    /**
+     * Method to initialize a transaction.
+     *
+     * @param bool $asSavepoint if true and a transaction is already active, a savepoint will be created
+     *
+     * @return void
+     *
+     * @since   12.3
+     *
+     * @throws RuntimeException
+     */
+    public function transactionStart($asSavepoint = false)
+    {
+        $this->connect();
+
+        if (!$asSavepoint || !$this->transactionDepth) {
+            parent::transactionStart($asSavepoint);
+        }
+
+        $savepoint = 'SP_'.$this->transactionDepth;
+        $this->setQuery('SAVEPOINT '.$this->quoteName($savepoint));
+
+        if ($this->execute()) {
+            $this->transactionDepth++;
+        }
+    }
+}

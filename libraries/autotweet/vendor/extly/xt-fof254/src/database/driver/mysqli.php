@@ -1,0 +1,974 @@
+<?php
+
+/*
+ * @package     XT Transitional Package from FrameworkOnFramework
+ *
+ * @author      Extly, CB. <team@extly.com>
+ * @copyright   Copyright (c)2012-2024 Extly, CB. All rights reserved.
+ *              Based on Akeeba's FrameworkOnFramework
+ * @license     https://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ *
+ * @see         https://www.extly.com
+ */
+
+// Protect from unauthorized access
+defined('XTF0F_INCLUDED') || exit;
+
+/**
+ * MySQLi database driver
+ *
+ * @see    http://php.net/manual/en/book.mysqli.php
+ * @since  12.1
+ */
+class XTF0FDatabaseDriverMysqli extends XTF0FDatabaseDriver
+{
+    /**
+     * The name of the database driver.
+     *
+     * @var string
+     *
+     * @since  12.1
+     */
+    public $name = 'mysqli';
+
+    /**
+     * The type of the database server family supported by this driver.
+     *
+     * @var string
+     *
+     * @since  CMS 3.5.0
+     */
+    public $serverType = 'mysql';
+
+    /**
+     * @var mysqli the database connection resource
+     *
+     * @since  11.1
+     */
+    protected $connection;
+
+    /**
+     * The character(s) used to quote SQL statement names such as table names or field names,
+     * etc. The child classes should define this as necessary.  If a single character string the
+     * same character is used for both sides of the quoted name, else the first character will be
+     * used for the opening quote and the second for the closing quote.
+     *
+     * @var string
+     *
+     * @since  12.2
+     */
+    protected $nameQuote = '`';
+
+    /**
+     * The null or zero representation of a timestamp for the database driver.  This should be
+     * defined in child classes to hold the appropriate value for the engine.
+     *
+     * @var string
+     *
+     * @since  12.2
+     */
+    protected $nullDate = '0000-00-00 00:00:00';
+
+    /**
+     * @var string the minimum supported database version
+     *
+     * @since  12.2
+     */
+    protected static $dbMinimum = '5.0.4';
+
+    /**
+     * Constructor.
+     *
+     * @param array $options List of options used to configure the connection
+     *
+     * @since   12.1
+     */
+    public function __construct($options)
+    {
+        // Get some basic values from the options.
+        $options['host'] ??= 'localhost';
+        $options['user'] ??= 'root';
+        $options['password'] ??= '';
+        $options['database'] ??= '';
+        $options['select'] = (isset($options['select'])) ? (bool) $options['select'] : true;
+        $options['port'] = null;
+        $options['socket'] = null;
+
+        // Finalize initialisation.
+        parent::__construct($options);
+    }
+
+    /**
+     * Destructor.
+     *
+     * @since   12.1
+     */
+    public function __destruct()
+    {
+        $this->disconnect();
+    }
+
+    /**
+     * Connects to the database if needed.
+     *
+     * @return void returns void if the database connected successfully
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function connect()
+    {
+        if ($this->connection) {
+            return;
+        }
+
+        /*
+         * Unlike mysql_connect(), mysqli_connect() takes the port and socket as separate arguments. Therefore, we
+         * have to extract them from the host string.
+         */
+        $port = $this->options['port'] ?? 3306;
+        $regex = '/^(?P<host>((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?))(:(?P<port>.+))?$/';
+
+        if (preg_match($regex, $this->options['host'], $matches)) {
+            // It's an IPv4 address with ot without port
+            $this->options['host'] = $matches['host'];
+
+            if (!empty($matches['port'])) {
+                $port = $matches['port'];
+            }
+        } elseif (preg_match('/^(?P<host>\[.*\])(:(?P<port>.+))?$/', $this->options['host'], $matches)) {
+            // We assume square-bracketed IPv6 address with or without port, e.g. [fe80:102::2%eth1]:3306
+            $this->options['host'] = $matches['host'];
+
+            if (!empty($matches['port'])) {
+                $port = $matches['port'];
+            }
+        } elseif (preg_match('/^(?P<host>(\w+:\/{2,3})?[a-z0-9\.\-]+)(:(?P<port>[^:]+))?$/i', $this->options['host'], $matches)) {
+            // Named host (e.g domain.com or localhost) with ot without port
+            $this->options['host'] = $matches['host'];
+
+            if (!empty($matches['port'])) {
+                $port = $matches['port'];
+            }
+        } elseif (preg_match('/^:(?P<port>[^:]+)$/', $this->options['host'], $matches)) {
+            // Empty host, just port, e.g. ':3306'
+            $this->options['host'] = 'localhost';
+            $port = $matches['port'];
+        }
+
+        // ... else we assume normal (naked) IPv6 address, so host and port stay as they are or default
+
+        // Get the port number or socket name
+        if (is_numeric($port)) {
+            $this->options['port'] = (int) $port;
+        } else {
+            $this->options['socket'] = $port;
+        }
+
+        // Make sure the MySQLi extension for PHP is installed and enabled.
+        if (!function_exists('mysqli_connect')) {
+            throw new RuntimeException('The MySQL adapter mysqli is not available');
+        }
+
+        $this->connection = @mysqli_connect(
+            $this->options['host'], $this->options['user'], $this->options['password'], null, $this->options['port'], $this->options['socket']
+        );
+
+        // Attempt to connect to the server.
+        if (!$this->connection) {
+            throw new RuntimeException('Could not connect to MySQL.');
+        }
+
+        // Set sql_mode to non_strict mode
+        mysqli_query($this->connection, "SET @@SESSION.sql_mode = '';");
+
+        // If auto-select is enabled select the given database.
+        if ($this->options['select'] && !empty($this->options['database'])) {
+            $this->select($this->options['database']);
+        }
+
+        // Pre-populate the UTF-8 Multibyte compatibility flag based on server version
+        $this->utf8mb4 = $this->serverClaimsUtf8mb4Support();
+
+        // Set the character set (needed for MySQL 4.1.2+).
+        $this->utf = $this->setUtf();
+
+        // Turn MySQL profiling ON in debug mode:
+        if ($this->debug && $this->hasProfiling()) {
+            mysqli_query($this->connection, 'SET profiling_history_size = 100;');
+            mysqli_query($this->connection, 'SET profiling = 1;');
+        }
+    }
+
+    /**
+     * Disconnects the database.
+     *
+     * @return void
+     *
+     * @since   12.1
+     */
+    public function disconnect()
+    {
+        // Close the connection.
+        if ($this->connection) {
+            foreach ($this->disconnectHandlers as $disconnectHandler) {
+                call_user_func_array($disconnectHandler, [&$this]);
+            }
+
+            mysqli_close($this->connection);
+        }
+
+        $this->connection = null;
+    }
+
+    /**
+     * Method to escape a string for usage in an SQL statement.
+     *
+     * @param string $text  the string to be escaped
+     * @param bool   $extra optional parameter to provide extra escaping
+     *
+     * @return string the escaped string
+     *
+     * @since   12.1
+     */
+    public function escape($text, $extra = false)
+    {
+        $this->connect();
+
+        $result = mysqli_real_escape_string($this->getConnection(), $text);
+
+        if ($extra) {
+            $result = addcslashes($result, '%_');
+        }
+
+        return $result;
+    }
+
+    /**
+     * Test to see if the MySQL connector is available.
+     *
+     * @return bool true on success, false otherwise
+     *
+     * @since   12.1
+     */
+    public static function isSupported()
+    {
+        return function_exists('mysqli_connect');
+    }
+
+    /**
+     * Determines if the connection to the server is active.
+     *
+     * @return bool true if connected to the database engine
+     *
+     * @since   12.1
+     */
+    public function connected()
+    {
+        if (is_object($this->connection)) {
+            return mysqli_ping($this->connection);
+        }
+
+        return false;
+    }
+
+    /**
+     * Drops a table from the database.
+     *
+     * @param string $tableName the name of the database table to drop
+     * @param bool   $ifExists  optionally specify that the table must exist before it is dropped
+     *
+     * @return XTF0FDatabaseDriverMysqli returns this object to support chaining
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function dropTable($tableName, $ifExists = true)
+    {
+        $this->connect();
+
+        $xtf0FDatabaseQuery = $this->getQuery(true);
+
+        $this->setQuery('DROP TABLE '.($ifExists ? 'IF EXISTS ' : '').$xtf0FDatabaseQuery->quoteName($tableName));
+
+        $this->execute();
+
+        return $this;
+    }
+
+    /**
+     * Get the number of affected rows by the last INSERT, UPDATE, REPLACE or DELETE for the previous executed SQL statement.
+     *
+     * @return int the number of affected rows
+     *
+     * @since   12.1
+     */
+    public function getAffectedRows()
+    {
+        $this->connect();
+
+        return mysqli_affected_rows($this->connection);
+    }
+
+    /**
+     * Method to get the database collation.
+     *
+     * @return mixed the collation in use by the database (string) or boolean false if not supported
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function getCollation()
+    {
+        $this->connect();
+
+        // Attempt to get the database collation by accessing the server system variable.
+        $this->setQuery('SHOW VARIABLES LIKE "collation_database"');
+        $result = $this->loadObject();
+
+        if (property_exists($result, 'Value')) {
+            return $result->Value;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Method to get the database connection collation, as reported by the driver. If the connector doesn't support
+     * reporting this value please return an empty string.
+     *
+     * @return string
+     */
+    public function getConnectionCollation()
+    {
+        $this->connect();
+
+        // Attempt to get the database collation by accessing the server system variable.
+        $this->setQuery('SHOW VARIABLES LIKE "collation_connection"');
+        $result = $this->loadObject();
+
+        if (property_exists($result, 'Value')) {
+            return $result->Value;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Get the number of returned rows for the previous executed SQL statement.
+     * This command is only valid for statements like SELECT or SHOW that return an actual result set.
+     * To retrieve the number of rows affected by a INSERT, UPDATE, REPLACE or DELETE query, use getAffectedRows().
+     *
+     * @param resource $cursor an optional database cursor resource to extract the row count from
+     *
+     * @return int the number of returned rows
+     *
+     * @since   12.1
+     */
+    public function getNumRows($cursor = null)
+    {
+        return mysqli_num_rows($cursor ?: $this->cursor);
+    }
+
+    /**
+     * Shows the table CREATE statement that creates the given tables.
+     *
+     * @param mixed $tables a table name or a list of table names
+     *
+     * @return array a list of the create SQL for the tables
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function getTableCreate($tables)
+    {
+        $this->connect();
+
+        $result = [];
+
+        // Sanitize input to an array and iterate over the list.
+        $tables = (array) $tables;
+
+        foreach ($tables as $table) {
+            // Set the query to get the table CREATE statement.
+            $this->setQuery('SHOW CREATE table '.$this->quoteName($this->escape($table)));
+            $row = $this->loadRow();
+
+            // Populate the result array based on the create statements.
+            $result[$table] = $row[1];
+        }
+
+        return $result;
+    }
+
+    /**
+     * Retrieves field information about a given table.
+     *
+     * @param string $table    the name of the database table
+     * @param bool   $typeOnly true to only return field types
+     *
+     * @return array an array of fields for the database table
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function getTableColumns($table, $typeOnly = true)
+    {
+        $this->connect();
+
+        $result = [];
+
+        // Set the query to get the table fields statement.
+        $this->setQuery('SHOW FULL COLUMNS FROM '.$this->quoteName($this->escape($table)));
+        $fields = $this->loadObjectList();
+
+        // If we only want the type as the value add just that to the list.
+        if ($typeOnly) {
+            foreach ($fields as $field) {
+                $result[$field->Field] = preg_replace('/[(0-9)]/', '', $field->Type);
+            }
+        }
+        // If we want the whole field data object add that to the list.
+        else {
+            foreach ($fields as $field) {
+                $result[$field->Field] = $field;
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Get the details list of keys for a table.
+     *
+     * @param string $table the name of the table
+     *
+     * @return array an array of the column specification for the table
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function getTableKeys($table)
+    {
+        $this->connect();
+
+        // Get the details columns information.
+        $this->setQuery('SHOW KEYS FROM '.$this->quoteName($table));
+        $keys = $this->loadObjectList();
+
+        return $keys;
+    }
+
+    /**
+     * Method to get an array of all tables in the database.
+     *
+     * @return array an array of all the tables in the database
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function getTableList()
+    {
+        $this->connect();
+
+        // Set the query to get the tables statement.
+        $this->setQuery('SHOW TABLES');
+        $tables = $this->loadColumn();
+
+        return $tables;
+    }
+
+    /**
+     * Get the version of the database connector.
+     *
+     * @return string the database connector version
+     *
+     * @since   12.1
+     */
+    public function getVersion()
+    {
+        $this->connect();
+
+        return mysqli_get_server_info($this->connection);
+    }
+
+    /**
+     * Method to get the auto-incremented value from the last INSERT statement.
+     *
+     * @return mixed The value of the auto-increment field from the last inserted row.
+     *               If the value is greater than maximal int value, it will return a string.
+     *
+     * @since   12.1
+     */
+    public function insertid()
+    {
+        $this->connect();
+
+        return mysqli_insert_id($this->connection);
+    }
+
+    /**
+     * Locks a table in the database.
+     *
+     * @param string $table the name of the table to unlock
+     *
+     * @return XTF0FDatabaseDriverMysqli returns this object to support chaining
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function lockTable($table)
+    {
+        $this->setQuery('LOCK TABLES '.$this->quoteName($table).' WRITE')->execute();
+
+        return $this;
+    }
+
+    /**
+     * Execute the SQL statement.
+     *
+     * @return mixed a database cursor resource on success, boolean false on failure
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function execute()
+    {
+        $this->connect();
+
+        if (!is_object($this->connection)) {
+            if (class_exists('JLog')) {
+                JLog::add(JText::sprintf('JLIB_DATABASE_QUERY_FAILED', $this->errorNum, $this->errorMsg), JLog::ERROR, 'database');
+            }
+
+            throw new RuntimeException($this->errorMsg, $this->errorNum);
+        }
+
+        // Take a local copy so that we don't modify the original query and cause issues later
+        $query = $this->replacePrefix((string) $this->sql);
+
+        if (!($this->sql instanceof XTF0FDatabaseQuery) && ($this->limit > 0 || $this->offset > 0)) {
+            $query .= ' LIMIT '.$this->offset.', '.$this->limit;
+        }
+
+        // Increment the query counter.
+        $this->count++;
+
+        // Reset the error values.
+        $this->errorNum = 0;
+        $this->errorMsg = '';
+        $memoryBefore = null;
+
+        // If debugging is enabled then let's log the query.
+        if ($this->debug) {
+            // Add the query to the object queue.
+            $this->log[] = $query;
+
+            if (class_exists('JLog')) {
+                JLog::add($query, JLog::DEBUG, 'databasequery');
+            }
+
+            $this->timings[] = microtime(true);
+
+            if (is_object($this->cursor)) {
+                // Avoid warning if result already freed by third-party library
+                @$this->freeResult();
+            }
+
+            $memoryBefore = memory_get_usage();
+        }
+
+        // Execute the query. Error suppression is used here to prevent warnings/notices that the connection has been lost.
+        $this->cursor = @mysqli_query($this->connection, $query);
+
+        if ($this->debug) {
+            $this->timings[] = microtime(true);
+
+            if (defined('DEBUG_BACKTRACE_IGNORE_ARGS')) {
+                $this->callStacks[] = debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS);
+            } else {
+                $this->callStacks[] = debug_backtrace();
+            }
+
+            $this->callStacks[count($this->callStacks) - 1][0]['memory'] = [
+                $memoryBefore,
+                memory_get_usage(),
+                is_object($this->cursor) ? $this->getNumRows() : null,
+            ];
+        }
+
+        // If an error occurred handle it.
+        if (!$this->cursor) {
+            // Get the error number and message before we execute any more queries.
+            $this->errorNum = $this->getErrorNumber();
+            $this->errorMsg = $this->getErrorMessage($query);
+
+            // Check if the server was disconnected.
+            if (!$this->connected()) {
+                try {
+                    // Attempt to reconnect.
+                    $this->connection = null;
+                    $this->connect();
+                }
+                // If connect fails, ignore that exception and throw the normal exception.
+                catch (RuntimeException $e) {
+                    // Get the error number and message.
+                    $this->errorNum = $this->getErrorNumber();
+                    $this->errorMsg = $this->getErrorMessage($query);
+
+                    if (class_exists('JLog')) {
+                        JLog::add(JText::sprintf('JLIB_DATABASE_QUERY_FAILED', $this->errorNum, $this->errorMsg), JLog::ERROR, 'database-error');
+                    }
+
+                    throw new RuntimeException($this->errorMsg, $this->errorNum, $e);
+                }
+
+                // Since we were able to reconnect, run the query again.
+                return $this->execute();
+            }
+            // The server was not disconnected.
+            else {
+                if (class_exists('JLog')) {
+                    JLog::add(JText::sprintf('JLIB_DATABASE_QUERY_FAILED', $this->errorNum, $this->errorMsg), JLog::ERROR, 'database-error');
+                }
+
+                throw new RuntimeException($this->errorMsg, $this->errorNum);
+            }
+        }
+
+        return $this->cursor;
+    }
+
+    /**
+     * Renames a table in the database.
+     *
+     * @param string $oldTable The name of the table to be renamed
+     * @param string $newTable the new name for the table
+     * @param string $backup   not used by MySQL
+     * @param string $prefix   not used by MySQL
+     *
+     * @return XTF0FDatabaseDriverMysqli returns this object to support chaining
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function renameTable($oldTable, $newTable, $backup = null, $prefix = null)
+    {
+        $this->setQuery('RENAME TABLE '.$oldTable.' TO '.$newTable)->execute();
+
+        return $this;
+    }
+
+    /**
+     * Select a database for use.
+     *
+     * @param string $database the name of the database to select for use
+     *
+     * @return bool true if the database was successfully selected
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function select($database)
+    {
+        $this->connect();
+
+        if (!$database) {
+            return false;
+        }
+
+        if (!mysqli_select_db($this->connection, $database)) {
+            throw new RuntimeException('Could not connect to database.');
+        }
+
+        return true;
+    }
+
+    /**
+     * Set the connection to use UTF-8 character encoding.
+     *
+     * @return bool true on success
+     *
+     * @since   12.1
+     */
+    public function setUtf()
+    {
+        // If UTF is not supported return false immediately
+        if (!$this->utf) {
+            return false;
+        }
+
+        // Make sure we're connected to the server
+        $this->connect();
+
+        // Which charset should I use, plain utf8 or multibyte utf8mb4?
+        $charset = $this->utf8mb4 ? 'utf8mb4' : 'utf8';
+
+        $result = @$this->connection->set_charset($charset);
+
+        /**
+         * If I could not set the utf8mb4 charset then the server doesn't support utf8mb4 despite claiming otherwise.
+         * This happens on old MySQL server versions (less than 5.5.3) using the mysqlnd PHP driver. Since mysqlnd
+         * masks the server version and reports only its own we can not be sure if the server actually does support
+         * UTF-8 Multibyte (i.e. it's MySQL 5.5.3 or later). Since the utf8mb4 charset is undefined in this case we
+         * catch the error and determine that utf8mb4 is not supported!
+         */
+        if (!$result && $this->utf8mb4) {
+            $this->utf8mb4 = false;
+            $result = @$this->connection->set_charset('utf8');
+        }
+
+        return $result;
+    }
+
+    /**
+     * Method to commit a transaction.
+     *
+     * @param bool $toSavepoint if true, commit to the last savepoint
+     *
+     * @return void
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function transactionCommit($toSavepoint = false)
+    {
+        $this->connect();
+
+        if (!$toSavepoint || $this->transactionDepth <= 1) {
+            if ($this->setQuery('COMMIT')->execute()) {
+                $this->transactionDepth = 0;
+            }
+
+            return;
+        }
+
+        $this->transactionDepth--;
+    }
+
+    /**
+     * Method to roll back a transaction.
+     *
+     * @param bool $toSavepoint if true, rollback to the last savepoint
+     *
+     * @return void
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function transactionRollback($toSavepoint = false)
+    {
+        $this->connect();
+
+        if (!$toSavepoint || $this->transactionDepth <= 1) {
+            if ($this->setQuery('ROLLBACK')->execute()) {
+                $this->transactionDepth = 0;
+            }
+
+            return;
+        }
+
+        $savepoint = 'SP_'.($this->transactionDepth - 1);
+        $this->setQuery('ROLLBACK TO SAVEPOINT '.$this->quoteName($savepoint));
+
+        if ($this->execute()) {
+            $this->transactionDepth--;
+        }
+    }
+
+    /**
+     * Method to initialize a transaction.
+     *
+     * @param bool $asSavepoint if true and a transaction is already active, a savepoint will be created
+     *
+     * @return void
+     *
+     * @since   12.2
+     *
+     * @throws RuntimeException
+     */
+    public function transactionStart($asSavepoint = false)
+    {
+        $this->connect();
+
+        if (!$asSavepoint || !$this->transactionDepth) {
+            if ($this->setQuery('START TRANSACTION')->execute()) {
+                $this->transactionDepth = 1;
+            }
+
+            return;
+        }
+
+        $savepoint = 'SP_'.$this->transactionDepth;
+        $this->setQuery('SAVEPOINT '.$this->quoteName($savepoint));
+
+        if ($this->execute()) {
+            $this->transactionDepth++;
+        }
+    }
+
+    /**
+     * Unlocks tables in the database.
+     *
+     * @return XTF0FDatabaseDriverMysqli returns this object to support chaining
+     *
+     * @since   12.1
+     *
+     * @throws RuntimeException
+     */
+    public function unlockTables()
+    {
+        $this->setQuery('UNLOCK TABLES')->execute();
+
+        return $this;
+    }
+
+    /**
+     * Method to fetch a row from the result set cursor as an array.
+     *
+     * @param mixed $cursor the optional result set cursor from which to fetch the row
+     *
+     * @return mixed either the next row from the result set or false if there are no more rows
+     *
+     * @since   12.1
+     */
+    protected function fetchArray($cursor = null)
+    {
+        return mysqli_fetch_row($cursor ?: $this->cursor);
+    }
+
+    /**
+     * Method to fetch a row from the result set cursor as an associative array.
+     *
+     * @param mixed $cursor the optional result set cursor from which to fetch the row
+     *
+     * @return mixed either the next row from the result set or false if there are no more rows
+     *
+     * @since   12.1
+     */
+    protected function fetchAssoc($cursor = null)
+    {
+        return mysqli_fetch_assoc($cursor ?: $this->cursor);
+    }
+
+    /**
+     * Method to fetch a row from the result set cursor as an object.
+     *
+     * @param mixed  $cursor the optional result set cursor from which to fetch the row
+     * @param string $class  the class name to use for the returned row object
+     *
+     * @return mixed either the next row from the result set or false if there are no more rows
+     *
+     * @since   12.1
+     */
+    protected function fetchObject($cursor = null, $class = 'stdClass')
+    {
+        return mysqli_fetch_object($cursor ?: $this->cursor, $class);
+    }
+
+    /**
+     * Method to free up the memory used for the result set.
+     *
+     * @param mixed $cursor the optional result set cursor from which to fetch the row
+     *
+     * @return void
+     *
+     * @since   12.1
+     */
+    protected function freeResult($cursor = null)
+    {
+        mysqli_free_result($cursor ?: $this->cursor);
+
+        if ((!$cursor) || ($cursor === $this->cursor)) {
+            $this->cursor = null;
+        }
+    }
+
+    /**
+     * Return the actual SQL Error number
+     *
+     * @return int The SQL Error number
+     *
+     * @since   3.4.6
+     */
+    protected function getErrorNumber()
+    {
+        return (int) mysqli_errno($this->connection);
+    }
+
+    /**
+     * Return the actual SQL Error message
+     *
+     * @param string $query The SQL Query that fails
+     *
+     * @return string The SQL Error message
+     *
+     * @since   3.4.6
+     */
+    protected function getErrorMessage($query)
+    {
+        $errorMessage = (string) mysqli_error($this->connection);
+
+        // Replace the Databaseprefix with `#__` if we are not in Debug
+        if (!$this->debug) {
+            $errorMessage = str_replace($this->tablePrefix, '#__', $errorMessage);
+            $query = str_replace($this->tablePrefix, '#__', $query);
+        }
+
+        return $errorMessage.' SQL='.$query;
+    }
+
+    /**
+     * Internal function to check if profiling is available
+     *
+     * @return bool
+     *
+     * @since   3.1.3
+     */
+    private function hasProfiling()
+    {
+        try {
+            $res = mysqli_query($this->connection, "SHOW VARIABLES LIKE 'have_profiling'");
+            $row = mysqli_fetch_assoc($res);
+
+            return isset($row);
+        } catch (Exception $exception) {
+            return false;
+        }
+    }
+
+    /**
+     * Does the database server claim to have support for UTF-8 Multibyte (utf8mb4) collation?
+     *
+     * libmysql supports utf8mb4 since 5.5.3 (same version as the MySQL server). mysqlnd supports utf8mb4 since 5.0.9.
+     *
+     * @return bool
+     *
+     * @since   CMS 3.5.0
+     */
+    private function serverClaimsUtf8mb4Support()
+    {
+        $client_version = mysqli_get_client_info();
+
+        if (false !== strpos($client_version, 'mysqlnd')) {
+            $client_version = preg_replace('/^\D+([\d.]+).*/', '$1', $client_version);
+
+            return version_compare($client_version, '5.0.9', '>=');
+        } else {
+            return version_compare($client_version, '5.5.3', '>=');
+        }
+    }
+}

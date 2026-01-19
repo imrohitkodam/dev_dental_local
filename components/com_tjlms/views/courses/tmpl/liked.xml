@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_TJLMS_LIKED_COURSES">
+		<message>
+			<![CDATA[All Courses]]>
+		</message>
+	</layout>
+
+<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+		<fieldset name="advanced" label="COM_MENUS_LAYOUT_FEATURED_OPTIONS">
+			<field name="layout_to_load" type="list" description="COM_TJLMS_LAYOUT_TO_SHOW" label="COM_TJLMS_LAYOUT_TO_SHOW" class="btn-group" default="pin_layout">
+				<option value="pin">COM_TJLMS_PIN_LAYOUT</option>
+				<option value="fixedpin">COM_TJLMS_FIXED_HEIGHT_PIN_LAYOUT</option>
+				<option value="list">COM_TJLMS_BLOG_LAYOUT</option>
+			</field>
+
+			<field name="defaultCatId" type="category"
+				label="COM_TJLMS_MENU_COURSES_FIELD_SELECT_CAT"
+				description="COM_TJLMS_MENU_COURSES_FIELD_SELECT_CAT"
+				extension="com_tjlms"
+				>
+					<option value=''>COM_TJLMS_MENU_COURSES_FIELD_OPTION_SELECT_CAT</option>
+			</field>
+
+			<field name="show_subcat_courses" type="list"
+				label="COM_TJLMS_MENU_PRODUCTS_FIELD_SHOW_SUBCATS"
+				description="COM_TJLMS_MENU_PRODUCTS_FIELD_SHOW_SUBCATS"
+				default="0"
+				>
+					<option value='1'>COM_TJLMS_YES</option>
+					<option value='0'>COM_TJLMS_NO</option>
+			</field>
+			<field name="cat_all_course_pagination_limit" type="text" default="20" label="COM_TJLMS_MENU_ALL_COURSE_PAGINATION_LIMIT" description="COM_TJLMS_MENU_ALL_COURSE_PAGINATION_LIMIT_DESC" />
+
+			<field name="course_images_size" type="list" label="COM_TJLMS_COURSE_IMAGES_SIZE_LABEL" description="COM_TJLMS_COURSE_IMAGES_SIZE_DESC" class="btn-group" default="S_">
+				<option value="S_">COM_TJLMS_COURSE_IMAGES_SIZE_SMALL</option>
+				<option value="M_">COM_TJLMS_COURSE_IMAGES_SIZE_MEDIUM</option>
+				<option value="L_">COM_TJLMS_COURSE_IMAGES_SIZE_LARGE</option>
+			</field>
+		</fieldset>
+
+	</fields>
+
+
+	<state>
+		<name>All Courses</name>
+		<description>All Courses</description>
+	</state>
+
+</metadata>

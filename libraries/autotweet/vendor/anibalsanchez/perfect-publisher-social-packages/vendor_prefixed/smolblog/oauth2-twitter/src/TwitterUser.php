@@ -1,0 +1,62 @@
+<?php
+/* This file has been prefixed by <PHP-Prefixer> for "XT Social Libraries" */
+
+namespace XTS_BUILD\Smolblog\OAuth2\Client\Provider;
+
+use XTS_BUILD\League\OAuth2\Client\Provider\ResourceOwnerInterface;
+
+class TwitterUser implements ResourceOwnerInterface
+{
+    /**
+     * @var array
+     */
+    protected $response;
+
+    /**
+     * @param array $response
+     */
+    public function __construct(array $response)
+    {
+        $this->response = $response['data'] ?? [];
+    }
+
+    public function getId()
+    {
+        return $this->response['id'];
+    }
+
+    public function getName()
+    {
+        return $this->response['name'];
+    }
+
+    public function getUsername()
+    {
+        return $this->response['username'];
+    }
+
+    public function getImageUrl()
+    {
+        return $this->response['profile_image_url'];
+    }
+
+    public function getEmail()
+    {
+        return $this->response['confirmed_email'] ?? null;
+    }
+
+    /**
+     * Get user data as an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return $this->response;
+    }
+
+    private function getResponseValue($key)
+    {
+        return $this->response[$key] ?? null;
+    }
+}

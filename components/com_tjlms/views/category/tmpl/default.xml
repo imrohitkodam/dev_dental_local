@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_TJLMS_CATEGORY">
+		<message>
+			<![CDATA[Category]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+		<fieldset name="advanced" label="COM_MENUS_LAYOUT_FEATURED_OPTIONS">
+			
+
+			<field name="defaultCatId" type="category"
+				label="COM_TJLMS_MENU_COURSES_FIELD_SELECT_CAT"
+				description="COM_TJLMS_MENU_COURSES_FIELD_SELECT_CAT"
+				extension="com_tjlms"
+				>
+					<option value=''>COM_TJLMS_MENU_COURSES_FIELD_OPTION_SELECT_CAT</option>
+			</field>
+</fieldset>
+			
+			
+
+	</fields>
+
+	<state>
+		<name>Category</name>
+		<description>Category</description>
+	</state>
+
+</metadata>

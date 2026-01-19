@@ -1,0 +1,246 @@
+<?php
+
+/*
+ * @package     XT Transitional Package from FrameworkOnFramework
+ *
+ * @author      Extly, CB. <team@extly.com>
+ * @copyright   Copyright (c)2012-2024 Extly, CB. All rights reserved.
+ *              Based on Akeeba's FrameworkOnFramework
+ * @license     https://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ *
+ * @see         https://www.extly.com
+ */
+
+defined('XTF0F_INCLUDED') || exit();
+
+/**
+ * Configuration parser for the tables-specific settings
+ *
+ * @since    2.1
+ */
+class XTF0FConfigDomainTables implements XTF0FConfigDomainInterface
+{
+    /**
+     * Parse the XML data, adding them to the $ret array
+     *
+     * @param SimpleXMLElement $xml  The XML data of the component's configuration area
+     * @param array            &$ret The parsed data, in the form of a hash array
+     *
+     * @return void
+     */
+    public function parseDomain(SimpleXMLElement $xml, array &$ret)
+    {
+        // Initialise
+        $ret['tables'] = [];
+
+        // Parse table configuration
+        $tableData = $xml->xpath('table');
+
+        // Sanity check
+        if (empty($tableData)) {
+            return;
+        }
+
+        foreach ($tableData as $aTable) {
+            $key = (string) $aTable['name'];
+
+            $ret['tables'][$key]['behaviors'] = (string) $aTable->behaviors;
+            $ret['tables'][$key]['tablealias'] = $aTable->xpath('tablealias');
+            $ret['tables'][$key]['fields'] = [];
+            $ret['tables'][$key]['relations'] = [];
+
+            $fieldData = $aTable->xpath('field');
+
+            if (!empty($fieldData)) {
+                foreach ($fieldData as $field) {
+                    $k = (string) $field['name'];
+                    $ret['tables'][$key]['fields'][$k] = (string) $field;
+                }
+            }
+
+            $relationsData = $aTable->xpath('relation');
+
+            if (!empty($relationsData)) {
+                foreach ($relationsData as $relationData) {
+                    $type = (string) $relationData['type'];
+                    $itemName = (string) $relationData['name'];
+
+                    if ($type === '' || $type === '0' || ($itemName === '' || $itemName === '0')) {
+                        continue;
+                    }
+
+                    $tableClass = (string) $relationData['tableClass'];
+                    $localKey = (string) $relationData['localKey'];
+                    $remoteKey = (string) $relationData['remoteKey'];
+                    $ourPivotKey = (string) $relationData['ourPivotKey'];
+                    $theirPivotKey = (string) $relationData['theirPivotKey'];
+                    $pivotTable = (string) $relationData['pivotTable'];
+                    $default = (string) $relationData['default'];
+
+                    $default = !in_array($default, ['no', 'false', 0]);
+
+                    $relation = [
+                        'type'			=> $type,
+                        'itemName'		=> $itemName,
+                        'tableClass'	=> $tableClass === '' || $tableClass === '0' ? null : $tableClass,
+                        'localKey'		=> $localKey === '' || $localKey === '0' ? null : $localKey,
+                        'remoteKey'		=> $remoteKey === '' || $remoteKey === '0' ? null : $remoteKey,
+                        'default'		=> $default,
+                    ];
+
+                    if ($ourPivotKey !== '' && $ourPivotKey !== '0' || $theirPivotKey !== '' && $theirPivotKey !== '0' || $pivotTable !== '' && $pivotTable !== '0') {
+                        $relation['ourPivotKey'] = $ourPivotKey === '' || $ourPivotKey === '0' ? null : $ourPivotKey;
+                        $relation['theirPivotKey'] = $theirPivotKey === '' || $theirPivotKey === '0' ? null : $theirPivotKey;
+                        $relation['pivotTable'] = $pivotTable === '' || $pivotTable === '0' ? null : $pivotTable;
+                    }
+
+                    $ret['tables'][$key]['relations'][] = $relation;
+                }
+            }
+        }
+    }
+
+    /**
+     * Return a configuration variable
+     *
+     * @param string &$configuration Configuration variables (hashed array)
+     * @param string $var            The variable we want to fetch
+     * @param mixed  $default        Default value
+     *
+     * @return mixed The variable's value
+     */
+    public function get(&$configuration, $var, $default)
+    {
+        $parts = explode('.', $var);
+
+        $view = $parts[0];
+        $method = 'get'.ucfirst($parts[1]);
+
+        if (!method_exists($this, $method)) {
+            return $default;
+        }
+
+        array_shift($parts);
+        array_shift($parts);
+
+        $ret = $this->$method($view, $configuration, $parts, $default);
+
+        return $ret;
+    }
+
+    /**
+     * Internal method to return the magic field mapping
+     *
+     * @param string $table          The table for which we will be fetching a field map
+     * @param array  &$configuration The configuration parameters hash array
+     * @param array  $params         Extra options; key 0 defines the table we want to fetch
+     * @param string $default        Default magic field mapping; empty if not defined
+     *
+     * @return array Field map
+     */
+    protected function getField($table, &$configuration, $params, $default = '')
+    {
+        $fieldmap = [];
+
+        if (isset($configuration['tables']['*']) && isset($configuration['tables']['*']['fields'])) {
+            $fieldmap = $configuration['tables']['*']['fields'];
+        }
+
+        if (isset($configuration['tables'][$table]) && isset($configuration['tables'][$table]['fields'])) {
+            $fieldmap = array_merge($fieldmap, $configuration['tables'][$table]['fields']);
+        }
+
+        $map = $default;
+
+        if (empty($params[0])) {
+            $map = $fieldmap;
+        } elseif (isset($fieldmap[$params[0]])) {
+            $map = $fieldmap[$params[0]];
+        }
+
+        return $map;
+    }
+
+    /**
+     * Internal method to get table alias
+     *
+     * @param string $table          The table for which we will be fetching table alias
+     * @param array  &$configuration The configuration parameters hash array
+     * @param array  $params         Extra options; key 0 defines the table we want to fetch
+     * @param string $default        Default table alias
+     *
+     * @return string Table alias
+     */
+    protected function getTablealias($table, &$configuration, $params, $default = '')
+    {
+        $tablealias = $default;
+
+        if (isset($configuration['tables']['*'])
+            && isset($configuration['tables']['*']['tablealias'])
+            && isset($configuration['tables']['*']['tablealias'][0])) {
+            $tablealias = (string) $configuration['tables']['*']['tablealias'][0];
+        }
+
+        if (isset($configuration['tables'][$table])
+            && isset($configuration['tables'][$table]['tablealias'])
+            && isset($configuration['tables'][$table]['tablealias'][0])) {
+            $tablealias = (string) $configuration['tables'][$table]['tablealias'][0];
+        }
+
+        return $tablealias;
+    }
+
+    /**
+     * Internal method to get table behaviours
+     *
+     * @param string $table          The table for which we will be fetching table alias
+     * @param array  &$configuration The configuration parameters hash array
+     * @param array  $params         Extra options; key 0 defines the table we want to fetch
+     * @param string $default        Default table alias
+     *
+     * @return string Table behaviours
+     */
+    protected function getBehaviors($table, &$configuration, $params, $default = '')
+    {
+        $behaviors = $default;
+
+        if (isset($configuration['tables']['*'])
+            && isset($configuration['tables']['*']['behaviors'])) {
+            $behaviors = (string) $configuration['tables']['*']['behaviors'];
+        }
+
+        if (isset($configuration['tables'][$table])
+            && isset($configuration['tables'][$table]['behaviors'])) {
+            $behaviors = (string) $configuration['tables'][$table]['behaviors'];
+        }
+
+        return $behaviors;
+    }
+
+    /**
+     * Internal method to get table relations
+     *
+     * @param string $table          The table for which we will be fetching table alias
+     * @param array  &$configuration The configuration parameters hash array
+     * @param array  $params         Extra options; key 0 defines the table we want to fetch
+     * @param string $default        Default table alias
+     *
+     * @return array Table relations
+     */
+    protected function getRelations($table, &$configuration, $params, $default = '')
+    {
+        $relations = $default;
+
+        if (isset($configuration['tables']['*'])
+            && isset($configuration['tables']['*']['relations'])) {
+            $relations = $configuration['tables']['*']['relations'];
+        }
+
+        if (isset($configuration['tables'][$table])
+            && isset($configuration['tables'][$table]['relations'])) {
+            $relations = $configuration['tables'][$table]['relations'];
+        }
+
+        return $relations;
+    }
+}

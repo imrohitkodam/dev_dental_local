@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<view title="Reports">
+		<message>
+			<![CDATA[
+				Courses
+			]]>
+		</message>
+		<options var="layout">
+ 			<default name="reports" msg="Reports" />
+	  </options>
+	</view>
+</metadata>

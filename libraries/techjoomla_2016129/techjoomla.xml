@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="2.5">
+	<name>Techjoomla</name>
+	<libraryname>techjoomla</libraryname>
+	<author>TechJoomla</author>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<copyright>Copyright(C)2012-15 TechJoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<creationDate>3rd June 2015</creationDate>
+	<version>1.0.4</version>
+	<description>Common code library for all Techjoola extensions</description>
+	<files>
+		<folder>jsocial</folder>
+		<folder>tjtoolbar</folder>
+		<folder>tjmedia</folder>
+		<folder>tjmail</folder>
+		<file>common.php</file>
+		<file>index.html</file>
+		<file>techjoomla.xml</file>
+	</files>
+</extension>
