@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="type" type="list" label="COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_DESC" default="button">
+                    <option value="button">COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_OPTION_BUTTON</option>
+                    <option value="button_nocount">COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_OPTION_BUTTON_NOCOUNT</option>
+                    <option value="link">COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_OPTION_LINK</option>
+                    <option value="link_noicon">COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_OPTION_LINK_NOICON</option>
+                    <option value="custom">COM_JFBCONNECT_WIDGET_VK_SHARE_TYPE_OPTION_CUSTOM</option>
+                </field>
+                <field name="text" type="text" label="COM_JFBCONNECT_WIDGET_VK_SHARE_TEXT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SHARE_TEXT_DESC" default="Share"/>
+                <field name="url" type="text" label="COM_JFBCONNECT_WIDGET_VK_SHARE_URL_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SHARE_URL_DESC"/>
+            </fieldset>
+        </fields>
+    </fields>
+</form>

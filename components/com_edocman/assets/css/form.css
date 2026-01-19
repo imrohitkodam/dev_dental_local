@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+/**
+ * @version		$Id: template.css 22238 2011-10-15 20:51:55Z github_bot $
+ * @package		Joomla.Administrator
+ * @subpackage	templates.bluestork
+ * @copyright	Copyright (C) 2005 - 2011 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ *
+ */
+
+/* ------------------------- COLOR PALETTE FOR BLUE STORK
+
+Dark blue color: 			#146295 		RGB: 20/98/149
+Med blue color: 			#025A8D 		RGB: 2/90/141
+Light blue color: 			#70ace4 		RGB: 112/172/228
+Extra light blue color: 	#BED6FF 		RGB: 190/214/255
+Orange color: 				#FC8F30 		RGB: 252/143/48
+Light grey color:			#f7f7f7 		RGB: 247/247/247
+Medium grey color:			#d7d7d7 		RGB: 215/215/215
+Dark grey color:			#666666 		RGB: 102/102/102
+Border grey color:			#CCCCCC 		RGB: 204/204/204
+
+----------------------------------------------------------*/
+.clr {
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+input, select {
+	font-size: 0.909em;
+	border: 1px solid silver;
+	background: #fff;
+}
+
+textarea {
+	font-size: 1.273em;
+	border: 1px solid silver;
+}
+
+.invalid {
+	color: red;
+	font-weight: bold;
+}
+
+input.invalid {
+	border: 1px solid red;
+}
+
+input.disabled {
+	background-color: #F0F0F0;
+}
+
+input.button {
+	cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	background-color: #ffd;
+}
+
+.enabled,
+.success {
+	color: green;
+	font-weight: bold;
+}
+
+.disabled,
+p.error {
+	color: red;
+	font-weight: bold;
+}
+
+.protected {
+	color: #999999;
+}
+
+p.warning {
+	color: red;
+	font-weight: bold;
+	font-size: 1.091em;
+}
+
+p.nowarning {
+	color: #333;
+	font-weight: bold;
+	font-size: 1.091em;
+}
+
+.allow,
+span.writable {
+	color: green;
+}
+
+.deny,
+span.unwritable  {
+	color: red;
+}
+
+.none 			{ color: #aaa; }
+.hide 			{ display: none; }
+.hidebtn 		{ border: 0; padding: 0;margin:0;width: 0;height: 0;}
+.hidelabeltxt	{ text-indent: -9999em; }
+
+.nowrap {
+	white-space: nowrap;
+}
+
+
+form label,
+form span.faux-label {
+	font-size: 1.091em;
+}
+
+/* Required elements */
+input.required {
+	background-color: #d5eeff;
+}
+
+.star {
+	color:#EB8207;
+	font-size:1.2em;
+}
+
+table.adminform {
+	background-color: #fff;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	border-collapse: collapse;
+	margin: 8px 0 10px 0;
+	margin-bottom: 15px;
+}
+
+table.adminform tr.row0 {
+	background-color: #f9f9f9;
+}
+
+table.adminform tr.row1 {
+	background-color: #eeeeee;
+}
+
+table.adminform th {
+	font-size: 1.091em;
+	padding: 6px 2px 4px 4px;
+	text-align: left;
+	height: 25px;
+	color: #000;
+	background-repeat: repeat;
+}
+
+table.adminform td {
+	padding: 5px;
+	text-align: left;
+	font-size: 1.091em;
+}
+
+table.adminform td.filter {
+	text-align: left;
+}
+
+table.adminform td.helpMenu {
+	text-align: right;
+}
+
+table#template-mgr td {
+	padding: 15px 0;
+}
+
+table#template-mgr td p {
+	margin: 3px;
+}
+
+td.template-name a {
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+.helplinks {
+	margin-top: 60px;
+}
+
+ul.helpmenu li {
+	float: right;
+	margin: 10px;
+	padding: 0;
+	list-style-type: none;
+}
+
+input.text-area-order {
+	text-align: center;
+	margin-right: 5px;
+}
+
+fieldset.uploadform label {
+	clear: left;
+	min-width: 100px;
+}
+
+span.gi {
+	color: #d7d7d7;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+span.gtr {
+	visibility:hidden;
+	margin-right: 5px;
+}
+
+ul#legend li {
+	float: left;
+	margin: 20px;
+	list-style-type: none;
+}
+
+#jform_params_target { width: 190px;}
+
+/* -- TOOLTIP STYLES ----------------------------- */
+.tip {
+	float: left;
+	background: #ffc;
+	border: 1px solid #D4D5AA;
+	padding: 5px;
+	max-width: 400px;
+	z-index: 50;
+}
+
+.tip-title {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: -15px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	background: url(../images/selector-arrow.png) no-repeat;
+}
+
+.tip-text {
+	font-size: 1em;
+	margin: 0;
+}
+
+/* -- CALENDAR STYLES ----------------------------- */
+a img.calendar {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	background: url(../images/calendar.png) no-repeat;
+	cursor: pointer;
+	vertical-align: middle;
+}

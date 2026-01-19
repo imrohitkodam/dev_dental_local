@@ -1,0 +1,130 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/**
+ * Styleguide area.
+ */
+ @import "config";
+
+ @{EasySocial} {
+	&.view-styleguide {
+
+	h2 {
+		color: @fd-brand-primary;
+	}
+	h4 {
+			font-size: @fd-base-font-size-root;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			margin-top: 40px;
+			&:after {
+				font-family: "FontAwesome";
+				content:"\f107";
+				margin-left: @fd-base-spacing--lg;
+			}
+		}
+
+		pre {
+			margin: 0;
+			code {
+				border: 0;
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		code {
+			background-color: transparent;
+			color: inherit;
+		display: inline-block;
+		padding: @fd-base-spacing--sm;
+		margin: @fd-base-spacing 0;
+		border: 1px dotted @fd-ui-border-color;
+		border-radius: 4px;
+		}
+		
+		.es-navbar {
+			display: none;
+		}
+
+		@import "styleguide/sidebar.less";
+		@import "styleguide/products-logo.less";
+		@import "styleguide/codes.less";
+
+		.es-container {
+		// background-color: red;
+		max-width: 980px;
+		margin: 0 auto;
+		}
+
+		.es-styleguide-wrapper {
+		background: @fd-ui-bg;
+		padding: @fd-base-spacing--xl;
+		border-radius: 4px;
+		   box-shadow: 0 0 3px 0 rgba(170, 170, 170, 0.3);
+		}
+
+		// Objects
+		.o-box {
+		margin-bottom: @fd-base-spacing--xl;
+		}
+ 
+		.o-avatar-wrapper {
+		.o-grid--1of2, 
+		.o-grid--1of4 {
+			text-align: center;
+			padding: @fd-base-spacing;
+		}
+		}
+
+		.o-button-wrapper {
+		.o-grid--1of4 {
+			padding: 12px;
+		}
+		}
+
+		// Home
+		.hero-unit {
+		background-color: @fd-ui-bg;
+		> * {
+			color: @fd-ui-meta-color;
+			text-shadow: none;
+		}
+		h2 {
+			color: @grayDarker;
+			font-size: 36px;
+		}
+		}
+
+		// Preview colors pellete in styleguide 
+	.fd-brand-primary--l {background: @fd-brand-primary--l;}
+	.fd-brand-success--l {background: @fd-brand-success--l;}
+	.fd-brand-danger--l {background: @fd-brand-danger--l;}
+	.fd-brand-default--l {background: @fd-brand-default--l;}
+	.fd-brand-info--l {background: @fd-brand-info--l;}
+	.fd-brand-warning--l {background: @fd-brand-warning--l;}
+	}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

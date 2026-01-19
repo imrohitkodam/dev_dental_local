@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Column Layout">
+		<message>
+			Displays a list of documents from a category in the column format (X documents per row)
+		</message>
+	</layout>
+	<fields name="request">			
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_edocman/model/fields">
+			<field name="id" type="edocmancategory" size="3" default="0" label="Select Category" description="Choose the category which you want to display documents" />
+		</fieldset>	
+	</fields>
+</metadata>

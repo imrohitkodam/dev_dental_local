@@ -1,0 +1,52 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+
+// Search result for es-navbar popbox
+.es-search-mini-result {
+
+}
+
+.es-search-mini-result-wrap {
+	// min-height: 80px;
+	max-height: 300px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.es-search-mini-group {
+	+ .es-search-mini-group {
+		border-top: 1px solid @fd-ui-border-color--l;
+	}
+}
+
+.es-search-mini-result-list { 
+	&__item {
+		> a {
+			color: @fd-ui-meta-color;
+			.clearfix();
+			padding: @fd-base-spacing @fd-base-spacing--lg;
+			display: block;
+			&:hover {
+				background-color: @fd-ui-shade;
+			}			
+		}
+		+ .es-search-mini-result-list__item {
+
+			border-top: 1px solid @fd-ui-border-color--l;		
+		}	
+	}
+}
+
+.es-search-mini-footer {
+	border-top: 1px solid @fd-ui-border-color;
+	padding: 14px 10px;
+	background: @fd-ui-shade;
+}
+.es-search-mini-empty {
+	padding: @fd-base-spacing--lg;
+	text-align: center;
+	color: @fd-ui-text-color;
+}

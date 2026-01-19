@@ -1,0 +1,103 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+.es-mainnav { // Override g-list-inline <ol>
+	// margin-bottom: 10px;
+	> li {
+		> a {
+			color: #B4B8C1;
+			padding: 3px 12px;
+			border-radius: 10px;
+			margin-bottom: 10px;
+			display: inline-block;
+			&:hover {
+				color: @link-color;
+			}
+			.no-focus-outline();
+		}
+
+		&.is-active {
+			> a {
+				color: @link-color;
+				background: #F0F1F5;
+			}
+		}
+	}
+	.fa {
+		display: none;
+	}
+
+	li.is-home {
+		span {
+			display: none;
+
+		}
+		.fa {
+			display: inline-block;
+		}
+	}
+}
+
+
+.btn-mainnav-toggle {
+	display: none;
+	cursor: pointer;
+	margin: 0 0 10px;
+}
+
+&.is-mobile {
+	.btn-mainnav-toggle {
+		display: block;
+	}
+	.es-mainnav {
+		display: none;
+	}
+}
+
+
+&.es-dialog.is-mobile {
+	.es-mainnav {
+		display: block;
+		margin-top: @fd-base-spacing;
+		.flex-display(flex);
+		.flex-wrap(wrap);
+		
+		> li {
+			border-left: 0;
+			margin-left: 0;
+			padding-left: 0;
+			margin-bottom: @fd-base-spacing;
+			.flex(0 0 33%);
+			padding: 0 @fd-base-spacing @fd-base-spacing;
+			text-align: center;
+			.text-overflow();
+		}
+		
+		.es-navbar__footer-link {
+			padding: @fd-base-spacing--xl @fd-base-spacing !important;
+			display: block;
+			width: 100%;
+			border: 1px solid @fd-ui-border-color;
+			overflow: hidden;
+			i { 
+				display: block;
+				font-size: 20px;
+			}
+			span {
+				margin-top: @fd-base-spacing;
+				display: inline-block;
+			}
+		}
+	}
+	.is-active {
+		.es-navbar__footer-link {
+			
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

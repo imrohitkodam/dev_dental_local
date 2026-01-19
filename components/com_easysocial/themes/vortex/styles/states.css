@@ -1,0 +1,198 @@
+#es .o-loader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0px;
+  text-align: center;
+  z-index: 1000;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 1em;
+}
+#es .o-loader:before {
+  position: absolute;
+  content: '';
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 500rem;
+  border: 4px solid rgba(0,0,0,0.1);
+}
+#es .o-loader:after {
+  position: absolute;
+  content: '';
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  animation: fd-loader .55s linear;
+  animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 4px;
+  box-shadow: 0px 0px 0px 1px transparent;
+}
+#es .o-loader.o-loader--top {
+  top: 16px;
+  -webkit-transform: translateX(-50%) translateY(0%);
+  -moz-transform: translateX(-50%) translateY(0%);
+  -o-transform: translateX(-50%) translateY(0%);
+  transform: translateX(-50%) translateY(0%);
+}
+@keyframes fd-loader {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+#es .o-loader.o-loader--sm:before,
+#es .o-loader.o-loader--sm:after {
+  width: 20px;
+  height: 20px;
+  margin: 0 0 0 -10px;
+}
+#es .o-loader:before,
+#es .o-loader:after {
+  width: 36px;
+  height: 36px;
+  margin: 0 0 0 -18px;
+}
+#es .o-loader.with-text {
+  width: auto !important;
+  height: auto !important;
+  text-align: center;
+  font-style: normal;
+}
+#es.is-loading,
+#es .is-loading {
+  outline: none !important;
+}
+#es.is-loading::-moz-focus-inner,
+#es .is-loading::-moz-focus-inner {
+  border: 0 !important;
+}
+#es.is-loading .o-loader,
+#es .is-loading .o-loader {
+  display: block;
+}
+#es .o-loader.is-active,
+#es .o-loader.is-visible {
+  display: block;
+}
+#es .o-loader.is-disabled,
+#es .o-loader.is-hidden {
+  display: none;
+}
+#es .o-loader {
+  width: 36px;
+  height: 36px;
+  font-size: 13px;
+}
+#es .o-loader--sm {
+  width: 20px;
+  height: 20px;
+}
+#es .o-loader.with-text {
+  min-width: 36px;
+  padding-top: 40px;
+}
+#es .o-loader.o-loader--sm.with-text {
+  min-width: 20px;
+  padding-top: 24px;
+}
+#es .o-loader.o-loader--inline {
+  position: relative;
+  vertical-align: middle;
+  margin: 0;
+  left: 0em;
+  top: 0em;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+#es .o-loader.o-loader--inline.is-active,
+#es .o-loader.o-loader--inline.is-visible {
+  display: inline-block;
+}
+#es .o-loader.o-loader--inline.is-active.is-centered,
+#es .o-loader.o-loader--inline.is-visible.is-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#es .o-empty {
+  width: 100%;
+  min-height: 200px;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  display: none;
+}
+#es .o-empty--clean {
+  min-height: 0;
+  text-align: left;
+}
+#es .o-empty--clean .o-empty__content {
+  position: relative;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(0%,0%);
+  -moz-transform: translate(0%,0%);
+  -o-transform: translate(0%,0%);
+  transform: translate(0%,0%);
+}
+#es .o-empty--height-no {
+  min-height: 0;
+}
+#es .o-empty--bg-no {
+  background-color: transparent;
+}
+#es .o-empty--bg-shade {
+  background-color: #f0f0f0;
+}
+#es .o-empty--bordered {
+  border: 1px solid #ccc;
+}
+#es .o-empty__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+#es .o-empty__icon {
+  font-size: 40px;
+  color: #888;
+  margin-bottom: 8px;
+  width: auto;
+}
+#es .o-empty__icon--sm {
+  font-size: 28px;
+  color: #888;
+}
+#es .o-empty__action {
+  margin-top: 20px;
+}
+#es.is-mobile .o-empty--height-no {
+  min-height: 80px;
+}
+#es .is-empty .o-empty {
+  display: inline-block;
+}

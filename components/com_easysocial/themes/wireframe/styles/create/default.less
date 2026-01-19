@@ -1,0 +1,100 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+
+.es-create-category-select {
+	width: 100%;
+	.flex-display(flex);
+	.flex-wrap(wrap);
+	.justify-content(flex-start);
+
+
+	line-height: 1;
+
+	input[type="radio"] {
+		display: none;
+	}
+	.btn-wrap {
+		width: 25%;
+		
+
+		.flex(0 0 25%);
+		min-width: 0;
+		padding: 0 @fd-base-spacing @fd-base-spacing;
+		margin-bottom: @fd-base-spacing;
+		&:nth-child(4n+1) {
+			padding-left: 0;
+		}   
+		&:nth-child(4n) {
+			padding-right: 0;
+		}
+	}
+	.es-desc {
+
+	}
+	.btn {
+		// flex: 1 0 auto;
+		width: 100%;
+		text-align: center;
+		padding: 15px;
+		line-height: 24px;
+		font-size: 18px;
+		text-shadow: none;
+		min-height: 180px;
+		.text-overflow();
+		overflow: hidden;
+		background-color: @fd-ui-bg;
+		border: 1px solid @fd-ui-border-color;
+
+		height: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		span {
+
+		}
+		&:hover{
+		}
+		img{
+			color: #B4B7C2;
+			display: block;
+			margin: 20px auto 10px;
+			width: 64px;
+			height: 64px;
+		}
+		&.active {
+			background: #69A0D6;
+			color: #fff;
+			i {
+				color: #fff;
+			}
+		}
+	}
+	.es-title {
+		display: block;
+		width: 100%;
+		font-weight: bold;
+		font-size: @fd-base-font-size--xl;
+		.text-overflow();
+	}
+	.es-desc {
+		// height: 50px;
+		line-height: 16px;
+		overflow: hidden;
+		white-space: normal;
+		font-size: @fd-base-font-size--xs;
+		flex: 1 0 auto;
+	}
+}
+
+&.is-mobile {
+	.es-create-category-select {
+		.btn-wrap {
+			.flex(0 0 49%);
+
+		}
+	}
+}

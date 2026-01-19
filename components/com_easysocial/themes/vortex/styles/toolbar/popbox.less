@@ -1,0 +1,276 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+// Override .dropdown-menu
+.es-dropdown-menu-search {
+	left: auto;
+	margin-top: 1px;
+	min-width: 260px;
+	padding: @fd-base-spacing--sm @fd-base-spacing;
+	right: -@fd-base-spacing;
+	&__title {
+		font-weight: bold;
+	}
+}
+
+
+// Popbox modifier for toolbar
+&.popbox-nav-search,
+&.popbox--navbar {
+	min-width: 300px;
+	min-height: 60px;
+	overflow: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	
+}
+
+&.popbox-navbar-friends,
+&.popbox-navbar-conversations,
+&.popbox-navbar-notifications {
+	width: 380px;
+}
+
+
+
+&.popbox-navbar-profile,
+&.popbox-navbar-signin {
+	width: 260px;
+	max-height: none;
+	.popbox-dropdown {
+
+		&__hd,
+		&__bd,
+		&__ft {
+			background-color: @fd-ui-bg;
+		}
+
+		&__hd {
+			padding: @fd-base-spacing--sm @fd-base-spacing;
+			// border: 0;
+		}
+
+		&__ft {
+			padding: 0 @fd-base-spacing @fd-base-spacing @fd-base-spacing;
+		}
+	}
+	.popbox-dropdown-nav {
+		max-height: none;
+	}
+}
+
+&.popbox-navbar-conversations {
+
+	.popbox-dropdown {
+		&__bd {
+			// padding: 0;
+		}
+
+		.popbox-dropdown-nav {
+			&__item {
+				// border: 0;    
+			}
+		}
+	}
+}
+
+// Main styling for popbox as dropdown menu
+.popbox-dropdown {
+	// padding: @fd-base-spacing @fd-base-spacing--lg;
+	background-color: @fd-ui-bg;
+	&__hd,
+	&__bd,
+	&__ft {
+		.clearfix();
+	}
+
+	&__hd {
+		padding: @fd-base-spacing;
+		font-size: @fd-base-font-size;
+		border-bottom: 1px solid @fd-ui-border-color;
+	}
+
+	&__bd {
+		background: #fff;
+		// padding: @fd-base-spacing;
+		padding: 0;
+		font-size: @fd-base-font-size;
+
+		.o-empty__content {
+			width: 100%;
+		}
+	}
+	&__ft {
+		background: #fff;
+		color: @fd-ui-meta-color;
+		font-size: @fd-base-font-size--xs;
+		padding-top: @fd-base-spacing;
+	}
+	
+	&__title {
+		font-weight: bold;
+		// color: @dropdownHeaderTextColor;
+	}
+	&__meta {
+		color: @fd-ui-meta-color;
+		font-size: @fd-base-font-size--xs;
+	}
+
+	&__note { // <a>
+		.no-focus-outline();
+	}
+}
+
+// Object
+.popbox-dropdown-nav {
+	max-height: 380px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: @fd-ui-bg;
+	>:not(:first-child) {
+		// margin-top: @fd-base-spacing;
+	}
+	&__item {
+		background-color: @fd-ui-bg;
+		// border: 1px solid @fd-ui-border-color;
+		
+		font-size: @fd-base-font-size;
+		&:hover {
+			background: #f6f7f9;
+		}
+		+ .popbox-dropdown-nav__item {
+			border-top: 1px solid @fd-ui-border-color;
+		}
+	}   
+	&__link {
+		padding: @fd-base-spacing @fd-base-spacing;
+		width: 100%;
+		display: inline-block;
+		.fd-no-focus-outline();
+	}
+	&__icon {
+		width: 16px;
+		height: 16px;
+		font-size: 16px;
+		text-align: center;
+		margin: 0 @fd-base-spacing--sm;
+		color: @fd-ui-meta-color;
+		position: relative;
+		// top: @fd-base-spacing--sm;
+	}
+	&__post {
+		color: @fd-ui-text-color;
+	}
+	&__name,
+	&__post-user-name {
+		font-weight: bold;
+		color: @fd-ui-text-color;
+	}
+	&__link,
+	&__post-name,
+	&__post-user-name {
+		color: @fd-ui-text-link-color;
+	}
+	
+	&__meta-lists {
+		color: @fd-ui-meta-color;
+		a { // Applied to all link
+			color: @fd-ui-meta-color;
+			display: block;
+			&:hover {
+				color: @fd-ui-text-color;
+			}
+		}
+	}
+
+	&__image {
+		.clearfix();
+		position: relative;
+		// background-color: @popboxNoticeBackground;
+		border: 1px solid transparent;
+		display: inline-block;
+		margin-left: @fd-base-spacing;
+		outline: none;
+		padding: 1px;
+		position: relative;
+		float: right;
+		> span {
+			width: 52px;
+			height: 40px;
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			display: block;
+		}
+	}
+
+	// Override 
+	.es-user-name {
+		font-size: 14px;
+	}
+
+}
+
+// States
+.popbox-dropdown-nav__item {
+	&.is-unread {
+		background-color: @fd-ui-bg--unread;
+		// border: 1px solid @fd-brand-primary;
+		&:hover {
+			background-color: #f6f7f9;
+		}
+	}
+
+	&.is-active {
+		// background-color: @fd-ui-bg--unread;
+		border: 1px solid @fd-brand-primary;
+		&:hover {
+			background-color: @fd-ui-bg;
+		}
+	}
+}
+
+.popbox-dropdown-signin {
+	background-color: @fd-ui-bg;
+	padding: @fd-base-spacing @fd-base-spacing--lg;
+	border-bottom: 1px solid @fd-ui-border-color;
+	// border-radius: @fd-navbar-radius;
+	margin-bottom: @fd-base-spacing;
+
+	// Override
+	
+	.o-form-group {
+		margin-bottom: @fd-base-spacing;
+		label {
+			font-weight: normal;
+		}
+	}
+	.o-form-control {
+		// reset default template
+		margin-bottom: 0;
+	}
+}
+
+.popbox-dropdown__social {
+	border-top: 1px solid @fd-ui-border-color;
+	padding-top: @fd-base-spacing;
+}
+
+@media (max-width: 480px) {
+	&.popbox--navbar {
+		width: 96%;
+		left: 52% !important;
+		margin-left: -50% !important;
+		> .arrow {
+			display: none;
+		}
+	}
+	.popbox-dropdown {
+		width: 100%;
+		max-width: 100%;
+	}
+}

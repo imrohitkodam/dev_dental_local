@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Upload Document">
+		<message>
+			Display form allows users to upload documents in the front-end 
+		</message>
+	</layout>
+    <fields name="request">
+        <fieldset name="request"
+                  addfieldpath="/administrator/components/com_edocman/model/fields">
+            <field name="catid" type="edocmancategory" size="3" default="0" label="Select Category" description="Choose the category which you want to display documents" />
+        </fieldset>
+    </fields>
+</metadata>

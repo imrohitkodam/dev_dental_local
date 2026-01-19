@@ -1,0 +1,83 @@
+#es .es-profile-header__bd {
+  background: rgba(255,255,255,0.85);
+  bottom: 46px;
+  height: 112px;
+  left: 0;
+  margin: 0;
+  padding-left: 130px;
+  position: absolute;
+  width: 100%;
+}
+#es .es-profile-header__ft {
+  height: 46px;
+}
+#es .es-profile-header__avatar-wrap {
+  padding: 0;
+  left: 0;
+  bottom: 0;
+}
+#es .es-profile-header__avatar-wrap > a {
+  border: 0;
+}
+#es .es-profile-header__avatar-wrap .es-flyout-content {
+  bottom: 0;
+}
+#es .es-profile-header__action-wrap {
+  position: relative;
+  z-index: 2;
+  top: 12px;
+}
+#es .es-profile-header--mini .es-profile-header__bd {
+  margin: 0;
+  padding-left: 90px;
+  height: 80px;
+  overflow: hidden;
+}
+#es .es-profile-header--mini .es-profile-header__fd {
+  height: auto;
+}
+#es .es-profile-header--mini .es-profile-header__avatar-wrap {
+  bottom: 0;
+}
+#es .es-profile-header--mini .es-profile-header__avatar-wrap > a {
+  width: 80px;
+  height: 80px;
+}
+#es .es-profile-header--mini .es-profile-header__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#es .es-profile-header--mini .es-teaser-about {
+  display: none;
+}
+#es .without-cover .es-profile-header__avatar-wrap {
+  top: 0;
+}
+#es .without-cover .es-profile-header__avatar-wrap > a {
+  width: 112px;
+  height: 112px;
+}
+#es .without-cover + .es-profile-header__bd {
+  margin-left: 0;
+  position: relative;
+  bottom: 0;
+}
+#es.is-mobile .es-profile-header__hd.without-cover {
+  height: 100px;
+}
+#es.is-mobile .es-profile-header__bd {
+  bottom: 0;
+  height: 100%;
+  padding: 16px 0 8px;
+  position: relative;
+}
+#es.is-mobile .es-profile-header__avatar-wrap {
+  left: 50%;
+}
+#es.is-mobile .es-profile-header__action-wrap {
+  top: auto;
+}
+#es.is-mobile .es-profile-header--mini .es-profile-header__bd {
+  margin-left: 0;
+}

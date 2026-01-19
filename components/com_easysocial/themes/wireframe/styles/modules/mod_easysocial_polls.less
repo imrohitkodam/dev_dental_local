@@ -1,0 +1,24 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Modules: mod_easysocial_polls
+\*------------------------------------*/
+
+.mod-es-polls {
+
+	// Override es-polls object
+	.es-polls {
+		+ .es-polls {
+			border-top: 1px solid @fd-ui-border-color; 
+		}
+	}
+	.es-polls__item {
+		+ .es-polls__item {
+			margin-top: @fd-base-spacing;
+		}
+	}
+}

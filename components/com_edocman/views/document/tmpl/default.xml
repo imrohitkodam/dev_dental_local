@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Document Details">
+		<message>
+			Display detail information about the document
+		</message>
+	</layout>
+	<fields name="request">			
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_edocman/model/fields">
+			<field name="id" type="edocmandocument" size="3" default="0" label="Select Document" description="Select document which you want to link to" />
+		</fieldset>	
+	</fields>
+</metadata>

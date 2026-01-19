@@ -1,0 +1,568 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*
+Main structure to control profile header
+
+.es-profile-header
+	.es-profile-header__hd (with-cover, without-cover)
+		.es-profile-header__cover
+		.es-profile-header__avatar
+	.es-profile-header__bd
+	.es-profile-header__ft
+
+Styleguide: /index.php?option=com_easysocial&view=styleguide&layout=render&file=header
+*/
+
+
+// Layout
+// ----------------
+
+.es-profile {
+	margin-top: @fd-base-spacing--lg;
+}
+
+.es-profile-header {
+	border: 1px solid @fd-ui-border-color;
+	position: relative;
+	&__hd,
+	&__bd,
+	&__ft {
+		position: relative;
+		.clearfix();
+		font-size: @fd-base-font-size;
+	}
+	&__hd {
+		
+	}
+	&__bd {
+		margin-left: 132px; // avatar spaces
+		padding: @fd-base-spacing--lg @fd-base-spacing--lg;
+		min-height: 40px;
+
+		.es-rating { // Override rating styles
+			display: inline-block;
+		}
+	}
+	&__ft {
+		border-top: 1px solid @fd-ui-border-color;
+		// margin-top: 10px;
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+		// overflow: hidden; // dropdown menu will be clipped
+
+		b {
+			color: @fd-ui-text-color;
+		}
+	}
+
+
+	// elements 
+	&__avatar-wrap {
+		background: rgba(0,0,0,0.1);
+		padding: 1px;
+
+		position: absolute;
+		bottom: -56px; // half of avatar size
+		left: @fd-base-spacing--lg;
+		z-index: 2;
+
+		&.show-all {
+			z-index: 3;
+		}
+
+		> a {
+			border: 4px solid @fd-ui-bg;
+			display: block;
+			width: 112px;
+			height: 112px;
+
+			img {
+				width: 100% !important;
+				height: auto !important;
+				background-color: @fd-ui-bg;
+			}
+		}
+		.es-flyout-content {
+			bottom: @fd-base-spacing--sm;
+			width: 100%;
+			.es-avatar-menu {
+
+				padding: 0 @fd-base-spacing--sm;
+				width: 100%;
+				text-align: center;
+			}
+			.es-flyout-button {
+				background: rgba(0,0,0,.6);
+				display: block;
+				color: #fff;
+				padding: @fd-base-spacing 0;
+			}
+		}
+	}
+	
+	&__label-wrap {
+		position: absolute;
+		right: @fd-base-spacing--lg;
+		bottom: @fd-base-spacing--lg;
+		.o-label {
+			font-size: @fd-base-font-size;
+		}
+	}    
+
+	&__action-wrap {
+		// float: right;
+		.btn-toolbar {
+			margin: 0; // Reset to prevent conflict
+		}
+	}
+
+	&__title {
+		font-size: 20px;
+		margin: 0;
+		color: @fd-ui-text-color;
+		word-break: break-all;
+		> a {
+			color: @fd-ui-text-color;
+		}
+	}
+	
+	&__badges {
+		margin-top: @fd-base-spacing--sm;
+		> a,
+		img {
+			display: inline-block;
+			width: 20px;
+			max-width: 20px;
+			height: 20px;
+			max-height: 20px;
+
+		}
+	}
+	// Modifier to display on stream item
+	&--mini {
+		.es-profile-header__avatar-wrap {
+			bottom: -30px;
+		}
+		.es-profile-header__avatar-wrap > a {
+			width: 60px;
+			height: 60px;
+		}
+		.es-profile-header__cover {
+			max-height: 140px;
+			overflow: hidden;
+		}
+		.es-profile-header__bd {
+			margin-left: 80px;
+		}
+		.es-profile-header__bd {
+			padding: @fd-base-spacing;
+		}
+		
+		.es-profile-header__title {
+			font-size: @fd-base-font-size--xl;
+			font-weight: bold;
+		}
+
+	}
+
+
+	// Reset BS3
+	.btn-toolbar > .btn, 
+	.btn-toolbar > .btn-group:first-child {
+		margin-left: 0;
+	}
+}
+
+
+
+
+
+
+// Profile header cover block
+// ----------------
+.es-profile-header__cover {
+	background-size: cover;
+	background-position: 50% 50%;
+	background-color: @fd-ui-bg;
+
+	max-height: 200px;
+
+	&[data-es-photo] { // if popup photo exists
+		cursor: pointer;
+	}
+	.transition(all .5s ease);
+
+  
+
+	.es-cover-image {
+		width: 100%;
+		height: 100%;
+		background-color: #ccc;
+		background-size: cover;
+		background-position: 50% 50%;
+		cursor: move;
+		display: none;
+	}
+
+	.es-cover-hint {
+
+		// Vertically center the hint
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: 2;
+
+		// Horizontally center fluid child content
+		text-align: center;
+		width: 30%; // If width: 100% unable to drag on the area #3730
+		margin-left: 35%;
+
+		// This is hidden except when parent is
+		// paired with .editing or .loading classnames.
+		opacity: 0;
+		.transition(opacity .2s ease);
+
+		// Hint content
+		> span {
+			background-color: rgba(255, 255, 255, 0.8);
+			margin-top: -15px;
+			padding: 5px 15px;
+			border-radius: 10px;
+			font-weight: bold;
+			display: none; /* Reversed should be inline-block */
+		}
+	}
+
+	.es-cover-loading-overlay {
+		background: rgba(0,0,0,0.5);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: none;
+		z-index: 1;
+	}
+
+	.es-flyout-content { // top dark area
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 3;
+		background: rgba(0,0,0,.6);
+		padding: @fd-base-spacing;
+		cursor: default;
+		.es-cover-menu { // @extend dropdown_
+			text-align: right;
+		}
+		.es-flyout-button { // @extend dropdown-toogle_
+			color: #fff;
+			&:hover {
+				background-color: transparent;
+				text-decoration: none;
+			}
+		}
+		.es-cover-dropdown-menu { // @extend dropdown-menu
+			right: 0;
+			left: auto;
+		}
+	}
+
+	.es-cover-done-button,
+	.es-cover-cancel-button {
+		display: none;
+	}
+	.es-cover-done-button {
+		float: right;
+	}
+	.es-cover-cancel-button {
+		float: left;
+	}
+	.es-cover-hint-text {
+		color: #333;
+	}
+	// !important is used because .loading preceeds .editing
+	// when both classnames are used together.
+	&.is-loading {
+
+		.es-cover-hint {
+			opacity: 1;
+
+			// Hint content
+			> span {
+				display: inline-block;
+
+				// Drag hint text
+				.es-cover-hint-text {
+					display: none !important;
+				}
+			}
+		}
+
+		.es-cover-loading-overlay {
+			display: block;
+		}
+	}
+
+	&.editing {
+
+		.es-cover-hint {
+			opacity: 1;
+
+			// Hint content
+			> span {
+				display: inline-block;
+
+				// Drag hint text
+				.es-cover-hint-text {
+					display: inline-block;
+				}
+			}
+		}
+
+		// When user holds down to drag, the cover hint fades out
+		&.active {
+			.es-cover-hint {
+				opacity: 0;
+			}
+
+			.es-flyout-content {
+				opacity: 0;
+			}
+		}
+
+		.es-flyout-content {
+			opacity: 1;
+		}
+
+		.es-cover-viewport {
+			display: block;
+		}
+
+		.es-cover-menu {
+			display: none;
+		}
+
+		.es-cover-image {
+			display: block;
+		}
+
+		.es-cover-done-button,
+		.es-cover-cancel-button {
+			display: inline-block;
+		}
+	}
+
+
+	&.no-cover {
+
+		.es-cover-menu {
+			.divider.for-cover-remove-button {
+				display: none;
+			}
+
+			li[data-cover-remove-button] {
+				display: none;
+			}
+
+			li[data-cover-edit-button] {
+				display: none;
+			}
+		}
+	}
+}
+
+// Upload dialog form
+.es-cover-form {
+
+	.es-cover-file {
+		width: 100%;
+	}
+
+	.es-cover-filename {
+		display: none;
+		line-height: 16px;
+	}
+
+	&.loading {
+		.es-cover-file {
+			display: none;
+		}
+		.es-cover-filename {
+			display: block;
+		}
+	}
+}
+
+.es-avatar-form {
+
+	.es-avatar-file {
+		width: 100%;
+	}
+
+	.es-avatar-filename {
+		display: none;
+		line-height: 16px;
+	}
+
+	&.loading {
+		.es-avatar-file {
+			display: none;
+		}
+		.es-avatar-filename {
+			display: block;
+		}
+	}
+}
+
+
+// Without cover
+// ----------------
+.without-cover {
+	.es-profile-header__avatar-wrap {
+		bottom: auto;
+		// position: relative;
+		top: @fd-base-spacing--sm;
+		> a {
+			width: 88px;
+			height: 88px;
+		}
+	}
+
+	+ .es-profile-header__bd {
+		margin-left: 116px;
+	}
+}
+&.is-mobile {
+	.es-profile-header__hd.without-cover {
+		height: 80px;
+	}
+}
+
+// Reponsive for profile-header
+&.is-mobile {
+	.es-profile-header {
+		
+		&__bd {
+			text-align: center;
+			margin: 0;
+			padding-top: @fd-base-spacing--lg;
+			// z-index: 2; // Make body text content on top of cover
+		}
+		&__ft {
+			display: block;
+			padding: 0 @fd-base-spacing--lg;
+			.es-nav-pills { // Override for responsvie
+				// display: none;
+				white-space: nowrap;
+			}
+			.swiper-container {
+				// border-bottom: 1px solid @fd-ui-border-color;
+				margin: 0 -@fd-base-spacing--lg;
+				overflow: hidden;
+				position: relative;
+				&:before,
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 16px;
+					height: 100%;
+					z-index: 1;
+					top: 0;
+				}
+				&:before {
+					left: 0;
+					#gradient > .horizontal(@start-color: rgba(255,255,255,.9); @end-color: rgba(255,255,255,.0001));
+				}
+				&:after {
+					right: 0;
+					#gradient > .horizontal(@start-color: rgba(255,255,255,.0001); @end-color: rgba(255,255,255,.9));
+				}
+				.o-nav__item {
+					// margin-bottom: @fd-base-spacing--sm;
+					padding: @fd-base-spacing 0;
+					+ .o-nav__item {
+						.o-nav__link {
+							border-left: 1px solid @fd-ui-border-color;
+						}
+					}
+				}
+				.o-nav__link {
+					padding: @fd-base-spacing--sm @fd-base-spacing;
+					border-radius: 0;
+					background-color: transparent;
+
+				}
+			}
+
+		}
+
+		&__profile-info {
+			border-top: 1px solid @fd-ui-border-color;
+			padding: @fd-base-spacing @fd-base-spacing--lg;
+		}
+
+
+		// elements 
+		&__avatar-wrap {
+			bottom: -12px; 
+			left: 50%;
+			margin-left: -40px;
+
+			> a {
+				// border: 4px solid @fd-ui-bg;
+				// display: block;
+				width: 80px;
+				height: 80px;
+
+				img {
+					// width: 100% !important;
+					// height: auto !important;
+				}
+			}
+		}
+
+		&__action-wrap {
+			.btn-toolbar {
+				.btn-group {
+					float: none;    
+				}
+				margin-top: @fd-base-spacing--lg;
+			}
+			.btn-group--viewer {
+				width: 100%;
+				.flex-display(flex);
+				.justify-content(center);
+				margin-bottom: @fd-base-spacing--lg;
+				.btn-group {
+					
+				}
+			}
+		}
+		
+		&__title {
+			> a {
+			}
+		}
+	}
+	
+
+	// Operation hour
+	.es-profile-header__label-wrap {
+		position: relative;
+		right: 0;
+		bottom: 0;
+		margin: @fd-base-spacing--lg 0;
+	}
+}
+
+
+.btn-group--es-friends {
+	.dropdown-toggle_ {
+		height: 100%;
+	}
+}

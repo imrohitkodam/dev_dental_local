@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="limit" type="text" label="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_LIMIT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_LIMIT_DESC" default="5"/>
+                <field name="max" type="text" label="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_MAX_LABEL" description="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_MAX_DESC" default="20"/>
+                <field name="period" type="list" label="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_PERIOD_LABEL" description="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_PERIOD_DESC" default="week">
+                    <option value="day">COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_PERIOD_OPTION_DAY_LABEL</option>
+                    <option value="week">COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_PERIOD_OPTION_WEEK_LABEL</option>
+                    <option value="month">COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_PERIOD_OPTION_MONTH_LABEL</option>
+                </field>
+                <field name="verb" type="list" label="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_VERB_LABEL" description="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_VERB_DESC" default="0">
+                    <option value="0">COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_VERB_OPTION_LIKE</option>
+                    <option value="1">COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_VERB_OPTION_THIS_IS_INTERESTING</option>
+                </field>
+                <field name="sort" type="list" label="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_SORT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_SORT_DESC" default="friend_likes">
+                    <option value="friend_likes">friend_likes</option>
+                    <option value="likes">likes</option>
+                </field>
+                <field name="target" type="list" label="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_TARGET_LABEL" description="COM_JFBCONNECT_WIDGET_VK_RECOMMENDATIONS_TARGET_DESC" default="parent">
+                    <option value="blank">blank</option>
+                    <option value="top">top</option>
+                    <option value="parent">parent</option>
+                </field>
+            </fieldset>
+        </fields>
+    </fields>
+</form>

@@ -1,0 +1,590 @@
+#es .es-convo {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  width: 100%;
+  font-size: 13px;
+  border: 1px solid #ccc;
+}
+#es .es-convo__sidebar,
+#es .es-convo__content {
+  vertical-align: top;
+  position: relative;
+}
+#es .es-convo__search-input-wrap {
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+#es .es-convo__search-input-wrap input[type="text"] {
+  border: none;
+  box-shadow: none;
+  padding-right: 24px;
+}
+#es .es-convo__search-input-wrap:before {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  content: "\f002";
+  text-align: center;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  color: #888;
+  display: inline-block;
+  text-decoration: inherit;
+}
+#es .es-convo__sidebar {
+  width: 280px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 280px;
+  -ms-flex: 0 0 280px;
+  flex: 0 0 280px;
+  border-right: 1px solid #ccc;
+}
+#es .es-convo__sidebar-hd {
+  border-bottom: 1px solid #ccc;
+  height: 40px;
+}
+#es .es-convo__sidebar-hd:before,
+#es .es-convo__sidebar-hd:after {
+  content: " ";
+  display: table;
+}
+#es .es-convo__sidebar-hd:after {
+  clear: both;
+}
+#es .es-convo__sidebar-scroll-area {
+  position: absolute;
+  top: 75px;
+  bottom: 0;
+}
+#es .es-convo__sidebar-item {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 20px 8px;
+  cursor: pointer;
+}
+#es .es-convo__sidebar-item:hover {
+  background-color: #f0f0f0;
+}
+#es .es-convo__sidebar-item:hover .es-convo__sidebar-action {
+  display: block;
+}
+#es .es-convo__sidebar-item.is-dropdown {
+  z-index: 3;
+}
+#es .es-convo__sidebar-action {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  z-index: 2;
+  display: none;
+}
+#es .es-convo__sidebar-action > a {
+  color: #333;
+}
+#es .es-convo__sidebar-pagination {
+  margin-top: 40px;
+  padding: 8px;
+  padding-bottom: 80px;
+}
+#es .es-convo__content {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+#es .es-convo__content-hd {
+  padding: 8px 20px 8px 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+  height: 40px;
+}
+#es .es-convo__content-hd:before,
+#es .es-convo__content-hd:after {
+  content: " ";
+  display: table;
+}
+#es .es-convo__content-hd:after {
+  clear: both;
+}
+#es .es-convo__content-hd-title {
+  float: left;
+}
+#es .es-convo__content-hd-title-input {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 6px;
+  display: none;
+}
+#es .es-convo__content-hd.is-editing .es-convo__content-hd-title,
+#es .es-convo__content-hd.is-editing .es-convo__content-action {
+  display: none;
+}
+#es .es-convo__content-hd.is-editing .es-convo__content-hd-title-input {
+  display: inline-block;
+}
+#es .es-convo__content-scroll-area {
+  position: relative;
+  height: 540px;
+}
+#es .es-convo__content-action {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+#es .es-convo__content.has-active .conversation-actions {
+  display: inline-block;
+}
+#es .es-convo__content.has-active .reply-button {
+  display: inline-block;
+}
+#es .es-convo__content .reply-button {
+  display: none;
+}
+#es .es-convo__content .conversation-actions {
+  display: none;
+}
+#es .es-convo__attached-item {
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 8px;
+  float: left;
+  clear: both;
+  max-width: 250px;
+}
+#es .es-convo__attached-item > img {
+  max-height: 200px;
+}
+#es .es-convo__attached-link {
+  display: block;
+  margin: 8px 0;
+  color: #428bca;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#es .es-convo__attached-name {
+  white-space: pre-line;
+}
+#es .es-convo__attached-size {
+  display: block;
+  color: #888;
+}
+#es .es-convo-sidebar-toggle {
+  display: none;
+}
+#es .btn-mobile-new-convo {
+  margin-bottom: 16px;
+}
+#es.is-mobile .es-convo {
+  position: relative;
+  overflow: hidden;
+}
+#es.is-mobile .es-convo__sidebar {
+  border-right: none;
+  display: block;
+  border-radius: 3px;
+  margin: 0;
+  width: 100%;
+  left: -100%;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  transition: all .2s linear;
+}
+#es.is-mobile .es-convo__sidebar-item {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 20px 8px;
+}
+#es.is-mobile .es-convo__sidebar-item .es-convo__sidebar-action {
+  display: block;
+}
+#es.is-mobile .es-convo__sidebar-item:hover {
+  background-color: #f0f0f0;
+}
+#es.is-mobile .es-convo__attached-item {
+  max-width: 180px;
+}
+#es.is-mobile .es-convo__content {
+  clear: both;
+  display: block;
+  position: relative;
+  min-height: 300px;
+  left: 0;
+  padding: 0 0 8px;
+  transition: all .2s linear;
+}
+#es.is-mobile .es-convo__content:before,
+#es.is-mobile .es-convo__content:after {
+  content: " ";
+  display: table;
+}
+#es.is-mobile .es-convo__content:after {
+  clear: both;
+}
+#es.is-mobile .es-convo__content-scroll-area {
+  height: auto;
+  max-height: 400px;
+}
+#es.is-mobile .es-convo__content .conversation-actions {
+  margin-top: 16px;
+  display: block;
+}
+#es.is-mobile .es-convo__content-hd {
+  height: auto;
+}
+#es.is-mobile .es-convo__content-hd-title {
+  float: none;
+  margin-top: 32px;
+}
+#es.is-mobile .es-convo__content-action {
+  margin: 0;
+  float: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+}
+#es.is-mobile .es-convo__content .btn-convo-back,
+#es.is-mobile .es-convo__content .btn-convo-dropdown {
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 6px 12px;
+  height: 100%;
+  line-height: 20px;
+}
+#es.is-mobile .es-convo__content .btn-convo-back {
+  border-right: 1px solid #ccc;
+}
+#es.is-mobile .es-convo__content .btn-convo-dropdown {
+  border-left: 1px solid #ccc;
+}
+#es.is-mobile .sidebar-open .es-convo__sidebar {
+  left: 0;
+  transition: all .2s linear;
+}
+#es.is-mobile .sidebar-open .es-convo__content {
+  left: 100%;
+  transition: all .2s linear;
+}
+#es .es-convo-sidebar-tab {
+  text-align: center;
+}
+#es .es-convo-sidebar-tab > li > a {
+  font-size: 13px;
+  color: #333;
+  padding: 8px 8px;
+  height: 39px;
+}
+#es .es-convo-sidebar-tab > li > a:hover {
+  color: #2e2e2e;
+  background-color: #f0f0f0;
+}
+#es .es-convo-sidebar-tab > li.active > a {
+  color: #428bca;
+  background-color: #f0f0f0;
+}
+#es .es-convo-sidebar-tab >:not(:first-child) {
+  border-left: 1px solid #ccc;
+}
+#es .es-convo-list {
+  margin: 0;
+  padding: 0 0 80px;
+  list-style: none;
+  position: relative;
+}
+#es .es-convo-list.is-loading .es-convo-list-items {
+  display: none;
+}
+#es .es-convo-list .o-empty {
+  margin-top: 150px;
+  background: none;
+  border: 0;
+}
+#es .es-convo-list .o-empty .o-empty__text {
+  color: #666;
+}
+#es.is-mobile .es-convo-list .o-empty {
+  margin-top: 20px;
+}
+#es .es-convo-text {
+  font-size: 13px;
+  color: #333;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+#es .es-convo-attachments {
+  font-size: 13px;
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 8px;
+}
+#es .es-convo-meta {
+  font-size: 12px;
+  color: #888;
+}
+#es .es-convo__sidebar-scroll-area,
+#es .es-convo__content-scroll-area {
+  overflow-y: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+#es .es-convo__sidebar-item {
+  color: #428bca;
+}
+#es .es-convo__sidebar-item.is-unread {
+  background-color: #E9F2F9;
+}
+#es .es-convo__sidebar-item.is-active {
+  background-color: #f0f0f0;
+}
+#es .es-convo__sidebar-item + .es-convo__sidebar-item {
+  border-top: 1px solid #ccc;
+}
+#es .es-convo__sidebar-item .o-avatar {
+  width: 24px;
+  height: 24px;
+}
+#es .es-convo__sidebar-item .es-convo-text {
+  color: #666;
+}
+#es .es-convo-messages {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#es .es-convo-messages .o-loading {
+  margin-top: 200px;
+}
+#es .es-convo-messages .o-loading i {
+  font-size: 48px;
+  color: #666;
+}
+#es .es-convo-messages .is-loading .message-list,
+#es .es-convo-messages .is-empty .message-list {
+  display: none;
+}
+#es .es-convo-messages .message-list {
+  display: block;
+}
+#es .es-convo-messages .o-empty {
+  background: none;
+  margin-top: 100px;
+}
+#es .es-convo-messages__item {
+  position: relative;
+}
+#es .es-convo-messages__item .es-user-name {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#es .es-convo-messages__item-content {
+  padding-right: 60px;
+}
+#es .es-convo-messages__time {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 13px;
+}
+#es .es-convo-messages__date {
+  color: #888;
+}
+#es .es-convo-messages__item + .es-convo-messages__item {
+  margin-top: 20px;
+}
+#es .es-convo-reply {
+  position: relative;
+  width: 100%;
+}
+#es .es-convo-composer {
+  display: table;
+  table-layout: fixed;
+  border-top: 1px solid #ccc;
+  padding-bottom: 16px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+#es .es-convo-composer:before,
+#es .es-convo-composer:after {
+  content: " ";
+  display: table;
+}
+#es .es-convo-composer:after {
+  clear: both;
+}
+#es .es-convo-composer__hd {
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+#es .es-convo-composer__textarea {
+  min-height: 80px;
+}
+#es .es-convo-composer__bd {
+  padding: 8px 16px;
+}
+#es .es-convo-composer__ft {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+#es .es-convo-composer__action {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+}
+#es .es-convo-composer__action-tab {
+  padding: 0 16px;
+}
+#es .es-convo-composer__action-tab a {
+  color: #888;
+  display: inline-block;
+  padding: 8px 4px;
+  margin-right: 8px;
+}
+#es .es-convo-composer__action-tab a i {
+  font-size: 16px;
+}
+#es .es-convo-composer__action-tab a:hover {
+  color: #333;
+}
+#es .es-convo-composer__attachment {
+  background-color: #f0f0f0;
+  padding: 8px;
+}
+#es .es-convo-composer__attachment-item {
+  position: relative;
+  margin-bottom: 4px;
+}
+#es .es-convo-composer__attachment-note {
+  font-weight: bold;
+}
+#es .es-convo-composer__close,
+#es .es-convo-composer__attachment-remove {
+  border-radius: 100%;
+  position: relative;
+  left: 0;
+  top: -3px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 10px;
+  color: #888;
+  text-align: center;
+  z-index: 10;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: text-top;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#es .es-convo-composer__close:before,
+#es .es-convo-composer__close:after,
+#es .es-convo-composer__attachment-remove:before,
+#es .es-convo-composer__attachment-remove:after {
+  background: #888;
+  border-radius: 2px;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#es .es-convo-composer__close:before,
+#es .es-convo-composer__attachment-remove:before {
+  width: 10px;
+  height: 2px;
+  margin: -1px 0 0 -5px;
+}
+#es .es-convo-composer__close:after,
+#es .es-convo-composer__attachment-remove:after {
+  height: 10px;
+  width: 2px;
+  margin: -5px 0 0 -1px;
+}
+#es .es-convo-composer .es-location-form {
+  border: 1px solid #ccc;
+}
+#es.is-mobile .es-convo-composer__bd {
+  padding: 0;
+}
+#es.is-mobile .es-convo-composer__editor {
+  padding: 8px 8px 0;
+}
+#es.is-mobile .es-convo-composer__location {
+  margin-bottom: 8px;
+}
+#es.is-mobile .es-convo-composer .es-location-form {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+#es .es-convo-selectize-dummy {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  height: 200px;
+  display: none;
+}
+#es .has-dropdown .es-convo-selectize-dummy {
+  display: block;
+}
+#es .es-messaging .selectize-control {
+  z-index: 3;
+}
+#es .es-messaging .form-group {
+  position: relative;
+}
+#es .es-convo-markitup {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+#es .es-convo-dialog {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+#es .es-single-composer-textarea {
+  border: 1px solid #ccc;
+  padding: 8px;
+}

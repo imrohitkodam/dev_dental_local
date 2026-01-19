@@ -1,0 +1,197 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Module: Default
+\*------------------------------------*/
+
+// Elements
+// Common elements for modules
+.mod-es-title {
+	font-weight: bold;
+}
+.mod-es-meta {
+	color: @fd-ui-meta-color;
+}
+
+.mod-es-list {
+	&--vertical {
+
+	}
+	&--horizontal {
+		
+	}
+}
+
+.mod-es-action {
+	margin-top: @fd-base-spacing;
+}
+
+
+// mod-es modifier
+&.mod-es--border {
+	border: 1px solid @fd-ui-border-color;
+}
+
+// Blocks 
+// Card layout for events/groups/pages
+.mod-card {
+	border: 1px solid @fd-ui-border-color;
+	+ .mod-card {
+		margin-top: @fd-base-spacing--lg;
+	}
+	&--border {
+		border-top: 1px solid @fd-ui-border-color;
+	}
+
+	&__ft {
+		.clearfix();
+		position: relative;
+	}
+	&__ft {
+		padding: @fd-base-spacing @fd-base-spacing--lg; 
+
+		// Override to make it vertical align well with .btn
+		.g-list-inline {
+			> li {
+				line-height: 28px;
+			}
+		}
+	}
+	&__cover-wrap {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		padding-top: 23%;
+	}
+	&__cover-wrap--16-9 {
+		padding-top: 56%;
+	}
+	&__cover {
+		background-size: cover;
+		border: 0 none;
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	&__avatar-holder {
+		position: absolute;
+		left: @fd-base-spacing--lg;
+		top: -20px;
+
+	}
+	&__avatar {
+		position: absolute;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border-radius: @fd-ui-radius;
+		background-color: @fd-ui-bg;
+		padding: 2px; 
+		border: 2px solid rgba(0, 0, 0, .065);
+		-webkit-background-clip: padding-box; /* for Safari */
+		background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+	}
+
+	&__title {
+		font-size: @fd-base-font-size--xl;
+		font-weight: bold;
+		margin-bottom: @fd-base-spacing;
+		line-height: 1;
+	}
+	&__meta {
+		color: @fd-ui-meta-color;
+		a {
+		   color: @fd-ui-meta-color; 
+		}
+	}
+
+	&__calendar-date {
+		left: @fd-base-spacing--lg;
+		width: 40px;
+		height: 40px;
+		border-radius: @fd-ui-radius;
+		background-color: #fff;
+		color: #333;
+
+		border: 1px solid @fd-ui-border-color;
+		border-radius: @fd-ui-radius--sm;
+		padding: @fd-base-spacing;
+		text-align: center;
+	}
+	&__calendar-day {
+		font-weight: bold;
+		font-size: @fd-base-font-size;
+		line-height: @fd-base-font-size;
+	}
+	&__calendar-mth {
+		color: @fd-brand-danger;
+		font-size: @fd-base-font-size;
+		line-height: @fd-base-font-size;
+	}
+
+	&__context {
+		position: relative;
+		padding: (@fd-base-spacing--xl+@fd-base-spacing--sm) @fd-base-spacing--lg @fd-base-spacing ;
+	}
+
+	&__state {
+		position: absolute;
+		
+		right: @fd-base-spacing--lg;
+		top: -30px;
+		
+		display: none; // hide by default
+	}
+
+	&.is-passed {
+		.mod-card__state {
+			display: block;
+			
+		}
+	}
+
+}
+
+// Override story body for quickpost
+&.mod-es-quickpost {
+	.es-story-body {
+		border-radius: @fd-ui-radius @fd-ui-radius 0 0;
+	}
+}
+
+// Override mod-es-menu-bar for notification module
+&.mod-es-notification {
+	.mod-es-menu-bar {
+		border: none;
+	}
+}
+
+.mod-es-dating-search-form {
+	padding: @fd-base-spacing @fd-base-spacing--lg;
+	border: 1px solid @fd-ui-border-color;
+}
+.mod-search-distance {
+	position: relative;
+	.es-location-autocomplete {
+		margin-top: 0;
+	}
+}
+
+.mod-es-passed-event {
+
+}
+
+&.mod-es-stream {
+	.es-stream-list {
+		min-height: 0; // #204 Reset min height for module
+	}
+}

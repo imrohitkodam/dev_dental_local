@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="url" type="text" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_URL_OR_ID_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_URL_OR_ID_DESCRIPTION"/>
+                <field name="maxwidth" default="550" type="text" label="COM_JFBCONNECT_WIDGET_OEMBED_WIDTH_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_MAX_WIDTH_DESCRIPTION" />
+                <field name="hide_media" type="list" default="false" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_HIDE_MEDIA_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_HIDE_MEDIA_DESCRIPTION" >
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+                <field name="hide_thread" type="list" default="false" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_HIDE_THREAD_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_HIDE_THREAD_DESCRIPTION" >
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+                <field name="align" type="list" default="none" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_ALIGN_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_ALIGN_DESCRIPTION" >
+                    <option value="left">COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_ALIGN_OPTION_LEFT</option>
+                    <option value="right">COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_ALIGN_OPTION_RIGHT</option>
+                    <option value="center">COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_ALIGN_OPTION_CENTER</option>
+                    <option value="none">COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_ALIGN_OPTION_NONE</option>
+                </field>
+                <field name="related" type="text" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_RELATED_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_RELATED_DESCRIPTION" default=""/>
+                <field name="theme" type="list" default="light" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_THEME_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_THEME_DESCRIPTION">
+                    <option value="light">COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_THEME_OPTION_LIGHT</option>
+                    <option value="dark">COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_THEME_OPTION_DARK</option>
+                </field>
+                <field name="link_color" type="text" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_LINK_COLOR_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_LINK_COLOR_DESCRIPTION" default=""/>
+                <field name="widget_type" type="text" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_WIDGET_TYPE_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_WIDGET_TYPE_DESCRIPTION" default=""/>
+                <field name="dnt" type="radio" label="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_DNT_LABEL" description="COM_JFBCONNECT_WIDGET_TWITTER_OEMBED_DNT_DESCRIPTION" default="false">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+        </fields>
+    </fields>
+</form>

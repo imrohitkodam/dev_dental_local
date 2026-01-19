@@ -1,0 +1,78 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$Layout - layout.less
+\*------------------------------------*/
+
+.es-profile-edit-form {
+	// background-color: @fd-ui-shade;
+	padding: @fd-base-spacing--lg;
+
+	// Override o-onoffswitch make it center on edit profile/notification page
+	.o-onoffswitch {
+		margin: @fd-base-spacing auto 0;
+	}
+}
+
+&.layout-edit{
+
+	.es-sidebar{
+		// width: 190px;
+	}
+	.edit-form {
+		// margin: 0 20px;
+		min-height : 450px;
+		// font-size: @baseFontSize; // #3537
+		label {
+			// font-size: @baseFontSize;
+		}
+		.yesno-list {
+			> li {
+				div.pull-left{
+					max-width: 320px;
+				}
+			}
+		}
+	}
+
+
+
+	.step-content{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+
+	// Shouldn't enforce this
+	// .step-content:first-child{
+	//  display: block;
+	// }
+
+	//avatar
+	.avatar-preview {
+		display: block;
+		width: 128px;
+		height: 128px;
+		position: relative;
+		background: #f5f5f5;
+		border-radius: 3px;
+		img {
+			position: absolute;
+		}
+		.loading-indicator {
+			position: absolute;
+			left: 50%;
+			margin-left: -25px;
+			top: 20%;
+		}
+	}
+
+	
+}
+
+

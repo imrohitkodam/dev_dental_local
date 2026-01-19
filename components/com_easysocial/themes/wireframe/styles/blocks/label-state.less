@@ -1,0 +1,33 @@
+//  Label for cards item
+
+
+.es-label-state {
+    width: 40px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    text-align: center;
+    &__icon {
+        line-height: 36px;
+        &:before {
+            font-family: FontAwesome;
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            text-decoration: inherit;
+            content: "\f02e";
+            font-size: 16px;
+        }
+    }
+    &--featured {
+        background-color: @fd-brand-success--l;
+        color: @fd-brand-success;
+    }
+    &--passed {
+        background-color: @fd-brand-danger--l;
+        color: @fd-brand-danger;
+        .es-label-state__icon:before {
+            content:"\f017";
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+.es-app-item {
+	border: 1px solid @fd-ui-border-color;
+
+	&__hd,
+	&__bd,
+	&__ft {
+		.clearfix();
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+		font-size: @fd-base-font-size;
+	}
+	&__ft {
+		border-top: 1px solid @fd-ui-border-color;
+	}
+
+	+ .es-app-item {
+		margin-top: @fd-base-spacing--lg;
+	}
+}

@@ -1,0 +1,736 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$Comment - comment.less
+\*------------------------------------*/
+.es-comments-wrap {
+	clear: both;
+	padding: @fd-base-spacing;
+	background-color: @fd-ui-shade;
+}
+
+.es-comments {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	> .es-comment {
+		padding: @fd-base-spacing--sm;
+		color: @fd-ui-text-color;
+		margin-bottom: 2px;
+		position: relative;
+		display: block;
+		word-wrap: break-word;
+		position: relative;
+	}
+
+	.es-story-text {
+		background: #fff;
+		border: 1px solid @esBorder;
+		border-radius: 3px;
+		padding: 5px;
+
+		.es-comments-form {
+			padding: 0;
+		}
+	}
+
+	.es-stream-editor-actions {
+		padding: @fd-base-spacing--sm 0 0;
+		text-align: right;
+	}
+
+	.media {
+		display: table;
+		width: 100%;
+		overflow: visible;
+
+		> .media-object,
+		> .media-body {
+			display: table-cell;
+			vertical-align: top;
+			float: none !important;
+		}
+		> .media-object {
+			width: 1%;
+			padding-right: 10px;
+		}
+		> .media-body {
+			overflow: visible;
+		}
+	}
+}
+
+.es-comment {
+	.emoji {
+		width: 20px;
+		height: 20px;
+	}
+
+	.es-avatar img {
+		// overwrite Elegant's Joomla template img spacing
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.es-comment-actions {
+	position: absolute;
+	right: @fd-base-spacing;
+	top: 0;
+	display: none; // hide by default
+	.es-comment-actions-toggle {
+		i {
+			color: @fd-ui-meta-color;
+			font-size: 14px;
+		}
+	}
+	.dropdown-menu {
+		top: @fd-base-spacing--lg;
+	}   
+}
+// Show action
+.es-comment:hover,
+&.w780,
+&.is-mobile,
+&.es-photo-popup {
+	.es-comment-actions {
+		display: block; 
+	}    
+}
+
+
+// .btn-comment-edit {
+
+//     [class^="ies-"],
+//     [class*=" ies-"] {
+//         &:before {
+//             font-size: 12px;
+//             width: 14px;
+//             height: 14px;
+//             top: -2px;
+//         }
+//     }
+// }
+
+@comment_textarea_line: 16px;
+
+
+.es-comments-form {
+	.clearfix();
+	padding: @fd-base-spacing--sm 0px 0;
+	position: relative;
+	
+	// .es-comments-form-decor {
+	//     padding: @fd-base-spacing;
+	//     background-color: @fd-ui-bg;
+	//     border: 1px solid @fd-ui-border-color;
+	//     border-radius: 3px;
+	// }
+	// .es-avatar {
+	//     float: left;
+	//     border: none;
+	//     margin-top: 0;
+	//     width: 30px;
+	//     height: 30px;
+	// }
+
+	.es-form {
+		// margin-left: 40px;
+		padding: @fd-base-spacing;
+		min-height: @comment_textarea_line;
+		border: 1px solid @fd-ui-border-color;
+		border-radius: @fd-ui-radius;
+		font-size: @fd-base-font-size;
+		background-color: @fd-ui-bg;
+
+		.mentions {
+			font-size: @fd-base-font-size;
+			min-height: @comment_textarea_line;
+			> div {
+				padding-bottom: 20px !important; // Reserve space for emoticon
+			}
+
+			textarea {
+				font-size: @fd-base-font-size;
+				line-height: @comment_textarea_line;
+			}
+		}
+	}
+
+	.es-form-footer {
+		.clearfix();
+
+		span {
+			&.label {
+				font-size: @fd-base-font-size;
+			}
+		}
+	}
+
+	.es-form-attach {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 8;
+		line-height: 1;
+
+		> label {
+			color: #aaa;
+			height: @comment_textarea_line;
+			line-height: @comment_textarea_line;
+			text-align: center;
+			margin: 0;
+			position: relative;
+
+			&:hover {
+				color: @fd-ui-meta-color;
+			}
+		}
+	}
+
+	.es-input-photo {
+		font-size: 13px;
+
+		input {
+			position: absolute;
+			left: -1000px;
+			top: -1000px;
+		}
+	}
+
+	.es-input-smiley {
+		font-size: 14px;
+		width: 14px;
+
+		&.active {
+			color: @fd-ui-meta-color;
+			.es-smileys {
+				display: block;
+			}
+		}
+	}
+
+	.attachments {
+		&.has-attachments {
+			display: block;
+		}
+
+		display: none;
+		border-top: 1px solid #e5e5e5;
+		overflow: hidden;
+		margin: 4px -4px 0;
+		padding: 4px 4px 0;
+
+		.figure {
+			float: left;
+			padding: 4px;
+			width: 25%;
+			position: relative;
+
+			&:hover .attachment-cancel {
+				background: #d00;
+			}
+
+			&.is-uploading {
+				.attachment {
+					background: #e5e5e5 !important;
+
+					.upload-progress {
+						display: block;
+					}
+				}
+
+				.attachment-cancel {
+					display: none;
+				}
+			}
+		}
+
+		.attachment {
+			position: relative;
+			padding-bottom: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+
+			.upload-progress {
+				display: none;
+				position: absolute;
+				top: 50%;
+				margin-top: -3px;
+				left: 10px;
+				right: 10px;
+
+				.progress {
+					background: #ccc;
+					height: 6px;
+					border-radius: 2px;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.attachment-cancel {
+			background: rgba(0, 0, 0, 0.75);
+			border-radius: 100%;
+			position: absolute;
+			right: -6px;
+			top: -6px;
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			font-size: 10px;
+			color: #fff;
+			text-align: center;
+
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+			&:before,
+			&:after {
+			  background: #fff;
+			  border-radius: 2px;
+			  content: '';
+			  display: block;
+			  position: absolute;
+			  left: 50%;
+			  top: 50%;
+			}
+			&:before {
+			  width: 10px;
+			  height: 2px;
+			  margin: -1px 0 0 -5px;
+			}
+			&:after {
+			  height: 10px;
+			  width: 2px;
+			  margin: -5px 0 0 -1px;
+			}
+		}
+	}
+
+	.plupload {
+		left: 0 !important; // Override inline style #4303, #4324
+	}
+}
+
+
+// Can't use <div> tag here it will reset by .mention > div
+.es-smileys { // ul
+	list-style: none;
+
+	display: none;
+	background: @fd-ui-bg;
+	border: 1px solid @fd-ui-border-color;
+	border-radius: 2px;
+	
+	position: absolute;
+	font-size: 0;
+	right: -8px;
+	bottom: 100%;
+	margin: 0 0 10px;
+	padding: @fd-base-spacing--sm;
+	width: 162px;
+	.box-shadow(0 0 2px rgba(0, 0, 0, 0.15));
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 7px;
+		bottom: -7px;
+
+		border-top: 7px solid #ccc;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		z-index: 2;
+	}
+
+	&:after {
+		border-top-color: @fd-ui-bg;
+		bottom: -6px;
+	}
+
+	> li {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		padding: @fd-base-spacing--sm;
+		border-radius: 3px;
+
+		&:hover {
+			background: #E7EDF3;
+		}
+
+		img {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	// The only tag for icons
+	i {
+
+	}
+}
+
+.es-smileys__close,
+.es-smileys__close:hover {
+	background: #c00;
+	border-radius: 100%;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	right: -12px;
+	top: -8px;
+
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	&:before,
+	&:after {
+	  background: #fff;
+	  border-radius: 3px;
+	  content: '';
+	  display: block;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	}
+	&:before {
+	  width: 12px;
+	  height: 2px;
+	  margin: -1px 0 0 -6px;
+	}
+	&:after {
+	  height: 12px;
+	  width: 2px;
+	  margin: -6px 0 0 -1px;
+	}
+}
+
+div#es .eb-composer-launcher-close-button i {
+  background: #c00;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin: 5px;
+  
+}
+
+
+/*------------------------------------*\
+	temporary reuse comment less on likes
+\*------------------------------------*/
+
+
+// comment load more
+.es-comments-control {
+	position: relative;
+	&__load {
+		display: block;
+		background: @fd-ui-shade;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+		margin: 2px 0;
+	}
+	&__link {
+		display: block;
+	}
+	&__stats {
+		position: absolute;
+		top: @fd-base-spacing--sm;
+		right: @fd-base-spacing--sm;
+		color: @fd-ui-meta-color;
+		i {
+			font-style: normal;
+		}
+	}
+}
+
+// comment item meta
+.es-comment-item-meta {
+	height: 20px;
+	color: @fd-ui-meta-color;
+	a {
+	   color: @fd-ui-meta-color; 
+	}
+	.es-comment-item-date,
+	.es-comment-item-like,
+	.es-comment-item-reply,
+	.es-comment-item-likecount {
+		display: inline-block;
+	}
+	.es-comment-item-date {
+		// color: #888;
+	}
+
+	.es-comment-item-like-wrap {
+		// background: #ccc;
+		// display: block;
+		// left: 180px;
+		// position: absolute;
+		// top: 38px;
+		// width: 100%;
+	}
+	.es-comment-item-like {
+
+	}
+	.es-comment-item-likecount {
+		// position: relative;
+		// top: -1px;
+		// left: 4px;
+		// border: 1px solid @esCommentLikeCountBorder;
+		// background: @esCommentLikeCountBackground;
+		// border-radius: 1px;
+		// padding: 0 3px;
+		// line-height: 14px;
+		// height: 16px;
+		// font-size: 9px;
+
+
+		// &:before,
+		// &:after {
+		//     content: "";
+		//     display: inline-block;
+		//     height: 0;
+		//     position: absolute;
+		//     width: 0;
+		// }
+		// &:before {
+		//     right: 100%;
+		//     top: 2px;
+		//     border-top: 5px solid transparent;
+		//     border-bottom: 5px solid transparent;
+		//     border-right: 5px solid @esCommentLikeCountBorder;
+
+		// }
+		// &:after {
+		//     right: 100%;
+		//     top: 3px;
+		//     border-top: 4px solid transparent;
+		//     border-bottom: 4px solid transparent;
+		//     border-right: 4px solid @esCommentLikeCountBackground;
+		// }
+	}
+	.es-comment-item-likehtml {
+		position: absolute;
+		// top: -20px;
+		// background: #555;
+		// color: #fff;
+		// padding: 1px 3px;
+		// display: block;
+		// .arrow(3px, #555, bottom, 10px, auto, 0, rgba(0, 0, 0, 0.2));
+		// min-width: 140px;
+		// width: 140px;
+
+		//reset .es-likes-wrap
+		.es-likes-wrap {
+			background: none repeat scroll 0 0 transparent;
+			margin: 0;
+			padding: 0;
+			top: 0;
+		}
+	}
+}
+
+.es-comment-item-loadreply {
+	padding: 3px 5px;
+	margin: 2px 0;
+	background: #ddd;
+}
+
+
+// Styling for comments listing in dropdown menu
+.dropdown-menu {
+	.es-item-comments {
+		a {
+			// padding: 0;
+			// clear: none;
+			// display: inline;
+		}
+	}
+}
+
+
+// Styling for comments attachment, will cover two display, multiple & single
+ul.es-comment-attachments {
+	margin: 0 -4px !important;
+	
+	&,
+	> li {
+		display: block !important;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	> li {
+		float: left;
+		padding: 4px;
+		width: 33.333%;
+		position: relative;
+
+		&:hover {
+			.es-comment-attachment-remove {
+				display: block;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		position: relative;
+
+		&:after,
+		i {
+			.transition(ease .5s);
+			position: absolute;
+			left: 0;
+			right: 0;
+			.opacity(0);
+		}
+
+		&:after {
+			background: rgba(0, 0, 0, 0.5);
+			content: '';
+			z-index: 2;
+			bottom: 0;
+			top: 0;
+		}
+
+		i {
+			z-index: 3;
+			color: #fff;
+			top: 50%;
+			text-align: center;
+			font-size: 24px;
+			line-height: 30px;
+			margin-top: -15px;
+		}
+
+		&:hover {
+			&:after,
+			i {
+				.opacity(1);
+			}
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	&.is-multiple {
+		
+		> li {
+			width: 25%;
+		}
+
+		a {
+			padding-bottom: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+.es-comment-attachment-remove {
+	background: rgba(0, 0, 0, 0.75);
+	border-radius: 100%;
+	position: absolute;
+	right: -3px; 
+	top: -3px; 
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	font-size: 10px;
+	color: #fff;
+	text-align: center;
+	z-index: 10;
+	display: none;
+	cursor: pointer;
+
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	&:hover {
+		background: #d00;
+	}
+
+	&:before,
+	&:after {
+	  background: #fff;
+	  border-radius: 2px;
+	  content: '';
+	  display: block;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	}
+	&:before {
+	  width: 10px;
+	  height: 2px;
+	  margin: -1px 0 0 -5px;
+	}
+	&:after {
+	  height: 10px;
+	  width: 2px;
+	  margin: -5px 0 0 -1px;
+	}
+}
+
+&.is-mobile,
+&.es-photo-popup {
+	.es-comment-attachment-remove {
+		display: block;
+		background: #d00;
+	}
+	
+	.es-comments-form {
+		.es-form-attach {
+			right: @fd-base-spacing--sm;
+			> label {
+				height: 20px;
+				line-height: 20px;
+			}
+			.es-input-photo {
+				+ .es-input-smiley {
+					margin-left: @fd-base-spacing;
+				}
+			}
+
+		}
+		.es-input-photo {
+			font-size: 15px;
+		}
+		.es-input-smiley {
+			font-size: 16px;
+			width: 16px;
+		}
+	}
+
+}
+
+
+
+
+
+
+

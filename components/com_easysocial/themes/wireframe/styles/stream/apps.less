@@ -1,0 +1,112 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+.es-stream-apps {
+	border: 1px solid @fd-ui-border-color;
+	line-height: @fd-ui-line-height--sm;
+	background-color: @fd-ui-bg; 
+	border-radius: @fd-ui-radius;
+	
+	&--border {
+		border-top: 1px solid @fd-ui-border-color;
+	}
+
+	&__hd,
+	&__bd {
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+		position: relative;
+	}
+
+	&__bd {
+		.clearfix();
+		.g-list--horizontal { // Override with css to reduce html dom
+			margin-top: @fd-base-spacing; 
+		}
+		.o-flag__body {
+			position: relative;
+		}
+	}
+	
+	&__title {
+		padding: @fd-base-spacing--sm @fd-base-spacing--lg @fd-base-spacing--sm 0;
+		font-weight: bold;
+	}
+	
+	&__context {
+		// padding: 0 @fd-base-spacing;
+	}
+	.is-quote { // for __context
+		border-left: 2px solid @fd-ui-border-color;
+		padding-left: @fd-base-spacing--lg;
+	}
+	.is-file {
+		background-color: @fd-ui-shade;
+		padding: @fd-base-spacing--lg;
+		padding-right: 80px; // Reserve space for icon
+		font-weight: bold;
+		position: relative;
+		overflow: hidden;
+		border-radius: @fd-ui-radius;
+		line-height: 1;
+		
+		span {
+			display: inline-block;
+			width: 100%;
+			.text-overflow();
+		}
+		&:after {
+			position: absolute;
+			bottom: -16px;
+			right: @fd-base-spacing;
+
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+			text-decoration: inherit;
+			content: "\f1c6";
+			font-size: 48px;
+
+			color: @fd-ui-meta-color;
+			opacity: .3; 
+		}
+	}
+	&__meta {
+		color: @fd-ui-meta-color;
+		// padding: 0 @fd-base-spacing;
+	}
+	&__player {
+		// max-height: 140px;
+	}
+	.es-stream-apps__state {
+		color: @fd-ui-meta-color;
+		font-size: 16px;
+		height: 16px;
+		margin-top: -8px;
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		width: 16px;
+	}
+	
+	// Type modifier
+	&.type-discuss {
+		
+	}
+
+	// State modifier
+	&.is-locked {
+
+	}
+	&.is-answered {
+
+	}
+	
+	// If there are more than 1 embedded objects on the stream preview
+	+.es-stream-apps {
+		margin-top: 10px;
+	}
+}

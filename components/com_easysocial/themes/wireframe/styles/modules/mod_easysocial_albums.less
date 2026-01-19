@@ -1,0 +1,43 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Modules: mod_easysocial_albums
+\*------------------------------------*/
+
+.mod-es-albums-item {
+	
+	padding: @fd-base-spacing;
+	border: 1px solid @fd-ui-border-color;
+	overflow: hidden;
+	 
+	+ .mod-es-albums-item {
+		margin-top: @fd-base-spacing;
+	}
+	
+	// Hack for single photo and we ensure this is 16:9 save to enforce with !important
+	.photos-1 {
+		.es-photo>a {
+			padding-top: 38%  !important; // Reduce height for single column photo it will make photo being clipped but looks nice
+		}
+		u {
+			position: absolute !important;
+		}
+		img {
+			width: 100% !important;
+			max-height: none !important; // Disabled to prevent distorted
+		}
+	}
+
+
+	.photos-3 {
+		.es-photo:first-child {
+			>a {
+				padding-top: 38%  !important; // Reduce height for single column photo it will make photo being clipped but looks nice
+			}
+		}
+	}
+}

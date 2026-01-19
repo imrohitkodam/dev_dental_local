@@ -1,0 +1,187 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	$widget - widget.less
+\*------------------------------------*/
+.es-widget,
+.es-widget-head,
+.es-widget-body,
+.es-widget-foot {
+	.clearfix();
+}
+
+.es-widget {
+	* {
+		font-size: @baseFontSize; // #3537
+	}
+
+	+ .es-widget {
+		margin-top: 20px;
+	}
+
+	&.es-widget-borderless {
+		border: none;
+
+		.es-widget-head + .es-widget-head{
+			margin-top: 12px;
+		}
+	}
+
+	&.es-widget-border {
+		border: 1px solid @esWidgetBorder;
+	}
+
+	
+	.es-friends-suggestion-item {
+		.total-no {
+			font-size: 12px;
+		}
+	}
+
+	.widget-title {
+		display: inline-block;
+		max-width: 150px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		height: 20px;
+		line-height: 20px;
+		white-space: nowrap;
+
+		font-family: @esTitleFont;
+	}
+
+
+	
+}//es-widget
+
+.es-widget-head {
+	color: #666;
+	position: relative;
+	padding: 8px;
+	padding-right: 6px;
+	border-bottom: 1px solid @esWidgetDividerColor;
+	font-weight: bold;
+	margin-bottom: 6px;
+	.widget-label {
+		background: none;
+		color: @grayLight;
+		font-weight: normal;
+
+		margin-left: 3px;
+
+	}
+}
+.es-widget-body {
+	position: relative;
+	padding: 6px;
+	padding-right: 0;
+}
+.es-widget-foot {
+	position: relative;
+	padding: 8px;
+	border-bottom: 1px solid @esWidgetDividerColor;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+
+//es-widget-search
+.es-widget-search {
+	.es-widget-body {
+		background: @esWidgetSearchBackground;
+		padding: 8px 6px;
+		form {
+			margin: 0;
+			position: relative;
+			input {
+				padding-left: 26px;
+			}
+			&:before,
+			&:after {
+				display: block;
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				line-height: 16px;
+			}
+			&:before {
+				top: 4px;
+				left: 10px;
+				content: "\e00a";
+				font-family: 'easysocial';
+			}
+		}
+	}
+}
+
+// Modules as widget missing modules styles 
+// (If more than 1 module then only need to seperate this block to another file)
+&.mod-es-events {
+	.es-events-list {
+		list-style: none;
+
+		> li {
+			margin-bottom: 10px;
+			list-style: none;
+
+			.es-event-object {
+				margin-bottom:5px;
+			}
+
+			.es-event-avatar {
+				float: right;
+
+				+ .es-event-object {
+					margin-right: 35px;
+				}
+			}
+			
+			.event-title {
+				font-size: 14px;
+				display: inline-block;
+			}
+
+			.es-event-meta {
+				font-size: 10px;
+				color: @esColor;
+
+				span {
+					margin-right: 5px;
+
+					+span {
+						border-left: 1px dotted @esBorder;
+						padding-left: 8px;
+					}
+				}
+			}
+
+			+li {
+				padding-top: 10px;
+				border-top: 1px dotted @esBorder;
+			}
+		}
+	}
+}
+
+
+// Responsive control
+&.is-mobile {
+	.es-widget {
+		.es-widget-head {
+			width: 100%;
+		}
+		.fd-nav {
+			> li.active {
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}

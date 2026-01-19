@@ -1,0 +1,217 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+// Discussions app
+.es-app-discussions {
+	&__hd,
+	&__ft {
+		.clearfix();
+	}
+	&__hd {
+		padding-bottom: @fd-base-spacing--lg;
+		margin-bottom: @fd-base-spacing--lg;
+		border-bottom: 1px solid @fd-ui-border-color;
+	}
+	&__ft {
+		color: @fd-ui-meta-color;
+	}
+
+
+	// Listing
+	&__item {
+		padding-bottom: @fd-base-spacing--lg;
+		margin-bottom: @fd-base-spacing--lg;
+		border-bottom: 1px solid @fd-ui-border-color;
+	}
+	&__item-title {
+		font-weight: bold;
+		font-size: @fd-base-font-size--xl;
+	}
+	&__item-flag {
+		margin-bottom: @fd-base-spacing;
+	}
+	&__item-content {
+		margin-bottom: @fd-base-spacing;
+	}
+
+
+	
+
+	// State
+	.label-locked,
+	.label-resolved,
+	.label-unanswered,
+	.label-answer-item {
+		display: none; // Hide by default
+		margin-right: @fd-base-spacing;
+	}
+
+	.locked-notice {
+		display: none;
+	}
+
+	.is-locked,
+	&.is-locked {
+		.label-locked {
+			display: inline-block;
+		}
+
+		.es-app-discussion-reply-form {
+			display: none;
+		}
+		
+		.locked-notice {
+			display: block;
+		}
+	}
+	.is-resolved,
+	&.is-resolved {
+		.label-resolved {
+			display: inline-block;
+		}
+		&.es-app-discussions__item {
+			// background-color: @state-success-bg;
+		}
+	}
+	.is-unanswered,
+	&.is-unanswered {
+		.label-unanswered {
+			display: inline-block;
+		}
+	}
+
+	
+}
+
+.es-app-discussion-title {
+	margin: 0 0 @fd-base-spacing--sm;
+	font-size: @fd-base-font-size--xl;
+}
+.es-app-discussion-meta {
+	float: right;
+}
+.es-app-discussion-content-header,
+.es-app-discussion-content,
+.es-app-discussion-content-footer,
+.es-app-discussion-participants,
+.es-app-discussion-reply-header,
+.es-app-discussion-reply-list  {
+	margin-bottom: @fd-base-spacing--lg;
+}
+.es-app-discussion-content-footer {
+	border-bottom: 1px solid @fd-ui-border-color;
+	padding-bottom: @fd-base-spacing;
+}
+
+.es-app-discussion-reply-form {
+	&.is-empty {
+		.alert-empty {
+			display: block;
+		}
+	}
+
+	.alert-empty {
+		display: none;
+	}
+}
+
+.es-app-discussion-reply-item {
+	margin-bottom: @fd-base-spacing--lg;
+	padding: @fd-base-spacing;
+	.es-app-discussion-reply-answer-state {
+		display: none; // hide by default
+	}
+	&.is-answer-item {
+		.es-app-discussion-reply-answer-state {
+			display: inline-block;
+		}
+		background-color: @fd-ui-bg--answer;
+		border-bottom: 2px solid @label-success-bg;
+		padding-bottom: @fd-base-spacing--lg;
+	}
+	+ .es-app-discussion-reply-item {
+		border-top: 1px solid @fd-ui-border-color--l;
+	}
+}
+
+
+
+&.is-mobile {
+
+	.app-discussions {
+		.discussion-item,
+		.discussion-replies {
+			.media-body {
+				clear: both;
+			}
+		}
+		.es-filterbar {
+			.btn {
+				width: 100%;
+				margin: 15px 0;
+			}
+		}
+	}
+}
+
+
+// ES apps statistics (ED apps)
+// ----------------
+.es-apps-statistic {
+	clear: both;
+	.clearfix();
+	>:not(:first-child) {
+		margin-left: 8px;
+	}
+
+	&__item {
+		border-radius: @borderRadius;
+		position: relative;
+		border: 1px solid @esBorder;
+		float: left;
+		font-size: 12px;
+		line-height: 1;
+		padding: 8px;
+		text-align: center;
+		width: auto;
+		min-width: 46px;
+		min-height: 46px;
+		background-color: #fff;
+		a {
+			// color: @fd-ui-text-color;
+			&:hover {
+				background: none;
+			}
+		}
+	}
+	&__link {
+		min-width: 46px;
+		display: inline-block;
+	}
+	&__item-icon {
+		// font-size + padding(top and bottom) sum have to be 36px;
+		font-size: 13px;
+		padding: 12px;
+		// 12 14
+		// 14 12
+	}
+	
+	
+	&__item-count {
+		display: block;
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 4px;
+	}
+}
+
+
+&.is-mobile {
+	.es-apps-statistic.pull-right {
+		float: none !important;
+	}    
+}
+

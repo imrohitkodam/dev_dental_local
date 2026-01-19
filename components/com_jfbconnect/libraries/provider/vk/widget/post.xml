@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="code" type="textarea" label="COM_JFBCONNECT_WIDGET_VK_POST_WIDGET_CODE_LABEL" description="COM_JFBCONNECT_WIDGET_VK_POST_WIDGET_CODE_DESC" rows="10" cols="5" filter="raw"/>
+                <field name="width" type="text" label="COM_JFBCONNECT_WIDGET_VK_POST_WIDTH_LABEL" description="COM_JFBCONNECT_WIDGET_VK_POST_WIDTH_DESC" default="665"/>
+            </fieldset>
+        </fields>
+    </fields>
+</form>

@@ -1,0 +1,258 @@
+#es.view-styleguide h2 {
+  color: #428bca;
+}
+#es.view-styleguide h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 40px;
+}
+#es.view-styleguide h4:after {
+  font-family: "FontAwesome";
+  content: "\f107";
+  margin-left: 16px;
+}
+#es.view-styleguide pre {
+  margin: 0;
+}
+#es.view-styleguide pre code {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+#es.view-styleguide code {
+  background-color: transparent;
+  color: inherit;
+  display: inline-block;
+  padding: 4px;
+  margin: 8px 0;
+  border: 1px dotted #555;
+  border-radius: 4px;
+}
+#es.view-styleguide .es-navbar {
+  display: none;
+}
+#es.view-styleguide .es-side-widget {
+  background-color: #333;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgba(170,170,170,0.3);
+}
+#es.view-styleguide .es-side-widget__hd {
+  padding: 12px 16px;
+  border-bottom: 1px solid #d5d5d5;
+}
+#es.view-styleguide .es-side-widget__bd {
+  border-radius: 0 0 4px 4px;
+}
+#es.view-styleguide .o-tabs--stacked .o-tabs__item {
+  border-right: 0;
+}
+#es.view-styleguide .o-tabs--stacked .o-tabs__item:last-child .o-tabs__link {
+  border-bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+#es.view-styleguide .o-tabs--stacked .o-tabs__link {
+  background-color: #333;
+  padding: 12px 16px;
+  border-bottom: 1px solid #d5d5d5;
+  position: relative;
+}
+#es.view-styleguide .o-tabs--stacked .o-tabs__link:hover {
+  background-color: #10273a;
+}
+#es.view-styleguide .o-tabs--stacked .o-tabs__link:after {
+  content: "\f054";
+  font-family: 'FontAwesome';
+  font-size: 9px;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+}
+#es.view-styleguide .product-logo {
+  background: url(../styleguide/images/products-logo.png) no-repeat;
+  display: inline-block;
+}
+#es.view-styleguide .logo-256 {
+  width: 256px;
+  height: 256px;
+}
+#es.view-styleguide .logo-128 {
+  width: 128px;
+  height: 128px;
+}
+#es.view-styleguide .logo-64 {
+  width: 64px;
+  height: 64px;
+}
+#es.view-styleguide .logo-48 {
+  width: 48px;
+  height: 48px;
+}
+#es.view-styleguide .logo-32 {
+  width: 32px;
+  height: 32px;
+}
+#es.view-styleguide .logo-24 {
+  width: 24px;
+  height: 24px;
+}
+#es.view-styleguide .logo-16 {
+  width: 16px;
+  height: 16px;
+}
+#es.view-styleguide .logo-easysocial.logo-256 {
+  background-position: 0 0;
+}
+#es.view-styleguide .logo-easysocial.logo-128 {
+  background-position: 0 -256px;
+}
+#es.view-styleguide .logo-easysocial.logo-64 {
+  background-position: 0 -384px;
+}
+#es.view-styleguide .logo-easysocial.logo-48 {
+  background-position: 0 -448px;
+}
+#es.view-styleguide .logo-easysocial.logo-32 {
+  background-position: 0 -496px;
+}
+#es.view-styleguide .logo-easysocial.logo-24 {
+  background-position: 0 -528px;
+}
+#es.view-styleguide .logo-easysocial.logo-16 {
+  background-position: 0 -552px;
+}
+#es.view-styleguide code[class*="language-"],
+#es.view-styleguide pre[class*="language-"] {
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+#es.view-styleguide pre[class*="language-"] {
+  padding: 1em;
+  margin: 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+#es.view-styleguide :not(pre) > code[class*="language-"],
+#es.view-styleguide pre[class*="language-"] {
+  background: #272822;
+}
+#es.view-styleguide :not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+#es.view-styleguide .token.comment,
+#es.view-styleguide .token.prolog,
+#es.view-styleguide .token.doctype,
+#es.view-styleguide .token.cdata {
+  color: slategray;
+}
+#es.view-styleguide .token.punctuation {
+  color: #f8f8f2;
+}
+#es.view-styleguide .namespace {
+  opacity: .7;
+}
+#es.view-styleguide .token.property,
+#es.view-styleguide .token.tag,
+#es.view-styleguide .token.constant,
+#es.view-styleguide .token.symbol {
+  color: #f92672;
+}
+#es.view-styleguide .token.boolean,
+#es.view-styleguide .token.number {
+  color: #ae81ff;
+}
+#es.view-styleguide .token.selector,
+#es.view-styleguide .token.attr-name,
+#es.view-styleguide .token.string,
+#es.view-styleguide .token.builtin {
+  color: #a6e22e;
+}
+#es.view-styleguide .token.operator,
+#es.view-styleguide .token.entity,
+#es.view-styleguide .token.url,
+#es.view-styleguide .language-css .token.string,
+#es.view-styleguide .style .token.string,
+#es.view-styleguide .token.variable {
+  color: #f8f8f2;
+}
+#es.view-styleguide .token.atrule,
+#es.view-styleguide .token.attr-value {
+  color: #e6db74;
+}
+#es.view-styleguide .token.keyword {
+  color: #66d9ef;
+}
+#es.view-styleguide .token.regex,
+#es.view-styleguide .token.important {
+  color: #fd971f;
+}
+#es.view-styleguide .token.important {
+  font-weight: bold;
+}
+#es.view-styleguide .token.entity {
+  cursor: help;
+}
+#es.view-styleguide .es-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+#es.view-styleguide .es-styleguide-wrapper {
+  background: #333;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgba(170,170,170,0.3);
+}
+#es.view-styleguide .o-box {
+  margin-bottom: 20px;
+}
+#es.view-styleguide .o-avatar-wrapper .o-grid--1of2,
+#es.view-styleguide .o-avatar-wrapper .o-grid--1of4 {
+  text-align: center;
+  padding: 8px;
+}
+#es.view-styleguide .o-button-wrapper .o-grid--1of4 {
+  padding: 12px;
+}
+#es.view-styleguide .hero-unit {
+  background-color: #333;
+}
+#es.view-styleguide .hero-unit > * {
+  color: #eee;
+  text-shadow: none;
+}
+#es.view-styleguide .hero-unit h2 {
+  color: #222222;
+  font-size: 36px;
+}
+#es.view-styleguide .fd-brand-primary--l {
+  background: #10273a;
+}
+#es.view-styleguide .fd-brand-success--l {
+  background: #0b220e;
+}
+#es.view-styleguide .fd-brand-danger--l {
+  background: #541412;
+}
+#es.view-styleguide .fd-brand-default--l {
+  background: #000000;
+}
+#es.view-styleguide .fd-brand-info--l {
+  background: #1e7b96;
+}
+#es.view-styleguide .fd-brand-warning--l {
+  background: #603b08;
+}

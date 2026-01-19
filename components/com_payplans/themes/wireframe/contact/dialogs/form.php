@@ -1,0 +1,105 @@
+<?php
+/**
+* @package		PayPlans
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* PayPlans is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
+defined( '_JEXEC' ) or die( 'Unauthorized Access' );
+?>
+<dialog>
+	<width>600</width>
+	<height>350</height>
+	<selectors type="json">
+	{
+		"{cancelButton}"  : "[data-cancel-button]",
+		"{sendButton}" : "[data-submit-button]",
+		"{form}" : "[data-form]",
+		"{subject}": "[data-contact-subject]",
+		"{contents}": "[data-contact-contents]"
+	}
+	</selectors>
+	<bindings type="javascript">
+	{
+		"{cancelButton} click": function() {
+			this.parent.close();
+		},
+
+		"{sendButton} click": function() {
+
+			var self = this;
+
+			$('[data-pp-contact-message]').hide();
+
+			var subject = this.subject().val();
+			var contents = this.contents().val();
+
+			// Email subject and contents can not be blank
+			if (subject == '' || contents == '') {
+				
+				var errorMsg = "<?php echo JText::_('COM_PP_CONTACT_US_ERROR', true); ?>";
+
+				$('[data-pp-contact-message]').html(errorMsg);
+				$('[data-pp-contact-message]').show();
+
+				return false;
+			}  
+			
+
+			// disable sedt button on click
+			this.sendButton().attr('disabled', 'disabled');
+
+			PayPlans.ajax('site/views/contact/send', {
+				"subject": subject,
+				"contents": contents
+			}).done(function(){
+				self.parent.close();
+			});
+		}
+	}
+
+
+	</bindings>
+	<title><?php echo JText::_('COM_PP_CONTACT_US'); ?></title>
+	<content>
+		<form action="<?php echo JRoute::_('index.php');?>" method="post" class="o-form-horizontal">
+			
+			<div class="pp-checkout-item">
+				<div class="pp-checkout-item__content">
+
+					<div>
+						<div class="text-danger" data-pp-contact-message></div>
+					</div>
+
+					<div class="">
+						<label class="o-form-label mr-sm" for="subject">
+							<?php echo JText::_('COM_PAYPLANS_SUPPORT_EMAILFORM_SUBJECT'); ?>
+						</label>
+
+						<div class="o-input-group">
+							<?php echo $this->html('form.text', 'subject', '', '', ['data-contact-subject' => '', 'placeholder' => JText::_('COM_PP_CONTACT_SUBJECT_PLACEHOLDER')]); ?>
+						</div>
+					</div>
+
+					<div class="">
+						<label class="o-form-label mr-sm" for="subject">
+							<?php echo JText::_('COM_PAYPLANS_SUPPORT_EMAILFORM_BODY'); ?>
+						</label>
+
+						<div class="o-input-group">
+							<?php echo $this->html('form.textarea', 'contents', '', '', ['data-contact-contents' => '', 'rows' => '10', 'placeholder' => JText::_('COM_PP_CONTACT_CONTENTS_PLACEHOLDER')]); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</content>
+	<buttons>
+		<?php echo $this->fd->html('dialog.button', 'COM_PP_CLOSE_BUTTON', 'warning', ['attributes' => 'data-cancel-button']); ?>
+		<?php echo $this->fd->html('dialog.button', 'COM_PP_SEND_BUTTON', 'primary', ['attributes' => 'data-submit-button']); ?>
+	</buttons>
+</dialog>

@@ -1,0 +1,135 @@
+/*------------------------------------*\
+	$Notifications - notifications.less
+\*------------------------------------*/
+.es-noti-hd { 
+	&__title {
+
+	}
+	&__badge {
+		background-color: #428bca;
+		border-radius: @fd-ui-radius;
+		color: #fff;
+		display: inline-block;
+		font-size: @fd-base-font-size;
+		font-weight: bold;
+		line-height: 1;
+		min-width: 28px;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+		text-align: center;
+		vertical-align: middle;
+		white-space: nowrap;    
+	}
+	&__action {
+		float: right;
+	}
+}
+
+.es-noti-list {
+	margin-bottom: 20px;
+}
+.es-noti {
+	&__item {
+		position: relative;
+		padding-left: @fd-base-spacing;
+		padding-right: @fd-base-spacing;
+		border-bottom: 1px solid @fd-ui-border-color;
+		&:hover {
+			background-color: @fd-ui-shade;
+		}
+	}
+	&__noclick {
+		position: absolute;
+		display: none;
+	}
+	&__date {
+		color: @fd-ui-meta-color;
+	}
+	&__title {
+		color: @fd-ui-text-color;
+	}
+
+	&__item-indicator {
+		width: @fd-base-spacing;
+		height: @fd-base-spacing;
+		border-radius: 50%;
+		position: absolute;
+		top: @fd-base-spacing--xl + @fd-base-spacing--sm;
+		background-color: @fd-brand-primary;
+	}
+	&__item-content {
+		position: relative;
+		padding: @fd-base-spacing--lg 120px @fd-base-spacing--lg @fd-base-spacing--xl; // 120px spaces for action btn groups
+		
+	}
+	&__item-type {
+		position: absolute;
+		right: 28px;
+		top: 8px;
+		&-icon {
+			// color: @fd-ui-meta-color;
+			text-shadow:
+				1px 1px 0px rgba(255, 255, 255, .9), 
+				-1px 1px 0px rgba(255, 255, 255, .9),
+				-1px -1px 0px rgba(255, 255, 255, .9),
+				1px -1px 0px rgba(255, 255, 255, .9);
+			position: relative;
+			right: @fd-base-spacing--sm;
+			z-index: 2;
+			&:before {
+				font-family: FontAwesome;
+				font-weight: normal;
+				font-style: normal;
+				display: inline-block;
+				text-decoration: inherit;
+				color: @fd-ui-meta-color;
+			}
+		}
+	}
+	&__item-embed {
+		display: block;
+
+		> img {
+			max-width: 120px;
+			max-height: 120px;
+		}
+	}
+	&__item-action {
+		position: absolute;
+		top: @fd-base-spacing--lg;
+		right: @fd-base-spacing--lg;
+	}
+}
+.es-noti__item {
+	&.is-read {
+		.es-noti__item-indicator {
+			display: none;
+		}
+	}
+	&.is-unread {
+		background-color: @fd-ui-bg--unread;
+	}
+	&.is-remove {
+		opacity: .5;
+		.es-noti__noclick {
+			background: transparent;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 0;
+			display: block;
+		}
+	}
+}
+
+
+&.is-mobile {
+	.es-noti-hd {
+		text-align: center;
+	}
+	.es-noti-hd__action {
+		float: none;
+		margin-top: @fd-base-spacing--lg;
+	}
+}

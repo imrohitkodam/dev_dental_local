@@ -1,0 +1,166 @@
+#es {
+  font-size: 13px;
+}
+#es.es-main {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+#es .es-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+#es .es-container .es-sidebar,
+#es .es-container .es-content {
+  display: table-cell;
+  vertical-align: top;
+  position: relative;
+}
+#es .es-container .es-sidebar {
+  width: 220px;
+}
+#es .es-container .es-sidebar .btn-close-sidebar {
+  display: none;
+}
+#es .es-container .es-sidebar + .es-content {
+  padding-left: 20px;
+}
+#es .es-container .es-content {
+  height: 100%;
+}
+#es .es-container .es-content > .loading-indicator {
+  height: 100px;
+  position: relative;
+}
+#es .es-container.es-container-alt .es-sidebar {
+  float: right;
+  width: 320px;
+}
+#es .es-container.es-container-alt .es-content {
+  margin-left: 0;
+}
+#es .es-container[data-achievements] .achievements-list,
+#es .es-container[data-conversations] .conversation-list,
+#es .es-container[data-friends] [data-friends-items],
+#es .es-container[data-profile-about] .profile-data-box,
+#es .es-notification-list {
+  min-height: 450px;
+}
+#es .btn-es-sidebar-toggle {
+  display: none;
+  width: 100%;
+  margin-bottom: 8px;
+  clear: both;
+  position: relative;
+}
+#es .es-dashboard .es-content > .loading-indicator,
+#es .es-profile .es-content > .loading-indicator {
+  display: none;
+}
+#es .es-dashboard.loading .es-content > .loading-indicator,
+#es .es-profile.loading .es-content > .loading-indicator {
+  display: block;
+}
+#es.is-mobile .btn-es-sidebar-toggle {
+  display: block;
+}
+#es.is-mobile .es-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+#es.is-mobile .es-container .es-sidebar {
+  display: block;
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 3px;
+  margin: 0;
+  width: 220px;
+  left: -230px;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  transition: all .2s linear;
+}
+#es.is-mobile .es-container .es-content {
+  clear: both;
+  display: block;
+  position: relative;
+  min-height: 400px;
+  left: 0;
+  padding: 0 0 8px;
+  transition: all .2s linear;
+}
+#es.is-mobile .es-container .es-content:before,
+#es.is-mobile .es-container .es-content:after {
+  content: " ";
+  display: table;
+}
+#es.is-mobile .es-container .es-content:after {
+  clear: both;
+}
+#es.is-mobile .es-container.sidebar-open .es-sidebar {
+  left: 0;
+  transition: all .2s linear;
+  overflow-y: scroll;
+}
+#es.is-mobile .es-container.sidebar-open .es-content {
+  left: 230px;
+  transition: all .2s linear;
+}
+#es .es-photo-camera,
+#es .es-photo-camera-preview {
+  background: #b3b3b3;
+  border-radius: 2px;
+  padding: 62px 0;
+  text-align: center;
+}
+#es .es-photo-camera *,
+#es .es-photo-camera-preview * {
+  display: inline-block;
+  vertical-align: top;
+}
+#es .btn-group-sort .btn {
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#es .es-profile-edit-form {
+  padding: 16px;
+}
+#es .es-profile-edit-form .o-onoffswitch {
+  margin: 8px auto 0;
+}
+#es.layout-edit .edit-form {
+  min-height: 450px;
+}
+#es.layout-edit .edit-form .yesno-list > li div.pull-left {
+  max-width: 320px;
+}
+#es.layout-edit .step-content {
+  display: none;
+}
+#es.layout-edit .step-content.active {
+  display: block;
+}
+#es.layout-edit .avatar-preview {
+  display: block;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+#es.layout-edit .avatar-preview img {
+  position: absolute;
+}
+#es.layout-edit .avatar-preview .loading-indicator {
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  top: 20%;
+}

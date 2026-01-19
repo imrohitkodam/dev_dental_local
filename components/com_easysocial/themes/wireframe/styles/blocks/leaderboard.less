@@ -1,0 +1,124 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	leaderboard.less
+\*------------------------------------*/
+
+.es-leaderboard { // Table
+	width: 100%;
+	thead {
+		background-color: @fd-ui-shade;
+	}
+	
+	tr {
+		th {
+			padding: @fd-base-spacing--sm @fd-base-spacing;
+		}
+		td {
+			padding: @fd-base-spacing--lg @fd-base-spacing;
+			border-bottom: 1px solid @fd-ui-border-color; 	
+		}
+		th,
+		td {
+			
+			
+			&:first-child { // Rank column
+				text-align: center;
+				width: 56px;
+				position: relative;
+			}
+
+			&:last-child { // Points column
+				width: 100px;
+			}	
+		}
+		
+	}
+	
+
+	&__points {
+		font-weight: bold;
+	}
+	
+
+}
+
+
+// Object for view=leaderboard and module
+.es-leader-badge {
+	height: 32px;
+	width: 32px;
+	color: @fd-ui-meta-color;
+	// background: #EDCA75;
+	position: relative;
+	text-align: center;
+	
+	&:before,
+	&:after {
+		height: 32px;
+		width: 32px;
+		// background: #EDCA75;
+		content:"";
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	&:before {
+	   
+	   /* Rotate */
+	   -moz-transform: rotate(30deg);
+	   -webkit-transform: rotate(30deg);
+	   -ms-transform: rotate(30deg);
+	   -o-transform: rotate(30deg);
+	   transform: rotate(30deg);
+	}
+	&:after {
+	   
+	   /* Rotate */
+	   -moz-transform: rotate(-30deg);
+	   -webkit-transform: rotate(-30deg);
+	   -ms-transform: rotate(-30deg);
+	   -o-transform: rotate(-30deg);
+	   transform: rotate(-30deg);
+	}
+
+	span {
+		z-index: 2;
+		position: relative;
+		line-height: 32px;
+		font-size: 14px;
+		font-weight: bold;
+		display: inline-block;
+		width: 32px;
+		
+	}
+
+	&--1 {
+		color: #fff;
+		background-color: #EDCA75;
+		&:before,
+		&:after {
+			background-color: #EDCA75;
+		}
+	}
+	&--2 {
+		color: #fff;
+		background-color: #CFD8DC;
+		&:before,
+		&:after {
+			background-color: #CFD8DC;
+		}
+	}
+	&--3 {
+		color: #fff;
+		background-color: #D6CCC8;
+		&:before,
+		&:after {
+			background-color: #D6CCC8;
+		}
+	}
+}
+

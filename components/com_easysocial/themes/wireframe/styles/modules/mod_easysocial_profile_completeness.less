@@ -1,0 +1,65 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Modules: mod_easysocial_profile_completeness
+\*------------------------------------*/
+
+&.mod-es-profile-completeness {
+	.progress { // Override object
+		height: 8px;
+		.box-shadow(none);
+		margin-bottom: @fd-base-spacing;
+	}
+}
+
+.es-completeness-check-list { 
+	&__item { // o-flag
+
+		a {
+			color: @fd-ui-text-color;
+		}
+
+		a:hover {
+			color: #005e8d;
+		}
+
+		// State
+		&.is-completed {
+			.es-completeness-check-list__icon {
+				border-color: @fd-ui-border-color;
+				color: @fd-brand-success;
+			}
+			span,
+			a {
+				text-decoration: line-through;
+				color: @fd-ui-meta-color;
+			}
+		}
+	}
+	&__icon {
+		border: 1px solid @fd-brand-warning;
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		line-height: 1;
+		text-align: center;
+		position: relative;
+		color: @fd-brand-warning;
+		i {
+			position: relative;
+			top: 50%;
+			.transform_(translateY(-50%));
+		}
+	}
+}
+.es-completeness-check-list__item {
+	+ .es-completeness-check-list__item {
+		margin-top: @fd-base-spacing;
+	}
+}
+
+

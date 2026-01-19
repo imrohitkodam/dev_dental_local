@@ -1,0 +1,464 @@
+&.es-photo-popup {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	display: none;
+
+	z-index: @zindex-photo-popup;
+	.box-sizing(border-box);
+	padding: 30px;
+
+	&.active {
+		display: block !important;
+	}
+
+	.es-popup-viewport {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background: #000;
+		// .box-shadow(0 3px 12px rgba(0, 0, 0, 0.5));
+	}
+
+	.es-popup-close-button {
+		position: absolute;
+		display: none;
+	}
+
+	.es-popup-handle {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding-right: 360px;
+		.box-sizing(border-box);
+	}
+
+	.es-photo-item {
+		.box-sizing(border-box);
+		width: 100%;
+		height: 100%;
+
+		&:hover {
+			.es-photo-header {
+				opacity: 1;
+			}
+		}
+	}
+
+	.es-photo-header {
+		//background: none repeat scroll 0 0 rgba(255, 255, 255, 0.7);
+		background: none;
+		padding: @fd-base-spacing--lg;
+		height: 60px;
+		margin: 0;
+
+		// opacity: 0;
+		.transition(opacity .5s ease);
+
+		// &.active {
+		// 	opacity: 1;
+		// }
+	}
+
+	.es-photo-footer {
+		position: absolute;
+		top: 0;
+		right: -360px;
+		width: 360px;
+		height: 100%;
+		background: @fd-ui-bg;
+		overflow: hidden;
+		overflow-y: auto;
+
+		.box-sizing(border-box);
+		padding: @fd-base-spacing--lg @fd-base-spacing--lg 0;
+	}
+	// No padding on like and comments section
+	.es-comments-control__load,
+	.es-likes-wrap,
+	.es-comments-wrap {
+		margin-left: -@fd-base-spacing--lg;
+		margin-right: -@fd-base-spacing--lg;
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+	}
+
+	.es-comments-control__load {
+		.es-comments-control__stats {
+			top: 8px;
+		}
+	}
+	.es-photo-content {
+		background: none;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		margin: 0;
+
+		position: absolute;
+
+		// For top bar
+		border-top: 60px solid transparent;
+		// For bottom bar
+		border-bottom: 30px solid transparent;
+	}
+
+	// This resets 4:3 ratio
+	.es-photo {
+		height: 100%;
+
+		> a {
+			padding: 0 !important;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.es-photo-interaction.row {
+		margin: 0;
+		.box-sizing(border-box);
+	}
+
+	.es-media-header .o-media {
+		border: none;
+		height: auto;
+	}
+
+	.es-media-item-menu {
+		text-align: center;
+		position: relative;
+	}
+
+	.es-photo-title {
+		font-size: 13px;
+	}
+
+	.es-media-stat {
+		// float: left;
+		// width: 33%;
+		padding: 4px 0;
+		// color: rgba(255,255,255,0.7);
+		// border-right: 1px solid rgba(0,0,0,0.25);
+
+		// Don't show stat label
+		> b {
+			display: none;
+		}
+
+		> i {
+			display: inline-block;
+			font-size: 8px;
+			line-height: 10px;
+		}
+
+		> span {
+			font-size: @fontSizeSmall;
+		}
+
+		.es-photo-tag-list-item {
+			float: left;
+		}
+	}
+
+	.es-photo-close-button {
+		font-size: @fontSizeSmall;
+		padding: 10px 12px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.es-photo-prev-button,
+	.es-photo-next-button {
+		background: none;
+
+		// > i {
+		// 	background: #999;
+		// 	border-radius: 100%;
+		// 	.box-shadow(0px 2px 0px rgba(0,0,0,0.7));
+		// 	padding: 18px;
+		// 	width: 60px;
+		// 	height: 60px;
+		// 	padding: 18px;
+		// }
+	}
+	.es-photo-prev-button i {
+		left: @fd-base-spacing;
+	}
+	.es-photo-next-button i {
+		right: @fd-base-spacing;
+	}
+
+	.btn-media[data-popup-close-button] {
+		display: none;
+	}
+
+	.es-photo-tag-list-item-group {
+		margin: 0 5px -2px;
+		overflow: hidden;
+		overflow-y: auto;
+		max-height: 320px;
+
+		.empty-tags-hint {
+			display: none;
+			padding: 3px 20px;
+		}
+
+		&.empty-tags {
+			.empty-tags-hint {
+				display: block;
+			}
+		}
+	}
+
+	.es-photo-content {
+		background: transparent;
+	}
+
+	.es-photo-item.tagging {
+		.es-media-header {
+			position: relative;
+			z-index: 1;	
+			.opacity(0);
+		}
+		.es-photo-hint.tag-hint.alert {
+			z-index: 9;
+			color: #fff;
+
+		}
+		.es-photo-content {
+			background: @esPhotoItemTaggingBackground;
+			.transition(background .3s ease);
+			margin-top: 0;
+		}
+		.es-photo-tag-viewport {
+			z-index: 21;
+		}
+	}
+
+	.es-photo-item .es-photo-hint.tag-hint.alert {
+		margin: 0;
+		top: -60px;
+		border: none;
+		border-radius: 0px;
+		padding: @fd-base-spacing--lg;
+		padding-left: 32px;
+
+		background: none;
+		color: @esPhotoItemTaggingAlertColor;
+		text-shadow: @esPhotoItemTaggingTextShadow;
+		font-weight: bold;
+		text-align: center;
+		font-size: 13px;
+
+		&:before {
+			top: @fd-base-spacing--lg;
+			display: none;
+		}
+
+		> button {
+			// top: 9px;
+			// right: @fd-base-spacing--lg;
+			padding: 3px 8px;
+			margin-left: 10px;
+			font-weight: bold;
+			position: relative;
+			top: auto;
+			left: auto;
+			font-size: 12px;
+		}
+	}
+
+	.es-media-item-menu {
+		li[data-photo-share-button] {
+			display: block;
+		}
+	}
+
+	.es-photo-item.tagging .es-media-header {
+		// display: none;
+	}
+
+	.es-privacy.active.custom-privacy .es-privacy-custom-form {
+		width: 280px;
+		right: -80px;
+		&:before,
+		&:after {
+			display: none; // remove arrow
+		}
+	}
+	.es-photo-popup-close {
+		display: none; // hide by default
+		position: absolute;
+		top: @fd-base-spacing--lg;
+		left: @fd-base-spacing--lg;
+	}
+	
+
+	&.is-mobile {
+		.es-photo-content {
+			max-height: 320px;
+		}
+	}
+
+	&.w320 {
+		.es-photo-content {
+			max-height: 240px;
+		}
+	}
+
+}
+
+
+
+.es-photo-popup-nav { // Override .o-nav
+	text-align: right;
+	.fa {
+		color: #fff;
+	}
+	.o-nav__item {
+		margin-right: @fd-base-spacing;
+		vertical-align: top;
+	}
+	.o-nav__link {
+		color: #aaa;
+	}
+}
+
+.es-photo-item.layout-item .es-photo-menu-item .o-nav__item > a,
+.btn-group.open .btn-photo-popup-nav-item,
+.btn-photo-popup-nav-item,
+.btn-photo-popup-nav-item:active, {
+
+	// Make <a> tag visual like .btn
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	font-weight: @btn-font-weight;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style ; see https://github.com/necolas/normalize.css/issues/214
+	border: 1px solid transparent;
+	white-space: nowrap;
+	text-shadow: none;
+	box-shadow: none;
+	.button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius-base);
+	.user-select(none);
+	.transition(none);
+
+	// custom
+	font-size: @fd-base-font-size;
+	padding: @fd-base-spacing--sm;
+	color: #fff !important;
+	background-color: transparent !important;
+	border: 1px solid transparent !important;
+	line-height: 1;
+}
+.btn-group.open .btn-photo-popup-tag-action,
+.btn-photo-popup-tag-action { // dropdown-toggle_
+	
+	border-radius: @fd-ui-radius;
+}
+.es-media-browser {
+	.is-featured {
+		.fa {
+			color: #EC971F;
+		}
+	}	
+}
+
+.btn-group.open .btn-photo-popup-action,
+.btn-photo-popup-action { // dropdown-toggle_
+	color: #fff !important;
+	background-color: transparent !important;
+	border: 1px solid @fd-ui-bg;
+	border-radius: @fd-ui-radius;
+	font-size: @fd-base-font-size;
+}
+
+@media(max-width: 900px) {
+	&.es-photo-popup {
+		padding: 0;
+		.es-photo-popup-close {
+			display: block;
+		}
+		.es-media-header.es-photo-header {
+			// position: fixed;
+			// height: 50px;
+			// width: 100%;
+			// background: #000;	
+		}
+		.btn-media[data-popup-close-button] {
+			display: block;
+		}
+
+		.es-photo-close-button {
+			display: none;
+		}
+
+		.es-popup-handle {
+			padding-right: 0;
+			background: transparent;
+		}
+
+		.es-photo-item {
+			overflow: hidden;
+			overflow-y: auto;
+		}
+
+		.es-photo-header {
+			background: transparent;
+		}
+
+		.es-photo-content {
+			position: relative;
+			max-height: 480px;
+			background: transparent;
+			border-top: 0px;
+			// top: 20px;
+		}
+
+		.es-photo-footer {
+			position: relative;
+			top: auto;
+			right: auto;
+			height: auto;
+			width: 100%;
+		}
+
+		.es-photo-item .es-photo-hint.tag-hint.alert {
+			// top: 0;
+		}
+		
+		
+
+		.es-photo-popup-nav { // Override .o-nav
+			
+			.o-nav__item,
+			.btn-photo-popup-nav-item.dropdown-toggle_ { // Hide label text
+				width: 20px;
+				overflow: hidden;
+				&:last-child { // Dropdown
+					width: 26px;
+					overflow: visible;
+				}
+			}
+			
+		}
+	}
+}
+
+@media(max-width: 720px) {
+	&.es-photo-popup {
+		// Hide tagging if too narrow
+		[data-photo-tag-list], 
+		.es-photo-tag-list {
+			display: none;
+		}
+	}
+}

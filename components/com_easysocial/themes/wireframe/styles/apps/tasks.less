@@ -1,0 +1,325 @@
+.es-dashboard {
+	
+	.app-tasks {
+		.form-item {
+			margin: @fd-base-spacing--lg 0 @fd-base-spacing--xl;
+		}
+
+		.tasks-list {
+			> li {
+				padding: @fd-base-spacing @fd-base-spacing--lg;
+				border-radius: @fd-ui-radius--lg;
+				background: @fd-ui-bg;
+				border: 1px dashed @fd-ui-border-color;
+                line-height: 22px; // Preserve height when .btn-group appeared
+
+				+ li {
+					margin-top: @fd-base-spacing;
+				}
+
+				.task-title {
+					font-size: @fd-base-font-size;
+				}
+
+				.task-time {
+					font-size: @fd-base-font-size--xs;
+					color: @fd-ui-text-color;
+				}
+
+				input {
+					margin-top: 0;
+				}
+
+				.btn-group {
+					display: none;
+				}
+
+				.task-stats {
+					.o-label {
+						display: none;
+					}
+				}
+
+				&:hover {
+					.btn-group {
+						display: inline-block;
+					}
+				}
+
+				&.is-resolved {
+					background: #FFFED8;
+
+					.task-title {
+						text-decoration: line-through;
+					}
+					
+					.task-stats {
+						.o-label {
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// From /components/com_easysocial/themes/wireframe/styles/pages/app-tasks.less
+.app-tasks {
+
+    .due,
+    .completed {
+        display: none; // Hide by default
+    }
+    
+    .is-due {
+        .due {
+            display: inline-block !important;
+        }
+    }
+
+    .is-completed {
+        .completed {
+            display: inline-block !important;
+        }
+
+        .mark-uncomplete {
+            display: block !important;
+        }
+
+        .mark-completed {
+            display: none !important;
+        }
+    }
+    
+    .milestone-list {
+        
+        > li + li {
+            margin-top: 40px;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 20px;
+
+            > .o-label {
+                font-size: @fd-base-font-size;
+                height: 20px;
+                line-height: 20px;
+                padding: 0 @fd-base-spacing;
+                text-transform: uppercase;
+            }
+        }
+
+        .milestone-desc {
+            font-size: @fd-base-font-size;
+        }
+
+        .milestone-meta {
+            border-top: 1px dotted @fd-ui-border-color;
+            border-bottom: 1px dotted @fd-ui-border-color;
+            padding: @fd-base-spacing--sm 0;
+
+            ul {
+                font-size: @fd-base-font-size;
+                color: @fd-ui-text-color;
+            }
+
+            li {
+                margin-right: @fd-base-spacing--sm;
+                display: inline-block;
+
+                +li {
+                    border-left: 1px dotted @fd-ui-border-color;
+                    padding-left: @fd-base-spacing;
+                }
+            }
+        }
+
+    }
+
+    .milestone-item-view {
+        font-size: @fd-base-font-size;
+
+        h3 {
+            margin-top: 0;
+        }
+
+        h5 {
+            font-weight: 700;
+        }
+
+        .mark-completed {
+            display: block;
+        }
+
+        .mark-uncomplete {
+            display: none;
+        }
+
+        .milestone-content {
+            border-right: 1px dotted @fd-ui-border-color;
+
+            > hr {
+                margin-top: @fd-base-spacing;
+            }
+        }
+        .milestone-desc {
+            margin-bottom: @fd-base-spacing--lg;
+        }
+
+        
+        .milestone-tasks {
+            margin-top: @fd-base-spacing--lg;
+
+            hr {
+                margin-top: @fd-base-spacing--sm;
+                margin-bottom: @fd-base-spacing;
+            }
+
+            .tasks-list {
+                &.completed-list {
+                    >li {
+                        label {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+                >li {
+                    padding: @fd-base-spacing--sm 0;
+
+                    &.task-form {
+                        margin-top: @fd-base-spacing;
+
+                        .form-meta {
+                            margin-top: @fd-base-spacing;
+                            >div {
+                                +div {
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .task-meta {
+                        margin-left: 41px;
+                    }
+                    .owner-avatar {
+                        max-width: 16px;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 5px;
+                    }
+
+                    .task-created {
+                        font-size: @fd-base-font-size--xs;
+                        color: @fd-ui-text-color;
+                    }
+                    label {
+                        font-size: @fd-base-font-size;
+                        font-weight: normal;
+                    }
+
+                    + li {
+                        border-top: 1px dotted @fd-ui-border-color;
+                        padding-top: @fd-base-spacing--sm;
+                    }
+
+                    .task-meta {
+                        color: @fd-ui-text-color;
+
+                        >ul {
+                            li {
+                                display: inline-block;
+                                padding-right: @fd-base-spacing--sm;
+
+                                +li {
+                                    border-left: 1px dotted @fd-ui-border-color;
+                                    padding-left: @fd-base-spacing;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .milestone-chart {
+            .legend-title {
+                margin: @fd-base-spacing--lg 0 @fd-base-spacing;
+                font-size: @fd-base-font-size;
+                font-weight: 700;
+            }
+
+            .legend-items {
+                >div {
+                    >span {
+                        width: 32px;
+                        height: 16px;
+                        display: inline-block;
+                        margin-right: @fd-base-spacing--sm;
+                    }
+
+                    +div {
+                        margin-top: @fd-base-spacing--sm;
+                    }
+                }
+            }
+
+            .legend-incomplete {
+                >span {
+                    background: #BE1F23;
+                }
+            }
+            .legend-completed {
+                >span {
+                    background: #2b94c5;
+                }
+            }
+        }
+
+        .milestone-meta {
+            > ul {
+                li {
+                    color: @fd-ui-text-color;
+                    font-size: @fd-base-font-size;
+                    padding: 0 0 @fd-base-spacing--sm 0;
+
+                    + li {
+                        padding: @fd-base-spacing--sm 0;
+                        border-top: 1px dotted @fd-ui-border-color;
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+.es-task-form {
+    margin-bottom: @fd-base-spacing--lg;
+}
+.es-task-item {
+    + .es-task-item {
+        border-top: 1px solid @fd-ui-border-color;
+        padding-top: @fd-base-spacing--lg;
+        margin-top: @fd-base-spacing--lg;
+    }
+
+    .checkbox {
+        margin: 0;
+    }
+}
+
+
+&.is-mobile {
+    .create-task {
+        .datepicker-wrap {
+            margin-top: @fd-base-spacing;
+        }
+    }
+
+}

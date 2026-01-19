@@ -1,0 +1,154 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+
+.es-side-widget,
+.es-side-widget__hd,
+.es-side-widget__bd,
+.es-side-widget__ft {
+	.clearfix();
+	position: relative;
+}
+&.is-mobile {
+	.es-side-widget {
+		padding: @fd-base-spacing;
+		
+		&__filter,
+		.es-data-truncater,
+		.es-side-profile-info {
+			display: block;
+			padding: @fd-base-spacing @fd-base-spacing--lg;
+		}
+	}
+}
+
+.es-side-widget {
+	&__title {
+		color: @fd-ui-text-color;
+		margin-bottom: @fd-base-spacing;
+		font-size: @fd-base-font-size;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	+ .es-side-widget {
+		margin-top: @fd-base-spacing--lg;
+	}
+	.o-tabs__link {
+		color: @fd-ui-meta-color;
+
+		&:hover {
+			color: @fd-ui-text-color;
+		}
+	}
+	// Override .fa to standaize icon width and align center #4644
+	&__icon {
+		width: 16px;
+		text-align: center;
+	}
+
+
+	//
+	&__meta-list {
+		a {
+			color: @fd-ui-meta-color;
+			&:hover {
+				color: @fd-ui-text-color;
+			}       
+		}
+	}
+	
+	&__create { // wrap for 'add new button'
+		.btn {
+			font-weight: bold;
+		}
+	}
+}
+
+.es-side-widget-events-calendar {
+	min-height: 193px; // #5074 Fix calendar height, so that it won't collapse when loading
+}
+
+.es-side-widget-tab-tasks {
+	// Override o-checkbox
+	.o-checkbox {
+		.es-task-check-note {
+			color: @fd-brand-danger;
+			margin-left: @fd-base-spacing--sm;
+		}     
+		input[type="checkbox"] {
+			&:checked {
+				+ label {
+					color: @fd-ui-meta-color;
+					text-decoration: line-through;
+					+ .es-task-check-note {
+						text-decoration: line-through;
+					}    
+				}
+				
+			}
+			// &:checked + label {
+			//     text-decoration: line-through;
+			//     + div {
+			//         text-decoration: line-through;
+			//     }
+			// }
+		}
+	}
+}
+
+// Elements
+.es-side-calendar-date {
+	border: 1px solid @fd-ui-border-color;
+	border-radius: @fd-ui-radius--sm;
+	padding: @fd-base-spacing;
+	text-align: center;
+	width: 44px; // #4687
+	background-color: #fff;
+	&__date {
+		font-weight: bold;
+		font-size: @fd-base-font-size;
+		line-height: @fd-base-font-size;
+		color: #333;
+	}
+	&__mth {
+		color: @fd-brand-danger;
+		font-size: @fd-base-font-size;
+		line-height: @fd-base-font-size;
+	}
+	&__title {
+		color: @fd-ui-text-color;
+	}
+}
+
+.es-side-progress-bar { // Override .progress
+	height: 5px;
+}
+
+.es-side-widget-btn-showmore {
+	color: @fd-ui-meta-color;
+	padding-left: 0;
+}
+
+
+.es-side-widget-albums {
+	&__item {
+		width: 68px; // Sidebar width divided 3 with spaces
+		
+	}
+}
+
+
+.es-side-embed-lists {
+	&__item {
+		width: 68px;
+		margin-right: @fd-base-spacing--sm;
+		display: inline-block;
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Categories List">
+		<message>
+			Displays a list of categories
+		</message>
+	</layout>	
+	<fields name="request">			
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_edocman/model/fields">
+			<field name="id" type="edocmancategory" size="3" default="0" label="Select Category" description="Choose the category which you want to list it's sub categories" />
+		</fieldset>
+	</fields>
+	<fields name="params">
+		<fieldset name="basic" label="Other setting" addfieldpath="/administrator/components/com_edocman/model/fields">
+			<field name="categories_layout" type="list"	default="default" label="Select Categories Layout" description="Select Categories Layout: Default and Table" class="input-medium">
+				<option value="default">Default layout</option>
+				<option value="table">Table layout</option>
+			</field>
+		</fieldset>
+	</fields>
+</metadata>

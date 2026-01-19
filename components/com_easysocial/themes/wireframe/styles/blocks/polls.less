@@ -1,0 +1,146 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+.es-polls {
+	.input-group-sm .form-control {
+		font-size: @baseFontSize;
+	}
+	
+	// Preview
+	&__title {
+		font-weight: bold;
+		margin-bottom: @fd-base-spacing;
+		> a { // Edit link
+			margin-left: @fd-base-spacing;
+			font-weight: normal;
+			float: right;
+		}
+	}
+	&__list {
+
+	}
+	&__item { // shared with .o-checkbox
+		// padding-right: 80px;
+		// margin-bottom: @fd-base-spacing--lg;
+
+		+ .es-polls__item {
+			margin-top: @fd-base-spacing--lg;
+			// padding-top: @fd-base-spacing--lg;
+			position: relative;
+
+			// &:before {
+			//     content: '';
+			//     display: block;
+			//     height: 1px;
+			//     background: @fd-ui-border-color;
+			//     position: absolute;
+			//     left: 25px;
+			//     top: 0;
+			//     right: 0;
+			// }
+		}
+	}
+
+	&__count {
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 80px;
+		text-align: right;
+		color: #999;
+		line-height: 16px;
+	}
+
+	&__progress {
+		background: #e5e5e5;
+		margin: @fd-base-spacing 0 0;
+		height: 10px;
+		.box-shadow(none);
+		.progress-bar {
+			background-color: #A6D2E5;
+			box-shadow: none;
+		}
+	}
+
+	&__voters {
+		overflow: hidden;
+		margin-top: @fd-base-spacing;
+
+		> .o-avatar {
+			// float: left;
+			// margin: 5px 5px 0 0;
+		}
+	}
+}
+
+.es-polls-question {
+	// font-weight: bold;
+}
+
+// .es-polls-item {
+//     padding-right: 80px;
+
+//     + .es-polls-item {
+//         margin-top: 10px;
+//         padding-top: 10px;
+//         position: relative;
+
+//         &:before {
+//             content: '';
+//             display: block;
+//             height: 1px;
+//             background: #e5e5e5;
+//             position: absolute;
+//             left: 25px;
+//             top: 0;
+//             right: 0;
+//         }
+//     }
+// }
+ 
+
+
+
+
+
+
+.is-checked .es-polls-progress .progress-bar {
+	background: @brand-success;
+}
+
+.es-polls-option {
+	display: table;
+	width: 100%;
+	margin-top: 10px;
+	font-size: @baseFontSize;
+
+	> div {
+		display: table-cell;
+
+		+ div {
+			text-align: right;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

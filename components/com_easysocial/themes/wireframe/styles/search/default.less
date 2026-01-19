@@ -1,0 +1,121 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	search-result.less
+\*------------------------------------*/
+
+.es-search-group {
+	margin-bottom: @fd-base-spacing--lg;
+	padding-bottom: @fd-base-spacing--lg;
+	border-bottom: 1px dashed @fd-ui-border-color;
+	&__title {
+		font-weight: bold;
+		margin-bottom: @fd-base-spacing;
+	} 
+	&__item {
+		margin-bottom: @fd-base-spacing--lg;
+		&-title {
+			font-weight: bold;
+			margin-bottom: @fd-base-spacing;
+		}
+	}
+	&__meta,
+	&__meta a {
+		color: @fd-ui-meta-color;
+	}
+
+	&__action {
+		margin-bottom: @fd-base-spacing--lg;
+	}
+}
+
+
+.es-search-master {
+	margin-bottom: @fd-base-spacing--lg;
+}
+
+.es-search-advance {
+	float: right;
+	margin: 0 0 0 @fd-base-spacing--lg;
+
+	a {
+		display: inline-block;
+		vertical-align: top;
+		line-height: 28px;
+	}
+}
+
+.es-search-filter {
+	overflow: hidden;
+	margin: 0 0 0 -1px;
+}
+
+.es-search-filter-item {
+	display: inline-block;
+	float: left;
+	margin: 2px 1px;
+	position: relative;
+	.user-select(none);
+
+	input {
+		display: none;
+
+		&:checked + label {
+			background: #f5f5f5;
+			border-color: #ddd;
+
+			&:after {
+				.opacity(1);
+			}
+		}
+	}
+
+	label,
+	label:before,
+	label:after {
+		.transition(ease .5s);
+	}
+
+	label {
+		background: transparent;
+		border: 1px solid transparent;
+		border-radius: 3px;
+		line-height: 26px;
+		padding: 0 10px 0 30px;
+		position: relative;
+
+		&:before,
+		&:after {
+			background: #fff;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			content: '';
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			position: absolute;
+			left: 7px;
+			top: 50%;
+			margin-top: -8px;
+
+			text-align: center;
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			font-size: @fontSizeSmall;
+			display: inline-block;
+			text-decoration: inherit;
+		}
+
+		&:after {
+			background: @brand-primary;
+			border-color: darken(@brand-primary, 10%);
+			color: #fff;
+			content: "\f00c";
+			.opacity(0);
+		}
+	}
+}

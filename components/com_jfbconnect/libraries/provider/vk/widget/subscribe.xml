@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="type" type="list" label="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_TYPE_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_TYPE_DESC" default="user">
+                    <option value="user">COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_TYPE_OPTION_USER</option>
+                    <option value="group">COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_TYPE_OPTION_GROUP</option>
+                    <option value="page">COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_TYPE_OPTION_PAGE</option>
+                </field>
+                <field name="link" type="text" label="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_LINK_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_LINK_DESC"/>
+                <field name="width" type="text" label="COM_JFBCONNECT_WIDGET_VK_LIKE_WIDTH_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_WIDTH_DESC" default="350"/>
+                <field name="mode" type="list" label="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_MODE_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_MODE_DESC" default="1">
+                    <option value="0">Button</option>
+                    <option value="1">Easy button</option>
+                    <option value="2">Link</option>
+                </field>
+                <field name="display" type="list" label="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_SOFT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_SOFT_DESC" default="0">
+                    <option value="0">COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_SOFT_OPTION_AUTHOR_BUTTON</option>
+                    <option value="1">COM_JFBCONNECT_WIDGET_VK_SUBSCRIBE_SOFT_OPTION_BUTTON_ONLY</option>
+                </field>
+            </fieldset>
+        </fields>
+    </fields>
+</form>

@@ -1,0 +1,18 @@
+#es .list-media-group li.is-owner .es-profile-header-footer {
+  display: none;
+}
+#es .list-media-group li.is-loading a.btn-loading {
+  display: block;
+}
+#es .list-media-group li.is-member a.btn-leave-group {
+  display: block;
+}
+#es .list-media-group li.is-invited a.btn-respond-invitation {
+  display: block;
+}
+#es .list-media-group li.is-guest a.btn-join-group {
+  display: block;
+}
+#es .list-media-group .es-profile-header-footer a {
+  display: none;
+}

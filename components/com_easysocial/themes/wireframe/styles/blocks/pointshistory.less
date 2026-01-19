@@ -1,0 +1,239 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	pointshistory.less
+\*------------------------------------*/
+
+.es-heading-avatar {
+	background-color: @fd-ui-shade;
+	text-align: center;
+	position: relative;
+	padding: 40px 0 0;
+	min-height: 180px;
+	margin-bottom: 80px;
+	&__title {
+		font-size: 20px;
+		font-weight: bold;
+	}
+	&__desc {
+		font-size: @fd-base-font-size;
+		color: @fd-ui-meta-color;
+	}
+	&__avatar {
+		overflow: hidden;
+		width: 120px;
+		height: 120px;
+		padding: 4px;
+		
+		background-color: @fd-ui-bg;
+		position: absolute;
+		left: 50%;
+		margin-left: -60px;
+		z-index: 2;
+		bottom: -60px;
+
+	}
+	&--rounded {
+		border-radius: 50%;
+		img {
+		border-radius: 50%;
+		}
+	}
+	
+}
+
+.es-pointshistory {
+	position: relative;
+	.clearfix();
+	padding: @fd-base-spacing 0 100px;
+	&:before { //timeline
+		display: block;
+		content: '';
+		width: 3px;
+		position: absolute;
+		background-color: @esPointsHistoryTimeline;
+		.opacity(.4);
+		left: 50%;
+		top: 0px;
+		bottom: 0;
+		margin-left: -2px;
+		// min-height: 320px;
+	}
+	//elements
+
+	.btn-loadmore {
+		position: absolute;
+		left: 50%;
+		width: 90px;
+		height: auto;
+		margin-left: -45px;
+		bottom: -2px;
+		padding: 3px;
+	}
+
+}
+
+.es-timeline-item-separator{
+	clear: both;
+	height: 72px;
+	margin: @fd-base-spacing--lg 0;
+	display: block;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 28px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		border-top: 1px dashed @fd-ui-border-color;
+	}
+}
+
+//timeline block
+.es-timeline { //ul
+	list-style: none;
+	margin:0;
+	padding: 0;
+	position: relative;
+	.clearfix();
+	padding-top: 30px;
+	margin-top: 30px;
+
+	&__item { //li
+		position: relative;
+		display: inline-block;
+		width: 50%;
+		float: left;
+		margin-bottom: 40px;
+
+		&:nth-child(2n) {
+			top: 40px;
+			padding-right: 20px;
+			.es-timeline__content {
+				&:before {
+					z-index: 2;
+					right: -10px;
+				}
+				
+			}//item
+			.es-timeline__dot {
+				right: -26px;
+			}
+		
+		}
+
+		&:nth-child(2n+1) { //2n
+			top: -20px;
+			// margin-top: 20px;
+			float: right;
+			padding-left: 20px;
+			.es-timeline__content {
+				&:before {
+					z-index: 2;
+					left: -10px;
+				}
+				
+			}
+			.es-timeline__dot {
+				left: -27px;
+			}
+			
+		}//even
+
+	}//timeline-item
+
+	&__content {
+		position: relative;
+		// height: 44px;
+		font-size: @fd-base-font-size;
+		// overflow: hidden;
+		line-height: 18px;
+		color: @esPointsHistoryColor;
+		background: @esPointsHistoryBackground;
+		border: 1px solid @fd-ui-border-color;
+		padding: @fd-base-spacing--lg;
+		// &:after,
+		&:before {
+			content: "";
+			position: absolute;
+			// border-color: transparent;
+			// border-style: solid;
+			display: inline-block;
+			background-color: @fd-ui-border-color;
+			width: 10px;
+			height: 1px;
+			top: 16px;
+		}
+
+		&:hover {
+			.es-timeline__dot {
+				background-color: @fd-brand-success;
+			}
+		}
+	}//item
+	
+	&__title {
+		font-weight: bold;
+	}
+
+	&__dot {
+		// border: 2px solid @fd-brand-success--l;
+		display: block;
+		width: 11px;
+		height: 11px;
+		position: absolute;
+		background-color: @fd-brand-success--l;
+		top: 12px;
+		border-radius: 50%;
+	}
+
+	&__date {
+		font-size: @fd-base-font-size--xs;
+		position: absolute;
+		top: -20px;
+		color: @fd-ui-meta-color;
+	}
+	
+
+	&__message {
+		padding: 0;
+		margin: @fd-base-spacing 0;
+		// border-left: 5px solid @grayLighter;
+		background: none;
+		min-height: 5px;
+	}
+
+}//timeline block
+
+// Responsive
+&.is-mobile {
+	.es-pointshistory {
+		//timeline block
+		margin-bottom: @fd-base-spacing;
+		padding: @fd-base-spacing 0;
+		&:before,
+		&:after {
+			display: none;
+		}
+		
+		.btn-loadmore {
+			width: 100%;
+			left: 0;
+			margin-left: 0;
+		}
+	}
+	.es-timeline { //ul
+		margin: 0;
+		&__item {
+			padding: 0;
+			top: 0;
+			float: none;
+			display: block;
+			width: 100%;
+		}
+	}
+}

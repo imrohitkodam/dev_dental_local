@@ -1,0 +1,691 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$Conversation - conversation.less
+\*------------------------------------*/
+
+.es-convo {
+	.flex-display(flex);
+	width: 100%;
+	font-size: @fd-base-font-size;
+
+	border: 1px solid @fd-ui-border-color;
+
+	&__sidebar,
+	&__content {
+		vertical-align: top;
+		position: relative;
+	}
+
+	&__search-input-wrap {
+		position: relative;
+		border-bottom: 1px solid @fd-ui-border-color;
+		input[type="text"] {
+			border: none;
+			box-shadow: none;
+			padding-right: 24px; // Reserve space for icon
+		}
+		&:before {
+			position: absolute;
+			right: @fd-base-spacing;
+			top: 6px;
+
+			content: "\f002";
+			text-align: center;
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			color: @fd-ui-meta-color;
+			display: inline-block;
+			text-decoration: inherit;
+		}
+	}
+
+	&__sidebar {
+		width: 280px;
+		.flex-display(flex);
+		.flex-direction(column);
+		.flex(0 0 280px);
+		border-right: 1px solid @fd-ui-border-color;
+
+		&-hd {
+			.clearfix();
+			border-bottom: 1px solid @fd-ui-border-color;
+			height: 40px;
+
+		}
+		&-scroll-area {
+			// height: 100%;
+			position: absolute;
+			top: 75px; // es-convo__sidebar-hd + es-convo__search-input-wrap height
+			bottom: 0;
+		}
+
+		&-item { // links
+			width: 100%;
+			display: block;
+			position: relative;
+			padding: @fd-base-spacing--xl @fd-base-spacing;
+			cursor: pointer;
+			
+			&:hover {
+				background-color: @fd-ui-shade;
+
+				.es-convo__sidebar-action {
+					display: block;
+				}
+			}
+
+			&.is-dropdown {
+				z-index: 3;
+			}
+		}
+
+		&-action {
+			position: absolute;
+			top: @fd-base-spacing--sm;
+			right: @fd-base-spacing;
+			z-index: 2;
+			display: none; // hide by default
+			> a {
+				color: @fd-ui-text-color;
+			}
+		}
+
+		&-pagination {
+			margin-top: 40px; // Reserve space for action dropdown #5427
+			padding: @fd-base-spacing;
+			padding-bottom: 80px; // Reserve space for action dropdown #5427
+		}
+	}
+
+	&__content {
+		// padding-top: @fd-base-spacing--xl;
+		position: relative;
+		.flex-display(flex);
+		.flex-direction(column);
+		overflow: hidden;
+		// .flex(0);
+		width: 100%;
+		&-hd {
+			.clearfix();
+			padding: @fd-base-spacing @fd-base-spacing--xl @fd-base-spacing @fd-base-spacing--xl;
+			border-bottom: 1px solid @fd-ui-border-color;
+			font-size: @fd-base-font-size; // Fontsize will affect height.
+			// padding-left: @fd-base-spacing--xl;
+			height: 40px;
+			&-title {
+				float: left;
+			}
+			&-title-input {
+				position: absolute;
+				left: @fd-base-spacing--xl;
+				right: @fd-base-spacing--xl;
+				top: 6px;
+				display: none; // Hide by default
+			}
+			&.is-editing {
+				.es-convo__content-hd-title,
+				.es-convo__content-action {
+					display: none;
+				}
+				.es-convo__content-hd-title-input {
+					display: inline-block;
+				}
+			}
+		}
+		&-scroll-area {
+			position: relative;
+			height: 540px;
+		}
+
+		&-action { // Override .btn-toolbar
+			// float: right;
+			position: absolute;
+			right: @fd-base-spacing;
+			top: @fd-base-spacing;
+		}
+
+		// Only when the conversation has active conversation
+		&.has-active {
+			.conversation-actions {
+				display: inline-block;
+			}
+
+			.reply-button {
+				display: inline-block;
+			}
+		}
+
+		.reply-button {
+			display: none;
+		}
+
+		.conversation-actions {
+			display: none;
+		}
+	}
+	&__attached-list {
+	}
+	&__attached-item {
+		border-radius: @fd-ui-radius;
+		display: inline-block;
+		border: 1px solid @fd-ui-border-color;
+		padding: @fd-base-spacing;
+		margin-bottom: @fd-base-spacing;
+		float: left;
+		clear: both;
+		max-width: 250px;
+		> img {
+			max-height: 200px; 
+		}
+	}
+	&__attached-link {
+		display: block;
+		margin: @fd-base-spacing 0;
+		color: @fd-ui-text-link-color;
+		.text-overflow();
+		
+	}
+	&__attached-name {
+		white-space: pre-line;
+	}
+	&__attached-size {
+		display: block;
+		color: @fd-ui-meta-color;
+		
+	}
+}
+
+.es-convo-sidebar-toggle {
+	display: none;
+}
+.btn-mobile-new-convo {
+	margin-bottom: @fd-base-spacing--lg;
+}
+
+// Responsive 
+&.is-mobile {
+	.es-convo {
+		position: relative;
+		overflow: hidden;
+
+		&__sidebar,
+		&__content {
+			// display: block;
+		}
+		&__sidebar {
+			border-right: none;
+			display: block;
+			// border-right: 1px solid @fd-ui-border-color;
+			border-radius: @fd-ui-radius;
+			margin: 0;
+			width: 100%;
+			left: -100%;
+			position: absolute;
+			z-index: 99;
+			top: 0;
+			bottom: 0;
+			transition: all .2s linear;
+
+
+			&-scroll-area {
+				// height: auto !important;
+			}
+
+			&-item { // links
+				width: 100%;
+				display: block;
+				position: relative;
+				padding: @fd-base-spacing--xl @fd-base-spacing;
+				.es-convo__sidebar-action {
+					display: block;
+				}
+
+				&:hover {
+					background-color: @fd-ui-shade;
+				}
+
+			}
+		}
+		&__attached-item {
+			max-width: 180px;
+		}
+
+		&__content {
+			clear: both;
+			display: block;
+			position: relative;
+			min-height: 300px;
+			left: 0;
+			padding: 0 0 @fd-base-spacing;
+			.clearfix();
+			transition: all .2s linear;
+
+			&-scroll-area {
+				height: auto;
+				max-height: 400px;
+			}
+
+			.conversation-actions {
+				margin-top: @fd-base-spacing--lg;
+				display: block;
+			}
+			&-hd {
+				height: auto;
+				&-title {
+					float: none;
+					margin-top: 32px; // Reserve space for es-convo__content-action
+				}
+			}
+			&-action {
+				margin: 0;
+				float: none;
+				top: 0;
+				left: 0;
+				width: 100%;
+				border-bottom: 1px solid @fd-ui-border-color;
+				.flex-display(flex);
+				.justify-content(space-between);
+			}
+			// Override .btn behaviour in mobile
+			.btn-convo-back,
+			.btn-convo-dropdown {
+				border-radius: 0;
+				border: none;
+				margin: 0;
+				padding: 6px 12px;
+				height: 100%;
+				line-height: 20px;
+			}
+			.btn-convo-back {
+				
+				border-right: 1px solid @fd-ui-border-color;
+			}
+			.btn-convo-dropdown {
+				
+				border-left: 1px solid @fd-ui-border-color;
+			}
+		}
+
+		
+	}
+	
+	.sidebar-open {
+		.es-convo__sidebar {
+			left: 0;
+			transition: all .2s linear;
+		}
+		.es-convo__content {
+			left: 100%;
+			transition: all .2s linear;
+		}
+	}
+}
+
+// Override .o-nav.o-nav--block
+.es-convo-sidebar-tab {
+	text-align: center;
+	> li {
+		> a {
+			font-size: @fd-base-font-size;
+			color: @fd-ui-text-color;
+			padding: @fd-base-spacing @fd-base-spacing;
+			height: 39px;
+			
+			&:hover {
+				color: darken(@fd-ui-text-color, 2%);
+				background-color: @fd-ui-shade;    
+			}
+		}
+		&.active {
+			> a {
+				color: @fd-ui-text-link-color;
+				background-color: @fd-ui-shade;       
+			}
+		}
+	}
+	>:not(:first-child) {
+		border-left: 1px solid @fd-ui-border-color;
+	}
+	
+}
+
+// Temporary port from .es-list
+.es-convo-list {
+	margin: 0; 
+	padding: 0 0 80px; // // Reserve space for action dropdown #5427
+	list-style: none;
+	position: relative;
+
+	.es-convo-list-items {
+		// padding-bottom: 80px; // Reserve space for action dropdown #5427
+	}
+	>:not(:first-child) {
+		// border-top: 1px solid @fd-ui-border-color;
+	}
+
+	&.is-loading {
+		.es-convo-list-items {
+			display: none;
+		}
+	}
+
+	.o-empty {
+		margin-top: 150px;
+		background: none;
+		border: 0;
+
+		.o-empty__text {
+			color: #666;    
+		}
+		
+	}
+}
+&.is-mobile {
+	.es-convo-list {
+		.o-empty {
+			margin-top: 20px;
+		}
+	}
+}
+
+// elements
+.es-convo-text {
+	font-size: @fd-base-font-size;
+	color: @fd-base-text-color;
+	// word-break: break-all;
+	.hyphens(auto); // #507 #528 For longer word
+}
+.es-convo-attachments {
+	font-size: @fd-base-font-size;
+	color: @fd-base-text-color;
+	background-color: @fd-ui-shade;
+	padding: @fd-base-spacing;
+}
+.es-convo-meta {
+	font-size: @fd-base-font-size--xs;
+	color: @fd-ui-meta-color;
+}
+
+// Sidebar
+.es-convo__sidebar-scroll-area,
+.es-convo__content-scroll-area {
+	overflow-y: auto;
+	width: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+// Status
+.es-convo__sidebar-item {
+	color: @fd-ui-text-link-color;
+	
+	&.is-unread {
+		background-color: @fd-ui-bg--unread;
+	}
+	
+	&.is-active {
+		background-color: @fd-ui-shade;
+	}
+	
+	+ .es-convo__sidebar-item {
+		border-top: 1px solid @fd-ui-border-color;
+	}
+
+	.o-avatar {
+		width: 24px;
+		height: 24px;
+	}
+
+	.es-convo-text {
+		color: #666;
+	}
+}
+
+
+// Messages section
+.es-convo-messages {
+	padding-left: @fd-base-spacing--xl;
+	padding-right: @fd-base-spacing--xl;
+
+	// Loading
+	.o-loading {
+		margin-top: 200px;
+
+		i {
+			font-size: 48px;
+			color: #666;
+		}
+	}
+
+	.is-loading,
+	.is-empty {
+		.message-list {
+			display: none;
+		}
+	}
+
+	.message-list {
+		display: block;
+	}
+
+	.o-empty {
+		background: none;
+		margin-top: 100px;
+	}
+
+	&__item {
+		position: relative;
+
+		.es-user-name {
+			font-size: @fd-base-font-size--xl;
+			font-weight: bold;
+			text-transform: capitalize;
+		}
+
+		&-content {
+			padding-right: 60px; // Reserve space for time
+		}
+	}
+	&__time {
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: @fd-base-font-size;
+	}
+	&__date {
+		color: @fd-ui-meta-color;
+	}
+}
+.es-convo-messages__item {
+	+ .es-convo-messages__item {
+		margin-top: @fd-base-spacing--xl;
+	}
+}
+
+// Composer section
+.es-convo-reply {
+	position: relative;
+	width: 100%;
+}
+.es-convo-composer {
+	display: table; // #408
+	table-layout: fixed; 
+	border-top: 1px solid @fd-ui-border-color;
+	padding-bottom: @fd-base-spacing--lg;
+
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	.clearfix();
+	&__hd {
+		padding: @fd-base-spacing--lg;
+		border-bottom: 1px solid @fd-ui-border-color;
+		
+	 
+	}
+	&__textarea {
+		min-height: 80px;
+	}
+	&__bd {
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+	}
+	&__ft {
+		padding-left: @fd-base-spacing--lg;
+		padding-right: @fd-base-spacing--lg;
+	}
+	
+	&__action {
+		.flex-display(flex);
+		.justify-content(flex-end);
+	}
+
+	&__action-tab {
+		// If extend need to convert it to class name
+		// background-color: red;
+		padding: 0 @fd-base-spacing--lg;
+		a {
+			color: @fd-ui-meta-color;
+			display: inline-block;
+			padding: @fd-base-spacing @fd-base-spacing--sm;
+			margin-right: @fd-base-spacing;
+			i {
+				font-size: 16px;
+				
+			}
+			&:hover {
+				color: @fd-ui-text-color;
+			}
+		}
+	}
+
+	&__attachment {
+		background-color: @fd-ui-shade;
+		padding: @fd-base-spacing;
+	}
+	&__attachment-item {
+		position: relative;
+		margin-bottom: @fd-base-spacing--sm;
+	}
+	&__attachment-note {
+		font-weight: bold;
+	}
+	&__close,
+	&__attachment-remove {
+		// background: rgba(0, 0, 0, 0.75);
+		border-radius: 100%;
+		position: relative;
+		left: 0; 
+		top: -3px; 
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		font-size: 10px;
+		color: @fd-ui-meta-color;
+		text-align: center;
+		z-index: 10;
+		display: inline-block;
+		cursor: pointer;
+		vertical-align: text-top;
+
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+
+		&:hover {
+			// background: #d00;
+		}
+
+		&:before,
+		&:after {
+		  background: @fd-ui-meta-color;
+		  border-radius: 2px;
+		  content: '';
+		  display: block;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		}
+		&:before {
+		  width: 10px;
+		  height: 2px;
+		  margin: -1px 0 0 -5px;
+		}
+		&:after {
+		  height: 10px;
+		  width: 2px;
+		  margin: -5px 0 0 -1px;
+		}
+	}
+	
+	// Override 
+	.es-location-form {
+		border: 1px solid @fd-ui-border-color;
+	}
+}
+
+&.is-mobile {
+	.es-convo-composer {
+		&__bd {
+			padding: 0;
+		}
+		&__editor {
+			padding: @fd-base-spacing @fd-base-spacing 0;
+		}
+		&__location {
+			margin-bottom: @fd-base-spacing;
+		}
+		.es-location-form {
+			border: 0;
+			border-bottom: 1px solid @fd-ui-border-color;
+		}
+	}
+}
+
+// Composer layout
+
+// A layer to prevent trigger the markitup buttons #1589
+.es-convo-selectize-dummy {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	height: 200px;
+	display: none;
+}
+.has-dropdown {
+	.es-convo-selectize-dummy {
+		display: block;
+	}
+}
+.es-messaging {
+	.selectize-control {
+		z-index: 3;
+	}
+	.form-group {
+		position: relative;
+	}
+}
+.es-convo-markitup {
+	border: 1px solid @fd-ui-border-color;
+	border-bottom: none;
+}
+
+// Composer dialog
+.es-convo-dialog {
+	border: 1px solid @fd-ui-border-color;
+	border-bottom: none;
+}
+
+
+.es-single-composer-textarea {
+	border: 1px solid @fd-ui-border-color;
+	padding: @fd-base-spacing;
+}

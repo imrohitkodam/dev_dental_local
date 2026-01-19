@@ -1,0 +1,92 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	$points - points.less
+\*------------------------------------*/
+
+// Shared with badges listing
+.es-points-list {
+	.flex-display(flex);
+	.flex-wrap(wrap);
+	.justify-content(flex-start);
+	
+	&__item {
+		.flex-display(flex);
+		.flex(0 0 33%);
+		padding: 0 @fd-base-spacing @fd-base-spacing--lg;
+		text-align: center;
+	}
+
+	&__title {
+		font-weight: bold;
+		color: @fd-ui-text-color;
+		margin-bottom: @fd-base-spacing--sm;
+	}
+
+	// Override object
+	.o-box {
+		width: 100%;
+		.flex-display(flex);
+		.flex-direction(column);
+		
+		> div {
+			&:first-child {
+				height: 100%;
+			}
+		}
+	}
+}
+
+&.is-mobile {
+	.es-points-list {
+		display: block;
+		&__item {
+			.flex(0);
+		}
+	}
+}
+
+// Point number with badge design
+.es-point-badge {
+	margin: 0 auto;
+	width: 112px;
+	height: 112px;
+	line-height: 102px;
+	font-size: 30px;
+	font-weight: bold;
+	border-radius: 50%;
+	padding: @fd-base-spacing--sm;
+
+	color: @state-success-text;
+	background-color: @state-success-bg;
+	text-align: center;
+	
+	&--alert {
+		color: @state-danger-text;
+		background-color: @state-danger-bg;
+	}
+	span { // Give a name if want to expand
+		font-size: 20px;
+		line-height: 1;
+		vertical-align: middle;
+		letter-spacing: -3px;
+
+	}
+
+}
+
+.es-badges-icon { // img
+	width: 112px;
+	height: 112px;
+	margin: auto;
+}
+
+.es-badge-wrapper {
+	&__title {
+		font-size: @fd-base-font-size;
+	}
+}
+

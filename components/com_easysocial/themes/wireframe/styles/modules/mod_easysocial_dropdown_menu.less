@@ -1,0 +1,27 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Modules: mod_easysocial_drop_menu
+\*------------------------------------*/
+
+&.mod-es-dropdown-menu {
+	&__body { // Override o-media__body
+		overflow: hidden;
+	}
+
+	.dropdown-toggle_ {
+		cursor: pointer;
+		.user-select(none);
+	}
+
+	.dropdown-menu { // Override default for mod dropdown menu
+		border: 0;
+		a {
+			.user-select(none);
+		}
+	}
+}

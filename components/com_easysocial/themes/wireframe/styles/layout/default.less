@@ -1,0 +1,183 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	$Layout - layout.less
+\*------------------------------------*/
+
+
+// font-family: @baseFontFamily;
+font-size: @fd-base-font-size;
+// color: @esColor;
+
+// line-height: 18px;
+// background: @esBackground; // temporary remove white background as default #1204
+// font-size-adjust: none;
+
+&.es-main {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+.es-container {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+
+	.es-sidebar,
+	.es-content {
+		// padding-top: 15px;
+		display: table-cell;
+		vertical-align: top;
+		position: relative;
+	}
+
+	.es-sidebar {
+		width: 220px;
+		// border-right: 1px solid @esBorder;
+		
+
+		.btn-close-sidebar {
+			display: none;
+		}
+
+		+ .es-content {
+			padding-left: 20px;
+		}
+	}
+	.es-content {
+		height: 100%;
+
+		> .loading-indicator {
+			height: 100px;
+			position: relative;
+		}
+	}
+	&.es-container-alt {
+		.es-sidebar {
+			float: right;
+			width: 320px;
+		}
+		.es-content {
+			margin-left: 0;
+		}
+	}
+
+}//es-container
+
+// Min height issues #1858, #1993
+.es-container[data-achievements] .achievements-list,
+.es-container[data-conversations] .conversation-list,
+.es-container[data-friends] [data-friends-items],
+.es-container[data-profile-about] .profile-data-box,
+.es-notification-list {
+	min-height: 450px;
+}
+.btn-es-sidebar-toggle {
+	
+	display: none;
+	width: 100%;
+	margin-bottom: @fd-base-spacing;
+	clear: both;
+	position: relative;
+}
+
+.es-dashboard,
+.es-profile {
+
+	.es-content > .loading-indicator {
+		display: none;
+	}
+
+	&.loading {
+		.es-content > .loading-indicator {
+			display: block;
+		}
+	}
+}
+
+//Responsive control
+
+&.is-mobile {
+	.btn-es-sidebar-toggle {
+		display: block;
+		// float: none !important;
+	}
+	//generel sidebar styling in mobile view
+	
+	.es-container {
+		display: block;
+		position: relative;
+
+		overflow: hidden;
+		
+
+		.es-sidebar {
+
+			display: block;
+			background: @fd-ui-bg;
+			border: 1px solid @fd-ui-border-color;
+			border-radius: @fd-ui-radius;
+			margin: 0;
+			width: 220px;
+			left: -230px;
+			position: absolute;
+			z-index: 99;
+			top: 0;
+			bottom: 0;
+			transition: all .2s linear;
+
+			
+		}
+		.es-content {
+			clear: both;
+			display: block;
+			position: relative;
+			min-height: 400px;
+			left: 0;
+			padding: 0 0 @fd-base-spacing;
+			.clearfix();
+			transition: all .2s linear;
+		}
+
+		&.sidebar-open {
+			// overflow-y: scroll;
+
+			.es-sidebar {
+				left: 0;
+				transition: all .2s linear;
+				overflow-y: scroll;
+			}
+			.es-content {
+				left: 230px;
+				transition: all .2s linear;
+			}
+		}
+	}//es-container
+
+	// specific sidebar styling in profile view up on request #751
+	&.view-profile {
+		.es-container {
+			.es-sidebar {
+				// top: 380px;
+			}
+		}
+	}
+}
+
+.es-photo-camera,
+.es-photo-camera-preview {
+	background: #b3b3b3;
+	border-radius: 2px;
+	padding: 62px 0;
+	text-align: center;
+
+	* {
+		display: inline-block;
+		vertical-align: top;
+	}
+}

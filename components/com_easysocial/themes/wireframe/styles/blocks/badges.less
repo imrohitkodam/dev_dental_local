@@ -1,0 +1,50 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	$badges - badges.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+
+.es-achieve-badges {
+
+}
+
+// Single
+.es-achieve-badge { // override .es-cards__item
+	text-align: center;
+	padding: @fd-base-spacing--lg;
+	.flex-flow(column wrap);
+
+	&__img-wrap {
+		margin: 0 auto @fd-base-spacing;
+		width: 60px;
+		height: 60px;
+	}
+	&__title {
+		font-weight: bold;
+		margin-bottom: @fd-base-spacing;
+		> a {
+			color: @fd-ui-text-color;
+		}
+	}
+	&__desc {
+		margin-bottom: @fd-base-spacing;	
+	}
+	&__date {
+		color: @fd-ui-meta-color;
+	}
+}
+
+&.es-mobile-content {
+	.es-achievements {
+		.es-cards__item {
+			margin: 0 -16px;
+			padding: @fd-base-spacing--lg;
+			border-top: 1px solid @fd-ui-border-color;
+			border-bottom: 1px solid @fd-ui-border-color;
+		}
+	}
+}

@@ -1,0 +1,129 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Modules: mod_easysocial_menu
+\*------------------------------------*/
+
+.mod-es-menu {
+
+	
+}
+
+.mod-es-menu-bar {
+	border: 1px solid @fd-ui-border-color;
+	padding: @fd-base-spacing--sm @fd-base-spacing;
+	&__icon-link {
+		// color: @fd-navbar-icon-color;
+		color: @fd-ui-meta-color;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+		// padding: 0;
+		// width: 28px;
+		min-width: 28px;
+		position: relative;
+		text-align: center;
+		&:hover {
+			background: transparent;
+		}
+		.fd-no-focus-outline();
+		> i {
+			line-height: @fd-base-line-height--computed;
+		}
+
+		&.has-new {
+			
+			.mod-es-menu-bar__link-bubble {
+				display: block;
+			}
+		}
+		&.is-active {
+			// background-color: @fd-navbar-link-bg--active;
+		}
+	}
+
+	&__link-bubble {
+		display: none; // Hide by default
+		position: absolute;
+		color: #fff;
+		background-color: @fd-brand-danger;
+		top: 0;
+		right: -@fd-base-spacing--xs;
+		min-width: 10px;
+		height: 13px;
+		overflow: hidden;
+		border-radius: @fd-navbar-radius--sm;
+		text-align: center;
+		font-size: 10px;
+		line-height: 14px;
+		font-weight: bold;
+		padding: 0 @fd-base-spacing--xs;
+	}
+}
+
+.mod-es-pf-hd {
+	&__cover-wrap {
+		display: block;
+		height: 0;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		padding-top: 22%;
+	}
+
+	&__cover {
+		background-size: cover;
+		border: 0 none;
+		bottom: 0;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	&__content {
+		text-align: center;
+		position: relative;
+		border: 1px solid @fd-ui-border-color;
+		padding: @fd-base-spacing--lg;
+		padding-top: @fd-base-spacing + 32px;
+	}
+	&__avatar {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		margin-left: -32px;
+		background-color: @fd-ui-bg;
+	}
+	&__badges {
+		margin-top: @fd-base-spacing;
+		text-align: left;
+		a {
+			margin: @fd-base-spacing--sm;
+			display: inline-block;
+		}
+		img {
+			display: inline-block;
+			height: 32px;
+			width: 32px;
+			max-height: 32px;
+			max-width: 32px;
+		}
+	}
+}
+
+.mod-es-menu-list {
+	border: 1px solid @fd-ui-border-color;
+	border-top: none;
+	padding: @fd-base-spacing @fd-base-spacing--lg;
+	&__item { // <a>
+		display: block;
+		color: @fd-ui-meta-color;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+		&:hover {
+			color: @fd-ui-text-color;
+		}
+	}
+}

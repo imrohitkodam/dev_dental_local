@@ -1,0 +1,224 @@
+#es .es-noti-hd__badge {
+  background-color: #428bca;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 28px;
+  padding: 4px 8px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+#es .es-noti-hd__action {
+  float: right;
+}
+#es .es-noti-list {
+  margin-bottom: 20px;
+}
+#es .es-noti__item {
+  position: relative;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-bottom: 1px solid #ccc;
+}
+#es .es-noti__item:hover {
+  background-color: #f0f0f0;
+}
+#es .es-noti__noclick {
+  position: absolute;
+  display: none;
+}
+#es .es-noti__date {
+  color: #888;
+}
+#es .es-noti__title {
+  color: #333;
+}
+#es .es-noti__item-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 24px;
+  background-color: #428bca;
+}
+#es .es-noti__item-content {
+  position: relative;
+  padding: 16px 120px 16px 20px;
+}
+#es .es-noti__item-type {
+  position: absolute;
+  right: 28px;
+  top: 8px;
+}
+#es .es-noti__item-type-icon {
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.9), -1px 1px 0px rgba(255,255,255,0.9), -1px -1px 0px rgba(255,255,255,0.9), 1px -1px 0px rgba(255,255,255,0.9);
+  position: relative;
+  right: 4px;
+  z-index: 2;
+}
+#es .es-noti__item-type-icon:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  color: #888;
+}
+#es .es-noti__item-embed {
+  display: block;
+}
+#es .es-noti__item-embed > img {
+  max-width: 120px;
+  max-height: 120px;
+}
+#es .es-noti__item-action {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+#es .es-noti__item.is-read .es-noti__item-indicator {
+  display: none;
+}
+#es .es-noti__item.is-unread {
+  background-color: #E9F2F9;
+}
+#es .es-noti__item.is-remove {
+  opacity: .5;
+}
+#es .es-noti__item.is-remove .es-noti__noclick {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: block;
+}
+#es.is-mobile .es-noti-hd {
+  text-align: center;
+}
+#es.is-mobile .es-noti-hd__action {
+  float: none;
+  margin-top: 16px;
+}
+#es.popbox-notifications .es-avatar {
+  width: 16px !important;
+  height: 16px !important;
+}
+#es.popbox-notifications .es-avatar img {
+  width: 16px !important;
+  height: 16px !important;
+}
+#es.popbox-notifications .popbox-body {
+  width: 100%;
+  max-height: 250px;
+  overflow: auto;
+  padding: 0;
+}
+#es.popbox-notifications .btn-es.btn-small,
+#es.popbox-notifications .btn-small[class^="btn-es-"],
+#es.popbox-notifications .btn-small[class*=" btn-es-"] {
+  font-size: 11px !important;
+  padding: 1px 8px !important;
+}
+#es.popbox-notifications .notifications-result,
+#es.popbox-notifications .conversations-result {
+  padding-bottom: 10px;
+}
+#es.popbox-notifications .notifications-result i.ies-earth,
+#es.popbox-notifications .conversations-result i.ies-earth {
+  color: #999999;
+  margin-left: 1px;
+}
+#es.popbox-notifications .notifications-result .object-image,
+#es.popbox-notifications .conversations-result .object-image {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid transparent;
+  display: inline-block;
+  margin-left: 7px;
+  outline: none;
+  padding: 1px;
+}
+#es.popbox-notifications .notifications-result .object-image:before,
+#es.popbox-notifications .notifications-result .object-image:after,
+#es.popbox-notifications .conversations-result .object-image:before,
+#es.popbox-notifications .conversations-result .object-image:after {
+  content: " ";
+  display: table;
+}
+#es.popbox-notifications .notifications-result .object-image:after,
+#es.popbox-notifications .conversations-result .object-image:after {
+  clear: both;
+}
+#es.popbox-notifications .notifications-result .object-image > span,
+#es.popbox-notifications .conversations-result .object-image > span {
+  width: 52px;
+  height: 38px;
+  background-color: transparent;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+}
+#es.popbox-notifications .notifications-result .is-unread .notice-message,
+#es.popbox-notifications .conversations-result .is-unread .notice-message {
+  background: #f6fbff !important;
+}
+#es.popbox-notifications .notifications-result .notice-message,
+#es.popbox-notifications .conversations-result .notice-message {
+  padding: 4px 10px;
+}
+#es.popbox-notifications .notifications-result .notice-message .es-avatar,
+#es.popbox-notifications .conversations-result .notice-message .es-avatar {
+  margin-top: 5px !important;
+}
+#es.popbox-notifications .notifications-result .notice-message:hover,
+#es.popbox-notifications .conversations-result .notice-message:hover {
+  background: #f6f6f6 !important;
+}
+#es.popbox-notifications .notifications-result .notice-message > a,
+#es.popbox-notifications .conversations-result .notice-message > a {
+  color: #666 !important;
+  padding: 0 5px !important;
+  white-space: normal !important;
+  display: block !important;
+}
+#es.popbox-notifications .notifications-result .notice-message > a:hover,
+#es.popbox-notifications .conversations-result .notice-message > a:hover {
+  text-decoration: none !important;
+}
+#es.popbox-notifications .friends-result {
+  padding-bottom: 10px;
+}
+#es.popbox-notifications .friends-result .loading-indicator {
+  display: none !important;
+}
+#es.popbox-notifications .friends-result .es-action-wrap {
+  clear: both;
+  position: relative;
+  padding: 5px 0 0;
+}
+#es.popbox-notifications .type-broadcast.is-unread > .notice-message {
+  background: #ffc !important;
+}
+#es .es-friend-approve-list .btn {
+  display: inline-block !important;
+}
+#es .es-friend-approve-list .btn.view-profile {
+  display: none !important;
+}
+#es .es-friend-approve-list .added-friends .btn.view-profile {
+  display: inline-block !important;
+}
+#es .es-friend-approve-list .added-friends .btn.reject-friend {
+  display: none !important;
+}
+#es .es-friend-approve-list .added-friends .btn.accept-friend {
+  display: none !important;
+}

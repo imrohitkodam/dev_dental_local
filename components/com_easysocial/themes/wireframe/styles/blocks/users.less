@@ -1,0 +1,24 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+// Listing users per row for friends, group/event members.
+
+.es-users-item {
+	padding: @fd-base-spacing;
+
+	&__title {
+		font-size: @fd-base-font-size;
+		margin-bottom: @fd-base-spacing--sm;
+		word-break: break-all;
+		// .text-overflow();
+		word-break: break-all;
+		white-space: normal;
+	}
+	+ .es-users-item {
+		border-top: 1px solid @fd-ui-border-color;
+	}
+}
+

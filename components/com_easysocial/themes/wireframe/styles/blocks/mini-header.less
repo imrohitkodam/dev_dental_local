@@ -1,0 +1,178 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*
+Main structure to control profile header
+
+.es-header-mini
+	.es-header-mini-cover
+	.es-header-mini-avatar
+	.es-header-mini-body
+	.es-header-mini-footer
+
+Styleguide: /index.php?option=com_easysocial&view=styleguide&layout=render&file=header
+*/
+
+.es-mini-header {
+	border: 1px solid @fd-ui-border-color;
+	&__hd,
+	&__bd,
+	&__ft {
+		.clearfix();
+		padding: @fd-base-spacing--lg * 2 @fd-base-spacing--lg;
+		font-size: @fd-base-font-size;
+
+	}
+	&__hd {
+		background-size: cover;
+	}
+	&__bd {
+		border-top: 1px solid @fd-ui-border-color;
+		display: none
+	}
+	&__ft {
+		border-top: 1px solid @fd-ui-border-color;
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+		color: @fd-ui-meta-color;
+
+		// Footer have <a> and <b> tags only, so just use html tags for it.
+		a {
+		   color: @fd-ui-meta-color; 
+		}
+		b {
+			color: @fd-ui-text-color;
+		}
+
+		.g-list-inline {
+			> li {
+				line-height: 28px; // Make it aligned well with .btn-sm
+				// background-color: blue;
+			}
+		}
+	}
+	&__cover {
+		padding-top: 20%;
+		max-height: 72px;
+		position: relative;
+	}
+	&__conver-content {
+		// position: absolute;
+		padding: @fd-base-spacing--lg;
+	}
+
+	&__avatar { // <a>
+		img {
+			background-color: @fd-ui-bg;
+		}
+	}
+
+	&__title-link {
+		// color: @fd-ui-text-link-color; // Have to
+		color: #fff;
+		text-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.5);
+	}
+	&__meta,
+	&__meta a {
+		color: #fff;
+		text-shadow: 0 0 3px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.5);
+		a {
+			
+		}
+	}
+	
+	&__badges {
+		margin-top: @fd-base-spacing--sm;
+		> a,
+		img {
+			display: inline-block;
+			width: 20px;
+			max-width: 20px;
+			height: 20px;
+			max-height: 20px;
+
+		}
+	}
+	
+}
+
+
+
+// Responsive
+&.is-mobile {
+	.es-header-mini {
+		.es-header-mini-body {
+			margin-top: 110px;
+			margin-left: 0;
+			text-align: center;
+		}
+
+		.es-header-mini-apps-action {
+			position: relative;
+			width: auto;
+			top: 0;
+			.fd-nav {
+				> li {
+					margin: 0;
+					margin-bottom: 5px;
+				}
+				> li > .btn {
+					width: 80px;
+				}
+			}
+		}
+
+		.es-header-mini-cover {
+			height: 100px;
+		}
+		.es-header-mini-avatar {
+			top: 15px;
+			left: 50%;
+			margin-left: -36px;
+		}
+
+		.es-header-mini-meta {
+			position: relative;
+			.es-cover-title {
+				width: 100%;
+			}
+		}
+
+		.es-header-mini-footer {
+			> div {
+				padding-left: 10px;
+			}
+			.pull-left {
+				float: none;
+				margin-bottom: 10px;
+			}
+			// message
+			.pull-right {
+				float: none;
+				margin-top: 10px;
+			}
+		}
+		.fd-nav-apps {
+			height: auto;
+			margin: 10px 15px;
+		}
+		.btn-scroll {
+			display: none;
+		}
+	}
+}
+
+
+// Override on specific view
+&.view-dashboard {
+	.es-header-mini {
+		// border-left: 0; // Temporary removed for issues #4424
+		margin-left: -20px;
+
+		.media-meta { // hide event action in dashboard
+			display: none;
+		}
+	}
+}

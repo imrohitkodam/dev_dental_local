@@ -1,0 +1,377 @@
+#es .es-media-group {
+  position: relative;
+  line-height: 16px;
+  font-size: 13px;
+}
+#es .es-media-group .content-hint {
+  text-align: center;
+  font-size: 16px;
+  color: #aaa;
+  padding: 100px 0;
+  display: none;
+  background: #fafafa;
+}
+#es .es-media-group .no-photos-hint {
+  display: block;
+}
+#es .es-media-group .no-albums-hint {
+  display: block;
+}
+#es .es-media-group .no-albums-hint .btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+#es .es-media-group.can-drop-file .no-photos-hint {
+  display: none;
+}
+#es .es-media-group.can-drop-file .drop-photo-hint {
+  display: block;
+}
+#es .es-media-group .btn-upload {
+  opacity: 0;
+}
+#es .es-media-group.can-upload .btn-upload {
+  opacity: 1;
+}
+#es .es-media-group.has-photos .no-photos-hint {
+  display: none;
+}
+#es .es-media-group.has-photos .drop-photo-hint {
+  display: none;
+}
+#es .es-media-group.has-albums .no-albums-hint {
+  display: none;
+}
+#es .es-media-group.loading > .es-media-loader {
+  display: block;
+}
+#es .es-media-item {
+  z-index: 1;
+  position: relative;
+}
+#es .es-media-item .show-on-hover {
+  opacity: 0;
+}
+#es .es-media-item:hover .show-on-hover {
+  opacity: 1;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+#es .es-media-item.show-all {
+  z-index: 2;
+}
+#es .es-media-item.show-all .show-on-hover {
+  opacity: 1 !important;
+}
+#es .es-media-item.loading > .es-media-loader {
+  display: block;
+}
+#es .es-media-item-menu {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+#es .es-media-item-menu .btn .dropdown-menu {
+  left: auto;
+  right: 0;
+  margin-top: 9px;
+  margin-right: -1px;
+  text-align: left;
+}
+#es .es-media-item-menu .btn .dropdown-menu:after,
+#es .es-media-item-menu .btn .dropdown-menu:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+#es .es-media-item-menu .btn .dropdown-menu:after {
+  bottom: 100%;
+  left: auto1;
+  right: 6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+}
+#es .es-media-item-menu .btn .dropdown-menu:before {
+  bottom: 100%;
+  left: auto;
+  right: 5px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+#es .es-media-header {
+  margin-bottom: 10px;
+}
+#es .es-media-header .media {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
+  height: 43px;
+  border-bottom: 1px solid #d7d7d7;
+}
+#es .es-media-header .media:before,
+#es .es-media-header .media:after {
+  content: " ";
+  display: table;
+}
+#es .es-media-header .media:after {
+  clear: both;
+}
+#es .es-media-header .media-object {
+  margin-right: 8px;
+  float: left;
+}
+#es .es-media-header .es-avatar,
+#es .es-media-header .es-avatar img {
+  width: 32px;
+  height: 32px;
+}
+#es.is-mobile .es-media-header .media {
+  height: auto;
+  padding-bottom: 8px;
+}
+#es.is-mobile .es-media-header .media-object {
+  float: none;
+  display: none;
+}
+#es.is-mobile .es-media-header .es-album-owner {
+  display: none;
+}
+#es .es-media-info {
+  position: relative;
+  z-index: 1;
+}
+#es .es-media-info > small {
+  display: block;
+  margin-top: 3px;
+  position: relative;
+}
+#es .es-media-info > small > span {
+  display: inline;
+  color: #858585;
+}
+#es .es-media-info > small > span > i {
+  width: 11px;
+  height: 11px;
+  line-height: 11px;
+}
+#es .es-media-title {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  margin-bottom: 2px;
+  padding-top: 10px;
+  word-break: break-all;
+}
+#es .es-media-caption {
+  margin-bottom: 2px;
+  padding: 4px 0;
+  display: inline;
+}
+#es .es-media-loader {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('../../../../../media/com_easysocial/images/loading.gif') no-repeat center rgba(0,0,0,0.5);
+  display: none;
+}
+#es .es-media-stats {
+  border-bottom: 1px solid #cccccc;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+#es .es-media-stats:before,
+#es .es-media-stats:after {
+  content: " ";
+  display: table;
+}
+#es .es-media-stats:after {
+  clear: both;
+}
+#es .es-media-stat {
+  width: 33%;
+  float: left;
+  padding: 15px;
+  text-align: center;
+}
+#es .es-media-stat b {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  line-height: 12px;
+  padding-bottom: 5px;
+}
+#es .es-media-stat i {
+  display: none;
+}
+#es .es-media-stat span {
+  font-size: 20px;
+  line-height: 20px;
+}
+#es .es-albums .content-hint {
+  text-align: center;
+  font-size: 16px;
+  color: #aaa;
+  padding: 100px 0;
+  display: none;
+  background: #fafafa;
+}
+#es .es-albums .no-albums-hint {
+  display: block;
+}
+#es .es-albums .no-albums-hint .btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+#es .es-media-browser.layout-dialog {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+#es .es-media-browser.layout-dialog .es-sidebar {
+  padding-top: 8px;
+}
+#es .es-media-browser.layout-dialog .es-sidebar .o-tabs__link {
+  padding-left: 8px;
+}
+#es .es-media-browser.layout-dialog .es-content {
+  padding: 8px 0 0;
+  position: relative;
+  left: -2px;
+  border-left: 1px solid #ccc;
+}
+#es .es-media-browser.layout-photo > .es-sidebar {
+  display: none;
+}
+#es .es-media-browser.layout-photo > .es-content {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+#es .es-media-browser > i.loading-indicator {
+  display: none;
+}
+#es .es-media-browser.loading .es-sidebar {
+  display: none;
+}
+#es .es-media-browser.loading .es-content {
+  display: none;
+}
+#es .es-media-browser.loading > i.loading-indicator {
+  margin: 10px 0;
+  background-color: #f8f8f8;
+  display: block;
+}
+#es .es-media-browser .es-content-hint {
+  margin-top: -7px;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  color: #999;
+  font-size: 14px !important;
+}
+#es .es-media-browser .btn-media {
+  padding: 0;
+}
+#es .es-media-browser .btn-media > a {
+  display: block;
+  padding: 6px 10px;
+  color: #555555;
+  text-shadow: 0px 1px 0px #fff;
+  outline: 0;
+}
+#es .es-media-browser .btn-es-primary > a {
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
+#es .es-media-browser.layout-album .es-media-header .media-body {
+  line-height: 30px;
+}
+#es .es-side-widget-cover {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#es .es-media-browser-dialog {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+#es .es-media-browser-dialog__sidebar {
+  display: block;
+  background: #fff;
+  margin: 0;
+  width: 100%;
+  left: -100%;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  transition: all .2s linear;
+}
+#es .es-media-browser-dialog__sidebar .es-side-widget .o-tabs__link {
+  padding: 8px 16px;
+}
+#es .es-media-browser-dialog__content {
+  clear: both;
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  left: 0;
+  padding: 0 0 8px;
+  transition: all .2s linear;
+}
+#es .es-media-browser-dialog__content:before,
+#es .es-media-browser-dialog__content:after {
+  content: " ";
+  display: table;
+}
+#es .es-media-browser-dialog__content:after {
+  clear: both;
+}
+#es .es-media-browser-dialog.sidebar-open .es-media-browser-dialog__sidebar {
+  left: 0;
+  transition: all .2s linear;
+  overflow-y: scroll;
+}
+#es .es-media-browser-dialog.sidebar-open .es-media-browser-dialog__content {
+  left: 100%;
+  transition: all .2s linear;
+}
+#es.is-mobile .es-media-browser .es-album-item.es-media-group.has-photos.layout-item .es-media-header.es-album-header,
+#es.is-mobile .es-media-browser .es-album-item.es-media-group.has-photos.layout-form .es-media-header.es-album-header {
+  padding-top: 16px;
+}
+#es.is-mobile .es-media-browser .es-album-item.es-media-group.has-photos.layout-item .es-media-header.es-album-header .media,
+#es.is-mobile .es-media-browser .es-album-item.es-media-group.has-photos.layout-form .es-media-header.es-album-header .media {
+  height: 50px;
+}
+#es.is-mobile .es-media-browser .layout-item .es-media-header .es-album-menu-item {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+}
+#es.is-mobile .es-media-browser .layout-item .es-media-header .es-album-menu-item > .btn-group--album-upload {
+  z-index: 2;
+}
+#es.is-mobile .es-media-browser .btn-album-favourite span {
+  display: none;
+}

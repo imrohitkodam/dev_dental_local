@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="limit" type="text" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_LIMIT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_LIMIT_DESC" default="10"/>
+                <field name="width" type="text" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_WIDTH_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_WIDTH_DESC" default="665"/>
+                <field name="height" type="text" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_HEIGHT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_HEIGHT_DESC" default="0"/>
+                <field name="mini" type="list" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_MINI_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_MINI_DESC" default="auto">
+                    <option value="0">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MINI_OPTION_DISABLED</option>
+                    <option value="1">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MINI_OPTION_ENABLED</option>
+                    <option value="auto">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MINI_OPTION_AUTO</option>
+                </field>
+                <field name="media" type="list" multiple="true" default="link" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_DESC">
+                    <option value="graffiti">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_OPTION_GRAFFITI</option>
+                    <option value="photo">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_OPTION_PHOTO</option>
+                    <option value="audio">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_OPTION_AUDIO</option>
+                    <option value="video">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_OPTION_VIDEO</option>
+                    <option value="link">COM_JFBCONNECT_WIDGET_VK_COMMENTS_MEDIA_OPTION_LINK</option>
+                </field>
+                <field name="autopublish" type="radio" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_AUTOPUBLISH_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_AUTOPUBLISH_DESC" default="1">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="norealtime" type="radio" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_NOREALTIME_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_NOREALTIME_DESC" default="0">
+                    <option value="0">COM_JFBCONNECT_WIDGET_VK_COMMENTS_NOREALTIME_OPTION_ENABLED</option>
+                    <option value="1">COM_JFBCONNECT_WIDGET_VK_COMMENTS_NOREALTIME_OPTION_DISABLED</option>
+                </field>
+                <field name="url" type="text" label="COM_JFBCONNECT_WIDGET_VK_COMMENTS_PAGE_URL_LABEL" description="COM_JFBCONNECT_WIDGET_VK_COMMENTS_PAGE_URL_DESC"/>
+            </fieldset>
+        </fields>
+    </fields>
+</form>

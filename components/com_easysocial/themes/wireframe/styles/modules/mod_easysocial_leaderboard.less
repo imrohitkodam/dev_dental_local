@@ -1,0 +1,35 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Modules: mod_easysocial_leaderboard
+\*------------------------------------*/
+.mod-es-leader-item {
+	.flex-display(flex);
+	.es-leader-context {
+		margin-left: @fd-base-spacing--xl;
+	}
+
+	+ .mod-es-leader-item {
+		margin-top: @fd-base-spacing--lg;
+		padding-top: @fd-base-spacing--lg;
+		border-top: 1px solid @fd-ui-border-color;
+	}
+}
+
+.mod-es-leader__points {
+	font-weight: bold;
+	span {
+		font-weight: normal;
+		color: @fd-ui-meta-color;
+	}
+}
+
+.es-leader-context__info {
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+}

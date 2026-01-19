@@ -1,0 +1,1180 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	Plugin: Docker
+\*------------------------------------*/
+
+@docker-size: 44px;
+@docker-border: solid 1px #37474f;
+@docker-content-border: solid 1px #ccc;
+
+&.es-docker {
+	background-color: #263238;
+	color: @fd-brand-default;
+	text-align: center;
+	line-height: 1;
+	position: fixed;
+	z-index: @zindex-docker;
+
+	.btn {
+		&,
+		&:active,
+		&.active {
+			outline: 0;
+			&:focus,
+			&.focus {
+				.tab-focus();
+				outline: 0;
+			}
+		}
+	}
+	
+	&.is-top {
+		width: 100%;
+		height: @docker-size;
+		top: 0;
+		left: 0;
+
+		&.active-menu, 
+		&.active-mobile-login {
+
+			.btn-docker-menu {
+
+				&:after, 
+				&:before {
+					display: block;
+					position: absolute;
+					top: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+
+				&:after {
+					border-bottom-color: @fd-base-bg-color;
+				}
+
+				&:before {
+					border-bottom-color: #ccc;
+				}
+			}
+
+			.docker-popup-window {
+				margin-top: 50px;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+
+		&.active-menu {
+			.docker-popup-menu, 
+			.docker-popup-login { 
+				display: block; 
+			}
+		}
+
+		&.active-quickpost {
+			.btn-quickpost {
+				&:after, 
+				&:before {
+					position: absolute;
+					top: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-bottom-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-bottom-color: #ccc;
+				}
+			}
+			.docker-popup-quickpost {
+				display: block;
+				margin-top: 50px;
+				top: 0;
+				right: 0;
+			}
+		}
+
+		&.active-friends {
+			.btn-friends {
+				&:after, 
+				&:before {
+					position: absolute;
+					top: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-bottom-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-bottom-color: #ccc;
+				}
+			}
+		}
+
+		&.active-conversations {
+			.btn-conversations {
+				&:after, 
+				&:before {
+					position: absolute;
+					top: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-bottom-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-bottom-color: #ccc;
+				}
+			}
+		}
+
+		&.active-notifications {
+			.btn-notifications {
+				&:after, 
+				&:before {
+					position: absolute;
+					top: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-bottom-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-bottom-color: #ccc;
+				}
+			}
+		}
+
+		&.is-mobile {
+
+			.docker-popup-menu {
+				height: 100%;
+			}
+		}
+	}
+
+	&.is-bottom {
+		width: 100%;
+		height: @docker-size;
+		bottom: 0; 
+		left: 0;
+
+		&.active-menu, 
+		&.active-mobile-login {
+
+			.btn-docker-menu {
+
+				&:after, 
+				&:before {
+					display: block;
+					position: absolute;
+					bottom: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+
+				&:after {
+					border-top-color: @fd-base-bg-color;
+				}
+
+				&:before {
+					border-top-color: #ccc;
+				}
+			}
+
+			.docker-popup-window {
+				margin-bottom: 50px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+
+		&.active-menu {
+			.docker-popup-menu, 
+			.docker-popup-login { 
+				display: block; 
+			}
+		}
+
+		&.active-quickpost {
+			.btn-quickpost {
+				&:after, 
+				&:before {
+					position: absolute;
+					bottom: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-top-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-top-color: #ccc;
+				}
+			}
+			.docker-popup-quickpost {
+				margin-bottom: 50px;
+				display: block;
+				bottom: 0;
+				right: 0;
+			}
+		}
+
+		&.active-friends {
+			.btn-friends {
+				&:after, 
+				&:before {
+					position: absolute;
+					bottom: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-top-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-top-color: #ccc;
+				}
+			}
+		}
+
+		&.active-conversations {
+			.btn-conversations {
+				&:after, 
+				&:before {
+					position: absolute;
+					bottom: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-top-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-top-color: #ccc;
+				}
+			}
+		}
+
+		&.active-notifications {
+			.btn-notifications {
+				&:after, 
+				&:before {
+					position: absolute;
+					bottom: ~"calc(100% - 6px)";
+					right: 25px;
+					z-index: 2000;
+				}
+				&:after {
+					border-top-color: @fd-base-bg-color;
+				}
+				&:before {
+					border-top-color: #ccc;
+				}
+			}
+		}
+
+		&.is-mobile {
+
+			.docker-popup-menu {
+				margin-bottom: 0;
+				top: 0;
+				bottom: 50px;
+			}
+		}
+	}
+
+	&.is-top, &.is-bottom {
+		.flex-display(flex);
+		.flex-direction(row);
+
+		.docker-border--left { border-left: @docker-border; }
+		.docker-border--right { border-right: @docker-border; }
+
+		.btn-friends, 
+		.btn-conversations, 
+		.btn-notifications, 
+		.btn-quickpost, 
+		.btn-docker-menu, 
+		{
+
+			&:after {
+				margin-right: -8px;
+				border-width: 8px;
+			}
+
+			&:before {
+				margin-right: -7px;
+				border-width: 7px;
+			}
+		}
+
+		.docker__search {
+			.flex-display(flex);
+			@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+				// display: none;
+			}
+
+		}
+
+		.docker-popup-menu {
+			.docker__search {
+				display: none;
+			}
+		}
+
+		&.is-mobile {
+
+			&.active-mobile-login {
+				.docker-login-box-mobile {
+					.docker-login-box {
+						display: block;
+					}
+				}
+			}
+
+			.docker__search {
+				max-width: 215px;
+				&.docker-border--right {
+					border: 0;
+				}
+			}
+ 
+			.text-menu, 
+			.es-story-meta-button span, 
+			.docker-login-box {
+				display: none;
+			}
+
+			.btn-quickpost {
+				border-left: 0;
+			}
+
+			.docker-popup-quickpost {
+				min-width: auto;
+				left: 0 !important;
+				right: 0 !important;
+				position: fixed;
+			}
+
+			.es-story-panel-dropdown {
+				display: none;
+			}
+
+			.es-story-panel-buttons {
+				.es-story-panel-button {
+					&:nth-child(-n+10) {
+						display: inline-block;
+					}
+				}
+			}
+
+			.es-story-panel-dropdown {
+				.es-story-panel-button {
+					&:nth-child(-n+10) {
+						display: none;
+					}
+				}
+			}
+
+			.es-story-panel-button {
+				width: auto;
+			}
+
+			.docker-popup-menu {
+				min-width: 0;
+				width: 100%;
+				overflow-x: hidden;
+				overflow-y: auto;
+				left: 0 !important;
+				right: 0 !important;
+
+				ul {
+					.flex-display(flex);
+					.flex-wrap(wrap);
+
+					li {
+						display: block;
+						.flex(0 0 30%);
+						text-align: center;
+						width: 100%;
+						border-bottom: none;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						margin: 5px;
+
+						a {
+							text-align: center;
+							padding: @fd-base-spacing;
+						}
+
+						.fa {
+							font-size: 20px;
+							display: block;
+							width: auto;
+							margin-bottom: @fd-base-spacing;
+							margin-right: 0;
+						}
+
+						span {
+							display: inline-block;
+						}
+					}
+				}
+				.docker__search {
+					display: block;
+					max-width: none;
+					height: auto;
+					margin: @fd-base-spacing 0;
+				}
+				.docker__search-box {
+					width: 100%;
+				}
+				.docker__search-input {
+					line-height: 30px;
+				}
+			}
+
+			.docker-popup-window {
+				position: fixed;
+			}
+
+			.docker-login-box-mobile {
+				.flex-display(flex);
+				height: 100%;
+			}
+
+			.docker-popup-login {
+				width: 100%;
+				height: 100%;
+
+				&.docker-login-box {
+					display: none;
+					height: auto;
+					padding: @fd-base-spacing--lg;
+
+					.docker-login-box {
+
+						&__form {
+							display: block;
+
+							.docker-login-social {
+
+								span + span {
+									display: block;
+									margin-top: @fd-base-spacing--sm;
+									margin-left: 0;
+								}
+							}
+						}
+					}
+
+					.docker-form-group {
+						margin-bottom: @fd-base-spacing;
+						margin-left: 0;
+					}
+
+					.docker-form-input {
+						min-width: auto;
+						max-width: none;
+						width: 100%;
+					}
+
+					.o-checkbox {
+						color: @fd-ui-meta-color;
+						margin: @fd-base-spacing 0;
+
+						label {
+							padding-left: @fd-base-spacing;
+						}
+					}
+
+					span.alternative {
+						text-align: center;
+						display: block;
+						margin: @fd-base-spacing--sm 0;
+					}
+
+					.btn {
+						width: 100%;
+						border-radius: 2px;
+					}
+				}
+			}
+		}
+	}
+
+	.es-location-autocomplete {
+		text-align: left;
+	}
+
+	.docker-popup-container {
+		.flex-display(flex);
+		.align-items(center);
+		.justify-content(center);
+		.flex(1 0 auto);
+		height: 100%;
+		position: relative;
+	}
+
+	.btn-docker {
+		background: transparent;
+		color: @fd-brand-default;
+		font-weight: bold;
+		border-radius: 0;
+		.flex-display(flex);
+		.flex(1 0 auto);
+		.align-items(center);
+		.justify-content(center);
+		height: 100%;
+		padding: 0 @fd-base-spacing--xl;
+		position: relative;
+
+		&:hover {
+			background: #37474f;
+		}
+
+		&:active, 
+		&.active {
+			background: darken(#263238, 5%) !important;
+		}
+
+		.docker-avatar {
+			display: block;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			overflow: hidden;
+
+			img { // Fix #799
+				width: 32px;
+				height: 32px;
+				overflow: hidden;
+			}
+		}
+
+		&.has-new {
+			.docker-bubble {
+				display: block;
+			}
+		}
+
+		.docker-bubble {
+			display: none;
+			background-color: #d95242;
+			color: @fd-brand-default;
+			font-size: 11px;
+			font-weight: bold;
+			line-height: 18px;
+			text-align: center;
+			min-width: 16px;
+			height: 16px;
+			padding: 0 4px;
+			border-radius: 22px;
+			position: absolute;
+			top: 5px;
+			right: 9px;
+			z-index: 1020;
+		}
+	}
+
+	.btn-friends, 
+	.btn-conversations, 
+	.btn-notifications, 
+	.btn-quickpost
+	{
+			
+		&:after, &:before {
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+		}
+	}
+
+	.btn-docker-menu {
+
+		&:after, &:before {
+			display: none;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+		}
+
+	}
+
+	.docker-popup {
+		background: @fd-base-bg-color;
+		line-height: 1.66667;
+		text-align: left;
+		border: @docker-content-border;
+		border-radius: 2px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+		white-space: normal;
+		z-index: 1000;
+	}
+
+	.btn-xs {
+		font-size: @fd-base-font-size-root;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+	}
+
+	.fa {
+		font-size: @fd-base-font-size-root; // 12px
+		text-align: center;
+		width: 10px;
+	}
+
+	.no-content {
+		.flex-display(flex);
+		.align-items(center);
+		.justify-content(center);
+		.flex(0 1 100%);
+	}
+
+	.text-menu {
+		padding-left: @fd-base-spacing--lg;
+	}
+
+	/* Search
+   ======================================
+	*/
+
+	.docker__search {
+		.align-items(center);
+		height: 100%;
+		padding: 0 @fd-base-spacing--xl;
+
+		&-box {
+			display: inline-block;
+			background-color: @fd-base-bg-color;
+			width: 260px;
+			border: @docker-content-border;
+			border-radius: 2px;
+			position: relative;
+
+			&:before {
+				content: '\f002';
+				font-family: FontAwesome;
+				font-size: @fd-base-font-size--context;
+				color: #ccc;
+				position: absolute;
+				left: @fd-base-spacing;
+				top: 6px; 
+			}
+		}
+
+		&-form {
+			line-height: 28px;
+			padding-left: @fd-base-spacing;
+		}
+
+		&-input {
+			background-color: @fd-base-bg-color;
+			color: @fd-ui-meta-color;
+			font-size: @fd-base-font-size-root;
+			line-height: 20px;
+			width: 100%;
+			height: auto;
+			margin: 0;
+			padding-left: @fd-base-spacing--xl;
+			border: 0;
+			border-radius: 2px;
+			box-shadow: none;
+		}
+	}
+
+	/* Login for top & bottom
+   ======================================
+	*/
+	.docker-login-box {
+		.flex-display(flex);
+		.align-items(center);
+		height: 100%;
+
+		&__form {
+			color: @fd-ui-meta-color;
+			font-size: 0;
+			text-transform: none;
+			padding: 0 @fd-base-spacing--xl;
+			.align-items(center);
+			.flex-display(flex);
+
+			.docker-login-social {
+
+				span + span {
+					margin-left: @fd-base-spacing--sm;
+				}
+			}
+		}
+
+		.docker-form-group {
+			position: relative;
+
+			.fa {
+				color: @fd-navbar-input-color;
+				font-size: @fd-base-font-size--context;
+				position: absolute;
+				top: 8px;
+				left: 6px;
+			}
+		}
+
+		.docker-form-input {
+			background-color: @fd-base-bg-color;
+			color: @fd-ui-meta-color;
+			font-size: @fd-base-font-size-root;
+			// line-height: 26px;
+			margin: 0;
+			max-width: 300px;
+			min-width: 200px;
+			height: 30px;
+			padding-left: @fd-base-spacing--xl;
+			border: @docker-content-border;
+			border-radius: 2px;
+			box-shadow: none;
+			text-overflow: ellipsis;
+			@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+				max-width: 150px;
+				min-width: 100px;
+			}
+		}
+
+		.o-checkbox {
+			color: @fd-brand-default;
+
+			label {
+				padding-left: @fd-base-spacing;
+
+				&:before, 
+				&:after {
+					top: 50%;
+					.transform_(translateY(-50%));
+				}
+			}
+		}
+
+		span.alternative {
+			font-size: @fd-base-font-size-root;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 0 @fd-base-spacing--lg;
+		}
+
+		.btn {
+			border-radius: 2px;
+		}
+
+		.btn-es-primary {
+			font-weight: bold;
+			padding: @fd-base-spacing--sm 12px;
+
+			&:hover {
+				color: darken(@fd-brand-primary, 20%) !important;
+			}
+		}
+
+		.btn-es-facebook {
+			font-weight: bold;
+			padding: @fd-base-spacing--sm @fd-base-spacing;
+
+			// i {
+			// 	margin-right: @fd-base-spacing;
+			// }
+		} 
+
+		.btn-es-twitter {
+			font-weight: bold;
+			padding: @fd-base-spacing--sm @fd-base-spacing;
+			border-color: darken(#339aed, 20%) !important;
+
+			// i {
+			// 	margin-right: @fd-base-spacing;
+			// }
+		}
+
+		.btn-docker-reg {
+			color: @fd-brand-default;
+			font-size: @fd-base-font-size-root;
+			font-weight: normal;
+		}
+	}
+
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		.docker-login-box {
+			&.docker-border--left {
+				border: 0;
+			}
+		}
+	}
+
+	.docker-login-box-mobile {
+		display: none;
+	}
+}
+
+
+/* Message, Notification & User
+======================================
+*/
+
+&.popbox-navbar--docker {
+
+	&.top-left, 
+	&.top-right {
+		top: auto !important;
+		bottom: 50px !important;
+	}
+
+	&.bottom-left, 
+	&.bottom-right {
+		top: 50px !important;
+		bottom: auto !important;
+	}
+
+	.o-avatar--sm {
+		width: 32px;
+		height: 32px;
+	}
+
+	.btn-xs {
+		font-size: @fd-base-font-size--xs;
+		margin-top: @fd-base-spacing--sm;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+	}
+}
+
+&.popbox-navbar--docker {
+
+	&.is-mobile {
+
+		&.popbox-navbar--docker {
+			width: auto;
+			left: 0 !important;
+			right: 0 !important;
+		}
+
+		.t-lg-pull-left {
+			float: left !important;
+		}
+
+		.t-lg-pull-right {
+			float: right !important;
+		}
+	}
+}
+
+&.popbox-navbar--docker {
+	color: @fd-base-text-color;
+	width: 100%;
+	max-width: 480px;
+	min-height: 100px;
+
+	.arrow {
+		display: none;
+	}
+
+	.popbox-dropdown__hd {
+		padding: 10px;
+	}
+
+	.g-list-inline {
+
+		> li {
+			font-size: @fd-base-font-size-root;
+		}
+	}
+}
+
+
+/* Menu
+   ======================================
+*/
+
+.docker-popup-menu {
+	display: none;
+	min-width: 500px;
+	min-height: 100px;
+		
+	ul {
+		.flex-display(flex);
+		.flex-wrap(wrap);
+		margin: 0;
+		padding-left: 0;
+
+		li {
+			text-align: center;
+			display: block;
+			.flex(0 0 25%);
+			width: 100%;
+			border-bottom: none;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			a {
+				color: @fd-navbar-color;
+				text-align: center;
+				display: block;
+				padding: @fd-base-spacing--xl;
+
+				&:hover {
+					background: #f5f5f5;
+					color: @fd-base-text-color;
+				}
+			}
+
+			.fa {
+				font-size: 20px;
+				text-align: center;
+				display: block;
+				margin-bottom: @fd-base-spacing;
+				width: auto;
+			}
+		}
+	}
+}
+
+
+/* Quickpost
+   ======================================
+*/
+.docker-popup-quickpost {
+	display: none;
+	background: #fff;
+	color: @fd-base-text-color;
+	min-width: 500px;
+	border: 1px solid @fd-ui-border-color;
+	position: absolute;
+	&.is-loading {
+		background: #fff;
+		width: 100%;
+		height: 100px;
+
+	}
+
+	.es-story {
+		border: 0;
+	}
+
+	.es-story-header {
+		text-align: left;
+		border-bottom: 1px solid @fd-ui-border-color;
+	}
+
+	.es-story-panel-button {
+
+		.fa {
+			display: block;
+		}
+
+		span {
+			display: none;
+		}
+
+	}
+}
+
+/* Tablet view
+   ======================================
+*/
+@media (min-width: @screen-sm-min) and (max-width: 1280px) {
+	&.es-docker {
+		&.is-top, &.is-bottom {
+			&.active-mobile-login {
+				.docker-login-box-mobile {
+					.docker-login-box {
+						display: block;
+					}
+				}
+			}
+
+			.docker__search {
+				&.docker-border--right {
+					border: 0;
+				}
+			}
+ 
+			.text-menu, 
+			.es-story-meta-button span, 
+			.docker-login-box {
+				display: none;
+			}
+
+			.btn-quickpost {
+				border-left: 0;
+			}
+
+			.docker-popup-quickpost {
+				min-width: auto;
+				left: 0 !important;
+				right: 0 !important;
+				position: fixed;
+			}
+
+			.es-story-panel-dropdown {
+				display: none;
+			}
+
+			.es-story-panel-buttons {
+				.es-story-panel-button {
+					&:nth-child(-n+10) {
+						display: inline-block;
+					}
+				}
+			}
+
+			.es-story-panel-dropdown {
+				.es-story-panel-button {
+					&:nth-child(-n+10) {
+						display: none;
+					}
+				}
+			}
+
+			.es-story-panel-button {
+				width: auto;
+			}
+
+			.docker-popup-menu {
+				ul {
+					.flex-display(flex);
+					.flex-wrap(wrap);
+
+					li {
+						display: block;
+						.flex(0 0 30%);
+						text-align: center;
+						width: 100%;
+						border-bottom: none;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						margin: 5px;
+
+						a {
+							text-align: center;
+							padding: @fd-base-spacing;
+						}
+
+						.fa {
+							font-size: 20px;
+							display: block;
+							width: auto;
+							margin-bottom: @fd-base-spacing;
+							margin-right: 0;
+						}
+
+						span {
+							display: inline-block;
+						}
+					}
+				}
+				.docker__search {
+					display: block;
+					max-width: none;
+					height: auto;
+					margin: @fd-base-spacing 0;
+				}
+				.docker__search-box {
+					width: 100%;
+				}
+				.docker__search-input {
+					line-height: 30px;
+				}
+			}
+
+			.docker-login-box-mobile {
+				.flex-display(flex);
+				height: 100%;
+			}
+
+			.docker-popup-login {
+				width: 300px;
+
+				&.docker-login-box {
+					display: none;
+					height: auto;
+					padding: @fd-base-spacing--lg;
+
+					.docker-login-box {
+
+						&__form {
+							display: block;
+
+							.docker-login-social {
+
+								span + span {
+									display: block;
+									margin-top: @fd-base-spacing--sm;
+									margin-left: 0;
+								}
+							}
+						}
+					}
+
+					.docker-form-group {
+						margin-bottom: @fd-base-spacing;
+						margin-left: 0;
+					}
+
+					.docker-form-input {
+						min-width: auto;
+						max-width: none;
+						width: 100%;
+					}
+
+					.o-checkbox {
+						color: @fd-ui-meta-color;
+						margin: @fd-base-spacing 0;
+
+						label {
+							padding-left: @fd-base-spacing;
+						}
+					}
+
+					span.alternative {
+						text-align: center;
+						display: block;
+						margin: @fd-base-spacing--sm 0;
+					}
+
+					.btn {
+						width: 100%;
+						border-radius: 2px;
+					}
+				}
+			}
+		}
+	}
+
+	&.popbox-navbar--docker {
+		&.popbox-navbar--docker {
+			width: auto;
+			left: 0 !important;
+			right: 0 !important;
+		}
+
+		.t-lg-pull-left {
+			float: left !important;
+		}
+
+		.t-lg-pull-right {
+			float: right !important;
+		}
+	}
+}

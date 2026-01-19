@@ -1,0 +1,139 @@
+#es .es-dashboard .es-container .es-sidebar .fd-nav-stacked a {
+  font-size: 12px;
+}
+#es .es-dashboard .es-container .es-sidebar a:hover,
+#es .es-dashboard .es-container .es-sidebar a:active,
+#es .es-dashboard .es-container .es-sidebar a:focus {
+  outline: 0;
+}
+#es .es-dashboard .es-container .es-sidebar .fd-nav li a > i {
+  margin-right: 5px;
+}
+#es .es-dashboard .es-container .es-content > .loading-indicator.large {
+  margin-top: 80px;
+}
+#es .es-dashboard .es-container .es-content .item-heading {
+  padding: 0 0 0 20px;
+}
+#es.is-mobile .es-dashboard .es-content .group-heading {
+  padding: 0;
+}
+#es.is-mobile .es-dashboard .es-content .es-header {
+  padding-bottom: 0;
+}
+#es .item-heading .es-header-footer {
+  padding-left: 15px !important;
+}
+#es #profile .stepItem {
+  line-height: 20px;
+  margin: 10px 0 10px 0;
+}
+#es #profile .stepItem a {
+  font-size: 12px;
+}
+#es .updateProfile {
+  margin-top: 30px;
+}
+#es .es-dashboard .es-filterbar,
+#es .appCanvas .es-filterbar {
+  padding-bottom: 10px;
+}
+#es .es-dashboard .es-filterbar .btn,
+#es .appCanvas .es-filterbar .btn {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+#es .es-dashboard .app-contents p.app-info,
+#es .appCanvas .app-contents p.app-info {
+  margin: 15px 0;
+  font-size: 12px;
+  padding: 0 0 8px;
+}
+#es .es-dashboard .app-contents.is-empty .app-contents-data,
+#es .appCanvas .app-contents.is-empty .app-contents-data {
+  display: none;
+}
+#es .es-dashboard .app-contents .empty,
+#es .appCanvas .app-contents .empty {
+  color: #666;
+  border: 1px dashed #d7d7d7;
+  padding: 30px 90px;
+  text-align: center;
+}
+#es .es-dashboard .app-contents .empty >i,
+#es .appCanvas .app-contents .empty >i {
+  color: #666;
+  font-size: 28px;
+  margin-bottom: 20px;
+  display: block;
+}
+#es .es-dashboard .app-feeds .feeds-list >li,
+#es .appCanvas .app-feeds .feeds-list >li {
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+#es .es-dashboard .app-feeds .feeds-list >li i,
+#es .appCanvas .app-feeds .feeds-list >li i {
+  color: #666;
+}
+#es .es-dashboard .app-feeds .feeds-list >li .feed-time,
+#es .appCanvas .app-feeds .feeds-list >li .feed-time {
+  font-size: 12px;
+  color: #666;
+  float: right;
+}
+#es .es-dashboard .app-feeds .feeds-list >li + li,
+#es .appCanvas .app-feeds .feeds-list >li + li {
+  border-top: 1px dotted #d7d7d7;
+  padding-top: 10px;
+}
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading {
+  background-color: #546075;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a,
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a:hover,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a:hover {
+  color: #fff;
+}
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a.view-all,
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a.view-all:hover,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a.view-all,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li div.feed-item-heading a.view-all:hover {
+  text-decoration: underline;
+}
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li + li,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li + li {
+  margin-top: 40px;
+}
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li > ul > li + li,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feeds-list > li > ul > li + li {
+  margin-top: 15px;
+  border-top: 1px dotted #666;
+}
+#es .es-dashboard .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feed-item .feed-item-meta,
+#es .appCanvas .app-feeds #es-wrap .app-user-feeds-wrapper.profile .feed-item .feed-item-meta {
+  margin-bottom: 10px;
+}
+#es .app-contents-title {
+  margin: 0;
+}
+#es .app-contents-list-bordered .alert {
+  margin: 0;
+}
+#es .app-contents-list-bordered > li {
+  padding: 10px 0;
+  border-bottom: 1px solid #d7d7d7;
+}
+#es .app-contents-list-bordered + .app-contents-title {
+  margin-top: 25px;
+}
+#es .es-dashboard .filter-more {
+  font-size: 12px;
+}

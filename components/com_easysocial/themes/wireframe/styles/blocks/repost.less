@@ -1,0 +1,48 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$repost - repost.less
+\*------------------------------------*/
+
+.es-repost-form {
+	.es-form {
+		padding: @fd-base-spacing--sm;
+		min-height: 100px;
+		border: 1px solid @fd-ui-border-color;
+		border-radius: @fd-ui-radius;
+		font-size: @fd-base-font-size;
+
+		// # http://stackideas.com/forums/repost-popup-box-css-issue
+		.mentions-textfield {
+			top: 0 !important;
+			left: 0 !important;
+		}
+
+
+		.mentions {
+			font-size: @baseFontSize;
+			min-height: 100px;
+
+			textarea {
+				font-size: @fd-base-font-size;
+			}
+		}
+
+	}
+}
+.es-repost-preview {
+	.clearfix();
+	padding: @fd-base-spacing;
+	border: 1px dashed @fd-ui-border-color;
+	.es-repost-title {
+		font-size: @fd-base-font-size--xl;
+	}
+
+	.es-repost-content {
+		margin-top: @fd-base-spacing;
+	}
+}

@@ -1,0 +1,369 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$elements - elements.less
+\*------------------------------------*/
+// Individual/single classes can apply to everywhere
+.es-cover-title {
+	margin: 5px 0;
+	word-break: break-all;
+	// font-size: 18px;
+}
+.es-title-font {
+	font-family: @esTitleFont;
+}
+.es-user-info {
+	font-size: @fd-base-font-size;
+}
+.es-user-name {
+	word-break: break-all;
+	.text-overflow();
+}
+.es-count-no {
+	line-height: 16px;
+	font-size: 9px;
+	background: @esCountBackground;
+	border: 1px solid @esCountBorder;
+	border-radius: 2px 2px 2px 2px;
+	color: @esCountColor;
+	padding: 2px 4px;
+}
+.es-hr {
+	margin: 20px 0;
+	border-top:1px solid @fd-ui-border-color--l;
+}
+
+.es-bg-shade {
+	background-color: @fd-ui-shade;
+}
+
+.fa-rss-square {
+	color: #E37126;
+}
+
+// Reduced fotn size when place under es-snackbar
+.es-snackbar {
+	.btn-rss {
+		font-size: @fd-base-font-size--xs;
+		font-weight: normal;
+	}
+}
+.btn-rss {
+	// line-height: 30px;
+}
+
+.es-divider-top {
+	border-top: 1px solid @esBorder;
+}
+.es-divider-bottom {
+	border-bottom: 1px solid @esBorder;
+}
+
+.app-icon-small {
+	width: 16px;
+	height: 16px;
+}
+/**
+ * Heading item for views.
+ */
+.view-heading {
+	margin: 35px 0 0;
+	padding-bottom: 35px;
+	text-align: center;
+}
+
+//extend .label
+//modifier for notification
+.label-notification {
+	background: @esLabelNotificationBackground;
+	color: #fff !important;
+	border: 0;
+	border-radius: 8px;
+	font-size: 9px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	padding: 0 3px;
+	line-height: 12px;
+	display: none;
+	min-width: 16px;
+	width: auto;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+}
+
+.has-notice {
+	.label-notification {
+		display: block;
+	}
+}
+
+
+
+// Search highlight
+.search-highlight {
+	background: @esHighlightBackground;
+	color: @esHighlightColor;
+	padding: 1px 3px;
+}
+
+i {
+	width: auto;
+	height: auto;
+}
+
+
+// row-fluid removed or elements which need clearfix
+.stream-meta,
+.stream-content,
+.widget-box,
+.widget-body,
+.blog-description,
+.article-item-meta,
+.article-item-actions,
+.es-modules-wrap {
+	.clearfix();
+}
+
+
+.step-content{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+
+// profile data table #4653
+.es-profile-data-table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	tr,
+	td {
+		border: 1px solid transparent;
+		padding: @fd-base-spacing;
+		vertical-align: top;
+	}
+	
+	tbody > tr > td {
+		border-top: none;
+	}
+}
+.profile-data-label {
+	width: 180px;
+}
+.profile-data-info {
+	a {
+		.hyphens(auto);
+	}
+}
+
+&.is-mobile {
+	.profile-data-label {
+		width: 100px;
+	}
+}
+
+.btn-group {
+	> .dropdown-menu {
+		font-size: @fd-base-font-size;
+	}
+}
+
+// Custom dropdown chevron 
+.i-chevron {
+	// color: @fd-ui-text-color;
+	&:before {
+		border-style: solid;
+		border-width: .1em .1em 0 0;
+		content: '';
+		display: inline-block;
+		width: .5em;
+		height: .5em;
+		
+		position: relative;
+		top: .45em;
+		left: 0;
+		
+		vertical-align: top;
+		
+	}
+	&.i-chevron--up:before {
+		top: .5em;
+		.transform_(rotate(-45deg));
+	}
+
+	&.i-chevron--right:before {
+		left: 0;
+		.transform_(rotate(45deg));
+	}
+
+	&.i-chevron--down:before {
+		top: 0.25em;
+		.transform_(rotate(135deg));
+	}
+
+	&.i-chevron--left:before {
+		left: .15em;
+		.transform_(rotate(-135deg));
+	}
+}
+
+.es-rsvp-notice { // #4637
+	width: 240px;
+	word-wrap: break-word;
+	white-space: normal;
+	padding: 0 @fd-base-spacing;
+}
+
+.es-rss-item,
+.es-blog-item {
+	margin-bottom: @fd-base-spacing--lg;
+}
+.es-blog-item {
+	&__title {
+		font-size: @fd-base-font-size--xl;
+	}
+	&__meta {
+		a,
+		span {
+			color: @fd-ui-meta-color;
+			font-size: @fd-base-font-size--xs;
+		}
+	}
+	+ .es-blog-item {
+		border-top: 1px solid @fd-ui-border-color;
+		padding-top: @fd-base-spacing--lg;
+	}
+}
+.es-discuss-group {
+	&__title {
+		font-size: @fd-base-font-size;
+		font-weight: bold;
+	}
+	&__meta {
+		a,
+		span {
+			color: @fd-ui-meta-color;
+			font-size: @fd-base-font-size--xs;
+		}
+	}
+	+ .es-discuss-group {
+		border-top: 1px solid @fd-ui-border-color;
+		padding-top: @fd-base-spacing--lg;
+		margin-top: @fd-base-spacing;
+	}
+}
+.es-discuss-item {
+	+ .es-discuss-item {
+		border-top: 1px dashed @fd-ui-border-color;
+		padding-top: @fd-base-spacing;
+		margin-top: @fd-base-spacing;	
+	}
+}
+.es-discuss-link {
+	vertical-align: text-top;
+}
+
+// Calendar date elements
+.es-calendar-date {
+	border: 1px solid @fd-ui-border-color;
+	border-radius: @fd-ui-radius--sm;
+	padding: @fd-base-spacing;
+	text-align: center;
+	width: 44px; // #4687
+	&__date {
+		font-weight: bold;
+		font-size: @fd-base-font-size;
+		line-height: @fd-base-font-size;
+	}
+	&__mth {
+		color: @fd-brand-danger;
+		font-size: @fd-base-font-size;
+		line-height: @fd-base-font-size;
+	}
+	&__title {
+		color: @fd-ui-text-color;
+	}
+}
+
+
+// Dropdown menu for event rsvp #4638
+.dropdown-menu--rsvp {
+	> li.active a {
+		position: relative;
+		&:after {
+			content: "\f00c";
+			position: absolute;
+			top: 0;
+			right: @fd-base-spacing;
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+			text-decoration: inherit;
+
+			font-size: @fd-base-font-size !important;
+			color: @fd-ui-text-color !important;
+			width: 20px !important;
+			height: 20px !important;
+			text-align: center !important;
+		}
+	}
+}
+
+// QUICK PATCH FOR DASHBOARD LOGIN. 
+.row-table {
+	display: table;
+	width: 100%;
+}
+.col-cell {
+	display: table-cell;
+	vertical-align: top;
+	float: none !important;
+
+	&.cell-mid {
+		vertical-align: middle;
+	}
+}
+.cell-half {
+	width: 50%;
+}
+
+.cell-tight {
+	width: 1%;
+	white-space: nowrap;
+}
+.panel-go {
+	.col-cell {
+		vertical-align: middle;
+		padding: 30px 50px;
+
+		+.col-cell {
+			border-left: 1px solid #eee;
+		}
+	}
+}
+
+
+// Not part of o-avatar but same design with .o-avatar-status__indicator
+// This indicartor right now for es-profile-header__avatar-wrap, due to this avatar size is customized. #5297
+.es-user-status-indicator {
+	position: absolute;
+	top: -4px;
+	right: -6px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: @fd-brand-success;
+	border: 2px solid #fff;
+	&.is-offline {
+		background-color: @fd-brand-danger;
+	}
+}

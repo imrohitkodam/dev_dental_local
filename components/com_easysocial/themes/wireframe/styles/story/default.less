@@ -1,0 +1,297 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+/*------------------------------------*\
+	$story - story.less
+\*------------------------------------*/
+
+/*
+shortcode
+.es-story>.es-story-form>form>textarea+(.es-story-panels>.es-story-panelbuttons+.es-story-panelbutton)+(.es-story-panelcontents>.es-story-panelcontent)^.row>button.btn{Share}
+*/
+.dashboard-story-wrapper {
+	padding-top: @fd-base-spacing--lg;
+}
+
+.es-story {
+	position: relative;
+	border-radius: @fd-ui-radius;
+	background: @fd-ui-bg;
+	border: 1px solid @fd-ui-border-color;
+	overflow: hidden;
+	z-index: 7;
+	// .transition(all 0.5s ease 0s);
+
+	
+	&.is-resizing {
+
+		.es-story-footer {
+			max-height: 100px;
+			overflow: hidden;
+		}
+
+		.es-story-avatar {
+			left: -44px;
+		}
+	}
+
+	&.is-expanded {
+		overflow: visible;
+
+		.es-story-footer {
+			max-height: none;
+			.transition(none);
+		}
+
+		.es-story-avatar {
+			display: none;
+		}
+	}
+
+	> .story-loading {
+		display: none;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 3;
+		background-color: @esStoryLoadingBackground;
+	}
+	
+
+	//elements
+
+	[data-message-group] .o-alert {
+		margin: 0;
+		border-radius: ~"3px 3px 0px 0px";
+		border-top: 0px;
+		border-left: 0px;
+		border-right: 0px;
+		padding-right: 28px;
+	}
+
+	&.saving {
+		> .story-loading {
+			display: block;
+		}
+		
+	}
+}
+
+.es-story-text-placeholder-ie9 {
+	display: none;
+}
+
+.es-story-avatar {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 4;
+
+	.transition(all 0.5s ease);
+}
+
+.es-story-header {
+	position: relative;
+	z-index: 3;
+
+	margin-top: 0;
+	.transition(all 0.5s ease);
+}
+
+.es-story-body {
+	position: relative;
+	z-index: 2;
+
+	// overflow: hidden;
+	background: @fd-ui-bg;
+	.transition(all 0.5s ease);
+}
+
+.es-story-footer {
+	position: relative;
+	z-index: 1;
+
+	.clearfix();
+	border-top: 1px solid @fd-ui-border-color;
+	margin-top: 0;
+
+	.transition(all 0.5s ease);
+}
+
+.es-story-text {
+	padding: 10px;
+}
+
+.plugin-polls,
+.plugin-event,
+.plugin-broadcast,
+.plugin-blog,
+.plugin-discuss,
+.plugin-hikashop,
+.plugin-easydiscuss {
+	.es-story-text {
+		display: none;
+	}
+	.es-story-panel-contents.active {
+		padding-top: 10px;
+	}
+}
+
+.es-story-textbox {
+	display: block !important; // Quick fix there is unknown inline display:none in IE11
+}
+
+.es-story-textbox .mentions > div {
+	min-height: 52px;
+	// Do not use position: relative here because we won't be able to hover on meta links.
+}
+
+// Safari3+, chrome1+ on iPhone #4056
+@media (max-width:479px) and (-webkit-min-device-pixel-ratio:0) {
+	.mentions div {
+		left: 3px;
+		position: relative;
+	}
+	.es-story-textfield:focus {
+		font-size: @fd-base-font-size !important;
+	}
+}
+
+.es-story-textfield {
+	.box-shadow(~"none");
+	font-size: @fd-base-font-size;
+	line-height: 16px;
+	overflow: hidden;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	resize: none;
+	top: 0;
+	color: @fd-ui-text-color;
+	.transition(font-size 0.5s ease);
+}
+
+.es-story-actions {
+	padding: @fd-base-spacing;
+	float: right;
+	.flex-display(flex);
+
+	&.no-privacy {
+		.es-story-submit {
+			border-radius: 3px !important;
+		}
+	}
+
+	&__share {
+		float: left;
+		margin-right: @fd-base-spacing;
+		.o-checkbox { // Override 
+			margin-top: 6px;
+			margin-bottom: 0;
+			margin-right: @fd-base-spacing;
+			i {
+				color: @fd-ui-meta-color;
+				font-size: 16px;
+				margin-left: @fd-base-spacing--xs;
+			}
+		}
+	}
+}
+
+.es-story-submit {
+	z-index: 2;
+	min-width: 85px;
+}
+
+.es-story-privacy {
+	z-index: 3;
+	.flex-display(flex);
+
+	.es-privacy {
+		.flex-display(flex);
+
+
+		.es-privacy-toggle,
+		.es-privacy-toggle:hover,
+		.es-privacy-toggle:focus,
+		.es-privacy-toggle:active {
+
+			.flex-display(flex);
+			.align-items(center);
+
+			.button-variant-es-gradient(@btn-es-primary-color, @btn-es-primary-bg-top, @btn-es-primary-bg, @btn-es-primary-border-color, none);
+			
+			color: @btn-es-primary-color !important;
+
+			border-top-left-radius: 0 !important;
+			border-bottom-left-radius: 0 !important;
+			
+			position: relative;
+			right: 1px;
+			padding: 5px 0 5px @fd-base-spacing--sm;
+
+			> .i-chevron {
+				position: relative;
+				right: 5px;
+			}
+
+		}
+	}
+
+	.es-privacy-toggle {
+		> span {
+			display: none; // Hide label text
+		}
+	}
+
+	.es-privacy .es-privacy-toggle:active {
+		.box-shadow(~"0 3px 5px rgba(0, 0, 0, 0.125) inset");
+	}
+}
+
+
+&.es-story-mentions-autocomplete {
+	// Blend into background, hides dashed border behind it.
+	border-top: 1px solid @fd-ui-bg;
+}
+
+// Posting as 
+.es-story-post-as {
+	float: right;
+	padding: @fd-base-spacing;
+
+	// Override object
+	.btn {
+		padding: 2px;
+		position: relative;
+	}
+	i {
+		color: @fd-ui-meta-color;
+		padding: 0 @fd-base-spacing;
+		&:before {
+			top: @fd-base-spacing !important;
+		}
+	}
+}
+.dropdown-menu--post-as {
+	> li {
+		&.is-active {
+			background-color: @fd-ui-shade;
+		}
+		> a {
+			padding: @fd-base-spacing--sm @fd-base-spacing;
+			max-width: 160px;
+			overflow: hidden;
+			.text-overflow();
+		}
+
+		+ li {
+			border-top: 1px solid @fd-ui-border-color;
+		}
+	}
+}

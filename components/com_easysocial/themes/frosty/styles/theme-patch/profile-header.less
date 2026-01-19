@@ -1,0 +1,124 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*
+Main structure to control profile header
+
+.es-profile-header
+	.es-profile-header__hd (with-cover, without-cover)
+		.es-profile-header__cover
+		.es-profile-header__avatar
+	.es-profile-header__bd
+	.es-profile-header__ft
+
+Styleguide: /index.php?option=com_easysocial&view=styleguide&layout=render&file=header
+*/
+
+
+// Layout
+// ----------------
+.es-profile-header {
+	&__bd {
+		background: rgba(255, 255, 255, 0.85);
+		bottom: 46px; // Same height with es-profile-header__ft
+		height: 112px; // Same with avatar
+		left: 0;
+		margin: 0;
+		padding-left: 130px;
+		position: absolute;
+		width: 100%;
+	}
+	&__ft {
+		height: 46px;
+	}
+	&__avatar-wrap {
+		padding: 0;
+		left: 0;
+		bottom: 0;
+		> a {
+			border: 0;
+		}
+		.es-flyout-content {
+			bottom: 0;
+		}
+	}
+	&__action-wrap {
+		position: relative;
+		z-index: 2;
+		top: 12px;
+	}
+}
+.es-profile-header--mini {
+	.es-profile-header__bd {
+		margin: 0;
+		padding-left: 90px;
+		height: 80px; // same with avatar
+		overflow: hidden; 
+	}
+	.es-profile-header__fd {
+		height: auto;
+	}
+	.es-profile-header__avatar-wrap {
+		bottom: 0;
+	}
+	.es-profile-header__avatar-wrap {
+		> a {
+			width: 80px;
+			height: 80px;
+		}
+	}
+	.es-profile-header__title {
+		.text-overflow();
+	}
+	.es-teaser-about {
+		display: none; // #5713
+	}
+}
+
+// Without cover
+// ----------------
+.without-cover {
+	.es-profile-header__avatar-wrap {
+		top: 0;
+		> a {
+			width: 112px;
+			height: 112px;
+		}
+	}
+
+	+ .es-profile-header__bd {
+		margin-left: 0;
+		position: relative;
+		bottom: 0;
+	}
+}
+&.is-mobile {
+	.es-profile-header__hd.without-cover {
+		height: 100px;
+	}
+}
+
+&.is-mobile {
+	.es-profile-header {
+		&__bd {
+			bottom: 0;
+			height: 100%;
+			padding: @fd-base-spacing--lg 0 @fd-base-spacing;
+			position: relative;
+		}
+		&__avatar-wrap {
+			left: 50%;
+		}
+		&__action-wrap {
+			top: auto;
+		}
+	}
+	.es-profile-header--mini {
+		.es-profile-header__bd {
+			margin-left: 0;
+		}
+	}
+}

@@ -1,0 +1,638 @@
+#es .es-app-item {
+  border: 1px solid #555;
+}
+#es .es-app-item__hd,
+#es .es-app-item__bd,
+#es .es-app-item__ft {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+#es .es-app-item__hd:before,
+#es .es-app-item__hd:after,
+#es .es-app-item__bd:before,
+#es .es-app-item__bd:after,
+#es .es-app-item__ft:before,
+#es .es-app-item__ft:after {
+  content: " ";
+  display: table;
+}
+#es .es-app-item__hd:after,
+#es .es-app-item__bd:after,
+#es .es-app-item__ft:after {
+  clear: both;
+}
+#es .es-app-item__ft {
+  border-top: 1px solid #555;
+}
+#es .es-app-item + .es-app-item {
+  margin-top: 16px;
+}
+#es .es-app-discussions__hd:before,
+#es .es-app-discussions__hd:after,
+#es .es-app-discussions__ft:before,
+#es .es-app-discussions__ft:after {
+  content: " ";
+  display: table;
+}
+#es .es-app-discussions__hd:after,
+#es .es-app-discussions__ft:after {
+  clear: both;
+}
+#es .es-app-discussions__hd {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #555;
+}
+#es .es-app-discussions__ft {
+  color: #eee;
+}
+#es .es-app-discussions__item {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #555;
+}
+#es .es-app-discussions__item-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+#es .es-app-discussions__item-flag {
+  margin-bottom: 8px;
+}
+#es .es-app-discussions__item-content {
+  margin-bottom: 8px;
+}
+#es .es-app-discussions .label-locked,
+#es .es-app-discussions .label-resolved,
+#es .es-app-discussions .label-unanswered,
+#es .es-app-discussions .label-answer-item {
+  display: none;
+  margin-right: 8px;
+}
+#es .es-app-discussions .locked-notice {
+  display: none;
+}
+#es .es-app-discussions .is-locked .label-locked,
+#es .es-app-discussions.is-locked .label-locked {
+  display: inline-block;
+}
+#es .es-app-discussions .is-locked .es-app-discussion-reply-form,
+#es .es-app-discussions.is-locked .es-app-discussion-reply-form {
+  display: none;
+}
+#es .es-app-discussions .is-locked .locked-notice,
+#es .es-app-discussions.is-locked .locked-notice {
+  display: block;
+}
+#es .es-app-discussions .is-resolved .label-resolved,
+#es .es-app-discussions.is-resolved .label-resolved {
+  display: inline-block;
+}
+#es .es-app-discussions .is-unanswered .label-unanswered,
+#es .es-app-discussions.is-unanswered .label-unanswered {
+  display: inline-block;
+}
+#es .es-app-discussion-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+#es .es-app-discussion-meta {
+  float: right;
+}
+#es .es-app-discussion-content-header,
+#es .es-app-discussion-content,
+#es .es-app-discussion-content-footer,
+#es .es-app-discussion-participants,
+#es .es-app-discussion-reply-header,
+#es .es-app-discussion-reply-list {
+  margin-bottom: 16px;
+}
+#es .es-app-discussion-content-footer {
+  border-bottom: 1px solid #555;
+  padding-bottom: 8px;
+}
+#es .es-app-discussion-reply-form.is-empty .alert-empty {
+  display: block;
+}
+#es .es-app-discussion-reply-form .alert-empty {
+  display: none;
+}
+#es .es-app-discussion-reply-item {
+  margin-bottom: 16px;
+  padding: 8px;
+}
+#es .es-app-discussion-reply-item .es-app-discussion-reply-answer-state {
+  display: none;
+}
+#es .es-app-discussion-reply-item.is-answer-item {
+  background-color: #dff0d8;
+  border-bottom: 2px solid #39b54a;
+  padding-bottom: 16px;
+}
+#es .es-app-discussion-reply-item.is-answer-item .es-app-discussion-reply-answer-state {
+  display: inline-block;
+}
+#es .es-app-discussion-reply-item + .es-app-discussion-reply-item {
+  border-top: 1px solid #333;
+}
+#es.is-mobile .app-discussions .discussion-item .media-body,
+#es.is-mobile .app-discussions .discussion-replies .media-body {
+  clear: both;
+}
+#es.is-mobile .app-discussions .es-filterbar .btn {
+  width: 100%;
+  margin: 15px 0;
+}
+#es .es-apps-statistic {
+  clear: both;
+}
+#es .es-apps-statistic:before,
+#es .es-apps-statistic:after {
+  content: " ";
+  display: table;
+}
+#es .es-apps-statistic:after {
+  clear: both;
+}
+#es .es-apps-statistic >:not(:first-child) {
+  margin-left: 8px;
+}
+#es .es-apps-statistic__item {
+  border-radius: 3px;
+  position: relative;
+  border: 1px solid #d7d7d7;
+  float: left;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px;
+  text-align: center;
+  width: auto;
+  min-width: 46px;
+  min-height: 46px;
+  background-color: #fff;
+}
+#es .es-apps-statistic__item a:hover {
+  background: none;
+}
+#es .es-apps-statistic__link {
+  min-width: 46px;
+  display: inline-block;
+}
+#es .es-apps-statistic__item-icon {
+  font-size: 13px;
+  padding: 12px;
+}
+#es .es-apps-statistic__item-count {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+#es.is-mobile .es-apps-statistic.pull-right {
+  float: none !important;
+}
+#es .app-news {
+  font-size: 12px;
+}
+#es .app-news .create-news {
+  margin-top: 5px;
+}
+#es .app-news.news-form input.news-title {
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  padding: 10px;
+  width: 100%;
+}
+#es .app-news.news-form label.checkbox {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+#es .app-news.is-empty .group-news-contents .group-news-items {
+  display: none;
+}
+#es .app-news.is-empty .group-news-contents .empty {
+  display: block;
+}
+#es .app-news .group-news-item .group-news-meta {
+  margin-bottom: 8px;
+}
+#es .app-news .group-news-item .group-news-meta ul li {
+  display: inline-block;
+}
+#es .app-news .group-news-item .group-news-meta ul li +li {
+  border-left: 1px dotted #d7d7d7;
+  margin-left: 8px;
+  padding-left: 8px;
+}
+#es .app-news .group-news-items {
+  margin-top: 8px;
+}
+#es .app-news .group-news-items > li + li {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dotted #d7d7d7;
+}
+#es .app-news .group-news-items .media .media-object {
+  margin-top: 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+}
+#es .app-news .group-news-items .media .media-object img {
+  padding: 1px;
+  width: 48px;
+  height: 48px;
+}
+#es .app-news .group-news-items .media .media-body h3 {
+  padding-top: 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+#es .app-news .group-news-items .group-news-meta {
+  margin-bottom: 8px;
+}
+#es .app-news .group-news-items .group-news-meta ul li {
+  display: inline-block;
+}
+#es .app-news .group-news-items .group-news-meta ul li +li {
+  border-left: 1px dotted #d7d7d7;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+#es .app-members {
+  font-size: 12px;
+}
+#es .app-members .member-item {
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 10px 0 0;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+}
+#es .app-members .member-item.is-pending-invitation span.label-pending-invitation {
+  display: inline;
+}
+#es .app-members .member-item.is-pending span.label-pending {
+  display: inline;
+}
+#es .app-members .member-item.is-owner span.label-owner {
+  display: inline;
+}
+#es .app-members .member-item.is-admin span.label-admin {
+  display: inline;
+}
+#es .app-members .member-item.is-member span.label-member {
+  display: inline;
+}
+#es .app-members .member-item.is-going span.label-going {
+  display: inline;
+}
+#es .app-members .member-item.is-not-going span.label-not-going {
+  display: inline;
+}
+#es .app-members .member-item.is-maybe span.label-maybe {
+  display: inline;
+}
+#es .app-members .member-item.is-pending span.label-pending {
+  display: inline;
+}
+#es .app-members .member-item h5 {
+  margin: 0 0 5px 50px;
+}
+#es .app-members .member-item h5 span.label {
+  display: none;
+  vertical-align: top;
+  font-size: 11px;
+  padding: 2px 4px;
+}
+#es .app-members .member-item .desc {
+  margin: 5px 0 0 50px;
+  color: #666;
+  font-size: 11px;
+}
+#es .es-dashboard .app-tasks .form-item {
+  margin: 16px 0 20px;
+}
+#es .es-dashboard .app-tasks .tasks-list > li {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: #333;
+  border: 1px dashed #555;
+  line-height: 22px;
+}
+#es .es-dashboard .app-tasks .tasks-list > li + li {
+  margin-top: 8px;
+}
+#es .es-dashboard .app-tasks .tasks-list > li .task-title {
+  font-size: 13px;
+}
+#es .es-dashboard .app-tasks .tasks-list > li .task-time {
+  font-size: 12px;
+  color: #f5f5f5;
+}
+#es .es-dashboard .app-tasks .tasks-list > li input {
+  margin-top: 0;
+}
+#es .es-dashboard .app-tasks .tasks-list > li .btn-group {
+  display: none;
+}
+#es .es-dashboard .app-tasks .tasks-list > li .task-stats .o-label {
+  display: none;
+}
+#es .es-dashboard .app-tasks .tasks-list > li:hover .btn-group {
+  display: inline-block;
+}
+#es .es-dashboard .app-tasks .tasks-list > li.is-resolved {
+  background: #FFFED8;
+}
+#es .es-dashboard .app-tasks .tasks-list > li.is-resolved .task-title {
+  text-decoration: line-through;
+}
+#es .es-dashboard .app-tasks .tasks-list > li.is-resolved .task-stats .o-label {
+  display: inline-block;
+}
+#es .app-tasks .due,
+#es .app-tasks .completed {
+  display: none;
+}
+#es .app-tasks .is-due .due {
+  display: inline-block !important;
+}
+#es .app-tasks .is-completed .completed {
+  display: inline-block !important;
+}
+#es .app-tasks .is-completed .mark-uncomplete {
+  display: block !important;
+}
+#es .app-tasks .is-completed .mark-completed {
+  display: none !important;
+}
+#es .app-tasks .milestone-list > li + li {
+  margin-top: 40px;
+}
+#es .app-tasks .milestone-list h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+#es .app-tasks .milestone-list h4 > .o-label {
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 8px;
+  text-transform: uppercase;
+}
+#es .app-tasks .milestone-list .milestone-desc {
+  font-size: 13px;
+}
+#es .app-tasks .milestone-list .milestone-meta {
+  border-top: 1px dotted #555;
+  border-bottom: 1px dotted #555;
+  padding: 4px 0;
+}
+#es .app-tasks .milestone-list .milestone-meta ul {
+  font-size: 13px;
+  color: #f5f5f5;
+}
+#es .app-tasks .milestone-list .milestone-meta li {
+  margin-right: 4px;
+  display: inline-block;
+}
+#es .app-tasks .milestone-list .milestone-meta li +li {
+  border-left: 1px dotted #555;
+  padding-left: 8px;
+}
+#es .app-tasks .milestone-item-view {
+  font-size: 13px;
+}
+#es .app-tasks .milestone-item-view h3 {
+  margin-top: 0;
+}
+#es .app-tasks .milestone-item-view h5 {
+  font-weight: 700;
+}
+#es .app-tasks .milestone-item-view .mark-completed {
+  display: block;
+}
+#es .app-tasks .milestone-item-view .mark-uncomplete {
+  display: none;
+}
+#es .app-tasks .milestone-item-view .milestone-content {
+  border-right: 1px dotted #555;
+}
+#es .app-tasks .milestone-item-view .milestone-content > hr {
+  margin-top: 8px;
+}
+#es .app-tasks .milestone-item-view .milestone-desc {
+  margin-bottom: 16px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks {
+  margin-top: 16px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks hr {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list.completed-list >li label {
+  text-decoration: line-through;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li {
+  padding: 4px 0;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li.task-form {
+  margin-top: 8px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li.task-form .form-meta {
+  margin-top: 8px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li.task-form .form-meta >div +div {
+  padding-left: 0;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li .task-meta {
+  margin-left: 41px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li .owner-avatar {
+  max-width: 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li .task-created {
+  font-size: 12px;
+  color: #f5f5f5;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li label {
+  font-size: 13px;
+  font-weight: normal;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li + li {
+  border-top: 1px dotted #555;
+  padding-top: 4px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li .task-meta {
+  color: #f5f5f5;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li .task-meta >ul li {
+  display: inline-block;
+  padding-right: 4px;
+}
+#es .app-tasks .milestone-item-view .milestone-tasks .tasks-list >li .task-meta >ul li +li {
+  border-left: 1px dotted #555;
+  padding-left: 8px;
+}
+#es .app-tasks .milestone-item-view .milestone-chart .legend-title {
+  margin: 16px 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+#es .app-tasks .milestone-item-view .milestone-chart .legend-items >div >span {
+  width: 32px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 4px;
+}
+#es .app-tasks .milestone-item-view .milestone-chart .legend-items >div +div {
+  margin-top: 4px;
+}
+#es .app-tasks .milestone-item-view .milestone-chart .legend-incomplete >span {
+  background: #BE1F23;
+}
+#es .app-tasks .milestone-item-view .milestone-chart .legend-completed >span {
+  background: #2b94c5;
+}
+#es .app-tasks .milestone-item-view .milestone-meta > ul li {
+  color: #f5f5f5;
+  font-size: 13px;
+  padding: 0 0 4px 0;
+}
+#es .app-tasks .milestone-item-view .milestone-meta > ul li + li {
+  padding: 4px 0;
+  border-top: 1px dotted #555;
+  margin-top: 2px;
+}
+#es .es-task-form {
+  margin-bottom: 16px;
+}
+#es .es-task-item + .es-task-item {
+  border-top: 1px solid #555;
+  padding-top: 16px;
+  margin-top: 16px;
+}
+#es .es-task-item .checkbox {
+  margin: 0;
+}
+#es.is-mobile .create-task .datepicker-wrap {
+  margin-top: 8px;
+}
+#es .es-profile .app-kunena h4 {
+  border-bottom: 1px solid #f6f6f6;
+  padding-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+#es .es-profile .app-kunena .stat-meta {
+  margin-top: 15px;
+  border-top: 1px solid #f6f6f6;
+  padding-top: 15px;
+}
+#es .es-profile .app-kunena .stat-meta .stat-item +.stat-item {
+  border-left: 1px solid #f6f6f6;
+  height: 60px;
+}
+#es .es-profile .app-kunena .stat-points {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+#es .es-profile .app-kunena .discussions-list {
+  margin-top: 30px;
+}
+#es .es-profile .app-kunena .discussions-list +.discussions-list {
+  margin-top: 50px;
+}
+#es .es-profile .app-kunena .discussions-list .empty {
+  background: #f6f6f6;
+  border: 1px solid #eee;
+  padding: 40px;
+  color: #666;
+  text-align: center;
+}
+#es .es-profile .app-kunena .discussions-list .post-item:before,
+#es .es-profile .app-kunena .discussions-list .post-item:after {
+  content: " ";
+  display: table;
+}
+#es .es-profile .app-kunena .discussions-list .post-item:after {
+  clear: both;
+}
+#es .es-profile .app-kunena .discussions-list .post-item .post-title a {
+  font-size: 14px;
+  line-height: 24px;
+  color: #666;
+}
+#es .es-profile .app-kunena .discussions-list .post-item .post-meta {
+  font-size: 12px;
+}
+#es .es-profile .app-kunena .discussions-list .post-item +.post-item {
+  margin-top: 25px;
+}
+#es .es-profile .app-kunena .discussions-list .post-item .hits-count {
+  padding: 6px 12px;
+  width: 64px;
+  background: #38648b;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+}
+#es .es-profile .app-kunena .discussions-list .post-item .post-info {
+  margin-left: 90px;
+}
+#es .es-profile .app-article {
+  font-size: 12px;
+}
+#es .es-profile .app-article .article-list >li {
+  margin-bottom: 15px;
+}
+#es .es-profile .app-article .article-list >li +li {
+  padding-top: 15px;
+}
+#es .es-profile .app-article .article-list >li .article-meta {
+  color: #666;
+  border-bottom: 1px dashed #d7d7d7;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#es .es-profile .app-article .article-list >li .article-actions {
+  margin-top: 10px;
+}
+#es .es-profile .app-article .blog-description p {
+  clear: both;
+}
+#es .es-profile .app-k2 {
+  font-size: 12px;
+}
+#es .es-profile .app-k2 .k2-list >li {
+  margin-bottom: 15px;
+  border: 1px dashed #d7d7d7;
+  padding: 15px;
+}
+#es .es-profile .app-k2 .k2-list >li +li {
+  padding-top: 15px;
+}
+#es .es-profile .app-k2 .k2-list >li .k2-meta {
+  border-bottom: 1px dashed #d7d7d7;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#es .es-profile .app-k2 .k2-list >li .k2-actions {
+  margin-top: 30px;
+}
+#es.w320 .es-profile .k2-text .media-object {
+  float: none !important;
+  margin: 0;
+}

@@ -1,0 +1,66 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+
+@import "config";
+
+@{EasySocial} {
+	@import "modules/variables";
+	@import "modules/default"; 
+	@import "modules/m-docker";
+	@import "modules/mod_easysocial_albums";
+	@import "modules/mod_easysocial_dropdown_menu";
+	@import "modules/mod_easysocial_leaderboard";
+	@import "modules/mod_easysocial_login";
+	@import "modules/mod_easysocial_menu";
+	@import "modules/mod_easysocial_profile_completeness";
+	@import "modules/mod_easysocial_recentpolls";
+	@import "modules/mod_easysocial_search";
+
+}
+
+// For docker modules, we want to add padding on the body
+body {
+	&.has-docker {
+		-ms-overflow-style: scrollbar; // prevent IE scrollbar overlay
+		
+		#es.es-dialog {
+			height: calc(~"100% - 44px"); // Minus topbar/footbar height
+		}
+
+		&.docker-top {
+			padding-top: 60px !important;
+
+			#es {
+				&.es-photo-popup, 
+				&.es-explorer-popup {
+					padding: 74px 30px 30px;
+				}
+
+				&.es-dialog {
+					top: 44px;
+				}
+			}
+		}
+		&.docker-bottom {
+			#es {
+				&.es-photo-popup, 
+				&.es-explorer-popup {
+					padding: 30px 30px 74px;
+				}
+
+				&.es-dialog {
+					bottom: 44px;
+				}
+			}
+
+			#ckit { // #798 prevent ckit toggle overlap when docker is bottom
+				&.layout-compact {
+					bottom: 30px;
+				}
+			}
+		}
+	}
+}

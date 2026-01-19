@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="params">
+        <fields name="widget_settings">
+            <fieldset name="widget_settings">
+                <field name="layout" type="list" label="COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_DESC" default="full">
+                    <option value="button">COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_OPTION_BUTTON</option>
+                    <option value="full">COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_OPTION_FULL</option>
+                    <option value="mini">COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_OPTION_MINI</option>
+                    <option value="vertical">COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_OPTION_VERTICAL</option>
+                </field>
+                <field name="height" type="list" label="COM_JFBCONNECT_WIDGET_VK_LIKE_HEIGHT_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_LAYOUT_DESC" default="22">
+                    <option value="18">18 px</option>
+                    <option value="20">20 px</option>
+                    <option value="22">22 px</option>
+                    <option value="24">24 px</option>
+                </field>
+                <field name="width" type="text" label="COM_JFBCONNECT_WIDGET_VK_LIKE_WIDTH_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_WIDTH_DESC" default="350"/>
+                <field name="verb" type="list" label="COM_JFBCONNECT_WIDGET_VK_LIKE_NAME_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_NAME_DESC" default="0">
+                    <option value="0">COM_JFBCONNECT_WIDGET_VK_LIKE_NAME_OPTION_LIKE</option>
+                    <option value="1">COM_JFBCONNECT_WIDGET_VK_LIKE_NAME_OPTION_THIS_IS_INTERESTING</option>
+                </field>
+                <field name="pagetitle" type="text" label="COM_JFBCONNECT_WIDGET_VK_LIKE_PAGE_TITLE_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_PAGE_TITLE_DESC"/>
+                <field name="url" type="text" label="COM_JFBCONNECT_WIDGET_VK_LIKE_PAGE_URL_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_PAGE_URL_DESC"/>
+                <field name="pageimage" type="media" label="COM_JFBCONNECT_WIDGET_VK_LIKE_PAGE_IMAGE_LABEL" description="COM_JFBCONNECT_WIDGET_VK_LIKE_PAGE_IMAGE_DESC" directory="" />
+            </fieldset>
+        </fields>
+    </fields>
+</form>

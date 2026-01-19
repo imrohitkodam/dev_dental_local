@@ -1,0 +1,61 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*
+Main structure to control profile header
+
+.es-cat-header
+	
+
+Styleguide: /index.php?option=com_easysocial&view=styleguide&layout=render&file=header
+*/
+
+.es-cat-header {
+	border: 1px solid @fd-ui-border-color;
+
+	&__hd,
+	&__bd,
+	&__ft {
+		.clearfix();
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+		font-size: @fd-base-font-size;
+	}
+	&__bd,
+	&__ft {
+		border-top: 1px solid @fd-ui-border-color;
+		
+		// Footer have <a> and <b> tags only, so just use html tags for it.
+	   color: @fd-ui-meta-color; 
+		b {
+			color: @fd-ui-text-color;
+		}
+
+		.g-list-inline {
+			> li {
+				line-height: 28px; // Make it aligned well with .btn-sm
+				// background-color: blue;
+			}
+		}
+	}
+	&__bd {
+		padding: @fd-base-spacing--sm 0;
+		background-color: @fd-ui-shade;
+	}
+
+	&__title-link {
+		font-weight: bold;
+	}
+	
+	&__graph {
+		position: relative;
+		
+	}
+	&__graph-title {
+		position: absolute;
+		top: @fd-base-spacing;
+		right: @fd-base-spacing--lg;
+	}
+}

@@ -1,0 +1,190 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$blocks - blocks.less
+\*------------------------------------*/
+// Blocks aka modules in html apply rely on few classes
+
+.es-friend-list {
+	> li {
+		border-bottom: 1px solid @esBorder;
+		padding: 6px 0px;
+	}
+}
+
+.es-data-wrapper {
+	position: relative; // To ensure .o-loader place in correct area.
+}
+
+// btn group for date filter event listing
+.es-btn-group-date { // modifier for .btn-group.btn-group-justified
+	> .btn:first-child,
+	> .btn:last-child {
+		width: 9%;
+	}
+	.btn:not(:first-child):not(:last-child):not(.dropdown-toggle_) {
+		border-left: none;
+		border-right: none;
+		cursor: default;
+		width: 80%;
+		&:hover {
+			background: none;
+			border-color: @esBorder;
+		}
+	}
+}
+
+.es-view-after-stream {
+	margin-top: @fd-base-spacing--lg;
+}
+
+.es-stream-login-box {
+	// padding: @fd-base-spacing--lg;
+	// background: none repeat scroll 0% 0% rgb(244, 244, 244);
+	margin-top: @fd-base-spacing--lg;
+	// border: 1px dashed @fd-ui-border-color;
+	// font-size: @fd-base-font-size;
+}
+
+.is-detecting-location {
+	.es-detecting-location {
+		display: block;
+	}
+}
+
+.es-detecting-location {
+	display: none;
+	padding: 48px;
+	text-align: center;
+	color: @esColor;
+	
+	> i {
+		font-size: 30px;
+		vertical-align: middle;
+		margin-bottom: 20px;
+		display: block;
+		color: @esColor; 
+	}
+}
+
+
+// .es-avatar-remove-tag { // wrapped by es-avatar-wrap
+//     position: absolute;
+//     top: -6px;
+//     right: -3px;
+//     > a {
+//         color: #fff;
+//         background: #DB513B;
+//         border-radius: 50%;
+//         width: 12px;
+//         height: 12px;
+//         display: inline-block;
+//         text-align: center;
+//         line-height: 8px;
+		
+//         i {
+//             font-size: 9px;
+//         }
+//     }
+// }
+
+.es-section-divider {
+	border-top: 3px double @esBorder;
+	margin: 0 0 20px;
+}
+
+// special custom styling for guest limit
+
+.input-group > .input-group-addon {
+	font-size: inherit;
+}
+
+.input-group.guest-limit {
+	width: auto;
+
+	> .form-control {
+		width: 60px !important;
+	}
+
+	> .input-group-addon {
+		width: auto !important;
+	}
+}
+
+
+// Modifier for o-nav.o-nav--block
+.es-nav-pills {
+	.o-nav__item {
+		margin-right: @fd-base-spacing--sm;
+
+		&.active {
+			.o-nav__link {
+				background-color: @fd-ui-shade;
+				color: @fd-ui-text-color;
+			}   
+		}
+	}
+	.o-nav__link {
+		border-radius: 12px;
+		padding: @fd-base-spacing @fd-base-spacing;
+		color: @fd-ui-meta-color;
+		position: relative;
+		line-height: 1;
+		&:hover {
+			background-color: @fd-ui-shade;
+		}
+	}
+
+	&__link-bubble {
+		display: none; // Hide by default
+		position: absolute;
+		color: #fff;
+		background-color: @fd-brand-danger;
+		top: -@fd-base-spacing--sm;
+		right: -@fd-base-spacing--xs;
+		min-width: 12px;
+		height: 13px;
+		overflow: hidden;
+		border-radius: @fd-navbar-radius--sm;
+		text-align: center;
+		font-size: 10px;
+		line-height: 14px;
+		font-weight: bold;
+		padding: 0 @fd-base-spacing--xs;
+
+	}
+
+	.has-notice {
+		.es-nav-pills__link-bubble {
+			display: block;
+		}
+	}
+}
+
+.es-list-result { // A dummy to wrap o-loader make it display nicely arrocrding the dom.
+	position: relative;
+	min-height: 100px;
+}
+
+.es-list-sorting { // sort with dropdown method
+	text-align: right;
+	margin-bottom: @fd-base-spacing--lg;
+}
+&.is-mobile,
+&.w780 {
+	.es-list-sorting {
+		.dropdown--popdown {
+			display: block;
+		}
+		.btn-popdown--inline {
+			width: 100%;
+		}
+	}
+}
+
+
+

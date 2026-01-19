@@ -1,0 +1,165 @@
+#es .es-videos-form-wrapper__hd {
+  padding: 16px 0;
+  border-bottom: 1px solid #555;
+}
+#es .es-videos-form-wrapper__title {
+  font-size: 13px;
+  margin: 0;
+  font-weight: bold;
+}
+#es .es-video-form-actions {
+  border-top: 1px solid #555;
+  padding: 16px;
+}
+#es .es-video-group-title {
+  font-size: 18px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+#es .es-video-thumbnail {
+  position: relative;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+#es .es-video-title > a {
+  max-height: 36px;
+  line-height: 18px;
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+#es .es-video-title.single {
+  margin: 8px 0;
+  font-weight: bold;
+  font-size: 170%;
+  line-height: 1.4;
+  font-family: inherit;
+}
+#es .es-video-meta:before,
+#es .es-video-meta:after {
+  content: " ";
+  display: table;
+}
+#es .es-video-meta:after {
+  clear: both;
+}
+#es .es-video-meta > span {
+  float: left;
+  line-height: 1;
+  margin: 0 16px 4px 0;
+  position: relative;
+}
+#es .es-video-meta > span + span:before {
+  content: '\00b7';
+  position: absolute;
+  top: 2px;
+  left: -10px;
+}
+#es .es-video-meta > span.es-video-manage {
+  padding-left: 8px;
+  border-left: 1px solid #333;
+}
+#es .es-playlist-wrap {
+  background: #F5F5F5;
+}
+#es .es-playlist-wrap .es-item-list > li + li {
+  border-top: 1px solid #e4e4e4;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+#es .es-playlist-title {
+  margin-bottom: 15px;
+}
+#es .es-playlist-item-title {
+  font-weight: bold;
+  margin: 5px 0;
+}
+#es .es-video-progress-area {
+  background: #fafafa;
+  padding: 50px 0;
+  text-align: center;
+}
+#es .es-video-progress-area .es-progress-wrap {
+  width: 60%;
+  margin: 0 auto;
+}
+#es .es-video-progress-area .es-muted {
+  margin-top: 5px;
+}
+#es .es-video-form .es-filterbar {
+  margin-bottom: 20px;
+}
+#es .es-video-dummy {
+  height: 350px;
+  background: #fafafa;
+  text-align: center;
+}
+#es .es-video-upload-form .form-horizontal {
+  padding-top: 16px;
+}
+#es .es-video-upload-form .help-block {
+  font-size: 12px;
+}
+#es .es-video-upload-form .control-label {
+  text-align: left;
+}
+#es .es-video-response .es-action-wrap {
+  padding: 0;
+}
+#es .es-video-response .es-action-feedback {
+  margin-bottom: 2px;
+}
+#es .es-video-response ul > .es-action-privacy > div {
+  display: inline-block;
+}
+#es .es-video-player {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+#es .es-video-player .es-viewport {
+  padding-top: 56.25%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#es .es-video-player .es-viewport > div {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+#es .es-videos-featured {
+  margin-bottom: 20px;
+}
+#es .es-video-other {
+  margin-top: 20px;
+}
+#es .es-video-upload-form .es-location-map,
+#es .es-video-upload-form .es-location-form {
+  border: 1px solid #555;
+}
+#es .es-video-upload-form .es-location-map {
+  border-bottom: none;
+}
+#es.es-mobile-content .es-video-single {
+  background-color: #333;
+  margin: 0 -16px;
+  padding: 8px 16px;
+}
+#es.es-mobile-content .es-video-single .es-likes-wrap {
+  background-color: #333;
+  border-bottom: 1px solid #555;
+}
+#es.es-mobile-content .es-video-content-body,
+#es.es-mobile-content .es-video-actions {
+  margin: 0 -16px;
+}
+#es.es-mobile-content .es-video-actions {
+  border-top: 1px solid #555;
+}
+#es.es-mobile-content .es-comments-wrap {
+  margin: 0 -16px;
+  padding: 16px;
+  background-color: #333;
+}

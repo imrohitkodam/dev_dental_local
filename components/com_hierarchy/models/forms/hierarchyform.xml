@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_HIERARCHY_FORM_LBL_HIERARCHY_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="user_id" type="user"
+                
+            label="COM_HIERARCHY_FORM_LBL_HIERARCHY_USER_ID"
+            description="COM_HIERARCHY_FORM_DESC_HIERARCHY_USER_ID" 
+                
+                
+                 /> 
+
+ 
+		<field name="filter_user_id" type="user" onchange="this.form.submit();" /> 
+
+       <field name="subuser_id" type="text"
+                
+            label="COM_HIERARCHY_FORM_LBL_HIERARCHY_SUBUSER_ID"
+            description="COM_HIERARCHY_FORM_DESC_HIERARCHY_SUBUSER_ID" 
+                
+                
+                 /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_HIERARCHY_FORM_LBL_HIERARCHY_CREATED_BY"
+            description="COM_HIERARCHY_FORM_DESC_HIERARCHY_CREATED_BY"  /> 
+
+ </fieldset> 
+
+ <fieldset
+                        name="accesscontrol">
+                       <field name="asset_id" type="hidden" filter="unset" />
+                       <field name="rules"
+                            type="rules"
+                            label="JFIELD_RULES_LABEL"
+                            translate_label="false"
+                            filter="rules"
+                            validate="rules"
+                            class="inputbox"
+                            component="com_hierarchy"
+                            section="hierarchy"
+                        />
+
+	</fieldset>
+
+</form>

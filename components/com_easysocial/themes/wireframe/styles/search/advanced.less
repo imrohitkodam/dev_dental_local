@@ -1,0 +1,106 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	advanced-search.less
+\*------------------------------------*/
+.es-adv-search2 {
+	&__list {
+
+	}
+	&__item {
+		margin-bottom: @fd-base-spacing;
+		&:first-child {
+			.es-adv-search2__action {
+				display: none; // Shouldn't show action on first item
+			}    
+		}
+		.es-adv-search2__action {
+			padding-right: 0;
+		}
+	}
+	&__criteria {
+		max-width: 22%;
+
+		margin-bottom: @fd-base-spacing;
+		.form-control {
+			font-weight: bold;
+		}    
+
+	}
+	&__condition {
+		.flex-display(flex);
+		.flex(1);
+		&-item {
+			.flex(1);
+
+			&--short {
+				.flex(0 0 168px);
+			}
+		}
+		
+		.is-short {
+			
+		}
+		> div { // item,criteria
+			padding-right: @fd-base-spacing;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+	
+	.is-operator {
+		max-width: 22%;
+	}
+
+	&__action {
+		.flex(none);
+	}
+	
+	&__locations {
+		.flex-grow(1);
+		width: 100%;
+		align-self: flex-end;
+	}
+	// Another section
+	&__options {
+		padding: @fd-base-spacing;
+		background-color: @fd-ui-shade;
+	}
+	&__options-group {
+	}
+	
+}
+
+.es-adv-search2-criteria {
+	&__item {
+
+	}
+}
+
+
+&.w780,
+&.is-mobile {
+	.es-adv-search2 {
+		&__item {
+			+ .es-adv-search2__item {
+				border-top: 1px solid @fd-ui-border-color;
+				padding-top: @fd-base-spacing--lg;
+			}
+		}
+		&__criteria {
+			max-width: 100%;
+		}
+		&__condition {
+			.flex-display(block);
+
+			> div { // item,criteria
+				padding: 0 0 @fd-base-spacing;
+			}
+		}
+	}   
+}

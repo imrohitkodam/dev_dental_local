@@ -1,0 +1,1442 @@
+#es .mod-es-title {
+  font-weight: bold;
+}
+#es .mod-es-meta {
+  color: #eee;
+}
+#es .mod-es-action {
+  margin-top: 8px;
+}
+#es.mod-es--border {
+  border: 1px solid #555;
+}
+#es .mod-card {
+  border: 1px solid #555;
+}
+#es .mod-card + .mod-card {
+  margin-top: 16px;
+}
+#es .mod-card--border {
+  border-top: 1px solid #555;
+}
+#es .mod-card__ft {
+  position: relative;
+}
+#es .mod-card__ft:before,
+#es .mod-card__ft:after {
+  content: " ";
+  display: table;
+}
+#es .mod-card__ft:after {
+  clear: both;
+}
+#es .mod-card__ft {
+  padding: 8px 16px;
+}
+#es .mod-card__ft .g-list-inline > li {
+  line-height: 28px;
+}
+#es .mod-card__cover-wrap {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  padding-top: 23%;
+}
+#es .mod-card__cover-wrap--16-9 {
+  padding-top: 56%;
+}
+#es .mod-card__cover {
+  background-size: cover;
+  border: 0 none;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#es .mod-card__avatar-holder {
+  position: absolute;
+  left: 16px;
+  top: -20px;
+}
+#es .mod-card__avatar {
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #333;
+  padding: 2px;
+  border: 2px solid rgba(0,0,0,0.065);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#es .mod-card__title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+#es .mod-card__meta {
+  color: #eee;
+}
+#es .mod-card__meta a {
+  color: #eee;
+}
+#es .mod-card__calendar-date {
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #555;
+  border-radius: 2px;
+  padding: 8px;
+  text-align: center;
+}
+#es .mod-card__calendar-day {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 13px;
+}
+#es .mod-card__calendar-mth {
+  color: #d9534f;
+  font-size: 13px;
+  line-height: 13px;
+}
+#es .mod-card__context {
+  position: relative;
+  padding: 24px 16px 8px;
+}
+#es .mod-card__state {
+  position: absolute;
+  right: 16px;
+  top: -30px;
+  display: none;
+}
+#es .mod-card.is-passed .mod-card__state {
+  display: block;
+}
+#es.mod-es-quickpost .es-story-body {
+  border-radius: 3px 3px 0 0;
+}
+#es.mod-es-notification .mod-es-menu-bar {
+  border: none;
+}
+#es .mod-es-dating-search-form {
+  padding: 8px 16px;
+  border: 1px solid #555;
+}
+#es .mod-search-distance {
+  position: relative;
+}
+#es .mod-search-distance .es-location-autocomplete {
+  margin-top: 0;
+}
+#es.mod-es-stream .es-stream-list {
+  min-height: 0;
+}
+#es.es-docker {
+  background-color: #263238;
+  color: #333;
+  text-align: center;
+  line-height: 1;
+  position: fixed;
+  z-index: 10021;
+}
+#es.es-docker .btn,
+#es.es-docker .btn:active,
+#es.es-docker .btn.active {
+  outline: 0;
+}
+#es.es-docker .btn:focus,
+#es.es-docker .btn.focus,
+#es.es-docker .btn:active:focus,
+#es.es-docker .btn:active.focus,
+#es.es-docker .btn.active:focus,
+#es.es-docker .btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  outline: 0;
+}
+#es.es-docker.is-top {
+  width: 100%;
+  height: 44px;
+  top: 0;
+  left: 0;
+}
+#es.es-docker.is-top.active-menu .btn-docker-menu:after,
+#es.es-docker.is-top.active-menu .btn-docker-menu:before,
+#es.es-docker.is-top.active-mobile-login .btn-docker-menu:after,
+#es.es-docker.is-top.active-mobile-login .btn-docker-menu:before {
+  display: block;
+  position: absolute;
+  top: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-top.active-menu .btn-docker-menu:after,
+#es.es-docker.is-top.active-mobile-login .btn-docker-menu:after {
+  border-bottom-color: #333;
+}
+#es.es-docker.is-top.active-menu .btn-docker-menu:before,
+#es.es-docker.is-top.active-mobile-login .btn-docker-menu:before {
+  border-bottom-color: #ccc;
+}
+#es.es-docker.is-top.active-menu .docker-popup-window,
+#es.es-docker.is-top.active-mobile-login .docker-popup-window {
+  margin-top: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#es.es-docker.is-top.active-menu .docker-popup-menu,
+#es.es-docker.is-top.active-menu .docker-popup-login {
+  display: block;
+}
+#es.es-docker.is-top.active-quickpost .btn-quickpost:after,
+#es.es-docker.is-top.active-quickpost .btn-quickpost:before {
+  position: absolute;
+  top: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-top.active-quickpost .btn-quickpost:after {
+  border-bottom-color: #333;
+}
+#es.es-docker.is-top.active-quickpost .btn-quickpost:before {
+  border-bottom-color: #ccc;
+}
+#es.es-docker.is-top.active-quickpost .docker-popup-quickpost {
+  display: block;
+  margin-top: 50px;
+  top: 0;
+  right: 0;
+}
+#es.es-docker.is-top.active-friends .btn-friends:after,
+#es.es-docker.is-top.active-friends .btn-friends:before {
+  position: absolute;
+  top: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-top.active-friends .btn-friends:after {
+  border-bottom-color: #333;
+}
+#es.es-docker.is-top.active-friends .btn-friends:before {
+  border-bottom-color: #ccc;
+}
+#es.es-docker.is-top.active-conversations .btn-conversations:after,
+#es.es-docker.is-top.active-conversations .btn-conversations:before {
+  position: absolute;
+  top: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-top.active-conversations .btn-conversations:after {
+  border-bottom-color: #333;
+}
+#es.es-docker.is-top.active-conversations .btn-conversations:before {
+  border-bottom-color: #ccc;
+}
+#es.es-docker.is-top.active-notifications .btn-notifications:after,
+#es.es-docker.is-top.active-notifications .btn-notifications:before {
+  position: absolute;
+  top: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-top.active-notifications .btn-notifications:after {
+  border-bottom-color: #333;
+}
+#es.es-docker.is-top.active-notifications .btn-notifications:before {
+  border-bottom-color: #ccc;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu {
+  height: 100%;
+}
+#es.es-docker.is-bottom {
+  width: 100%;
+  height: 44px;
+  bottom: 0;
+  left: 0;
+}
+#es.es-docker.is-bottom.active-menu .btn-docker-menu:after,
+#es.es-docker.is-bottom.active-menu .btn-docker-menu:before,
+#es.es-docker.is-bottom.active-mobile-login .btn-docker-menu:after,
+#es.es-docker.is-bottom.active-mobile-login .btn-docker-menu:before {
+  display: block;
+  position: absolute;
+  bottom: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-bottom.active-menu .btn-docker-menu:after,
+#es.es-docker.is-bottom.active-mobile-login .btn-docker-menu:after {
+  border-top-color: #333;
+}
+#es.es-docker.is-bottom.active-menu .btn-docker-menu:before,
+#es.es-docker.is-bottom.active-mobile-login .btn-docker-menu:before {
+  border-top-color: #ccc;
+}
+#es.es-docker.is-bottom.active-menu .docker-popup-window,
+#es.es-docker.is-bottom.active-mobile-login .docker-popup-window {
+  margin-bottom: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#es.es-docker.is-bottom.active-menu .docker-popup-menu,
+#es.es-docker.is-bottom.active-menu .docker-popup-login {
+  display: block;
+}
+#es.es-docker.is-bottom.active-quickpost .btn-quickpost:after,
+#es.es-docker.is-bottom.active-quickpost .btn-quickpost:before {
+  position: absolute;
+  bottom: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-bottom.active-quickpost .btn-quickpost:after {
+  border-top-color: #333;
+}
+#es.es-docker.is-bottom.active-quickpost .btn-quickpost:before {
+  border-top-color: #ccc;
+}
+#es.es-docker.is-bottom.active-quickpost .docker-popup-quickpost {
+  margin-bottom: 50px;
+  display: block;
+  bottom: 0;
+  right: 0;
+}
+#es.es-docker.is-bottom.active-friends .btn-friends:after,
+#es.es-docker.is-bottom.active-friends .btn-friends:before {
+  position: absolute;
+  bottom: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-bottom.active-friends .btn-friends:after {
+  border-top-color: #333;
+}
+#es.es-docker.is-bottom.active-friends .btn-friends:before {
+  border-top-color: #ccc;
+}
+#es.es-docker.is-bottom.active-conversations .btn-conversations:after,
+#es.es-docker.is-bottom.active-conversations .btn-conversations:before {
+  position: absolute;
+  bottom: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-bottom.active-conversations .btn-conversations:after {
+  border-top-color: #333;
+}
+#es.es-docker.is-bottom.active-conversations .btn-conversations:before {
+  border-top-color: #ccc;
+}
+#es.es-docker.is-bottom.active-notifications .btn-notifications:after,
+#es.es-docker.is-bottom.active-notifications .btn-notifications:before {
+  position: absolute;
+  bottom: calc(100% - 6px);
+  right: 25px;
+  z-index: 2000;
+}
+#es.es-docker.is-bottom.active-notifications .btn-notifications:after {
+  border-top-color: #333;
+}
+#es.es-docker.is-bottom.active-notifications .btn-notifications:before {
+  border-top-color: #ccc;
+}
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu {
+  margin-bottom: 0;
+  top: 0;
+  bottom: 50px;
+}
+#es.es-docker.is-top,
+#es.es-docker.is-bottom {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+#es.es-docker.is-top .docker-border--left,
+#es.es-docker.is-bottom .docker-border--left {
+  border-left: solid 1px #37474f;
+}
+#es.es-docker.is-top .docker-border--right,
+#es.es-docker.is-bottom .docker-border--right {
+  border-right: solid 1px #37474f;
+}
+#es.es-docker.is-top .btn-friends:after,
+#es.es-docker.is-top .btn-conversations:after,
+#es.es-docker.is-top .btn-notifications:after,
+#es.es-docker.is-top .btn-quickpost:after,
+#es.es-docker.is-top .btn-docker-menu:after,
+#es.es-docker.is-bottom .btn-friends:after,
+#es.es-docker.is-bottom .btn-conversations:after,
+#es.es-docker.is-bottom .btn-notifications:after,
+#es.es-docker.is-bottom .btn-quickpost:after,
+#es.es-docker.is-bottom .btn-docker-menu:after {
+  margin-right: -8px;
+  border-width: 8px;
+}
+#es.es-docker.is-top .btn-friends:before,
+#es.es-docker.is-top .btn-conversations:before,
+#es.es-docker.is-top .btn-notifications:before,
+#es.es-docker.is-top .btn-quickpost:before,
+#es.es-docker.is-top .btn-docker-menu:before,
+#es.es-docker.is-bottom .btn-friends:before,
+#es.es-docker.is-bottom .btn-conversations:before,
+#es.es-docker.is-bottom .btn-notifications:before,
+#es.es-docker.is-bottom .btn-quickpost:before,
+#es.es-docker.is-bottom .btn-docker-menu:before {
+  margin-right: -7px;
+  border-width: 7px;
+}
+#es.es-docker.is-top .docker__search,
+#es.es-docker.is-bottom .docker__search {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+#es.es-docker.is-top .docker-popup-menu .docker__search,
+#es.es-docker.is-bottom .docker-popup-menu .docker__search {
+  display: none;
+}
+#es.es-docker.is-top.is-mobile.active-mobile-login .docker-login-box-mobile .docker-login-box,
+#es.es-docker.is-bottom.is-mobile.active-mobile-login .docker-login-box-mobile .docker-login-box {
+  display: block;
+}
+#es.es-docker.is-top.is-mobile .docker__search,
+#es.es-docker.is-bottom.is-mobile .docker__search {
+  max-width: 215px;
+}
+#es.es-docker.is-top.is-mobile .docker__search.docker-border--right,
+#es.es-docker.is-bottom.is-mobile .docker__search.docker-border--right {
+  border: 0;
+}
+#es.es-docker.is-top.is-mobile .text-menu,
+#es.es-docker.is-top.is-mobile .es-story-meta-button span,
+#es.es-docker.is-top.is-mobile .docker-login-box,
+#es.es-docker.is-bottom.is-mobile .text-menu,
+#es.es-docker.is-bottom.is-mobile .es-story-meta-button span,
+#es.es-docker.is-bottom.is-mobile .docker-login-box {
+  display: none;
+}
+#es.es-docker.is-top.is-mobile .btn-quickpost,
+#es.es-docker.is-bottom.is-mobile .btn-quickpost {
+  border-left: 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-quickpost,
+#es.es-docker.is-bottom.is-mobile .docker-popup-quickpost {
+  min-width: auto;
+  left: 0 !important;
+  right: 0 !important;
+  position: fixed;
+}
+#es.es-docker.is-top.is-mobile .es-story-panel-dropdown,
+#es.es-docker.is-bottom.is-mobile .es-story-panel-dropdown {
+  display: none;
+}
+#es.es-docker.is-top.is-mobile .es-story-panel-buttons .es-story-panel-button:nth-child(-n+10),
+#es.es-docker.is-bottom.is-mobile .es-story-panel-buttons .es-story-panel-button:nth-child(-n+10) {
+  display: inline-block;
+}
+#es.es-docker.is-top.is-mobile .es-story-panel-dropdown .es-story-panel-button:nth-child(-n+10),
+#es.es-docker.is-bottom.is-mobile .es-story-panel-dropdown .es-story-panel-button:nth-child(-n+10) {
+  display: none;
+}
+#es.es-docker.is-top.is-mobile .es-story-panel-button,
+#es.es-docker.is-bottom.is-mobile .es-story-panel-button {
+  width: auto;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu {
+  min-width: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  left: 0 !important;
+  right: 0 !important;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu ul,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu ul li,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu ul li {
+  display: block;
+  -webkit-flex: 0 0 30%;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  text-align: center;
+  width: 100%;
+  border-bottom: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 5px;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu ul li a,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu ul li a {
+  text-align: center;
+  padding: 8px;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu ul li .fa,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu ul li .fa {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  margin-bottom: 8px;
+  margin-right: 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu ul li span,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu ul li span {
+  display: inline-block;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu .docker__search,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu .docker__search {
+  display: block;
+  max-width: none;
+  height: auto;
+  margin: 8px 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu .docker__search-box,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu .docker__search-box {
+  width: 100%;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-menu .docker__search-input,
+#es.es-docker.is-bottom.is-mobile .docker-popup-menu .docker__search-input {
+  line-height: 30px;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-window,
+#es.es-docker.is-bottom.is-mobile .docker-popup-window {
+  position: fixed;
+}
+#es.es-docker.is-top.is-mobile .docker-login-box-mobile,
+#es.es-docker.is-bottom.is-mobile .docker-login-box-mobile {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  height: 100%;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login {
+  width: 100%;
+  height: 100%;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box {
+  display: none;
+  height: auto;
+  padding: 16px;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .docker-login-box__form,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .docker-login-box__form {
+  display: block;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .docker-login-box__form .docker-login-social span + span,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .docker-login-box__form .docker-login-social span + span {
+  display: block;
+  margin-top: 4px;
+  margin-left: 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .docker-form-group,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .docker-form-group {
+  margin-bottom: 8px;
+  margin-left: 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .docker-form-input,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .docker-form-input {
+  min-width: auto;
+  max-width: none;
+  width: 100%;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .o-checkbox,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .o-checkbox {
+  color: #eee;
+  margin: 8px 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .o-checkbox label,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .o-checkbox label {
+  padding-left: 8px;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box span.alternative,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box span.alternative {
+  text-align: center;
+  display: block;
+  margin: 4px 0;
+}
+#es.es-docker.is-top.is-mobile .docker-popup-login.docker-login-box .btn,
+#es.es-docker.is-bottom.is-mobile .docker-popup-login.docker-login-box .btn {
+  width: 100%;
+  border-radius: 2px;
+}
+#es.es-docker .es-location-autocomplete {
+  text-align: left;
+}
+#es.es-docker .docker-popup-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  height: 100%;
+  position: relative;
+}
+#es.es-docker .btn-docker {
+  background: transparent;
+  color: #333;
+  font-weight: bold;
+  border-radius: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+  position: relative;
+}
+#es.es-docker .btn-docker:hover {
+  background: #37474f;
+}
+#es.es-docker .btn-docker:active,
+#es.es-docker .btn-docker.active {
+  background: #1c2429 !important;
+}
+#es.es-docker .btn-docker .docker-avatar {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#es.es-docker .btn-docker .docker-avatar img {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+#es.es-docker .btn-docker.has-new .docker-bubble {
+  display: block;
+}
+#es.es-docker .btn-docker .docker-bubble {
+  display: none;
+  background-color: #d95242;
+  color: #333;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 22px;
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  z-index: 1020;
+}
+#es.es-docker .btn-friends:after,
+#es.es-docker .btn-friends:before,
+#es.es-docker .btn-conversations:after,
+#es.es-docker .btn-conversations:before,
+#es.es-docker .btn-notifications:after,
+#es.es-docker .btn-notifications:before,
+#es.es-docker .btn-quickpost:after,
+#es.es-docker .btn-quickpost:before {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+}
+#es.es-docker .btn-docker-menu:after,
+#es.es-docker .btn-docker-menu:before {
+  display: none;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+}
+#es.es-docker .docker-popup {
+  background: #333;
+  line-height: 1.66667;
+  text-align: left;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  white-space: normal;
+  z-index: 1000;
+}
+#es.es-docker .btn-xs {
+  font-size: 13px;
+  padding: 4px 8px;
+}
+#es.es-docker .fa {
+  font-size: 13px;
+  text-align: center;
+  width: 10px;
+}
+#es.es-docker .no-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+}
+#es.es-docker .text-menu {
+  padding-left: 16px;
+}
+#es.es-docker .docker__search {
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+#es.es-docker .docker__search-box {
+  display: inline-block;
+  background-color: #333;
+  width: 260px;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  position: relative;
+}
+#es.es-docker .docker__search-box:before {
+  content: '\f002';
+  font-family: FontAwesome;
+  font-size: 14px;
+  color: #ccc;
+  position: absolute;
+  left: 8px;
+  top: 6px;
+}
+#es.es-docker .docker__search-form {
+  line-height: 28px;
+  padding-left: 8px;
+}
+#es.es-docker .docker__search-input {
+  background-color: #333;
+  color: #eee;
+  font-size: 13px;
+  line-height: 20px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding-left: 20px;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: none;
+}
+#es.es-docker .docker-login-box {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  height: 100%;
+}
+#es.es-docker .docker-login-box__form {
+  color: #eee;
+  font-size: 0;
+  text-transform: none;
+  padding: 0 20px;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+#es.es-docker .docker-login-box__form .docker-login-social span + span {
+  margin-left: 4px;
+}
+#es.es-docker .docker-login-box .docker-form-group {
+  position: relative;
+}
+#es.es-docker .docker-login-box .docker-form-group .fa {
+  color: #ccc;
+  font-size: 14px;
+  position: absolute;
+  top: 8px;
+  left: 6px;
+}
+#es.es-docker .docker-login-box .docker-form-input {
+  background-color: #333;
+  color: #eee;
+  font-size: 13px;
+  margin: 0;
+  max-width: 300px;
+  min-width: 200px;
+  height: 30px;
+  padding-left: 20px;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  box-shadow: none;
+  text-overflow: ellipsis;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #es.es-docker .docker-login-box .docker-form-input {
+    max-width: 150px;
+    min-width: 100px;
+  }
+}
+#es.es-docker .docker-login-box .o-checkbox {
+  color: #333;
+}
+#es.es-docker .docker-login-box .o-checkbox label {
+  padding-left: 8px;
+}
+#es.es-docker .docker-login-box .o-checkbox label:before,
+#es.es-docker .docker-login-box .o-checkbox label:after {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#es.es-docker .docker-login-box span.alternative {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 16px;
+}
+#es.es-docker .docker-login-box .btn {
+  border-radius: 2px;
+}
+#es.es-docker .docker-login-box .btn-es-primary {
+  font-weight: bold;
+  padding: 4px 12px;
+}
+#es.es-docker .docker-login-box .btn-es-primary:hover {
+  color: #245682 !important;
+}
+#es.es-docker .docker-login-box .btn-es-facebook {
+  font-weight: bold;
+  padding: 4px 8px;
+}
+#es.es-docker .docker-login-box .btn-es-twitter {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-color: #0f65ab !important;
+}
+#es.es-docker .docker-login-box .btn-docker-reg {
+  color: #333;
+  font-size: 13px;
+  font-weight: normal;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #es.es-docker .docker-login-box.docker-border--left {
+    border: 0;
+  }
+}
+#es.es-docker .docker-login-box-mobile {
+  display: none;
+}
+#es.popbox-navbar--docker.top-left,
+#es.popbox-navbar--docker.top-right {
+  top: auto !important;
+  bottom: 50px !important;
+}
+#es.popbox-navbar--docker.bottom-left,
+#es.popbox-navbar--docker.bottom-right {
+  top: 50px !important;
+  bottom: auto !important;
+}
+#es.popbox-navbar--docker .o-avatar--sm {
+  width: 32px;
+  height: 32px;
+}
+#es.popbox-navbar--docker .btn-xs {
+  font-size: 12px;
+  margin-top: 4px;
+  padding: 4px 8px;
+}
+#es.popbox-navbar--docker.is-mobile.popbox-navbar--docker {
+  width: auto;
+  left: 0 !important;
+  right: 0 !important;
+}
+#es.popbox-navbar--docker.is-mobile .t-lg-pull-left {
+  float: left !important;
+}
+#es.popbox-navbar--docker.is-mobile .t-lg-pull-right {
+  float: right !important;
+}
+#es.popbox-navbar--docker {
+  color: #fefefe;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100px;
+}
+#es.popbox-navbar--docker .arrow {
+  display: none;
+}
+#es.popbox-navbar--docker .popbox-dropdown__hd {
+  padding: 10px;
+}
+#es.popbox-navbar--docker .g-list-inline > li {
+  font-size: 13px;
+}
+#es .docker-popup-menu {
+  display: none;
+  min-width: 500px;
+  min-height: 100px;
+}
+#es .docker-popup-menu ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-left: 0;
+}
+#es .docker-popup-menu ul li {
+  text-align: center;
+  display: block;
+  -webkit-flex: 0 0 25%;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  width: 100%;
+  border-bottom: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#es .docker-popup-menu ul li a {
+  color: #eee;
+  text-align: center;
+  display: block;
+  padding: 20px;
+}
+#es .docker-popup-menu ul li a:hover {
+  background: #f5f5f5;
+  color: #fefefe;
+}
+#es .docker-popup-menu ul li .fa {
+  font-size: 20px;
+  text-align: center;
+  display: block;
+  margin-bottom: 8px;
+  width: auto;
+}
+#es .docker-popup-quickpost {
+  display: none;
+  background: #fff;
+  color: #fefefe;
+  min-width: 500px;
+  border: 1px solid #555;
+  position: absolute;
+}
+#es .docker-popup-quickpost.is-loading {
+  background: #fff;
+  width: 100%;
+  height: 100px;
+}
+#es .docker-popup-quickpost .es-story {
+  border: 0;
+}
+#es .docker-popup-quickpost .es-story-header {
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+#es .docker-popup-quickpost .es-story-panel-button .fa {
+  display: block;
+}
+#es .docker-popup-quickpost .es-story-panel-button span {
+  display: none;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  #es.es-docker.is-top.active-mobile-login .docker-login-box-mobile .docker-login-box,
+  #es.es-docker.is-bottom.active-mobile-login .docker-login-box-mobile .docker-login-box {
+    display: block;
+  }
+  #es.es-docker.is-top .docker__search.docker-border--right,
+  #es.es-docker.is-bottom .docker__search.docker-border--right {
+    border: 0;
+  }
+  #es.es-docker.is-top .text-menu,
+  #es.es-docker.is-top .es-story-meta-button span,
+  #es.es-docker.is-top .docker-login-box,
+  #es.es-docker.is-bottom .text-menu,
+  #es.es-docker.is-bottom .es-story-meta-button span,
+  #es.es-docker.is-bottom .docker-login-box {
+    display: none;
+  }
+  #es.es-docker.is-top .btn-quickpost,
+  #es.es-docker.is-bottom .btn-quickpost {
+    border-left: 0;
+  }
+  #es.es-docker.is-top .docker-popup-quickpost,
+  #es.es-docker.is-bottom .docker-popup-quickpost {
+    min-width: auto;
+    left: 0 !important;
+    right: 0 !important;
+    position: fixed;
+  }
+  #es.es-docker.is-top .es-story-panel-dropdown,
+  #es.es-docker.is-bottom .es-story-panel-dropdown {
+    display: none;
+  }
+  #es.es-docker.is-top .es-story-panel-buttons .es-story-panel-button:nth-child(-n+10),
+  #es.es-docker.is-bottom .es-story-panel-buttons .es-story-panel-button:nth-child(-n+10) {
+    display: inline-block;
+  }
+  #es.es-docker.is-top .es-story-panel-dropdown .es-story-panel-button:nth-child(-n+10),
+  #es.es-docker.is-bottom .es-story-panel-dropdown .es-story-panel-button:nth-child(-n+10) {
+    display: none;
+  }
+  #es.es-docker.is-top .es-story-panel-button,
+  #es.es-docker.is-bottom .es-story-panel-button {
+    width: auto;
+  }
+  #es.es-docker.is-top .docker-popup-menu ul,
+  #es.es-docker.is-bottom .docker-popup-menu ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  #es.es-docker.is-top .docker-popup-menu ul li,
+  #es.es-docker.is-bottom .docker-popup-menu ul li {
+    display: block;
+    -webkit-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    text-align: center;
+    width: 100%;
+    border-bottom: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 5px;
+  }
+  #es.es-docker.is-top .docker-popup-menu ul li a,
+  #es.es-docker.is-bottom .docker-popup-menu ul li a {
+    text-align: center;
+    padding: 8px;
+  }
+  #es.es-docker.is-top .docker-popup-menu ul li .fa,
+  #es.es-docker.is-bottom .docker-popup-menu ul li .fa {
+    font-size: 20px;
+    display: block;
+    width: auto;
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+  #es.es-docker.is-top .docker-popup-menu ul li span,
+  #es.es-docker.is-bottom .docker-popup-menu ul li span {
+    display: inline-block;
+  }
+  #es.es-docker.is-top .docker-popup-menu .docker__search,
+  #es.es-docker.is-bottom .docker-popup-menu .docker__search {
+    display: block;
+    max-width: none;
+    height: auto;
+    margin: 8px 0;
+  }
+  #es.es-docker.is-top .docker-popup-menu .docker__search-box,
+  #es.es-docker.is-bottom .docker-popup-menu .docker__search-box {
+    width: 100%;
+  }
+  #es.es-docker.is-top .docker-popup-menu .docker__search-input,
+  #es.es-docker.is-bottom .docker-popup-menu .docker__search-input {
+    line-height: 30px;
+  }
+  #es.es-docker.is-top .docker-login-box-mobile,
+  #es.es-docker.is-bottom .docker-login-box-mobile {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    height: 100%;
+  }
+  #es.es-docker.is-top .docker-popup-login,
+  #es.es-docker.is-bottom .docker-popup-login {
+    width: 300px;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box {
+    display: none;
+    height: auto;
+    padding: 16px;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .docker-login-box__form,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .docker-login-box__form {
+    display: block;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .docker-login-box__form .docker-login-social span + span,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .docker-login-box__form .docker-login-social span + span {
+    display: block;
+    margin-top: 4px;
+    margin-left: 0;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .docker-form-group,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .docker-form-group {
+    margin-bottom: 8px;
+    margin-left: 0;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .docker-form-input,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .docker-form-input {
+    min-width: auto;
+    max-width: none;
+    width: 100%;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .o-checkbox,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .o-checkbox {
+    color: #eee;
+    margin: 8px 0;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .o-checkbox label,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .o-checkbox label {
+    padding-left: 8px;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box span.alternative,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box span.alternative {
+    text-align: center;
+    display: block;
+    margin: 4px 0;
+  }
+  #es.es-docker.is-top .docker-popup-login.docker-login-box .btn,
+  #es.es-docker.is-bottom .docker-popup-login.docker-login-box .btn {
+    width: 100%;
+    border-radius: 2px;
+  }
+  #es.popbox-navbar--docker.popbox-navbar--docker {
+    width: auto;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  #es.popbox-navbar--docker .t-lg-pull-left {
+    float: left !important;
+  }
+  #es.popbox-navbar--docker .t-lg-pull-right {
+    float: right !important;
+  }
+}
+#es .mod-es-albums-item {
+  padding: 8px;
+  border: 1px solid #555;
+  overflow: hidden;
+}
+#es .mod-es-albums-item + .mod-es-albums-item {
+  margin-top: 8px;
+}
+#es .mod-es-albums-item .photos-1 .es-photo>a {
+  padding-top: 38% !important;
+}
+#es .mod-es-albums-item .photos-1 u {
+  position: absolute !important;
+}
+#es .mod-es-albums-item .photos-1 img {
+  width: 100% !important;
+  max-height: none !important;
+}
+#es .mod-es-albums-item .photos-3 .es-photo:first-child >a {
+  padding-top: 38% !important;
+}
+#es.mod-es-dropdown-menu__body {
+  overflow: hidden;
+}
+#es.mod-es-dropdown-menu .dropdown-toggle_ {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#es.mod-es-dropdown-menu .dropdown-menu {
+  border: 0;
+}
+#es.mod-es-dropdown-menu .dropdown-menu a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#es .mod-es-leader-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+#es .mod-es-leader-item .es-leader-context {
+  margin-left: 20px;
+}
+#es .mod-es-leader-item + .mod-es-leader-item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #555;
+}
+#es .mod-es-leader__points {
+  font-weight: bold;
+}
+#es .mod-es-leader__points span {
+  font-weight: normal;
+  color: #eee;
+}
+#es .es-leader-context__info {
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+#es .es-mod-login-wrap {
+  border: 1px solid #555;
+}
+#es .es-mod-login-wrap__hd {
+  background-color: #444;
+  padding: 16px 16px 0;
+}
+#es .es-mod-login-wrap__ft {
+  padding: 8px 16px;
+}
+#es .es-mod-login-wrap__ft {
+  border-top: 1px solid #555;
+  background-color: #333;
+}
+#es .mod-es-menu-bar {
+  border: 1px solid #555;
+  padding: 4px 8px;
+}
+#es .mod-es-menu-bar__icon-link {
+  color: #eee;
+  padding: 4px 8px;
+  min-width: 28px;
+  position: relative;
+  text-align: center;
+  outline: none !important;
+}
+#es .mod-es-menu-bar__icon-link:hover {
+  background: transparent;
+}
+#es .mod-es-menu-bar__icon-link::-moz-focus-inner {
+  border: 0 !important;
+}
+#es .mod-es-menu-bar__icon-link > i {
+  line-height: 19px;
+}
+#es .mod-es-menu-bar__icon-link.has-new .mod-es-menu-bar__link-bubble {
+  display: block;
+}
+#es .mod-es-menu-bar__link-bubble {
+  display: none;
+  position: absolute;
+  color: #fff;
+  background-color: #d9534f;
+  top: 0;
+  right: -2px;
+  min-width: 10px;
+  height: 13px;
+  overflow: hidden;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: bold;
+  padding: 0 2px;
+}
+#es .mod-es-pf-hd__cover-wrap {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  padding-top: 22%;
+}
+#es .mod-es-pf-hd__cover {
+  background-size: cover;
+  border: 0 none;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#es .mod-es-pf-hd__content {
+  text-align: center;
+  position: relative;
+  border: 1px solid #555;
+  padding: 16px;
+  padding-top: 40px;
+}
+#es .mod-es-pf-hd__avatar {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  margin-left: -32px;
+  background-color: #333;
+}
+#es .mod-es-pf-hd__badges {
+  margin-top: 8px;
+  text-align: left;
+}
+#es .mod-es-pf-hd__badges a {
+  margin: 4px;
+  display: inline-block;
+}
+#es .mod-es-pf-hd__badges img {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  max-height: 32px;
+  max-width: 32px;
+}
+#es .mod-es-menu-list {
+  border: 1px solid #555;
+  border-top: none;
+  padding: 8px 16px;
+}
+#es .mod-es-menu-list__item {
+  display: block;
+  color: #eee;
+  padding: 4px 8px;
+}
+#es .mod-es-menu-list__item:hover {
+  color: #f5f5f5;
+}
+#es.mod-es-profile-completeness .progress {
+  height: 8px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 8px;
+}
+#es .es-completeness-check-list__item a {
+  color: #f5f5f5;
+}
+#es .es-completeness-check-list__item a:hover {
+  color: #005e8d;
+}
+#es .es-completeness-check-list__item.is-completed .es-completeness-check-list__icon {
+  border-color: #555;
+  color: #39b54a;
+}
+#es .es-completeness-check-list__item.is-completed span,
+#es .es-completeness-check-list__item.is-completed a {
+  text-decoration: line-through;
+  color: #eee;
+}
+#es .es-completeness-check-list__icon {
+  border: 1px solid #EC971F;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  color: #EC971F;
+}
+#es .es-completeness-check-list__icon i {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#es .es-completeness-check-list__item + .es-completeness-check-list__item {
+  margin-top: 8px;
+}
+#es .mod-es-recentpolls .es-polls + .es-polls {
+  border-top: 1px solid #555;
+}
+#es .mod-es-recentpolls .es-polls__item + .es-polls__item {
+  margin-top: 8px;
+}
+#es .mod-es-search__dropdown {
+  padding: 8px 16px;
+  right: 0;
+  top: 30px;
+  width: 262px;
+}
+#es .mod-es-search__filter {
+  position: absolute;
+  right: 8px;
+  top: 0;
+}
+#es .mod-es-search__filter-header {
+  border-bottom: 1px solid #555;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+#es .mod-es-search__filter-item {
+  width: 50%;
+  float: left;
+}
+body.has-docker {
+  -ms-overflow-style: scrollbar;
+}
+body.has-docker #es.es-dialog {
+  height: calc(100% - 44px);
+}
+body.has-docker.docker-top {
+  padding-top: 60px !important;
+}
+body.has-docker.docker-top #es.es-photo-popup,
+body.has-docker.docker-top #es.es-explorer-popup {
+  padding: 74px 30px 30px;
+}
+body.has-docker.docker-top #es.es-dialog {
+  top: 44px;
+}
+body.has-docker.docker-bottom #es.es-photo-popup,
+body.has-docker.docker-bottom #es.es-explorer-popup {
+  padding: 30px 30px 74px;
+}
+body.has-docker.docker-bottom #es.es-dialog {
+  bottom: 44px;
+}
+body.has-docker.docker-bottom #ckit.layout-compact {
+  bottom: 30px;
+}

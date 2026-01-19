@@ -1,0 +1,177 @@
+/**
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+.es-stream-embed {
+	border: 1px solid @fd-ui-border-color;
+	line-height: @fd-ui-line-height--sm;
+	background-color: @fd-ui-bg; 
+	border-radius: @fd-ui-radius;
+	// word-break: keep-all; // #245
+	.hyphens(auto); // #507 For longer word
+	
+	&--border {
+		border-top: 1px solid @fd-ui-border-color;
+	}
+	// Common elements?
+	&__cover,
+	&__title,
+	&__desc,
+	&__meta,
+	&__player {
+		width: 100%;
+		display: block;
+	}
+	&__cover { // <a> tag
+		text-align: center;
+		border-radius: @fd-ui-radius @fd-ui-radius 0 0;
+		background-color: @fd-ui-shade;
+		&:hover {
+			background-color: @fd-ui-shade;
+		}
+
+		img {
+			max-height: 100%;
+			max-width: 100%;
+			// max-width: 100%;
+			max-height: 200px;
+		}
+	}
+	&__title {
+		padding: @fd-base-spacing;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	
+	&__desc {
+		padding: 0 @fd-base-spacing;
+	}
+	&__meta {
+		padding: 0 @fd-base-spacing;
+	}
+	&__player {
+		// max-height: 140px;
+	}
+	
+	// Polls
+	&.is-link {
+		.es-stream-embed__desc {
+			margin-bottom: @fd-base-spacing;
+		}
+	}
+
+	&.is-file,
+	&.is-achievement,
+	&.is-apps,
+	&.is-broadcasts {
+		.flex-display(flex);
+		.align-items(center);
+	}
+	
+	&__context {
+		.flex(1);
+		padding-left: @fd-base-spacing;
+	}
+	// File
+	&__file-context {
+		.flex(1);
+		padding-left: @fd-base-spacing;
+		b { // file size text
+			color: @fd-ui-meta-color;
+			font-weight: normal;
+			font-size: @fd-base-font-size--xs;
+			display: block;
+		}
+	}
+	&__file-icon {
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+		font-size: 20px;
+		border-right: 1px solid @fd-ui-border-color;
+	}
+	
+	// achievement    
+	&.is-achievement,
+	&.is-apps {
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+	}
+	&.is-achievement {
+		img {
+			width: 64px;
+			height: 64px;
+		}
+	}
+	&__apps-title,
+	&__achievement-title {
+		font-weight: bold;
+
+		span { // apps version
+			color: @fd-ui-meta-color;
+			font-weight: normal;
+		}
+	}
+	&__apps-context,
+	&__achievement-context {
+		.flex(1);
+		padding-left: @fd-base-spacing--lg;
+		b { // achievement meta text
+			color: @fd-ui-meta-color;
+			font-weight: normal;
+			font-size: @fd-base-font-size--xs;
+			display: block;
+		}
+	}
+	&__apps-context,
+	&__achievement-context {
+		.flex(1);
+		padding-right: @fd-base-spacing--lg;
+	}
+
+	// broadcasts
+	&__broadcasts-title {
+		padding: @fd-base-spacing @fd-base-spacing 0;
+		font-weight: bold;
+		display: block
+	}
+	&__broadcasts-text {
+		padding: @fd-base-spacing--sm @fd-base-spacing @fd-base-spacing;
+
+	}
+	&__broadcasts-icon {
+		.flex(none);
+		background-color: @fd-ui-shade;
+		width: 36px;
+		height: 36px;
+		line-height: 36px;
+		font-size: 14px;
+		color: @fd-ui-meta-color;
+		text-align: center;
+		margin: 0 @fd-base-spacing--lg;
+		border-radius: 50%;
+		> i {
+			width: 36px;
+		}
+	}
+
+	// Polls
+	&.is-polls {
+		padding: @fd-base-spacing @fd-base-spacing--lg;
+	}
+
+	// RSS / Calendar
+	&.is-rss,
+	&.is-calendar {
+		> div { // Just wanted to reduced html size
+			padding: @fd-base-spacing @fd-base-spacing--lg;
+			.clearfix();
+		}
+	}
+
+	
+
+	// If there are more than 1 embedded objects on the stream preview
+	+.es-stream-embed {
+		margin-top: 10px;
+	}
+}
