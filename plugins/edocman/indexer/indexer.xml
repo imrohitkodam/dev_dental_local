@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="edocman" method="upgrade">
+	<name>EDocman - Indexer plugin</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Aug 2010</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>2.0</version>
+	<description>This plugin is used to index EDocman documents and make content of these documents searchable</description>
+	<files>
+		<filename plugin="indexer">indexer.php</filename>
+		<filename>adapter.php</filename>
+		<folder>adapters</folder>
+		<folder>binaries</folder>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="file_exts" type="text" size="50" default="" label="File Extensions" description="Enter file extensions of the file type you want to index, comma seperated. For example: txt, pdf, doc, docx ,html"></field>
+			</fieldset>
+		</fields>		
+	</config>
+</extension>

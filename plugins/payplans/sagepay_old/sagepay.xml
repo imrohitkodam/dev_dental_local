@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="payplans" method="upgrade">
+    <name>PayPlans-SagePay</name>
+    <version>@global.version@.@svn.lastrevision@</version>
+    <creationDate>Oct 2013</creationDate>
+    <author>Team JoomlaXi</author>
+    <authorEmail>payplans@readybytes.in</authorEmail>
+    <authorUrl>http://www.jpayplans.com</authorUrl>
+    <copyright>2009-11 Ready Bytes Software Labs Pvt. Ltd.</copyright>
+    <license>GNU General Public License v2</license>
+    <description>SagePay : Payment Gateway Integration for Payplans</description>
+	<files>
+		<filename plugin="sagepay">sagepay.php</filename>
+		<folder>sagepay</folder>
+	</files>
+<alias>pp-sagepay</alias>
+<version_number>@app.version@.@app.buildversion@</version_number>
+<version_name>PayPlans-SagePay @app.version@.@app.buildversion@</version_name>
+</extension>

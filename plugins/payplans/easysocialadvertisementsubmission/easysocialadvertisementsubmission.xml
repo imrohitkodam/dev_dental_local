@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="payplans" method="upgrade">
+	<name>PayPlans - Easysocial Advertisement Submission Restriction</name>
+	<version>4.2.0</version>
+	<creationDate>March 2020</creationDate>
+	<author>StackIdeas</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright (C) Stack Ideas Sdn Bhd. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>
+	<![CDATA[
+		PayPlans integration with EasySocial's Advertisement to allows restriction of total number of advertisement can be created in EasySocial.
+	]]>
+	</description>
+	<files>
+		<folder>app</folder>
+		<folder>config</folder>
+		<filename plugin="easysocialadvertisementsubmission">easysocialadvertisementsubmission.php</filename>
+		<filename>easysocialadvertisementsubmission.xml</filename>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="StackIdeas Modules and Plugins">https://stackideas.com/joomla4compat.xml</server>
+	</updateservers>
+</extension>

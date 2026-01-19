@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.0" client="site" method="upgrade">
+	<name>Edocman title slider</name>
+	<author>Dang Thuc Dam</author>
+	<creationDate>Jan 2016</creationDate>
+	<copyright>(C) 2012 - 2018 www.joomdonation.com, LLC. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>damdt@joomservices.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<version>2.0</version>
+	<description>Edocman document titles slider module let you to create the sliding docents display using your document title. This is the nice fashionable way to show all the latest document titles to the user. we have option to select four different type of sliding.</description>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_edocman_title_slider.ini</language>
+		<language tag="en-US">language/en-US.mod_edocman_title_slider.ini</language>
+	</languages>
+	<files>
+		<filename module="mod_edocman_title_slider">mod_edocman_title_slider.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>		
+		<filename>mod_edocman_title_slider.xml</filename>
+		<folder>tmpl</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="SliderSettings" label="ATS_SCROLLSETTING">
+				<field name="ats_direction" type="list" default="scrollLeft" label="ATS_DIRECTION" description="ATS_DIRECTION_DESC">
+					<option value="scrollLeft">ATS_DIRECTION_1</option>
+					<option value="scrollRight">ATS_DIRECTION_2</option>
+					<option value="scrollUp">ATS_DIRECTION_3</option>
+					<option value="scrollDown">ATS_DIRECTION_4</option>
+				</field>
+				<field name="ats_speed" type="text" default="700" label="ATS_SPEED" description="ATS_SPEED_DESC" />
+				<field name="ats_timeout" type="text" default="5000" label="ATS_TIMEOUT" description="ATS_TIMEOUT_DESC" />
+				<field name="ats_css" type="list" default="SLIDER1" label="ATS_CSS" description="ATS_CSS_DESC">
+					<option value="SLIDER1">ATS_SETTING1</option>
+					<option value="SLIDER2">ATS_SETTING2</option>
+					<option value="SLIDER3">ATS_SETTING3</option>
+					<option value="SLIDER4">ATS_SETTING4</option>
+					<option value="SLIDER5">ATS_SETTING5</option>
+					<option value="SLIDER6">ATS_SETTING6</option>
+					<option value="SLIDER7">ATS_SETTING7</option>
+					<option value="SLIDER8">ATS_SETTING8</option>
+					<option value="SLIDER9">ATS_SETTING9</option>
+				</field>
+			</fieldset>
+			<fieldset name="ArticleSetting" label="ATS_ARTICLE_SETTING" addfieldpath="/administrator/components/com_edocman/model/fields">
+				<field name="ats_count" type="text" default="5" label="ATS_DISPLAY_COUNT" description="ATS_DISPLAY_COUNT_DESC" />
+				<field name="ats_ordering" type="list" default="c_dsc" label="ATS_ORDERING" description="ATS_ORDERING_DESC">
+					<option value="c_dsc">ATS_ORDERING_1</option>
+					<option value="m_dsc">ATS_ORDERING_2</option>
+					<option value="h_dsc">ATS_ORDERING_3</option>
+					<option value="h_asc">ATS_ORDERING_4</option>
+					<option value="random">ATS_ORDERING_5</option>
+					<option value="d_desc">ATS_ORDERING_6</option>
+					<option value="d_asc">ATS_ORDERING_6</option>
+				</field>
+				<field name="ats_recent" type="text" default="" label="ATS_RECENT" description="ATS_RECENT_DESC" />
+				<field name="ats_cat" type="radio" class="btn-group" default="0" label="ATS_CATEGORY" description="ATS_CATEGORY_DESC">
+					<option value="1">ATS_YES</option>
+					<option value="0">ATS_NO</option>
+				</field>
+				<field name="ats_show_child_category_articles" type="radio" class="btn-group" default="1" label="ATS_SHOW_CHILD_CATEGORY_ARTICLES" description="ATS_SHOW_CHILD_CATEGORY_ARTICLES_DESC">
+					<option value="1">ATS_INCLUDE</option>
+					<option value="0">ATS_EXCLUDE</option>
+				</field>
+				<field name="ats_catixc" type="edocmancategory" extension="com_edocman" multiple="true" size="5" label="ATS_CATIXC" description="ATS_CATIXC_DESC">
+					<option value="">ATS_NONE</option>
+				</field>
+			</fieldset>
+			<fieldset name="JquerySettings" label="ATS_JQUERY_SETTINGS">
+				<field name="ats_jquery" type="list" default="no" label="ATS_JQUERY" description="ATS_JQUERY_DESC">
+						<option value="yes">ATS_YES</option>
+						<option value="no">ATS_NO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

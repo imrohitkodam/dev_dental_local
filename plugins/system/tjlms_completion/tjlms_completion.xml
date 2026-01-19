@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+	<name>System - TJLMS Completion</name>
+	<author>TechJoomla</author>
+	<creationDate>December 2025</creationDate>
+	<copyright>Copyright (C) 2025 TechJoomla. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Triggers onAfterLessonCompletion event for TJLMS lessons even if consider_marks is disabled.</description>
+	<files>
+		<filename plugin="tjlms_completion">tjlms_completion.php</filename>
+	</files>
+</extension>

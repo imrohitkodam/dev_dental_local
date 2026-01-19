@@ -1,0 +1,6 @@
+{
+	"name": "MySQL Query",
+	"element": "mysqlquery",
+	"description": "The administrator can specify a mySQL query that should be carried out on the basis of subscription status of the plan subscribed by user",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/automation/mysql-queries"
+}

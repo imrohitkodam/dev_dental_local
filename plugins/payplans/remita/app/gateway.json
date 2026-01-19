@@ -1,0 +1,7 @@
+{
+	"name": "Remita",
+	"element": "remita",
+	"description": "Remita is an e-Payments and e-Collections solution on a single multi-bank platform.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/payment-methods/remita",
+	"icon": "remita.svg"
+}

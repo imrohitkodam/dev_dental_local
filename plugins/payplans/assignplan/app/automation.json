@@ -1,0 +1,6 @@
+{
+	"name": "Automated Plan Assignment",
+	"element": "assignplan",
+	"description": "Assign additional plans to user when they subscribe to a particular plan. Plan assignments can be done automatically dependent on the user's subscription status",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/automation/automated-plan-assignment"
+}

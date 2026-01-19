@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>mod_ostimer</name>
+    <author>Joomlashack</author>
+    <authorEmail>help@joomlashack.com</authorEmail>
+    <authorUrl>https://www.joomlashack.com/</authorUrl>
+    <copyright>Copyright 2016-2025 Joomlashack. All rights reserved.</copyright>
+    <license>GNU GPL; see LICENSE file</license>
+    <description>MOD_OSTIMER_DESCRIPTION</description>
+    <version>3.0.4</version>
+    <creationDate>March 31 2025</creationDate>
+    <variant>FREE</variant>
+
+    <alledia>
+        <element publish="true">ostimer</element>
+        <namespace>OSTimer</namespace>
+        <license>free</license>
+        <targetplatform>3.9</targetplatform>
+        <phpminimum>7.2</phpminimum>
+
+        <relatedExtensions>
+            <extension type="library"
+                       element="allediaframework">ShackFramework</extension>
+
+            <extension type="plugin"
+                       group="system"
+                       element="osmylicensesmanager"
+                       publish="true">ShackExtensionSupport</extension>
+        </relatedExtensions>
+
+        <include>ShackDefaultFiles</include>
+
+        <obsolete>
+            <preflight>
+                <folder>/modules/mod_ostimer/library</folder>
+                <folder>/modules/mod_ostimer/tmpl</folder>
+            </preflight>
+
+            <file>/language/en-GB/en-GB.mod_ostimer.ini</file>
+            <file>/language/en-GB/en-GB.mod_ostimer.sys.ini</file>
+            <file>/language/es-ES/es-ES.mod_ostimer.ini</file>
+            <file>/language/es-ES/es-ES.mod_ostimer.sys.ini</file>
+            <file>/modules/mod_ostimer/form/fields/timezones.php</file>
+            <file>/modules/mod_ostimer/tmpl/style.css</file>
+        </obsolete>
+    </alledia>
+
+    <scriptfile>script.installer.php</scriptfile>
+
+    <files>
+        <folder>form</folder>
+        <folder>language</folder>
+        <folder>library</folder>
+        <folder>tmpl</folder>
+        <folder>views</folder>
+
+        <filename module="mod_ostimer">mod_ostimer.php</filename>
+        <filename>helper.php</filename>
+        <filename>include.php</filename>
+    </files>
+
+    <media destination="mod_ostimer" folder="media">
+        <folder>css</folder>
+        <folder>images</folder>
+    </media>
+
+    <config addfieldpath="/modules/mod_ostimer/form/fields">
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="ev_dtitle"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_DISPLAY_EVENT_TITLE_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="ev_tit"
+                       type="text"
+                       label="MOD_OSTIMER_EVENT_TITLE_LABEL"
+                       description="MOD_OSTIMER_EVENT_TITLE_DESC"/>
+
+                <field name="ev_ddate"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_DISPLAY_EVENT_DATE_LABEL"
+                       description="MOD_OSTIMER_DISPLAY_EVENT_DATE_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="ev_user"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="0"
+                       label="MOD_OSTIMER_USER_LOCAL_LABEL"
+                       description="MOD_OSTIMER_USER_LOCAL_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="ev_ddate_format"
+                       type="list"
+                       layout="joomla.form.field.list-fancy-select"
+                       default="MOD_OSTIMER_DATE_FORMAT_US"
+                       label="MOD_OSTIMER_DISPLAY_EVENT_DATE_FORMAT_LABEL"
+                       description="MOD_OSTIMER_DISPLAY_EVENT_DATE_FORMAT_DESC">
+                    <option value="MOD_OSTIMER_DATE_FORMAT_US">MOD_OSTIMER_DATE_FORMAT_US_LABEL</option>
+                    <option value="MOD_OSTIMER_DATE_FORMAT_INT">MOD_OSTIMER_DATE_FORMAT_INT_LABEL</option>
+                    <option value="MOD_OSTIMER_DATE_FORMAT_LC1">MOD_OSTIMER_DATE_FORMAT_LC1_LABEL</option>
+                    <option value="MOD_OSTIMER_DATE_FORMAT_LC2">MOD_OSTIMER_DATE_FORMAT_LC2_LABEL</option>
+                    <option value="MOD_OSTIMER_DATE_FORMAT_LC3">MOD_OSTIMER_DATE_FORMAT_LC3_LABEL</option>
+                    <option value="MOD_OSTIMER_DATE_FORMAT_LC4">MOD_OSTIMER_DATE_FORMAT_LC4_LABEL</option>
+                    <option value="MOD_OSTIMER_DATE_FORMAT_LC5">MOD_OSTIMER_DATE_FORMAT_LC5_LABEL</option>
+                </field>
+
+                <field name="ev_date"
+                       type="calendar"
+                       label="MOD_OSTIMER_DATE_LABEL"
+                       description="MOD_OSTIMER_DATE_DESC"
+                       filter="utc"/>
+
+                <field name="ev_h"
+                       type="number"
+                       min="0"
+                       max="24"
+                       validate="number"
+                       default="12"
+                       label="MOD_OSTIMER_HOUR_LABEL"
+                       description="MOD_OSTIMER_HOUR_DESC"/>
+
+                <field name="ev_min"
+                       type="number"
+                       min="0"
+                       max="59"
+                       validate="number"
+                       default="00"
+                       label="MOD_OSTIMER_MINUTE_LABEL"
+                       description="MOD_OSTIMER_MINUTE_DESC"/>
+
+                <field name="timezone"
+                       type="timezone"
+                       layout="joomla.form.field.groupedlist-fancy-select"
+                       default="UTC"
+                       label="MOD_OSTIMER_TIMEZONE_LABEL"
+                       description="MOD_OSTIMER_TIMEZONE_DESC">
+                    <group label="JDEFAULT">
+                        <option value="UTC">JLIB_FORM_VALUE_TIMEZONE_UTC</option>
+                    </group>
+                </field>
+
+                <field name="ev_dtime_format"
+                       type="list"
+                       layout="joomla.form.field.list-fancy-select"
+                       label="MOD_OSTIMER_DISPLAY_EVENT_TIME_FORMAT_LABEL"
+                       description="MOD_OSTIMER_DISPLAY_EVENT_TIME_FORMAT_DESC">
+                    <option value="">MOD_OSTIMER_TIME_FORMAT_NONE</option>
+                    <option value="MOD_OSTIMER_TIME_FORMAT_12H_UPPER">MOD_OSTIMER_TIME_FORMAT_12H_UPPER_LABEL</option>
+                    <option value="MOD_OSTIMER_TIME_FORMAT_12H_LOWER">MOD_OSTIMER_TIME_FORMAT_12H_LOWER_LABEL</option>
+                    <option value="MOD_OSTIMER_TIME_FORMAT_24H">MOD_OSTIMER_TIME_FORMAT_24H_LABEL</option>
+                </field>
+            </fieldset>
+
+            <fieldset name="layout" label="MOD_OSTIMER_LAYOUT">
+                <field name="layout"
+                       type="modulelayout"
+                       class="form-select"
+                       default="default"
+                       label="MOD_OSTIMER_THEME_STYLE_LABEL"
+                       description="MOD_OSTIMER_THEME_STYLE_DESC"/>
+
+                <field name="ev_dhour"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_HOURS_MINUTES_TO_EVENT_LABEL"
+                       description="MOD_OSTIMER_HOURS_MINUTES_TO_EVENT_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="ev_js"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_JAVASCRIPT_EFFECT_LABEL"
+                       description="MOD_OSTIMER_JAVASCRIPT_EFFECT_DESC"
+                       showon="ev_dhour:1">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="loadcss"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_LOAD_MODULE_LABEL"
+                       description="MOD_OSTIMER_LOAD_MODULE_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="show_zero_day"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_SHOW_ZERO_DAY_LABEL"
+                       description="MOD_OSTIMER_SHOW_ZERO_DAY_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="show_timezone"
+                       type="list"
+                       layout="joomla.form.field.list-fancy-select"
+                       label="MOD_OSTIMER_SHOW_TIMEZONE_LABEL"
+                       description="MOD_OSTIMER_SHOW_TIMEZONE_DESC">
+                    <option value="">MOD_OSTIMER_OPTION_TIMEZONE_NONE</option>
+                    <option value="e">MOD_OSTIMER_OPTION_TIMEZONE_IDENTIFIER</option>
+                    <option value="P">MOD_OSTIMER_OPTION_TIMEZONE_GMT</option>
+                    <option value="T">MOD_OSTIMER_OPTION_TIMEZONE_ABBREVIATION</option>
+                </field>
+
+                <field name="show_after_expired"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_SHOW_AFTER_EXPIRED_LABEL"
+                       description="MOD_OSTIMER_SHOW_AFTER_EXPIRED_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="ev_color"
+                       type="color"
+                       default="#2B7CBE"
+                       label="MOD_OSTIMER_NUMBER_COLOR_LABEL"
+                       description="MOD_OSTIMER_NUMBER_COLOR_DESC"/>
+
+                <field name="ev_dlink"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="1"
+                       label="MOD_OSTIMER_SHOW_LINK_LABEL"
+                       description="MOD_OSTIMER_SHOW_LINK_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="ev_tlink"
+                       type="radio"
+                       class="btn-group"
+                       default="_self"
+                       label="MOD_OSTIMER_TARGET_LINK_LABEL"
+                       description="MOD_OSTIMER_TARGET_LINK_DESC"
+                       showon="ev_dlink:1">
+                    <option value="_self">MOD_OSTIMER_TARGET_SELF</option>
+                    <option value="_blank">MOD_OSTIMER_TARGET_BLANK</option>
+                </field>
+
+                <field name="ev_l"
+                       type="url"
+                       label="MOD_OSTIMER_URL_LABEL"
+                       description="MOD_OSTIMER_URL_DESC"
+                       showon="ev_dlink:1"/>
+
+                <field name="ev_ltitle"
+                       type="text"
+                       label="MOD_OSTIMER_TEXT_URL_LABEL"
+                       description="MOD_OSTIMER_TEXT_URL_DESC"
+                       showon="ev_dlink:1"/>
+            </fieldset>
+
+            <fieldset name="custom" label="MOD_OSTIMER_CUSTOM_TEXT">
+                <field name="ev_endtime"
+                       type="text"
+                       default="Time's Up"
+                       label="MOD_OSTIMER_TIME_HAS_COME_LABEL"
+                       description="MOD_OSTIMER_TIME_HAS_COME_DESC"/>
+
+                <field type="customfooter"
+                       name="customfooter"
+                       media="mod_ostimer"
+                       showgoproad="https://www.joomlashack.com/joomla-extensions/ostimer/"
+                       jedurl="https://extensions.joomla.org/extension/ostimer/"/>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="debug"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       default="0"
+                       label="MOD_OSTIMER_DEBUG_LABEL">
+                    <option value="0">JDISABLED</option>
+                    <option value="1">JENABLED</option>
+                </field>
+
+                <field name="moduleclass_sfx"
+                       type="textarea"
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                       rows="3"/>
+
+                <field name="cache"
+                       type="list"
+                       default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL"
+                       description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server type="extension" priority="1" name="OSTimer Free"><![CDATA[https://deploy.ostraining.com/client/update/free/stable/mod_ostimer]]></server>
+    </updateservers>
+</extension>

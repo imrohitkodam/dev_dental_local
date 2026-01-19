@@ -1,0 +1,6 @@
+{
+	"name": "EasySocial Pages Submission Restriction",
+	"element": "easysocialpagesubmission",
+	"description": "Allows you to restrict number of Easysocial Pages can be created by a user according to user subscription.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/easysocial-page-submission-restriction"
+}

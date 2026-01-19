@@ -1,0 +1,6 @@
+{
+	"name": "DJ Classifieds Points",
+	"element": "djcpoints",
+	"description": "Allocate DJ Classified points to users when they purchased a specific plan in PayPlans.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/dj-classifieds"
+}

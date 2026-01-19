@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" method="upgrade" type="plugin" group="system">
+	<name>PLG_SYSTEM_TJLMS_BLOCKREG</name>
+	<author>Techjoomla</author>
+	<creationDate>20th Feb 2016</creationDate>
+	<copyright>(c)Techjoomla</copyright>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>http://www.techjoomla.com</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>PLG_SYSTEM_TJLMS_BLOCKREG_DESC</description>
+	<files>
+		<filename plugin="tjlmsblockregs">tjlmsblockregs.php</filename>
+	</files>
+	<languages folder="language">
+			<language tag="en-GB">en-GB/en-GB.plg_system_tjlmsblockregs.ini</language>
+			<language tag="en-GB">en-GB/en-GB.plg_system_tjlmsblockregs.sys.ini</language>
+  	</languages>
+  	<config name="params">
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="allowed_user_registrations" type="hidden" default="5000" label="PLG_SYSTEM_TJLMS_BLCOKREG_ALLOWED_REGISTRATIONS" description="PLG_SYSTEM_TJLMS_BLCOKREG_ALLOWED_REGISTRATIONS_DESC"> </field>
+
+				<field name="consider_only_published_users" type="hidden" default="1" label="PLG_SYSTEM_TJLMS_BLCOKREG_CONSIDER_ONLY_ACTIVE_USERS" description="PLG_SYSTEM_TJLMS_BLCOKREG_CONSIDER_ONLY_ACTIVE_USERS_DESC"> </field>
+			</fieldset>
+		</fields>
+
+	</config>
+</extension>
+

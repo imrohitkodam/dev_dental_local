@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--~
+  ~ @package   admintools
+  ~ @copyright Copyright (c)2023 Nicholas K. Dionysopoulos / Akeeba Ltd
+  ~ @license   GNU General Public License version 3, or later
+  -->
+
+<form>
+	<fields name="params">
+		<fieldset name="task_params">
+			<field name="time_limit_cli"
+				   type="number"
+				   default="0"
+				   label="PLG_TASK_ADMINTOOLS_LBL_TIME_LIMIT_CLI_LABEL"
+				   description="PLG_TASK_ADMINTOOLS_LBL_TIME_LIMIT_CLI_DESC"
+				   min="0"
+				   max="3600"
+			/>
+			<field name="time_limit_web"
+				   type="number"
+				   default="0"
+				   label="PLG_TASK_ADMINTOOLS_LBL_TIME_LIMIT_WEB_LABEL"
+				   description="PLG_TASK_ADMINTOOLS_LBL_TIME_LIMIT_WEB_DESC"
+				   min="0"
+				   max="100"
+			/>
+		</fieldset>
+	</fields>
+</form>

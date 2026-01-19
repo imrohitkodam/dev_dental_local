@@ -1,0 +1,21 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "total_ads_submisssion",
+				"type": "text",
+				"title": "Total Ads",
+				"tooltip": "Set the total number of advertisement a user is allowed to create in EasySocial.",
+				"default": ""
+			},
+			{
+				"name": "statusUnpublished",
+				"type": "toggler",
+				"title": "UnPublish Ads on Subscription Expiration",
+				"tooltip": "Determine when should system unpublish the user's created Ads.",
+				"default": ""
+			}
+		]
+	}
+]

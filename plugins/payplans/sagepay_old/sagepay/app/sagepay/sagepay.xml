@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <name>SagePay</name>
+    <author>Team Readybytes</author>
+    <authorEmail>support+payplans@readybytes.in</authorEmail>
+    <authorUrl>http://www.readybytes.net/</authorUrl>
+    <copyright>2009-14 Ready Bytes Software Labs Pvt. Ltd.</copyright>
+    <icon>sagepay.png</icon>
+    <tags>payment</tags>
+    <description></description>
+    <help><![CDATA[     
+          		<strong>Note : </strong><br/><br/>
+          		<ol>
+          			<li>Support Fixed,Recurring, Recurring+1 and Recurring+2 trial.</li>
+          			<li>PayPlans Sage Pay payment gateway integration doesn’t support refund request.</li>
+                    <li>25+ currencies supported. By default, the Terminal will select GBP as the transaction currency. If you have multi-currency set up on your Sage Pay account you can use this option to choose which currency is selected by default.</li>
+                    <li>In PayPlans Sage Pay payment gateway integration we supports credit/debit card (Visa, Master Card, American Express, Diner's Club) as payment method).</li>
+          		</ol>     
+            ]]>
+    </help>
+ 
+	<fields name="app_params">
+		<fieldset name="app_params">
+				
+			<field	name="vendor" 	
+					default="" 		
+					type="text" 	
+					label="COM_PAYPLANS_APP_SAGEPAY_VENDOR_NAME"  
+					description="COM_PAYPLANS_APP_SAGEPAY_VENDOR_NAME_DESC" 
+					/>
+
+			<field	name="vendorEmail" 	
+					default="" 		
+					type="text" 	
+					label="Vendor Email"  
+					description="Vendor Email" 
+					/>
+
+			<field	name="encryptionKey" 	
+					default="" 		
+					type="text" 	
+					label="Encrypton Key"  
+					description="Encryption Key" 
+					/>
+									
+			<field  name="sandbox" 
+	        		type="radio" 
+	        		default="0" 
+	        		class="btn-group"
+	        		label="COM_PAYPLANS_APP_SAGEPAY_SANDBOX" 
+	        		description="COM_PAYPLANS_APP_SAGEPAY_SANDBOX_DESC">
+			        <option value="0">COM_PAYPLANS_NO</option>
+			        <option value="1">COM_PAYPLANS_YES</option>
+        	</field>
+	        	
+      		<field  name="allow_recurring_cancel" 
+		    		type="radio" 
+		    		default="0" 
+		            class="btn-group"
+		    		label="COM_PAYPLANS_APP_SAGEPAY_ALLOW_RECURRING_CANCEL" 
+		    		description="COM_PAYPLANS_APP_SAGEPAY_ALLOW_RECURRING_CANCEL_DESC">
+				    <option value="0">COM_PAYPLANS_NO</option>
+				    <option value="1">COM_PAYPLANS_YES</option>
+			</field>
+	
+		</fieldset>
+	</fields>
+<alias>pp-sagepay</alias>
+<documentation>http://www.readybytes.net/payplans/documentation/item/sagepay.html</documentation>
+<version>@app.version@.@app.buildversion@</version>
+</config>

@@ -1,0 +1,6 @@
+{
+	"name": "ACYMailing 6",
+	"element": "acymailing6",
+	"description": "It's integrated with AcyMailing version 6.x and higher version. Automatically adds user to different mailing lists that exists in AcyMailing according to their subscription plans and subscription status.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/acyMailing"
+}

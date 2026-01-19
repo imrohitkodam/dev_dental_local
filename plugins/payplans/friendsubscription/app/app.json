@@ -1,0 +1,6 @@
+{
+	"name": "Friend subscription",
+	"element": "friendsubscription",
+	"description": "Allows user's to purchase subscription for friends.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/friend-subscription"
+}

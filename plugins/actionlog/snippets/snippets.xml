@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="4" type="plugin" group="actionlog" method="upgrade">
+  <name>PLG_ACTIONLOG_SNIPPETS</name>
+  <description>PLG_ACTIONLOG_SNIPPETS_DESC</description>
+  <version>9.3.8</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <files>
+    <file plugin="snippets">snippets.php</file>
+    <folder>language</folder>
+  </files>
+  <config>
+    <fields name="params" addfieldprefix="RegularLabs\Library\Form\Field">
+      <fieldset name="basic">
+        <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs"/>
+        <field name="@load_language" type="LoadLanguage" extension="plg_actionlog_snippets"/>
+        <field name="@jcompatibility" type="JCompatibility" extension="REGULAR_LABS_LIBRARY"/>
+        <field name="@license" type="License" extension="SNIPPETS"/>
+        <field name="@version" type="Version" extension="SNIPPETS"/>
+        <field name="@dependency" type="Dependency" label="SNP_THE_COMPONENT" file="/administrator/components/com_snippets/snippets.xml"/>
+        <field name="@dependency2" type="Dependency" label="SNP_THE_SYSTEM_PLUGIN" file="/plugins/system/snippets/snippets.xml"/>
+        <field name="@header" type="Header" label="SNIPPETS" description="SNIPPETS_DESC" url="https://regularlabs.com/snippets"/>
+        <field name="@note__settings" type="Note" class="rl-alert alert alert-info rl-alert-light" text="SNP_SETTINGS,&lt;a href=&quot;index.php?option=com_snippets&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;"/>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

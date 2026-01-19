@@ -1,0 +1,11 @@
+[
+	{
+		"element": "payplans",
+		"rule": "friend.purchase",
+		"core": false,
+		"value": {
+			"email": false,
+			"system": true
+		}
+	}
+]

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.0" type="plugin" group="edocman" method="upgrade">
+    <name>EDocman - Dropbox</name>
+    <author>Tuan Pham Ngoc</author>
+    <creationDate>Apirl 2015</creationDate>
+    <copyright>Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+    <version>1.0</version>
+    <description>This plugin allows users to upload and store files on dropbox
+    </description>
+    <files>
+        <filename plugin="dropbox">dropbox.php</filename>
+		<folder>vendor</folder>
+		<folder>fields</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/plugins/edocman/dropbox/fields">
+				<field	name="gettoken"
+                        type="gettoken"
+						label=""
+						/>
+				<field	name="app_key"
+                        type="text"
+                        label="App Key"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        required="true" default=""/>
+				<field	name="app_secret"
+                        type="text"
+                        label="App secret"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        required="true" default=""/>
+				<field	name="access_token"
+                        type="text"
+                        label="Access Token"
+                        description=""
+                        class="input-xxlarge"
+                        size="50"
+                        required="true"/>
+				<field	name="dropbox_path"
+                        type="text"
+                        label="Root foler (Dropdox/Edocman)"
+                        description="Please enter the Root folder, it will be the subfolder of Dropbox > Edocman"
+                        class="input-xlarge"
+                        size="50"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

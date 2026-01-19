@@ -1,0 +1,36 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "esgroupOnActive",
+				"type": "easysocialgroups",
+				"title": "Easysocial Group For Active Subscription",
+				"tooltip": "Determine the Easysocial groups that the user should be assigned to when the subscription is active",
+				"default": ""
+			},
+			{
+				"name": "esgroupOnHold",
+				"type": "easysocialgroups",
+				"title": "Easysocial Group For On Hold Subscription",
+				"tooltip": "Determine the Easysocial groups that the user should be assigned to when the subscription is on hold",
+				"default": ""
+			},
+			{
+				"name": "esgroupOnExpire",
+				"type": "easysocialgroups",
+				"title": "Easysocial Group For Expire Subscription",
+				"tooltip": "Determine the Easysocial groups that the user should be assigned to when the subscription is expire",
+				"default": ""
+			},
+			{
+				"name": "removeFromGroup",
+				"type": "easysocialgroups",
+				"title": "Forcefully Remove Easysocial Group",
+				"tooltip": "Determine if the system should forcefully remove all of the selected Easysocial Group from the user once the user subscription become active",
+				"default": ""
+			}
+
+		]
+	}
+]

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="plugin" version="1.9.8" group="content" method="upgrade">
+	<name>Content - Edocman link</name>
+	<version>1.9.8</version>
+    <author>Dang Thuc Dam</author>
+    <creationDate>October 2015</creationDate>
+    <copyright>Copyright (C) 2010 - 2018 Ossolution (http://www.joomdonation.com)</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>services@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+	<description>This plugin is used to show Download Button of Document in Article. The shortcode format is {edocmanlink ID}. For example: {edocmanlink 1}</description>
+	<files>
+		<filename plugin="edocmanlink">edocmanlink.php</filename>
+	</files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="show_size" type="radio" class="btn-group" default="1" label="Show Document Size">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+				<field name="button_function" type="radio" class="btn-group" default="0" label="Select function">
+                    <option value="0">Download document</option>
+                    <option value="1">View document</option>
+                </field>
+				<field name="btnclass" type="text" class="input-small" default="btn" label="Button style class" />
+				<field name="icon" type="text" class="input-small" default="icon-download" label="Icon" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

@@ -1,0 +1,8 @@
+memory_limit = 1024M
+max_execution_time = 30
+max_input_time = 60
+magic_quotes_gpc = Off
+upload_max_filesize = 140M
+post_max_size = 140M
+zend_extension=/usr/local/php70/lib/php/extensions/ioncube.so
+zend_extension=/usr/local/php70/lib/php/extensions/ZendOptimizer.so

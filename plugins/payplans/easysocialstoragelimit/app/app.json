@@ -1,0 +1,6 @@
+{
+	"name": "EasySocial Storage Limit",
+	"element": "easysocialstoragelimit",
+	"description": "Manage the maximum upload storage limit in EasySocial according to user subscription.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/easysocial-file-storage-limit"
+}

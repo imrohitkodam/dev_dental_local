@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset name="content">
+    <field name="tag_type" type="Radio" default="show" class="btn-group rl-btn-group btn-group-md" label="COC_TAG_TYPE_DESC">
+      <option value="show" class="btn btn-outline-success">JSHOW</option>
+      <option value="hide" class="btn btn-outline-danger">JHIDE</option>
+    </field>
+    <field name="content" type="Editor" default="" buttons="false" filter="JComponentHelper::filterText" label="COC_CONTENT" description="COC_CONTENT_DESC"/>
+  </fieldset>
+  <fieldset name="content_no_editor">
+    <field name="tag_type" type="Radio" default="show" class="btn-group rl-btn-group btn-group-md" label="COC_TAG_TYPE_DESC">
+      <option value="show" class="btn btn-outline-success">JSHOW</option>
+      <option value="hide" class="btn btn-outline-danger">JHIDE</option>
+    </field>
+    <field name="content" type="Editor" editor="codemirror" default="" buttons="false" filter="JComponentHelper::filterText" label="COC_CONTENT" description="COC_CONTENT_DESC"/>
+  </fieldset>
+  <fieldset name="alternative">
+    <field name="content_alternative" type="Editor" default="" buttons="false" filter="JComponentHelper::filterText" label="COC_ALTERNATIVE_CONTENT" description="COC_ALTERNATIVE_CONTENT_DESC"/>
+  </fieldset>
+  <fieldset name="alternative_no_editor">
+    <field name="content_alternative" type="Editor" editor="codemirror" default="" buttons="false" filter="JComponentHelper::filterText" label="COC_ALTERNATIVE_CONTENT" description="COC_ALTERNATIVE_CONTENT_DESC"/>
+  </fieldset>
+  <fieldset name="conditions">
+    <field name="@load_language_conditions" type="LoadLanguage" extension="com_conditions"/>
+    <field name="@showon__has_conditions__a" type="ShowOn" value="has_conditions:1"/>
+    <field name="condition_type" type="Radio" default="alias" class="btn-group rl-btn-group btn-group-md" label="COC_CONDITION_TYPE">
+      <option value="id" class="btn btn-outline-info">JGLOBAL_FIELD_ID_LABEL</option>
+      <option value="alias" class="btn btn-outline-info">JALIAS</option>
+      <option value="name" class="btn btn-outline-info">JFIELD_NAME_LABEL</option>
+    </field>
+    <field name="@showon__has_conditions__b" type="ShowOn"/>
+    <field name="@conditions" type="Condition" addfieldprefix="RegularLabs\Plugin\EditorButton\ConditionalContent\Form\Field" enable="                     menu__menu_item,                     menu__home_page,                     date__date,                     visitor__access_level,                     visitor__user_group,                     visitor__language,                     agent__device,                     other__condition"/>
+  </fieldset>
+  <fieldset name="inline__a">
+    <field name="@showon__use_inline__a" type="ShowOn" value="use_inline:1[AND]has_conditions:0"/>
+    <field name="@note__inline_rules" type="Note" class="" title="COC_INLINE_RULES" heading="h3"/>
+    <field name="matching_method" type="Radio" default="all" class="btn-group rl-btn-group" label="RL_MATCHING_METHOD" description="CON_MATCHING_METHOD_DESC,CON_ALL,CON_ALL_DESC,CON_ANY,CON_ANY_DESC" showon="has_multiple_rules:1">
+      <option value="all" class="btn btn-outline-info">CON_ALL</option>
+      <option value="any" class="btn btn-outline-info">CON_ANY</option>
+    </field>
+  </fieldset>
+  <!-- MENU ITEMS -->
+  <fieldset name="group__menu__a">
+    <field name="@block__group__menu__a" type="Block" start="1" label="CON_MENU_ITEMS"/>
+  </fieldset>
+  <!-- MENU ITEMS -->
+  <fieldset name="menu__menu_item">
+    <field name="@block__menuitems__a" type="Block" start="1"/>
+    <field name="menuitems" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_MENU_ITEMS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__menuitems__a" type="ShowOn" value="menuitems!:"/>
+    <field name="menuitems__selection" type="MenuItems" multiple="true" default="" label="CON_MENU_ITEMS" hiddenLabel="true"/>
+    <field name="@showon__menuitems__b" type="ShowOn"/>
+    <field name="@block__menuitems__b" type="Block" end="1"/>
+  </fieldset>
+  <!-- HOMEPAGE -->
+  <fieldset name="menu__home_page">
+    <field name="@block__homepage__a" type="Block" start="1"/>
+    <field name="homepage" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_HOME_PAGE">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__homepage__a" type="ShowOn" value="homepage!:"/>
+    <field name="@note__homepage" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_HOME_PAGE_DESC"/>
+    <field name="@showon__homepage__b" type="ShowOn"/>
+    <field name="@block__homepage__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__menu__b">
+    <field name="@block__group__menu__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__date__a">
+    <!-- DATE -->
+    <field name="@block__group__date__a" type="Block" start="1" label="CON_DATE_TIME"/>
+  </fieldset>
+  <fieldset name="date__date">
+    <!-- DATE :: DATE -->
+    <field name="@block__date__a" type="Block" start="1"/>
+    <field name="date" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_DATE">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__date__a" type="ShowOn" value="date!:"/>
+    <field name="date__comparison" type="Radio" default="after" class="btn-group rl-btn-group btn-group-md" label="">
+      <option value="before" class="btn btn-outline-info">CON_DATE_BEFORE</option>
+      <option value="after" class="btn btn-outline-info">CON_DATE_AFTER</option>
+      <option value="between" class="btn btn-outline-info">CON_DATE_BETWEEN</option>
+    </field>
+    <field name="@showon__date__before_after__a" type="ShowOn" value="date__comparison!:between"/>
+    <field name="date__date" type="Calendar" showtime="true" filter="user_utc" format="%Y-%m-%d %H:%M" default="" label=""/>
+    <field name="@showon__date__before_after__b" type="ShowOn"/>
+    <field name="@showon__date__between__a" type="ShowOn" value="date__comparison:between"/>
+    <field name="date__from" type="Calendar" showtime="true" filter="user_utc" format="%Y-%m-%d %H:%M" default="" label="CON_DATE_FROM"/>
+    <field name="date__to" type="Calendar" showtime="true" filter="user_utc" format="%Y-%m-%d %H:%M" default="" label="CON_DATE_TO"/>
+    <field name="@showon__date__between__b" type="ShowOn"/>
+    <field name="@showon__date__b" type="ShowOn"/>
+    <field name="@block__date__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="date__season">
+    <!-- DATE :: SEASONS -->
+    <field name="@block__seasons__a" type="Block" start="1"/>
+    <field name="seasons" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_SEASONS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__seasons__a" type="ShowOn" value="seasons!:"/>
+    <field name="seasons__selection" type="List" multiple="true" default="" layout="joomla.form.field.list-fancy-select" label="CON_SEASONS" hiddenLabel="true">
+      <option value="winter">CON_WINTER</option>
+      <option value="spring">CON_SPRING</option>
+      <option value="summer">CON_SUMMER</option>
+      <option value="fall">CON_FALL</option>
+    </field>
+    <field name="@showon__seasons__b" type="ShowOn"/>
+    <field name="@block__seasons__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="date__month">
+    <!-- DATE :: MONTHS -->
+    <field name="@block__months__a" type="Block" start="1"/>
+    <field name="months" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_MONTHS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__months__a" type="ShowOn" value="months!:"/>
+    <field name="months__selection" type="List" multiple="true" default="" layout="joomla.form.field.list-fancy-select" label="CON_MONTHS" hiddenLabel="true">
+      <option value="january">JANUARY</option>
+      <option value="february">FEBRUARY</option>
+      <option value="march">MARCH</option>
+      <option value="april">APRIL</option>
+      <option value="may">MAY</option>
+      <option value="june">JUNE</option>
+      <option value="july">JULY</option>
+      <option value="august">AUGUST</option>
+      <option value="september">SEPTEMBER</option>
+      <option value="october">OCTOBER</option>
+      <option value="november">NOVEMBER</option>
+      <option value="december">DECEMBER</option>
+    </field>
+    <field name="@showon__months__b" type="ShowOn"/>
+    <field name="@block__months__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="date__day">
+    <!-- DATE :: DAYS -->
+    <field name="@block__days__a" type="Block" start="1"/>
+    <field name="days" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_DAYS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__days__a" type="ShowOn" value="days!:"/>
+    <field name="days__selection" type="List" multiple="true" default="" layout="joomla.form.field.list-fancy-select" label="CON_DAYS" hiddenLabel="true">
+      <option value="monday">MONDAY</option>
+      <option value="tuesday">TUESDAY</option>
+      <option value="wednesday">WEDNESDAY</option>
+      <option value="thursday">THURSDAY</option>
+      <option value="friday">FRIDAY</option>
+      <option value="saturday">SATURDAY</option>
+      <option value="sunday">SUNDAY</option>
+    </field>
+    <field name="@showon__days__b" type="ShowOn"/>
+    <field name="@block__days__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="date__time">
+    <!-- DATE :: TIME -->
+    <field name="@block__time__a" type="Block" start="1"/>
+    <field name="time" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_TIME">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__time__a" type="ShowOn" value="time!:"/>
+    <field name="time__comparison" type="Radio" default="after" class="btn-group rl-btn-group btn-group-md" label="">
+      <option value="before" class="btn btn-outline-info">CON_DATE_BEFORE</option>
+      <option value="after" class="btn btn-outline-info">CON_DATE_AFTER</option>
+      <option value="between" class="btn btn-outline-info">CON_DATE_BETWEEN</option>
+    </field>
+    <field name="@showon__time__before_after__a" type="ShowOn" value="time__comparison!:between"/>
+    <field name="time__time" type="Text" size="10" default="0:00" class="rl-w-5em text-right" label=""/>
+    <field name="@showon__time__before_after__b" type="ShowOn"/>
+    <field name="@showon__time__between__a" type="ShowOn" value="time__comparison:between"/>
+    <field name="time__from" type="Text" size="10" default="0:00" class="rl-w-5em text-right" label="CON_DATE_FROM"/>
+    <field name="time__to" type="Text" size="10" default="0:00" class="rl-w-5em text-right" label="CON_DATE_TO"/>
+    <field name="@showon__time__between__b" type="ShowOn"/>
+    <field name="@showon__time__b" type="ShowOn"/>
+    <field name="@block__time__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__date__b">
+    <!-- DATE (footer) -->
+    <field name="@showon__group__date__a" type="ShowOn" value="date!:[OR]seasons!:[OR]months!:[OR]days!:[OR]time!:"/>
+    <field name="@note__group__date" type="Note" class="rl-alert alert alert-warning" text="CON_DATE_TIME_DESC"/>
+    <field name="@note__group__date__current" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_CURRENT_DATE,[date:Y-m-d H:i]"/>
+    <field name="@showon__group__date__b" type="ShowOn"/>
+    <field name="@block__group__date__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__content__a">
+    <!-- JOOMLA CONTENT -->
+    <field name="@block__group__content__a" type="Block" start="1" label="RL_JCONTENT"/>
+    <field name="@load_language_content" type="LoadLanguage" extension="com_content"/>
+    <field name="@load_language_content_sys" type="LoadLanguage" extension="com_content.sys"/>
+  </fieldset>
+  <fieldset name="content__page_type">
+    <!-- JOOMLA CONTENT :: PAGE TYPES -->
+    <field name="@block__contentpagetypes__a" type="Block" start="1"/>
+    <field name="contentpagetypes" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_PAGE_TYPES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__contentpagetypes__a" type="ShowOn" value="contentpagetypes!:"/>
+    <field name="contentpagetypes__selection" type="List" multiple="true" default="" layout="joomla.form.field.list-fancy-select" label="CON_PAGE_TYPES" hiddenLabel="true">
+      <option value="archive">COM_CONTENT_ARCHIVE_VIEW_DEFAULT_TITLE</option>
+      <option value="article">COM_CONTENT_ARTICLE_VIEW_DEFAULT_TITLE</option>
+      <option value="categories">COM_CONTENT_CATEGORIES_VIEW_DEFAULT_TITLE</option>
+      <option value="categoryblog">COM_CONTENT_CATEGORY_VIEW_BLOG_TITLE</option>
+      <option value="category">COM_CONTENT_CATEGORY_VIEW_DEFAULT_TITLE</option>
+      <option value="featured">COM_CONTENT_FEATURED_VIEW_DEFAULT_TITLE</option>
+      <option value="form">COM_CONTENT_FORM_VIEW_DEFAULT_TITLE</option>
+    </field>
+    <field name="@showon__contentpagetypes__b" type="ShowOn"/>
+    <field name="@block__contentpagetypes__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="content__category">
+    <!-- JOOMLA CONTENT :: CATEGORIES -->
+    <field name="@block__categories__a" type="Block" start="1"/>
+    <field name="categories" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_CATEGORIES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__categories__a" type="ShowOn" value="categories!:"/>
+    <field name="categories__selection" type="ContentCategories" multiple="true" default="" label="CON_CATEGORIES" hiddenLabel="true"/>
+    <field name="@showon__categories__b" type="ShowOn"/>
+    <field name="@block__categories__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="content__article__id">
+    <!-- JOOMLA CONTENT :: ARTICLES -->
+    <field name="@block__articles__a" type="Block" start="1"/>
+    <field name="articles" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_ARTICLES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__articles__a" type="ShowOn" value="articles!:"/>
+    <field name="articles__selection" type="ContentArticles" multiple="true" default="" label="CON_ARTICLES" hiddenLabel="true"/>
+    <field name="@showon__articles__b" type="ShowOn"/>
+    <field name="@block__articles__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="content__article__featured">
+    <!-- JOOMLA CONTENT :: ARTICLE FEATURED -->
+    <field name="@block__featured__a" type="Block" start="1"/>
+    <field name="featured" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_ARTICLE_FEATURED">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@block__featured__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="content__article__status">
+    <!-- JOOMLA CONTENT :: ARTICLE PUBLISH STATE -->
+    <field name="@block__article_status__a" type="Block" start="1"/>
+    <field name="article_status" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_ARTICLE_STATUS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__article_status__a" type="ShowOn" value="article_status!:"/>
+    <field name="article_status__selection" type="List" multiple="true" default="1" layout="joomla.form.field.list-fancy-select" label="CON_ARTICLE_STATUS" hiddenLabel="true">
+      <option value="published">JPUBLISHED</option>
+      <option value="unpublished">JUNPUBLISHED</option>
+      <option value="archived">JARCHIVED</option>
+      <option value="trashed">JTRASHED</option>
+    </field>
+    <field name="@showon__article_status__b" type="ShowOn"/>
+    <field name="@block__article_status__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="content__article__date">
+    <!-- JOOMLA CONTENT :: ARTICLE DATE -->
+    <field name="@block__article_date__a" type="Block" start="1"/>
+    <field name="article_date" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_ARTICLE_DATE">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__article_date__a" type="ShowOn" value="article_date!:"/>
+    <field name="article_date__type" type="List" default="created" layout="joomla.form.field.list-fancy-select" label="CON_ARTICLE_DATE" hiddenLabel="true">
+      <option value="created">COM_CONTENT_FIELD_CREATED_LABEL</option>
+      <option value="modified">JGLOBAL_FIELD_MODIFIED_LABEL</option>
+      <option value="publish_up">COM_CONTENT_FIELD_PUBLISH_UP_LABEL</option>
+      <option value="publish_down">COM_CONTENT_FIELD_PUBLISH_DOWN_LABEL</option>
+    </field>
+    <field name="article_date__comparison" type="Radio" default="after" class="btn-group rl-btn-group btn-group-md" label="">
+      <option value="before" class="btn btn-outline-info">CON_DATE_BEFORE</option>
+      <option value="after" class="btn btn-outline-info">CON_DATE_AFTER</option>
+      <option value="between" class="btn btn-outline-info">CON_DATE_BETWEEN</option>
+    </field>
+    <field name="@showon__article_date__before_after__a" type="ShowOn" value="article_date__comparison!:between"/>
+    <field name="article_date__date" type="Calendar" showtime="true" filter="user_utc" format="%Y-%m-%d %H:%M" default="" label=""/>
+    <field name="@showon__article_date__before_after__b" type="ShowOn"/>
+    <field name="@showon__article_date__between__a" type="ShowOn" value="article_date__comparison:between"/>
+    <field name="article_date__from" type="Calendar" showtime="true" filter="user_utc" format="%Y-%m-%d %H:%M" default="" label="CON_DATE_FROM"/>
+    <field name="article_date__to" type="Calendar" showtime="true" filter="user_utc" format="%Y-%m-%d %H:%M" default="" label="CON_DATE_TO"/>
+    <field name="@showon__article_date__between__b" type="ShowOn"/>
+    <field name="@showon__article_date__b" type="ShowOn"/>
+    <field name="@block__article_date__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="content__article__author">
+    <!-- JOOMLA CONTENT :: ARTICLE AUTHORS -->
+    <field name="@block__article_authors__a" type="Block" start="1"/>
+    <field name="article_authors" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_ARTICLE_AUTHORS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__article_authors__a" type="ShowOn" value="article_authors!:"/>
+    <field name="article_authors__selection" type="Users" multiple="true" show_current="true" default="" username_as_value="true" label="CON_ARTICLE_AUTHORS" hiddenLabel="true"/>
+    <field name="@showon__article_authors__b" type="ShowOn"/>
+    <field name="@block__article_authors__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__content__b">
+    <field name="@block__group__content__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__visitor__a">
+    <!-- VISITORS -->
+    <field name="@block__group__visitor__a" type="Block" start="1" label="CON_VISITORS"/>
+  </fieldset>
+  <fieldset name="visitor__user">
+    <!-- USERS -->
+    <field name="@block__user__a" type="Block" start="1"/>
+    <field name="users" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_USERS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__users__a" type="ShowOn" value="users!:"/>
+    <field name="users__selection" type="Users" multiple="true" default="" username_as_value="true" label="CON_USERS" hiddenLabel="true"/>
+    <field name="@showon__users__b" type="ShowOn"/>
+    <field name="@block__users__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="visitor__access_level">
+    <!-- ACCESS LEVEL -->
+    <field name="@block__accesslevels__a" type="Block" start="1"/>
+    <field name="accesslevels" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_ACCESS_LEVELS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__accesslevels__a" type="ShowOn" value="accesslevels!:"/>
+    <field name="accesslevels__selection" type="AccessLevels" multiple="true" default="" text_as_value="true" label="CON_ACCESS_LEVELS" hiddenLabel="true"/>
+    <field name="@showon__accesslevels__b" type="ShowOn"/>
+    <field name="@block__accesslevels__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="visitor__user_group">
+    <!-- USER GROUPS -->
+    <field name="@block__usergroups__a" type="Block" start="1"/>
+    <field name="usergroups" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_USER_GROUPS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__usergroups__a" type="ShowOn" value="usergroups!:"/>
+    <field name="usergroups__selection" type="UserGroups" multiple="true" notregistered="1" default="" text_as_value="true" label="CON_USER_GROUPS" hiddenLabel="true"/>
+    <field name="@showon__usergroups__b" type="ShowOn"/>
+    <field name="@block__usergroups__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="visitor__language">
+    <!-- LANGUAGES -->
+    <field name="@block__languages__a" type="Block" start="1"/>
+    <field name="languages" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_LANGUAGES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__languages__a" type="ShowOn" value="languages!:"/>
+    <field name="languages__selection" type="Languages" multiple="true" default="" label="CON_LANGUAGES" hiddenLabel="true"/>
+    <field name="@showon__languages__b" type="ShowOn"/>
+    <field name="@block__languages__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="agent__device">
+    <!-- DEVICES -->
+    <field name="@block__devices__a" type="Block" start="1"/>
+    <field name="devices" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_DEVICES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__devices__a" type="ShowOn" value="devices!:"/>
+    <field name="devices__selection" type="List" multiple="true" default="" layout="joomla.form.field.list-fancy-select" label="CON_DEVICES" hiddenLabel="true">
+      <option value="desktop">CON_DEVICES_DESKTOP</option>
+      <option value="tablet">CON_DEVICES_TABLET</option>
+      <option value="mobile">CON_DEVICES_MOBILE</option>
+    </field>
+    <field name="@note__devices" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_DEVICES_DESC"/>
+    <field name="@showon__devices__b" type="ShowOn"/>
+    <field name="@block__devices__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="visitor__ip">
+    <!-- IPS -->
+    <field name="@block__ips__a" type="Block" start="1"/>
+    <field name="ips" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_IPS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__ips__a" type="ShowOn" value="ips!:"/>
+    <field name="ips__selection" type="Textarea" default="" label="CON_IPS" hiddenLabel="true"/>
+    <field name="@note__ips" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_IPS_DESC"/>
+    <field name="@showon__ips__b" type="ShowOn"/>
+    <field name="@block__ips__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__visitor__b">
+    <field name="@block__group__visitor__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__geo__a">
+    <!-- GEO LOCATION -->
+    <field name="@block__group__geo__a" type="Block" start="1" label="CON_GEOLOCATION"/>
+    <field name="has_geoip_library" type="IsInstalled" extension="geoip" extension_type="library"/>
+    <field name="@showon__geo__1a" type="ShowOn" value="continents!:[OR]countries!:[OR]regions!:[OR]postalcodes!:"/>
+    <field name="@note__geo__no_geoip_library" type="Note" class="rl-alert alert alert-danger" text="CON_GEO_NO_GEOIP_LIBRARY,&lt;a href=&quot;https://regularlabs.com/geoip&quot; class=&quot;btn btn-sm btn-success&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" showon="has_geoip_library:0"/>
+    <field name="@showon__geo__1b" type="ShowOn"/>
+  </fieldset>
+  <fieldset name="geo__continent">
+    <!-- GEO LOCATION :: CONTINENTS -->
+    <field name="@block__continents__a" type="Block" start="1"/>
+    <field name="continents" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_CONTINENTS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__continents__a" type="ShowOn" value="continents!:"/>
+    <field name="continents__selection" type="Geo" group="continents" multiple="true" default="" text_as_value="true" label="CON_CONTINENTS" hiddenLabel="true"/>
+    <field name="@showon__continents__b" type="ShowOn"/>
+    <field name="@block__continents__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="geo__country">
+    <!-- GEO LOCATION :: COUNTRIES -->
+    <field name="@block__countries__a" type="Block" start="1"/>
+    <field name="countries" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_COUNTRIES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__countries__a" type="ShowOn" value="countries!:"/>
+    <field name="countries__selection" type="Geo" group="countries" multiple="true" default="" text_as_value="true" label="CON_COUNTRIES" hiddenLabel="true"/>
+    <field name="@showon__countries__b" type="ShowOn"/>
+    <field name="@block__countries__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="geo__postal_code">
+    <!-- GEO LOCATION :: POSTAL CODES -->
+    <field name="@block__postalcodes__a" type="Block" start="1"/>
+    <field name="postalcodes" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_POSTAL_CODES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__postalcodes__a" type="ShowOn" value="postalcodes!:"/>
+    <field name="postalcodes__selection" type="Textarea" default="" label="CON_POSTAL_CODES" hiddenLabel="true"/>
+    <field name="@note__postalcodes" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_POSTAL_CODES_DESC,&lt;a href=&quot;https://www.maxmind.com/en/locate-my-ip-address/&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;"/>
+    <field name="@showon__postalcodes__b" type="ShowOn"/>
+    <field name="@block__postalcodes__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__geo__b">
+    <!-- GEO LOCATION (footer) -->
+    <field name="@showon__geo__2a" type="ShowOn" value="continents!:[OR]countries!:[OR]regions!:[OR]postalcodes!:"/>
+    <field name="@note__geo__info" type="GeoInformation" showon="has_geoip_library:1"/>
+    <field name="@note__geo" type="Note" class="rl-alert alert alert-warning" text="CON_GEO_DESC"/>
+    <field name="@note__geo__has_geoip_library" type="Note" class="text-muted" text="CON_GEO_GEOIP_COPYRIGHT_DESC,&lt;a href=&quot;http://www.maxmind.com&quot; target=&quot;_blank&quot;&gt;http://www.maxmind.com&lt;/a&gt;" showon="has_geoip_library:1"/>
+    <field name="@showon__geo__2b" type="ShowOn"/>
+    <field name="@block__group__geo__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__other__a">
+    <!-- MISCELLANEOUS -->
+    <field name="@block__group__other__a" type="Block" start="1" label="CON_MISCELLANEOUS"/>
+  </fieldset>
+  <fieldset name="other__tag">
+    <!-- TAGS -->
+    <field name="@block__tags__a" type="Block" start="1"/>
+    <field name="tags" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_TAGS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__tags__a" type="ShowOn" value="tags!:"/>
+    <field name="tags__selection" type="Tags" multiple="true" default="" text_as_value="true" label="CON_TAGS" hiddenLabel="true"/>
+    <field name="@showon__tags__b" type="ShowOn"/>
+    <field name="@block__tags__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="other__component">
+    <!-- COMPONENTS -->
+    <field name="@block__components__a" type="Block" start="1"/>
+    <field name="components" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_COMPONENTS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__components__a" type="ShowOn" value="components!:"/>
+    <field name="components__selection" type="Components" multiple="true" admin="true" show_content="true" default="" no_com_prefix="true" label="CON_COMPONENTS" hiddenLabel="true"/>
+    <field name="@showon__components__b" type="ShowOn"/>
+    <field name="@block__components__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="other__template">
+    <!-- TEMPLATES -->
+    <field name="@block__templates__a" type="Block" start="1"/>
+    <field name="templates" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_TEMPLATES">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__templates__a" type="ShowOn" value="templates!:"/>
+    <field name="templates__selection" type="Templates" multiple="true" default="" label="CON_TEMPLATES" hiddenLabel="true"/>
+    <field name="@showon__templates__b" type="ShowOn"/>
+    <field name="@block__templates__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="other__url">
+    <!-- URLS -->
+    <field name="@block__urls__a" type="Block" start="1"/>
+    <field name="urls" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_URLS">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__urls__a" type="ShowOn" value="urls!:"/>
+    <field name="urls__selection" type="Textarea" default="" label="CON_URLS" hiddenLabel="true"/>
+    <field name="@note__urls" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_URLS_DESC"/>
+    <field name="@showon__urls__b" type="ShowOn"/>
+    <field name="@block__urls__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="other__php">
+    <!-- PHP -->
+    <field name="@block__php__a" type="Block" start="1"/>
+    <field name="php" type="Radio" default="" class="btn-group rl-btn-group btn-group-md btn-group" label="CON_PHP">
+      <option value="" class="btn btn-outline-info">CON_IGNORE</option>
+      <option value="include" class="btn btn-outline-success">CON_INCLUDE</option>
+      <option value="exclude" class="btn btn-outline-danger">CON_EXCLUDE</option>
+    </field>
+    <field name="@showon__php__a" type="ShowOn" value="php!:"/>
+    <field name="php__selection" type="Editor" editor="codemirror" height="120" default="" label="CON_PHP" hiddenLabel="true"/>
+    <field name="@note__php" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_PHP_DESC,&lt;pre&gt;return ( $user-&gt;name == 'Peter van Westen' );&lt;/pre&gt;"/>
+    <field name="@showon__php__b" type="ShowOn"/>
+    <field name="@block__php__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="group__other__b">
+    <field name="@block__group__other__b" type="Block" end="1"/>
+  </fieldset>
+  <fieldset name="inline__b">
+    <field name="@note__more_in_condition_set" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_MORE_IN_CONDITION_SET"/>
+    <field name="@note__more_in_pro" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_MORE_IN_PRO,&lt;a href=&quot;https://regularlabs.com/conditionalcontent/features&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;"/>
+    <field name="@showon__use_inline__b" type="ShowOn"/>
+  </fieldset>
+  <fieldset name="messages">
+    <field name="has_multiple_rules" type="Hidden" default="0"/>
+    <field name="@showon__use_inline__c" type="ShowOn" value="use_inline:1[AND]has_conditions:0"/>
+    <field name="@note__consider_condition_set" type="Note" class="rl-alert alert alert-warning rl-alert-light" text="CON_CONSIDER_CONDITION_SET" showon="has_multiple_rules:1"/>
+    <field name="@showon__use_inline__d" type="ShowOn"/>
+  </fieldset>
+</config>

@@ -1,0 +1,28 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "addToGroupOnActive",
+				"type": "k2Usergroups",
+				"title": "COM_PP_APP_K2_ON_SUBS_ACTIVE",
+				"tooltip": "COM_PP_APP_K2_ON_SUBS_ACTIVE_DESC",
+				"default": ""
+			},
+			{
+				"name": "addToGroupOnHold",
+				"type": "k2Usergroups",
+				"title": "COM_PP_APP_K2_ON_SUBS_HOLD",
+				"tooltip": "COM_PP_APP_K2_ON_SUBS_HOLD_DESC",
+				"default": ""
+			},
+			{
+				"name": "addToGroupOnExpire",
+				"type": "k2Usergroups",
+				"title": "COM_PP_APP_K2_ON_SUBS_EXPIRED",
+				"tooltip": "COM_PP_APP_K2_ON_SUBS_EXPIRED_DESC",
+				"default": ""
+			}
+		]
+	}
+]

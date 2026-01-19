@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="module" client="site" method="upgrade">
+	<name>StackIdeas Toolbar</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>1st November 2022</creationDate>
+	<copyright>Copyright (C) Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<version>1.0.20</version>
+	<description><![CDATA[StackIdeas toolbar is a module to unify the toolbar from EasyBlog, EasySocial, EasyDiscuss and PayPlans.]]></description>
+	<files>
+		<folder>admin</folder>
+		<folder>assets</folder>
+		<folder>includes</folder>
+		<folder>tmpl</folder>
+		<filename>en-GB.mod_stackideas_toolbar.ini</filename>
+		<filename>helper.php</filename>
+		<filename module="mod_stackideas_toolbar">mod_stackideas_toolbar.php</filename>
+		<filename>mod_stackideas_toolbar.xml</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">en-GB.mod_stackideas_toolbar.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_stackideas_toolbar/admin/elements">
+
+				<field name="appearance" type="list" default="light" label="MOD_SI_TOOLBAR_APPEARANCE_SETTINGS" description="MOD_SI_TOOLBAR_APPEARANCE_SETTINGS_DESC">
+					<option value="light">MOD_SI_TOOLBAR_LIGHT</option>
+					<option value="dark">MOD_SI_TOOLBAR_DARK</option>
+				</field>
+
+				<field name="accent" type="list" default="si-theme-foundry" label="MOD_SI_TOOLBAR_ACCENT" description="MOD_SI_TOOLBAR_ACCENT_DESC">
+					<option value="si-theme-foundry">Default</option>
+					<option value="si-theme-blue-violet">Violet</option>
+					<option value="si-theme-dodger-blue">Blue</option>
+					<option value="si-theme-teal">Teal</option>
+					<option value="si-theme-tomato">Tomato</option>
+				</field>
+
+				<field name="fontawesome" type="radio" class="btn-group" default="1" label="MOD_SI_TOOLBAR_FONTAWESOME" description="MOD_SI_TOOLBAR_FONTAWESOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="globalMenu" type="toolbarmenu" default="toolbardefault-easysocial" label="MOD_SI_TOOLBAR_MENU_SELECT_MENU" description="MOD_SI_TOOLBAR_MENU_SELECT_MENU_DESC"></field>
+
+				<field name="showHome" showon="globalMenu:mainmenu" type="radio" class="btn-group" default="1" label="MOD_SI_TOOLBAR_SHOW_HOME" description="MOD_SI_TOOLBAR_SHOW_HOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="showUserDropdown" type="radio" class="btn-group" default="1" label="MOD_SI_TOOLBAR_SHOW_USER_DROPDOWN" description="MOD_SI_TOOLBAR_SHOW_USER_DROPDOWN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="showUserLogin" type="radio" class="btn-group" default="1" label="MOD_SI_TOOLBAR_SHOW_USER_LOGIN" description="MOD_SI_TOOLBAR_SHOW_USER_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="avatar_style" type="list" default="rounded" label="MOD_SI_TOOLBAR_AVATAR_STYLE_SETTINGS" description="MOD_SI_TOOLBAR_AVATAR_STYLE_SETTINGS_DESC">
+					<option value="rounded">Rounded</option>
+					<option value="square">Square</option>
+				</field>
+
+				<field name="show_online" type="radio" class="btn-group" default="1" label="MOD_SI_TOOLBAR_AVATAR_SHOW_ONLINE_STATE_SETTINGS" description="MOD_SI_TOOLBAR_AVATAR_SHOW_ONLINE_STATE_SETTINGS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="truncateMenu" type="number" label="MOD_SI_TOOLBAR_MENU_LIMIT" default="5" filter="integer" description="MOD_SI_TOOLBAR_MENU_LIMIT_DESC" />
+
+				<field name="defaultSearch" type="toolbarsearch" default="search-default" label="MOD_SI_TOOLBAR_DEFAULT_SEARCH" description="MOD_SI_TOOLBAR_DEFAULT_SEARCH_DESC"></field>
+
+				<field name="showDivider" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_SHOW_DIVIDER" description="MOD_SI_TOOLBAR_SHOW_DIVIDER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="dropdown_placement" type="list" default="bottom-end" label="MOD_SI_TOOLBAR_LOGIN_DROPDOWN_PLACEMENT_SETTINGS" description="MOD_SI_TOOLBAR_LOGIN_DROPDOWN_PLACEMENT_SETTINGS_DESC">
+					<option value="top">top</option>
+					<option value="top-start">top-start</option>
+					<option value="top-end">top-end</option>
+					<option value="bottom">bottom</option>
+					<option value="bottom-start">bottom-start</option>
+					<option value="bottom-end">bottom-end</option>
+				</field>
+
+				<field name="show_qrcode_mobileapp" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_DISPLAY_QRCODE_MOBILEAPP" description="MOD_SI_TOOLBAR_DISPLAY_QRCODE_MOBILEAPP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field type="spacer" name="adaptivemenusetting" label="MOD_SI_TOOLBAR_CUSTOM_MENU_SETTINGS"/>
+
+				<field name="adaptiveMenu" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_CUSTOM_MENU" description="MOD_SI_TOOLBAR_CUSTOM_MENU_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="easyblog" showon="adaptiveMenu:1" type="toolbarmenu" default="toolbardefault-easyblog" label="MOD_SI_TOOLBAR_MENU_SELECT_EB_MENU" description="MOD_SI_TOOLBAR_MENU_SELECT_EB_MENU_DESC"></field>
+
+				<field name="easydiscuss" showon="adaptiveMenu:1" type="toolbarmenu" default="toolbardefault-easydiscuss" label="MOD_SI_TOOLBAR_MENU_SELECT_ED_MENU" description="MOD_SI_TOOLBAR_MENU_SELECT_ED_MENU_DESC"></field>
+
+				<field name="easysocial" showon="adaptiveMenu:1" type="toolbarmenu" default="toolbardefault-easysocial" label="MOD_SI_TOOLBAR_MENU_SELECT_ES_MENU" description="MOD_SI_TOOLBAR_MENU_SELECT_ES_MENU_DESC"></field>
+
+				<field name="payplans" showon="adaptiveMenu:1" type="toolbarmenu" default="toolbardefault-payplans" label="MOD_SI_TOOLBAR_MENU_SELECT_PP_MENU" description="MOD_SI_TOOLBAR_MENU_SELECT_PP_MENU_DESC"></field>
+
+				<field name="komento" showon="adaptiveMenu:1" type="toolbarmenu" default="toolbardefault-komento" label="MOD_SI_TOOLBAR_MENU_SELECT_KT_MENU" description="MOD_SI_TOOLBAR_MENU_SELECT_KT_MENU_DESC"></field>
+			</fieldset>
+
+			<fieldset name="easysocial">
+				<field name="es_layout_home" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_HOME" description="MOD_SI_TOOLBAR_ES_DISPLAY_HOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_pages" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_PAGES" description="MOD_SI_TOOLBAR_ES_DISPLAY_PAGES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_groups" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_GROUPS" description="MOD_SI_TOOLBAR_ES_DISPLAY_GROUPS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_events" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_EVENTS" description="MOD_SI_TOOLBAR_ES_DISPLAY_EVENTS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_videos" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_VIDEOS" description="MOD_SI_TOOLBAR_ES_DISPLAY_VIDEOS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_audio" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_AUDIO" description="MOD_SI_TOOLBAR_ES_DISPLAY_AUDIO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_photos" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_PHOTOS" description="MOD_SI_TOOLBAR_ES_DISPLAY_PHOTOS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_polls" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_POLLS" description="MOD_SI_TOOLBAR_ES_DISPLAY_POLLS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_marketplace" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_MARKETPLACE" description="MOD_SI_TOOLBAR_ES_DISPLAY_MARKETPLACE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_search" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_SEARCH" description="MOD_SI_TOOLBAR_ES_DISPLAY_SEARCH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_friends" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_FRIENDS" description="MOD_SI_TOOLBAR_ES_DISPLAY_FRIENDS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_conversations" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_CONVERSATIONS" description="MOD_SI_TOOLBAR_ES_DISPLAY_CONVERSATIONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_notifications" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_DISPLAY_NOTIFICATIONS" description="MOD_SI_TOOLBAR_ES_DISPLAY_NOTIFICATIONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_guests" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_GUEST" description="MOD_SI_TOOLBAR_ES_GUEST_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_searchguests" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ES_SEARCHGUEST" description="MOD_SI_TOOLBAR_ES_SEARCHGUEST_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_user_dropdown" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_USER_DROPDOWN" description="MOD_SI_TOOLBAR_USER_DROPDOWN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_layout_login" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_DISPLAY_LOGIN" description="MOD_SI_TOOLBAR_DISPLAY_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_event" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_EVENT" description="MOD_SI_TOOLBAR_COMPOSE_EVENT_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_group" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_GROUP" description="MOD_SI_TOOLBAR_COMPOSE_GROUP_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_page" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_PAGE" description="MOD_SI_TOOLBAR_COMPOSE_PAGE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_video" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_VIDEO" description="MOD_SI_TOOLBAR_COMPOSE_VIDEO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_audio" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_AUDIO" description="MOD_SI_TOOLBAR_COMPOSE_AUDIO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_poll" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_POLL" description="MOD_SI_TOOLBAR_COMPOSE_POLL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="es_compose_marketplace" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_MARKETPLACE" description="MOD_SI_TOOLBAR_COMPOSE_MARKETPLACE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="es_compose_album" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_COMPOSE_ALBUM" description="MOD_SI_TOOLBAR_COMPOSE_ALBUM_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="es_dropdown_discover_people" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_DROPDOWN_DISCOVER_PEOPLE" description="MOD_SI_TOOLBAR_DROPDOWN_DISCOVER_PEOPLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="easyblog">
+				<field name="eb_layout_home" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_HOME" description="MOD_SI_TOOLBAR_EB_DISPLAY_HOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_categories" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_CATEGORIES" description="MOD_SI_TOOLBAR_EB_DISPLAY_CATEGORIES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_tags" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_TAGS" description="MOD_SI_TOOLBAR_EB_DISPLAY_TAGS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_bloggers" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_AUTHORS" description="MOD_SI_TOOLBAR_EB_DISPLAY_AUTHORS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_teamblogs" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_TEAMS" description="MOD_SI_TOOLBAR_EB_DISPLAY_TEAMS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_archives" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_ARCHIVES" description="MOD_SI_TOOLBAR_EB_DISPLAY_ARCHIVES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_calendar" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_CALENDAR" description="MOD_SI_TOOLBAR_EB_DISPLAY_CALENDAR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_search" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_SEARCH" description="MOD_SI_TOOLBAR_EB_DISPLAY_SEARCH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_compose" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_COMPOSE" description="MOD_SI_TOOLBAR_EB_DISPLAY_COMPOSE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_quickpost" type="radio" class="btn-group" filter="integer" default="0" label="MOD_SI_TOOLBAR_EB_DISPLAY_QUICK_POST" description="MOD_SI_TOOLBAR_EB_DISPLAY_QUICK_POST_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_subscribe" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_EB_DISPLAY_SUBSCRIBE" description="MOD_SI_TOOLBAR_EB_DISPLAY_SUBSCRIBE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_user_dropdown" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_USER_DROPDOWN" description="MOD_SI_TOOLBAR_USER_DROPDOWN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="eb_layout_login" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_DISPLAY_LOGIN" description="MOD_SI_TOOLBAR_DISPLAY_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="easydiscuss">
+				<field name="ed_layout_home" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_HOME" description="MOD_SI_TOOLBAR_ED_DISPLAY_HOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_home_menu" type="list" default="index" label="MOD_SI_TOOLBAR_ED_HOME_MENU" description="MOD_SI_TOOLBAR_ED_HOME_MENU_DESC">
+					<option value="index">Default Frontpage</option>
+					<option value="forums">Forums</option>
+				</field>
+
+				<field name="ed_layout_categories" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_CATEGORIES" description="MOD_SI_TOOLBAR_ED_DISPLAY_CATEGORIES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_tags" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_TAGS" description="MOD_SI_TOOLBAR_ED_DISPLAY_TAGS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_users" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_USERS" description="MOD_SI_TOOLBAR_ED_DISPLAY_USERS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_badges" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_BADGES" description="MOD_SI_TOOLBAR_ED_DISPLAY_BADGES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_conversation" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_CONVERSATIONS" description="MOD_SI_TOOLBAR_ED_DISPLAY_CONVERSATIONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_notification" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_NOTIFICATIONS" description="MOD_SI_TOOLBAR_ED_DISPLAY_NOTIFICATIONS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+ 
+				<field name="ed_layout_search" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_SEARCH" description="MOD_SI_TOOLBAR_ED_DISPLAY_SEARCH_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_compose" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_NEW_POST" description="MOD_SI_TOOLBAR_ED_DISPLAY_NEW_POST_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_subscribe" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_ED_DISPLAY_SUBSCRIBE" description="MOD_SI_TOOLBAR_ED_DISPLAY_SUBSCRIBE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_user_dropdown" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_USER_DROPDOWN" description="MOD_SI_TOOLBAR_USER_DROPDOWN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="ed_layout_login" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_DISPLAY_LOGIN" description="MOD_SI_TOOLBAR_DISPLAY_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="payplans">
+				<field name="pp_layout_home" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_PP_DISPLAY_HOME" description="MOD_SI_TOOLBAR_PP_DISPLAY_HOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="komento">
+				<field name="kt_layout_home" type="radio" class="btn-group" filter="integer" default="1" label="MOD_SI_TOOLBAR_KT_DISPLAY_HOME" description="MOD_SI_TOOLBAR_KT_DISPLAY_HOME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" class="form-select" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

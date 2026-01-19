@@ -1,0 +1,105 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "block_j17",	
+				"type": "dependency",
+				"title": "COM_PP_CONTENTACL_SELECT_TYPE",
+				"tooltip": "COM_PP_CONTENTACL_SELECT_TYPE_DESC",
+				"default": "joomla_article",
+				"options": [
+					{
+						"title": "COM_PP_JOOMLA_ARTICLE",
+						"value": "joomla_article",
+						"for": "data-joomla-article"
+					},
+					{
+						"title": "COM_PP_JOOMLA_CATEGORY",
+						"value": "joomla_category",
+						"for": "data-joomla-category"
+					},
+					{
+						"title": "COM_PP_EASYBLOG_ARTICLE",
+						"value": "easyblog_article",
+						"for": "data-easyblog-article"
+					},
+					{
+						"title": "COM_PP_EASYBLOG_CATEGORY",
+						"value": "easyblog_category",
+						"for": "data-easyblog-category"
+					}					
+
+				]
+			},
+			{
+				"name": "joomla_article",
+				"type": "articlelist",
+				"title": "COM_PP_CONTENTACL_SELECT_JOOMLA_ARTICLE",
+				"tooltip": "COM_PP_CONTENTACL_SELECT_JOOMLA_ARTICLE_DESC",
+				"attributes": "data-joomla-article",
+				"default": ""
+			},			
+			{
+				"name": "joomla_category",
+				"type": "joomlaCategory",
+				"title": "COM_PP_CONTENTACL_SELECT_JOOMLA_CATEGORY",
+				"tooltip": "COM_PP_CONTENTACL_SELECT_CATEGORY_DESC",
+				"attributes": "data-joomla-category",
+				"default": ""
+			},
+			{
+				"name": "easyblog_article",
+				"type": "easyblogArticles",
+				"title": "COM_PP_CONTENTACL_SELECT_EASYBLOG_ARTICLE",
+				"tooltip": "COM_PP_CONTENTACL_SELECT_ARTICLES_DESC",
+				"attributes": "data-easyblog-article",
+				"default": ""
+			},			
+			{
+				"name": "easyblog_category",
+				"type": "easyblogCategories",
+				"title": "COM_PP_CONTENTACL_SELECT_EASYBLOG_CATEGORY",
+				"tooltip": "COM_PP_CONTENTACL_SELECT_CATEGORY_DESC",
+				"attributes": "data-easyblog-category",
+				"default": ""
+			},
+			{
+				"name": "restriction_layout",
+				"type": "lists",
+				"title": "Restriction Message",
+				"tooltip": "Set the restriction message that should appear if the user does not have access to view the full article",
+				"default" : "default",
+				"options": [
+					{
+						"title": "Default Template",
+						"value": "default"
+					},
+					{
+						"title": "A Link to Plan Page",
+						"value": "plan_links"
+					}
+				]
+			},
+			{
+				"name": "display_overlay",
+				"type": "toggler",
+				"title": "COM_PP_CONTENTACL_DISPLAY_OVERLAY",
+				"default": true
+			},
+			{
+				"name": "overlay_color",
+				"type": "colorpicker",
+				"title": "COM_PP_CONTENTACL_DISPLAY_OVERLAY_COLOR",
+				"default": "#FFFFFF"
+			},
+			{
+				"name": "login_url",
+				"type": "text",
+				"title": "COM_PP_CONTENTACL_LOGIN_URL",
+				"tooltip": "COM_PP_CONTENTACL_LOGIN_URL_DESC",
+				"default":""
+			}
+		]
+	}
+]

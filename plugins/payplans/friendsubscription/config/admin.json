@@ -1,0 +1,22 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "notify_user",
+				"type": "toggler",
+				"title": "Notify User and Friend",
+				"tooltip": "Notify User and his friend vai email on subscription owner updation",
+				"default": true
+			},
+			{
+				"name": "userListOption",
+				"type": "custom",
+				"path": "plugins:/payplans/friendsubscription/elements/userlist",
+				"title": "Applicable User's",
+				"tooltip": "This option determines that user can purchase subscription for everyone, friend or followers.",
+				"default": "everyone"
+			}
+		]
+	}
+]

@@ -1,0 +1,21 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "category",
+				"type": "k2Categories",
+				"title": "COM_PAYPLANS_APP_K2CATEGORY_CATEGORY_LABEL",
+				"tooltip": "COM_PAYPLANS_APP_K2CATEGORY_CATEGORY_DESC",
+				"default": ""
+			},
+			{
+				"name": "allowed_submission",
+				"type": "text",
+				"title": "COM_PAYPLANS_APP_K2CATEGORY_ALLOWED_SUBMISSION",
+				"tooltip": "COM_PAYPLANS_APP_K2CATEGORY_ALLOWED_SUBMISSION_DESC",
+				"default": "0"
+			}
+		]
+	}
+]

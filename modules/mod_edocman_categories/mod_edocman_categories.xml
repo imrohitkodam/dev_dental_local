@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.1" method="upgrade">
+	<name>Edocman Categories</name>
+	<creationDate>Aug 2011</creationDate>
+	<author>Tuan Pham Ngoc</author>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<copyright>Copyright (C) 2010 Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.7.1</version>
+	<description>This module is used to display document categories in Edocman Extension</description>
+	<files>
+		<filename module="mod_edocman_categories">index.html</filename>
+		<filename module="mod_edocman_categories">mod_edocman_categories.php</filename>		
+		<filename module="mod_edocman_categories">helper.php</filename>		
+		<filename module="mod_edocman_categories">tmpl/default.php</filename>
+		<filename module="mod_edocman_categories">tmpl/index.html</filename>		
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_edocman_categories.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="administrator/components/com_edocman/model/fields">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text"
+					label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX">
+				</field>
+                <field name="edocmancategory" type="edocmancategory" default="" label="Category" description="Category" />
+				<field name="number_categories" type="text"
+					label="Number Categories" class="input-mini" description="Number of Categories to be showed on the module" default="0">
+				</field>
+				<field
+					name="show_sub"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Show sub-categories"
+					description="Do you want to show Sub Categories"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="item_id" class="input-mini" type="text"
+					label="Itemid" description="ID of the menu item you want to linked with links in this module" default="">
+				</field>
+			</fieldset>
+		</fields>		
+	</config>
+</extension>

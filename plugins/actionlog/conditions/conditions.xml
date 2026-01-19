@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="4" type="plugin" group="actionlog" method="upgrade">
+  <name>PLG_ACTIONLOG_CONDITIONS</name>
+  <description>PLG_ACTIONLOG_CONDITIONS_DESC</description>
+  <version>25.11.2254</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <files>
+    <file plugin="conditions">conditions.php</file>
+    <folder>language</folder>
+  </files>
+  <config>
+    <fields name="params" addfieldprefix="RegularLabs\Library\Form\Field">
+      <fieldset name="basic">
+        <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs"/>
+        <field name="@load_language" type="LoadLanguage" extension="plg_system_conditions"/>
+        <field name="@jcompatibility" type="JCompatibility" extension="REGULAR_LABS_LIBRARY"/>
+        <field name="@license" type="License" extension="CONDITIONS"/>
+        <field name="@version" type="Version" extension="CONDITIONS"/>
+        <field name="@dependency" type="Dependency" label="CON_THE_COMPONENT" file="/administrator/components/com_conditions/conditions.xml"/>
+        <field name="@header" type="Header" label="CONDITIONS" description="CONDITIONS_DESC"/>
+        <field name="@note__settings" type="Note" class="rl-alert alert alert-info rl-alert-light" text="CON_SETTINGS,&lt;a href=&quot;index.php?option=com_conditions&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;"/>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

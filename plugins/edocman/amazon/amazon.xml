@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.0" type="plugin" group="edocman" method="upgrade">
+    <name>EDocman - Amazon S3</name>
+    <author>Dang Thuc Dam</author>
+    <creationDate>July 2017</creationDate>
+    <copyright>Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+    <version>1.0</version>
+    <description>This plugin allows users to upload and store files on Amazon Storage</description>
+    <files>
+        <filename plugin="amazon">amazon.php</filename>
+		<folder>vendor</folder>
+		<folder>fields</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/plugins/edocman/amazon/fields">
+				<field	name="gettoken"
+                        type="gettoken"
+						label=""
+						/>
+				<field	name="accountId"
+                        type="text"
+                        label="Account ID"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        required="true" default=""/>
+				<field	name="access_key"
+                        type="text"
+                        label="Access key"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        required="true" default=""/>
+				<field	name="secret_key"
+                        type="text"
+                        label="Secret key"
+                        description=""
+                        class="input-xxlarge"
+                        size="50"
+                        required="true"/>
+				<field	name="bucketname"
+                        type="text"
+                        label="Bucket Name"
+                        description="Please enter the Root folder, it will be the subfolder of Bucket Name"
+                        class="input-large" 
+						required="true" 
+                        size="50"/>
+				<field	name="bucketregion"
+                        type="text"
+                        label="Bucket Region"
+                        description="Please enter your Bucket Region"
+                        class="input-large" 
+						required="true" 
+						default="us-west-1"
+                        size="50"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

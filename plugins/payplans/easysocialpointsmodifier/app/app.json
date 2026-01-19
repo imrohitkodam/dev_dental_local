@@ -1,0 +1,6 @@
+{
+	"name": "EasySocial User Points Modifier",
+	"element": "easysocialpointsmodifier",
+	"description": "Manage the user points assignment by giving extra X times points in EasySocial according to user subscription.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/easysocial-user-points-modifier"
+}

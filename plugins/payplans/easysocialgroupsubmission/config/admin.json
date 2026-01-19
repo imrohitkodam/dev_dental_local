@@ -1,0 +1,55 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+
+			{
+				"name": "restrict_type",
+				"type": "dependency",
+				"title": "Apply Restrictions On",
+				"tooltip": "This determines restrictions rule to be applied on selected category or all categories of the group",
+				"default": "any_category",
+				"options": [
+					{
+						"title": "All Group Categories",
+						"value": "any_category"
+					},
+					{
+						"title": "Specific Group Categories",
+						"value": "restrict_specific",
+						"for": "data-restrict-specific"
+					}
+				]
+			},
+			{
+				"name": "restrict_in_category",
+				"type": "easysocialGroupCategories",
+				"attributes": "data-restrict-specific",
+				"title": "Select Group Categories",
+				"tooltip": "Set the restrictions based on the selected group's categories",
+				"default": ""
+			},
+			{
+				"name": "total_submisssion",
+				"type": "text",
+				"title": "Total Groups",
+				"tooltip": "Set the total number of groups a user is allowed to create in EasySocial. <br><br> When restriction applied on 'specific group categories', the number of groups allowed is applied to each categories.",
+				"default": ""
+			},
+			{
+				"name": "statusPublished",
+				"type": "subscriptionstatus",
+				"title": "Publish Groups When Subscription:",
+				"tooltip": "Determine when should system publish the user's created groups that associated with the above selected group's categories based on user's subscription status.",
+				"default": ""
+			},
+			{
+				"name": "statusUnpublished",
+				"type": "subscriptionstatus",
+				"title": "UnPublish Groups When Subscription:",
+				"tooltip": "Determine when should system unpublish the user's created groups that associated with the above selected group's categories based on user's subscription status.",
+				"default": ""
+			}
+		]
+	}
+]

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0"  type="plugin" group="system" method="upgrade">
+<name>TJLMS - TJfields custom plugin</name>
+<author>TechJoomla</author>
+<authorEmail>extensions@techjoomla.com</authorEmail>
+<authorUrl>www.techjoomla.com</authorUrl>
+<copyright>Copyright(C)2012-13 TechJoomla</copyright>
+<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+<creationDate>8th Jan 2016</creationDate>
+<version>3.1.1</version>
+
+<description>Plugin for replcing the shika course custom fields values</description>
+
+<files>
+	<filename plugin="plg_Tjlms_Custom_Fields">plg_Tjlms_Custom_Fields.php</filename>
+</files>
+
+<languages folder="language">
+	<language tag="en-GB">en-GB.plg_tjlms_custom_fields.ini</language>
+	<language tag="en-GB">en-GB.plg_tjlms_custom_fields.sys.ini</language>
+</languages>
+
+<config name="params">
+	<!--
+	<fields name="params">
+		<fieldset name="basic" label="Basic">
+			<field name="use_menu" type="radio"  default="0" label="Use menu to show custom fields">
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</field>
+			<field name="menulist" type="sql"  multiple="multiple"   default="" label="Select Menus" query="SELECT id as value, title FROM #__menu WHERE (published = 1 AND level >= 1)" value_field="title"/>
+		</fieldset>
+	</fields>
+	->>
+</config>
+</extension>

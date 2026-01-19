@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.10.0" type="plugin" group="edocman" method="upgrade">
+    <name>EDocman Limit Downloads</name>
+    <author>Tuan Pham Ngoc</author>
+    <creationDate>November 2018</creationDate>
+    <copyright>Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+    <version>1.10.0</version>
+    <description>Edocman Download limits is a plugin capable of limiting the number of downloads of published documents for logged in users. This plugin needs Edocman Configure option: Download Log to be enabled.</description>
+    <files>
+        <filename plugin="limitdownloads">limitdownloads.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_edocman/model/fields">
+                <field name="download_limit_per_user"
+                       type="text"
+                       class="input-small"
+                       default="20"
+                       description="Configure the maximum number of downloads to count the downloads per user"
+                       label="Document download limit per user" />
+                <field name="limit_per_document"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="The download limitation can be applied on a per document basis or for all documents"
+                       label="Limit Per Document"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+				<field name="user_groups" type="usergroup"
+                       label="User groups limitation"
+                       description="The download limitation can be applied to specific user groups."
+                       multiple="true"/>
+				<field name="limit_by_ip_address"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="Guest users can be limited based on their IP address"
+                       label="Limit by IP address"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

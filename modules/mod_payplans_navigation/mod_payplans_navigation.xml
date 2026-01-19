@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>Payplans - Navigation</name>
+	<version>5.0.6</version>
+	<creationDate>13th October 2022</creationDate>
+	<author>StackIdeas</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright Stack Ideas Sdn Bhd. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>MOD_PAYPLANS_NAVIGATION_DESC</description>
+	<files>
+		<folder>tmpl</folder>
+		<filename module="mod_payplans_navigation">mod_payplans_navigation.php</filename>
+		<filename>mod_payplans_navigation.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_payplans_navigation.ini</language>
+		<language tag="en-GB">en-GB.mod_payplans_navigation.sys.ini</language>
+	</languages>
+	<config>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="StackIdeas Modules and Plugins">https://stackideas.com/joomla4compat.xml</server>
+	</updateservers>
+</extension>

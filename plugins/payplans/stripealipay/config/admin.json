@@ -1,0 +1,36 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+
+			{
+				"name": "public_key",
+				"type": "text",
+				"title": "Public API Key",
+				"tooltip": "You will need to enter the Public API Key that is provided by Stripe",
+				"default": ""
+			},
+			{
+				"name": "secret_key",
+				"type": "text",
+				"title": "Secret API Key",
+				"tooltip": "You will need to enter the Secret API Key that is provided by Stripe",
+				"default": ""
+			},
+			{
+				"name": "webhook_secret",
+				"type": "text",
+				"title": "Webhook Secret Key",
+				"tooltip": "You will need to enter the Webhook Secret Key that is provided by Stripe",
+				"default": ""
+			},
+			{
+				"name": "sandbox",
+				"type": "toggler",
+				"title": "COM_PP_SANDBOX",
+				"tooltip": "COM_PP_SANDBOX_DESC",
+				"default": false
+			}
+		]
+	}
+]

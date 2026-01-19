@@ -1,0 +1,42 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "restrictionOn",
+				"type": "dependency",
+				"title": "COM_PAYPLANS_APP_K2ITEM_RESTRICTION_LABEL",
+				"tooltip": "COM_PAYPLANS_APP_K2ITEM_RESTRICTION_DESC",
+				"default": "restricted_item",
+				"options": [
+					{
+						"title": "Items",
+						"value": "restricted_item",
+						"for": "data-restricted_item"
+					},
+					{
+						"title": "Categories",
+						"value": "restricted_category",
+						"for": "data-restricted_category"
+					}
+				]
+			},
+			{
+				"name": "k2item",
+				"type": "k2items",
+				"title": "COM_PAYPLANS_APP_K2ITEM_ITEM_LABEL",
+				"tooltip": "COM_PAYPLANS_APP_K2ITEM_ITEM_DESC",
+				"attributes": "data-restricted_item",
+				"default": ""
+			},
+			{
+				"name": "restricted_category",
+				"type": "k2Categories",
+				"title": "COM_PAYPLANS_APP_K2ITEM_CATEGORY_LABEL",
+				"tooltip": "COM_PAYPLANS_APP_K2ITEM_CATEGORY_DESC",
+				"attributes": "data-restricted_category",
+				"default": ""
+			}
+		]
+	}
+]

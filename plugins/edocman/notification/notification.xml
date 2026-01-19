@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.9.12" type="plugin" group="edocman" method="upgrade">
+    <name>EDocman Notification Plugin</name>
+    <author>Tuan Pham Ngoc</author>
+    <creationDate>Apirl 2015</creationDate>
+    <copyright>Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+    <version>1.9.12</version>
+    <description>This plugin will notify users from selected Joomla Group(s) when someone add new document or update existing
+        documents from certain categories.
+    </description>
+    <files>
+        <filename plugin="notification">notification.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_edocman/model/fields">
+                <field name="new_document_notification"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="Set to Yes if you want to send notification when a new document is uploaded"
+                       label="New Document Notification"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="update_document_notification"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="Set to Yes if you want to send notification when a document is updated"
+                       label="Update Document Notification"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+				<field name="disable_sending"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="Do you want to disable sending notification emails with documents that already assigned to users"
+                       label="Disable sending with assigned document"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="use_groups_from_parent_category"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       description="If set to Yes and the category of document doesn't have a group selected, the system will try to find the groups from it's parent categories"
+                       label="Use Groups from parent category"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="notify_groups" type="usergroup"
+                       label="Default groups to notify"
+                       description="Select the default user groups you want to receive notification. If the document belong to a category which doesn't have any groups selected, the groups you select here will be used."
+                       multiple="true"/>
+
+                <field
+                        name="new_document_email_subject"
+                        type="text"
+                        label="New Document Email Subject"
+                        description=""
+                        class="input-xlarge"
+                        size="70"
+                        required="true"/>
+                <field
+                        name="new_document_email_body"
+                        type="editor"
+                        label="New Document Email Body"
+                        description="Available tags: [DOCUMENT_TITLE], [DOCUMENT_LINK], [CATEGORY_TITLE], [CREATED_USER_USERNAME], [CREATED_USER_NAME], [CREATED_USER_EMAIL], [USERNAME], [NAME], [UNSUBSCRIBE_LINK]"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        width="100%"
+                        height="150"
+                        buttons="false"
+                        />
+
+
+                <field
+                        name="document_update_email_subject"
+                        type="text"
+                        label="Document Update Email Subject"
+                        description=""
+                        class="input-xlarge"
+                        size="70"
+                        required="true"/>
+
+                <field
+                        name="document_update_email_body"
+                        type="editor"
+                        label="Document Update Email Body"
+                        description=""
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        width="100%"
+                        height="150"
+                        buttons="false"
+                        />
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>

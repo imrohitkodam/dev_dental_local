@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.11.4" method="upgrade">
+    <name>Edocman Documents</name>
+    <creationDate>Aug 2011</creationDate>
+    <author>Tuan Pham Ngoc</author>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>http://www.joomdonation.com</authorUrl>
+    <copyright>Copyright (C) 2019 Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.11.4</version>
+    <description>This module is used to display Edocman documents</description>
+    <files>
+        <filename module="mod_edocman_documents">index.html</filename>
+        <filename module="mod_edocman_documents">mod_edocman_documents.php</filename>
+        <filename module="mod_edocman_documents">tmpl/lastest.php</filename>
+        <filename module="mod_edocman_documents">tmpl/top_hits.php</filename>
+        <filename module="mod_edocman_documents">tmpl/top_downloads.php</filename>
+		<filename module="mod_edocman_documents">tmpl/alphabetical.php</filename>
+        <filename module="mod_edocman_documents">tmpl/ordering.php</filename>
+        <filename module="mod_edocman_documents">tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="moduleclass_sfx" type="text"
+                       label="Module Class Suffix" description="Please enter Module Class Suffix">
+                </field>
+                <field name="module_type" type="list" defalut="1"
+                       label="Type" description="">
+                    <option value="1">Lastest Documents</option>
+                    <option value="2">Top Hits Documents</option>
+                    <option value="3">Most Downloaded Documents</option>
+					<option value="4">Alphabetic Documents</option>
+                    <option value="5">Ordering</option>
+                </field>
+                <field name="category_ids" type="text" size="60"
+                       label="Categories IDs"
+                       description="Enter IDs of categories which you want to display documents from. Comma seperated">
+                </field>
+                <field name="include_children"
+                       type="radio"
+					   class="btn-group"
+                       default="0"
+                       label="Include Documents from Children Categories">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+                <field name="number_documents" type="text"
+                       label="Number Documents" description="Number of documents to be showed on the module"
+                       default="0">
+                </field>
+                <field name="link_type"
+                       type="list"
+                       default="0"
+                       label="Link Type">
+                    <option value="0">Link to Document Detail Page</option>
+                    <option value="1">Link to Download Document</option>
+                    <option value="2">Link to View Document</option>
+                </field>
+                <field name="item_id" type="text"
+                       label="Itemid" description="ID of the menu item you want to linked with links in this module"
+                       default="">
+                </field>
+				<field name="showdownload"
+                       type="radio"
+					   class="btn-group"
+                       default="1"
+                       label="Show download times">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				<field name="showfilesize"
+                       type="radio"
+					   class="btn-group"
+                       default="1"
+                       label="Show file size">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+				<field name="newpage"
+                       type="radio"
+					   class="btn-group"
+                       default="0"
+                       label="Open in New page">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

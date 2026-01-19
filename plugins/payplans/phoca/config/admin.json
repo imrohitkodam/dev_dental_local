@@ -1,0 +1,49 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "accessToCatOnActive",
+				"type": "phocaCategories",
+				"title": "Access to Categories (Active Status)",
+				"tooltip": "Determines the categories users can access when they have an active subscription",
+				"default": ""
+			},
+			{
+				"name": "uploadToCatOnActive",
+				"type": "phocaCategories",
+				"title": "Access to Uploads (Active Status)",
+				"tooltip": "Determines the categories users can upload to when they have an active subscription",
+				"default": ""
+			},
+			{
+				"name": "accessToCatOnHold",
+				"type": "phocaCategories",
+				"title": "Access to Categories (On Hold Status)",
+				"tooltip": "Determines the categories users can access when they have an on hold subscription status",
+				"default": ""
+			},	
+			{
+				"name": "uploadToCatOnHold",
+				"type": "phocaCategories",
+				"title": "Access to Uploads (On Hold Status)",
+				"tooltip": "Determines the categories users can upload to when they have an on hold status",
+				"default": ""
+			},
+			{
+				"name": "accessToCatOnExpire",
+				"type": "phocaCategories",
+				"title": "Access to Categories (Expire Status)",
+				"tooltip": "Determines the categories users can access when they have an expired subscription",
+				"default": ""
+			},
+			{
+				"name": "uploadToCatOnExpire",
+				"type": "phocaCategories",
+				"title": "Access to Uploads (Expire Status)",
+				"tooltip": "Determines the categories users can upload to when they have an expired subscription",
+				"default": ""
+			}
+		]
+	}
+]

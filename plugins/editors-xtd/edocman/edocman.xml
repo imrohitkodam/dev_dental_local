@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="editors-xtd" method="upgrade">
+	<name>EDocman Document Link</name>
+	<author>Ossolution Team</author>
+	<creationDate>March 2012</creationDate>
+	<copyright>Copyright (C) 2010 - 2012 Ossolution Team. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>1.6.0</version>
+	<description>Display a button to make it possible to insert a Edocman document link into an article.</description>
+	<files>
+		<filename plugin="edocman">edocman.php</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+		<filename>index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="link_type"
+					type="list"
+					default="0"					
+					label="Link Type">
+					<option value="0">Add Link to Document Detail</option>
+					<option value="1">Add Link to Download Document</option>
+					<option value="2">Add Link to View Document</option>
+				</field>
+                <field name="default_insert_option"
+                       type="list"
+                       default="0"
+                       label="Link Type">
+                    <option value="0">Choose from existing Documents</option>
+                    <option value="1">Upload New Documents</option>
+                </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

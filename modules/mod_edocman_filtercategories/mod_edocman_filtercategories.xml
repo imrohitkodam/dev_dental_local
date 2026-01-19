@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0.0" method="upgrade">
+	<name>EDocman Filter Categories</name>
+	<author>Ossolution Team</author>
+	<creationDate>Aug 2017</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>Commercial</license>
+	<authorEmail>contact@joomservices.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.0.0</version>
+	<description>This module allows users to filter Edocman Categories through multi-level single dropdown</description>
+	<files>
+		<filename module="mod_edocman_filtercategories">mod_edocman_filtercategories.php</filename>
+		<filename module="mod_edocman_filtercategories">helper.php</filename>
+		<filename module="mod_edocman_filtercategories">index.html</filename>
+		<filename module="mod_edocman_filtercategories">tmpl/default.php</filename>
+		<filename module="mod_edocman_filtercategories">elements/maxlevel.php</filename>
+		<filename module="mod_edocman_filtercategories">asset/style.css</filename>
+	</files>
+	<folder>tmpl</folder>
+	<folder>asset</folder>
+	<folder>elements</folder>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_edocman_filtercategories/elements">
+				<field name="moduleclass_sfx" class="input-medium" type="text" label="Module Class Suffix" description="Please enter Module Class Suffix"></field>
+				<field name="maxlevel" type="maxlevel" size="3" default="" label="Max Lelvel" description="Select Max level of Categories that you want to show. Leave it empty if you want to show all Category levels" />
+			</fieldset>
+		</fields>		
+	</config>	
+</extension>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <name>PayPlans-Tjlms</name>
+    <author>Techjoomla</author>
+    <authorEmail>contact@techjoomla.com</authorEmail>
+    <authorUrl>www.techjoomla.com</authorUrl>
+    <icon>tjlms.png</icon>
+    <description>This app is used to configure one or more Shika plans against Payplans Subscription via App.
+    </description>
+    <tags>Integration</tags>
+    <help></help>
+
+	<fields name="app_params">
+		<fieldset name="app_params">
+			<field name="tjlms_plans"
+				type="tjplans"
+				label="Apply on Course plans"
+				default=""
+				description="Select SHIKA/LMS course plans"
+				multiple="true"
+			/>
+		</fieldset>
+	</fields>
+<alias>pp-tjlms</alias>
+<documentation></documentation>
+<version>1.0.0</version>
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.1" type="plugin" group="authentication" method="upgrade">
+	<name>Authentication - PayPlans</name>
+	<version>4.1.2</version>
+	<creationDate>19th February 2020</creationDate>
+	<author>StackIdeas</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright 2009 - 2020 Stack Ideas Sdn Bhd. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>
+		<![CDATA[An authentication plugin that allows oauth users to login to the site.]]>
+	</description>
+	<files>
+		<filename plugin="payplans">payplans.php</filename>
+		<filename>payplans.xml</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_authentication_payplans.ini</language>
+		<language tag="en-GB">en-GB.plg_authentication_payplans.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="noteImportant" type="note" class="alert" label="Important" description="PLG_SYSTEM_AUTHENTICATIONPAYPLANS_IMPORTANT_LABEL" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="StackIdeas Modules and Plugins">https://stackideas.com/joomla4compat.xml</server>
+	</updateservers>
+</extension>

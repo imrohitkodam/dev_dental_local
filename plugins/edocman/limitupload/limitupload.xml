@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.10.0" type="plugin" group="edocman" method="upgrade">
+    <name>EDocman Limit Upload</name>
+    <author>Tuan Pham Ngoc</author>
+    <creationDate>Jan 2019</creationDate>
+    <copyright>Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+    <version>1.11.3</version>
+    <description>Edocman Limit Upload is a plugin capable of limiting the number or total size of uploaded documents.</description>
+    <files>
+        <filename plugin="limitupload">limitupload.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_edocman/model/fields">
+                <field name="max_files"
+                       type="text"
+                       class="input-small"
+                       default="0"
+                       description="Maximum documents that user can upload. Leave 0 or empty for unlimited upload"
+                       label="Limited number files" />
+				<field name="max_size"
+                       type="text"
+                       class="input-small"
+                       default="0"
+                       description="Maximum total size (Megabyte) of documents that user can upload. Leave 0 or empty for unlimited upload"
+                       label="Limited total size (MB)" />
+				<field name="user_groups" type="usergroup"
+                       label="User groups limitation"
+                       description="The upload limitation can be applied to specific user groups."
+                       multiple="true"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

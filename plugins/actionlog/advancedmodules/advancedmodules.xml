@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="4" type="plugin" group="actionlog" method="upgrade">
+  <name>PLG_ACTIONLOG_ADVANCEDMODULES</name>
+  <description>PLG_ACTIONLOG_ADVANCEDMODULES_DESC</description>
+  <version>10.4.8</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <files>
+    <file plugin="advancedmodules">advancedmodules.php</file>
+    <folder>language</folder>
+  </files>
+  <config>
+    <fields name="params" addfieldprefix="RegularLabs\Library\Form\Field">
+      <fieldset name="basic">
+        <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs"/>
+        <field name="@load_language" type="LoadLanguage" extension="plg_actionlog_advancedmodules"/>
+        <field name="@jcompatibility" type="JCompatibility" extension="REGULAR_LABS_LIBRARY"/>
+        <field name="@license" type="License" extension="ADVANCEDMODULEMANAGER"/>
+        <field name="@version" type="Version" extension="ADVANCEDMODULEMANAGER"/>
+        <field name="@dependency" type="Dependency" label="AMM_THE_COMPONENT" file="/administrator/components/com_advancedmodules/advancedmodules.xml"/>
+        <field name="@header" type="Header" label="ADVANCEDMODULEMANAGER" description="ADVANCEDMODULEMANAGER_DESC" url="https://regularlabs.com/advancedmodulemanager"/>
+        <field name="@note__settings" type="Note" class="rl-alert alert alert-info rl-alert-light" text="AMM_SETTINGS,&lt;a href=&quot;index.php?option=com_advancedmodules&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;"/>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

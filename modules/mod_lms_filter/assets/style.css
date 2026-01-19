@@ -1,0 +1,26 @@
+.tjlms-filters #filter-bar select,
+.tjlms-filters #filter-bar input,
+.tjlms-filters #filter-bar button{
+	height: 35px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	line-height: 24px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.tjlms-filters .input-append  input[type="text"],
+.tjlms-filters .input-append button{
+	display: inline-block;
+}
+.tjlms-filters .input-append button{
+	padding-right: 12px;
+	padding-left: 12px;
+}
+
+.tjlms_filter_margin{
+	vertical-align:top;
+	display: inline-block;
+	margin: 0 0 5px 5px;
+}

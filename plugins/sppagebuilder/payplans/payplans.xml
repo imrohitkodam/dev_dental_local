@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" type="plugin" group="sppagebuilder" method="upgrade">
+	<name>PayPlans Addon Plugin - SP Page Builder</name>
+	<version>4.2.0</version>
+	<author>Stackideas</author>
+	<creationDate>June 2019</creationDate>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<author>StackIdeas</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright 2009 - 2018 Stack Ideas Sdn Bhd. All Rights Reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>PayPlans plan addon plugin for SP Page Builder</description>
+	<files>
+		<filename plugin="payplans">payplans.php</filename>
+		<folder>addons</folder>
+	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="StackIdeas Modules and Plugins">https://stackideas.com/joomla4compat.xml</server>
+	</updateservers>
+</extension>

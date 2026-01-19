@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="2.5" type="plugin" group="payplans" method="upgrade">
+    <name>PayPlans-Tjlms</name>
+    <version>3.3.0</version>
+    <creationDate>Oct 2015</creationDate>
+    <author>Techjoomla</author>
+    <authorEmail>contact@techjoomla.com</authorEmail>
+    <authorUrl>www.techjoomla.com</authorUrl>
+    <copyright>(C)techjoomla.com</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <description>PayPlans : Ability to configure one or more Shika plans against Payplans Subscription via App</description>
+	<files>
+		<filename plugin="tjlms">tjlms.php</filename>
+		<folder>tjlms</folder>
+	</files>
+<alias>pp-tjlms</alias>
+<version_number>1.0.0</version_number>
+<version_name>PayPlans-Tjlms 1.0.0</version_name>
+</extension>

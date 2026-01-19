@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="k2" method="upgrade">
+	<name>K2 - EasySocial</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>9th July 2021</creationDate>
+	<copyright>Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>2.0.4</version>
+	<description>This plugin adds integrations with the famous K2 CCK extension for Joomla!.</description>
+	<files>
+		<folder>assets</folder>
+		<folder>rules</folder>
+		<folder>tmpl</folder>
+		<filename plugin="easysocial">easysocial.php</filename>
+		<filename>easysocial.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_k2_easysocial.ini</language>
+		<language tag="en-GB">en-GB.plg_k2_easysocial.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="modify_author_name" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_MODIFY_AUTHOR_NAME" description="PLG_K2_EASYSOCIAL_MODIFY_AUTHOR_NAME_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="modify_author_avatar" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_MODIFY_AUTHOR_AVATAR" description="PLG_K2_EASYSOCIAL_MODIFY_AUTHOR_AVATAR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="modify_author_link" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_MODIFY_AUTHOR_LINK" description="PLG_K2_EASYSOCIAL_MODIFY_AUTHOR_LINK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="display_pm" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_DISPLAY_CONVERSATION" description="PLG_K2_EASYSOCIAL_DISPLAY_CONVERSATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="display_points" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_DISPLAY_POINTS" description="PLG_K2_EASYSOCIAL_DISPLAY_POINTS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="display_friend" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_DISPLAY_ADD_FRIEND" description="PLG_K2_EASYSOCIAL_DISPLAY_ADD_FRIEND_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="display_follow" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_DISPLAY_FOLLOW_AUTHOR" description="PLG_K2_EASYSOCIAL_DISPLAY_FOLLOW_AUTHOR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field name="display_badges" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_DISPLAY_BADGES" description="PLG_K2_EASYSOCIAL_DISPLAY_BADGES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="achievements" label="PLG_K2_EASYSOCIAL_TAB_ACHIEVEMENTS">
+				<field name="badges_create" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_BADGES_CREATE" description="PLG_K2_EASYSOCIAL_BADGES_CREATE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="badges_read" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_BADGES_READ" description="PLG_K2_EASYSOCIAL_BADGES_READ_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="badges_update" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_BADGES_UPDATE" description="PLG_K2_EASYSOCIAL_BADGES_UPDATE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="points" label="PLG_K2_EASYSOCIAL_TAB_POINTS">
+				<field name="points_create" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_POINTS_CREATE" description="PLG_K2_EASYSOCIAL_POINTS_CREATE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="points_read" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_POINTS_READ" description="PLG_K2_EASYSOCIAL_POINTS_READ_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="points_read_author" type="radio" class="btn-group" default="1" label="PLG_K2_EASYSOCIAL_POINTS_READ_USER" description="PLG_K2_EASYSOCIAL_POINTS_READ_USER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" name="K2 Article Update Site">https://stackideas.com/apps/updater/manifest?id=57</server>
+	</updateservers>
+</extension>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.11.6" type="plugin" group="system" method="upgrade">
+	<name>Edocman - Document expires notification</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Feb 2012</creationDate>
+	<copyright>Copyright (C) 2011 - 2019 Ossolution Team. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>tuanpn@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.11.6</version>
+	<description>This plugin check and send notification emails to uploader when documents are about to expire automatically</description>
+	<files>
+		<filename plugin="expiresnotification">expiresnotification.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_edocman/model/fields">
+				<field name="document_expires_notification"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="Set to Yes if you want to send notification when document is about to expire"
+                       label="Send expires notification"
+                        >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+				<field
+                        name="ndays"
+                        type="text"
+                        label="Send X days before expires"
+                        description="Please enter number days that this email will be sent before the document is expired"
+                        class="input-small"
+						default="2"
+                        size="70" />
+				<field
+                        name="expires_email_subject"
+                        type="text"
+                        label="Expires Email Subject"
+                        description="Please enter subject of email. Available tag: [DOCUMENT_TITLE]"
+                        class="input-xlarge"
+                        size="70" />
+				<field
+                        name="expires_email_body"
+                        type="editor"
+                        label="Expires Email Body"
+                        description="Available tags: [DOCUMENT_TITLE], [PUBLISH_DOWN], [USER]"
+                        class="inputbox"
+                        filter="JComponentHelper::filterText"
+                        width="100%"
+                        height="150"
+                        buttons="false"
+                        />
+			</fieldset>
+		</fields>
+	</config>	
+</extension>

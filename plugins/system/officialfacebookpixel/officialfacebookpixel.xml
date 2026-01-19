@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_OFFICIALFACEBOOKPIXEL</name>
+	<author>Facebook</author>
+	<creationDate>June 2018</creationDate>
+	<copyright>Copyright 2004-present Facebook. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorUrl>www.facebook.com</authorUrl>
+	<version>1.0.3</version>
+	<description>PLG_OFFICIALFACEBOOKPIXEL_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="officialfacebookpixel">officialfacebookpixel.php</filename>
+		<folder>core</folder>
+		<folder>vendor</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_system_officialfacebookpixel.ini</language>
+		<language tag="en-GB">en-GB.plg_system_officialfacebookpixel.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+            name="pixel_id"
+            type="text"
+            label="PLG_OFFICIALFACEBOOKPIXEL_FIELD_PIXELID_LABEL"
+            description="PLG_OFFICIALFACEBOOKPIXEL_FIELD_BROWSERCACHE_DESC"
+            default="1296875560489519"
+            hint="Enter your pixel ID here"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+  <updateservers>
+    <server type="extension" name="Official Facebook Pixel Plugin Updates">https://raw.githubusercontent.com/facebookincubator/Facebook-Pixel-for-Joomla/master/update.xml</server>
+  </updateservers>
+</extension>

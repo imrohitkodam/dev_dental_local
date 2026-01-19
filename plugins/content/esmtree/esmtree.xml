@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content" method="upgrade">
+	<name>Content - EasySocial Mosets Tree</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>6th December 2016</creationDate>
+	<copyright>Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>2.0.1</version>
+	<description>This plugin enhances the output of a Mosets Tree item.</description>
+	<files>
+		<folder>tmpl</folder>
+		<filename plugin="esmtree">esmtree.php</filename>
+		<filename>esmtree.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_content_esmtree.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="field_code_about" type="text" class="btn-group" default="ABOUT" label="PLG_CONTENT_ESMTREE_FIELD_CODE_ABOUT" description="PLG_CONTENT_ESMTREE_FIELD_CODE_ABOUT_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="StackIdeas Modules and Plugins">https://stackideas.com/joomla4compat.xml</server>
+	</updateservers>
+</extension>

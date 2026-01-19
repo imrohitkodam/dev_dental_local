@@ -1,0 +1,6 @@
+.button2-left .edocman {
+    background: url("../images/j_button2_readmore.png") no-repeat scroll 100% 0 transparent;
+}
+.button2-left, .button2-right, .button2-left div, .button2-right div {
+    float: left;
+}

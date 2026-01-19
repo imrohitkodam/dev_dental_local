@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="editors-xtd">
+	<name>Button - PayPlans Token</name>
+	<creationDate>4th August 2021</creationDate>
+	<author>Stack Ideas Sdn Bhd</author>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright 2009 - 2019 StackIdeas Private Limited. All rights reserved.</copyright>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<license>GPL License</license>
+	<version>4.2.9</version>
+	<description>Editor button to insert available Payplans variable token in custom invoice layout.</description>
+	<files>
+		<filename plugin="payplanstoken">payplanstoken.php</filename>
+		<filename>payplanstoken.xml</filename>
+	</files>
+</extension>

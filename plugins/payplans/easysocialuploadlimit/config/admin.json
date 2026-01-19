@@ -1,0 +1,14 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "upload_mapping",
+				"type": "planAlias",
+				"title": "File Upload Limit Mapping",
+				"tooltip": "You will need to map the plans on the site with the maximum file upload size limit. Please specify the file upload size limit in MB (Megabytes) unit.",
+				"default": ""
+			}
+		]
+	}
+]

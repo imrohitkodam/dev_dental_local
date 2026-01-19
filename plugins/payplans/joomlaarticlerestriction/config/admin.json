@@ -1,0 +1,49 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "addEntryIn",
+				"type": "dependency",
+				"title": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_ADD_ENTRY_IN",
+				"tooltip": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_ADD_ENTRY_IN_DESC",
+				"default": "any_category",
+				"options": [
+					{
+						"title": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_ADD_ENTRY_IN_ANY_CATEGORY",
+						"value": "any_category"
+					},
+					{
+						"title": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_ADD_ENTRY_IN_SPECIFIC_CATEGORY",
+						"value": "on_specific_category",
+						"for": "data-joomla-category"
+					}
+				]
+
+			},
+
+			{
+				"name": "joomla_category",
+				"type": "joomlaCategory",
+				"title": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_SELECT_JOOMLA_CATEGORY",
+				"tooltip": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_SELECT_JOOMLA_CATEGORY_DESC",
+				"attributes": "data-joomla-category",
+				"default": ""
+			},
+			{
+				"name": "entriesToPublish",
+				"type": "text",
+				"title": "Number of entries user can submit(On Subscription Active)",
+				"tooltip": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_PUBLISH_ENTRIES_DESC",
+				"default": ""
+			},
+			{
+				"name": "unpublishEntries",
+				"type": "toggler",
+				"title": "Unpublish Entries on Expiration",
+				"tooltip": "COM_PP_APP_JOOMLA_ARTICLE_RESTRICTION_UNPUBLISH_ENTRIES_DESC",
+				"default": true
+			}
+		]
+	}
+]

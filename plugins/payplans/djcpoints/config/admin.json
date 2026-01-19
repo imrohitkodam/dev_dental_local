@@ -1,0 +1,14 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "points",
+				"type": "text",
+				"title": "COM_PP_TOTAL_POINTS_TO_ASSIGN",
+				"tooltip": "COM_PP_TOTAL_POINTS_TO_ASSIGN_DESC",
+				"default": ""
+			}
+		]
+	}
+]

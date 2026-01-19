@@ -1,0 +1,35 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "jsmultiprofileOnActive",
+				"type": "jomsocialMultiprofile",
+				"title": "COM_PP_APP_LABEL_ON_ACTIVE",
+				"tooltip": "COM_PP_APP_ON_ACTIVE_DESC",
+				"default": ""
+			},
+			{
+				"name": "jsmultiprofileOnHold",
+				"type": "jomsocialMultiprofile",
+				"title": "COM_PP_APP_LABEL_ON_HOLD",
+				"tooltip": "COM_PP_APP_ON_HOLD_DESC",
+				"default": ""
+			},
+			{
+				"name": "jsmultiprofileOnExpire",
+				"type": "jomsocialMultiprofile",
+				"title": "COM_PP_APP_LABEL_ON_EXPIRE",
+				"tooltip": "COM_PP_APP_ON_EXPIRE_DESC",
+				"default": ""
+			},
+			{
+				"name": "block_ptype_change",
+				"type": "toggler",
+				"title": "COM_PAYPLANS_APP_JSPROFILETYPE_BLOCK_PTYPE_CHANGE_LABEL",
+				"tooltip": "COM_PAYPLANS_APP_JSPROFILETYPE_BLOCK_PTYPE_CHANGE_DESC",
+				"default": true
+			}
+		]
+	}
+]

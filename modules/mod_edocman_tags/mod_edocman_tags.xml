@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.9.11" method="upgrade">
+	<name>Edocman Tags</name>
+	<creationDate>September 2018</creationDate>
+	<author>Tuan Pham Ngoc</author>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<copyright>Copyright (C) 2018 Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.9.11</version>
+	<description>This module is used to display document categories in Edocman Extension</description>
+	<files>
+		<filename module="mod_edocman_tags">index.html</filename>
+		<filename module="mod_edocman_tags">mod_edocman_tags.php</filename>		
+		<folder>tmpl</folder>
+		<folder>asset</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="administrator/components/com_edocman/model/fields">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text"
+					label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX">
+				</field>
+				<field name="number_tags" type="text"
+					label="Number Tags" class="input-mini" description="Number of Categories to be showed on the module" default="0">
+				</field>
+				<field
+					name="layouts"
+					type="list"
+					class="btn-group btn-group-yesno"
+					default="1"
+					label="Show sub-categories"
+					description="Do you want to show Sub Categories"
+				>
+					<option value="default">Default</option>
+					<option value="list">List</option>
+					<option value="dropdown">Dropdown</option>
+				</field>
+				<field name="item_id" class="input-mini" type="text"
+					label="Itemid" description="ID of the menu item you want to linked with links in this module" default="">
+				</field>
+			</fieldset>
+		</fields>		
+	</config>
+</extension>

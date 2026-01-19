@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7.2" type="plugin" group="finder" method="upgrade">
+	<name>plg_finder_edocman</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>October 2012</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.7.2</version>
+	<description>PLG_FINDER_EDOCMAN_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<file plugin="edocman">edocman.php</file>
+    	<filename>index.html</filename>
+	</files>
+	<languages>		
+		<language tag="en-GB">language/en-GB/en-GB.plg_finder_edocman.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_finder_edocman.sys.ini</language>
+	</languages>
+</extension>

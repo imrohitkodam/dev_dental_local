@@ -1,0 +1,41 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+
+			{
+				"name": "restrict_type",
+				"type": "dependency",
+				"title": "Apply Restrictions On",
+				"tooltip": "This determines restrictions rule to be applied on selected category or all categories of the event",
+				"default": "any_category",
+				"options": [
+					{
+						"title": "All Categories",
+						"value": "any_category"
+					},
+					{
+						"title": "Specific Categories",
+						"value": "restrict_specific",
+						"for": "data-restrict-specific"
+					}
+				]
+			},
+			{
+				"name": "restrict_in_category",
+				"type": "easydiscussCategories",
+				"attributes": "data-restrict-specific",
+				"title": "Select Categories",
+				"tooltip": "Set the restrictions based on the selected ticket categories",
+				"default": ""
+			},
+			{
+				"name": "total_submisssion",
+				"type": "text",
+				"title": "Total Tickets Per Day",
+				"tooltip": "Set the total number of tickets a user is allowed to create in EasyDiscuss per day.",
+				"default": ""
+			}
+		]
+	}
+]

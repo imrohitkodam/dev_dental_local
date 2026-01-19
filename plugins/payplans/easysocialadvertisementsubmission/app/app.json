@@ -1,0 +1,6 @@
+{
+	"name": "EasySocial Advertisement Submission Restriction",
+	"element": "easysocialadvertisementsubmission",
+	"description": "Allows you to restrict number of Easysocial Advertisement can be created by a user according to user subscription.",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/apps/easysocial-advertisement-submission-restriction"
+}

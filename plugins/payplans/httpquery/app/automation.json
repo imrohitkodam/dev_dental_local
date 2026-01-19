@@ -1,0 +1,6 @@
+{
+	"name": "REST Calls",
+	"element": "httpquery",
+	"description": "Sends out REST requests to specific url to get certain variables from the URL on the basis of the subscription status of the plan subscribed by the user",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/automation/rest-api-requests"
+}

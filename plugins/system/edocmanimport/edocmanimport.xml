@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" group="system" method="upgrade">
+	<name>Edocman - Import</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Feb 2012</creationDate>
+	<copyright>Copyright (C) 2010 - 2015 Ossolution Team. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>tuanpn@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.6.8</version>
+	<description>This plugin check and send reminder emails to registrants automatically</description>
+	<files>
+		<filename plugin="edocmanimport">edocmanimport.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_edocman/model/fields">
+				<field name="last_run" label="Last Run Time" type="text" readonly="true" size="30" description="Store Last Run Time of the plugin"></field>
+				<field name="default_category_id" label="Default Category ID" type="edocmancategory" description="Select Default Category Of Imported Documents in case none category is detected based on file path"></field>
+			</fieldset>
+		</fields>
+	</config>	
+</extension>

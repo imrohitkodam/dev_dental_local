@@ -1,0 +1,34 @@
+
+#es .es-k2-author {
+	margin-top: 10px;
+}
+#es .es-k2-author ul.es-k2-author-actions > li {
+	display: inline-block;
+}
+#es .es-k2-author ul.es-k2-author-actions > li {
+	margin-right: 5px;
+}
+#es .es-k2-author ul.es-k2-author-actions > li + li {
+	border-left: 1px dotted #d7d7d7;
+	padding-left: 8px;
+}
+
+#es .es-k2-author-achievements li {
+	display: inline-block;
+}
+
+#es .es-k2-author-achievements li img {
+	max-width: 32px;
+	width: 32px;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#es .es-k2-author-achievements {
+	margin: 0;
+	padding: 0;
+}
+
+#es .es-k2-author-achievements li + li {
+	margin-left: 3px !important;
+}

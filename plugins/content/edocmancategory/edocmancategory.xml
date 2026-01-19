@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content" method="upgrade">
+	<name>EDocman Category</name>
+	<author>Ossolution Team</author>
+	<creationDate>Sep 2013</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.5.5</version>
+	<description>This plugin is used to display all documents from a category within an article. Using syntax {edocmancategory ID_OF_CATEGORY}</description>
+	<files>
+		<filename plugin="edocmancategory">edocmancategory.php</filename>		
+	</files>	
+</extension>

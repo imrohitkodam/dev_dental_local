@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+
+    <name>System-PayPlans TJLMS</name>
+    <version>3.3.5</version>
+    <creationDate>Dec 2015</creationDate>
+    <author>Techjoomla</author>
+    <authorEmail>extensions@techjoomla.com</authorEmail>
+    <authorUrl>www.techjoomla.com</authorUrl>
+    <copyright>Copyright(C)2012-13 TechJoomla</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <!--description>PayPlans : Paid Membership and Subscription System for Joomla. Should be Enabled for proper functioning of PayPlans.</description-->
+	<files>
+		<filename plugin="payplans_tjlms">payplans_tjlms.php</filename>
+		<folder>js</folder>
+	</files>
+	  <languages folder="language/en-GB">
+    <language tag="en-GB">en-GB.payplans_tjlms.ini</language>
+  </languages>
+	<params>
+	</params>
+	<config name="params">
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="sync_limit" type="text" default="1" label="PLG_PAYPLANS_TJLMS_SYNC_LIMIT" description="PLG_PAYPLANS_TJLMS_SYNC" />
+      </fieldset>
+    </fields>
+  </config>
+	<scriptfile>script.php</scriptfile>
+<alias>pp-payplans_tjlms</alias>
+<version_number>3.3.13</version_number>
+<version_name>System-PayPlans-Tjlms 3.3.13</version_name>
+</extension>

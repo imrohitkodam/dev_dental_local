@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.0" method="upgrade">
+	<name>Edocman Categories Tree</name>
+	<creationDate>Oct 2018</creationDate>
+	<author>Tuan Pham Ngoc</author>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<copyright>Copyright (C) 2018 Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>This module is used to display document categories in tree view in Edocman Extension</description>
+	<files>
+		<filename module="mod_edocman_treecats">index.html</filename>
+		<filename module="mod_edocman_treecats">mod_edocman_treecats.php</filename>		
+		<filename module="mod_edocman_treecats">helper.php</filename>		
+		<filename module="mod_edocman_treecats">tmpl/default.php</filename>
+		<filename module="mod_edocman_treecats">tmpl/index.html</filename>		
+		<folder>assets</folder>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="administrator/components/com_edocman/model/fields">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text"
+					label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX">
+				</field>
+                <field name="edocmancategory" type="text" class="input-mini" default="" label="Parent Category" description="Please enter Parent Category ID number" />
+				<field name="item_id" class="input-mini" type="text"
+					label="Itemid" description="ID of the menu item you want to linked with links in this module" default="">
+				</field>
+			</fieldset>
+		</fields>		
+	</config>
+</extension>

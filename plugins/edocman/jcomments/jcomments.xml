@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="edocman" version="2.5" method="upgrade">
+	<name>Edocman - JComments</name>
+	<creationDate>18/1/2016</creationDate>
+	<author>Dang Thuc Dam</author>
+	<authorEmail>damdt@joomservices.com</authorEmail>
+	<authorUrl>http://www.joomservices.com</authorUrl>
+	<copyright>Copyright 2010-2016 Joomdonation.com All rights reserved!</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>1.0</version>
+	<description>PLG_EDOCMAN_JCOMMENTS_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="jcomments">jcomments.php</filename>
+	</files>
+	<languages folder="language">
+	    <language tag="en-GB">en-GB/en-GB.plg_edocman_jcomments.ini</language>
+	    <language tag="en-GB">en-GB/en-GB.plg_edocman_jcomments.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="autosubscribe"
+					type="radio"
+					default="0"
+					label="PLG_EDOCMAN_JCOMMENTS_FIELD_AUTOSUBSCRIBE_LABEL"
+					description="PLG_EDOCMAN_JCOMMENTS_FIELD_AUTOSUBSCRIBE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<field 
+					name="anchor_css"
+					type="text" 
+					default="" 
+					label="PLG_EDOCMAN_JCOMMENTS_FIELD_ANCHOR_CSS_LABEL" 
+					description="PLG_EDOCMAN_JCOMMENTS_FIELD_ANCHOR_CSS_DESC" />
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

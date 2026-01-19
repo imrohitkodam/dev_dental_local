@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="plugin" group="finder" method="upgrade">
+	<name>plg_finder_weblinks</name>
+	<author>Joomla! Project</author>
+	<creationDate>2025-04-02</creationDate>
+	<copyright>(C) 2005 - 2025 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>4.4.0</version>
+	<description>PLG_FINDER_WEBLINKS_XML_DESCRIPTION</description>
+	<namespace path="src">Joomla\Plugin\Finder\Weblinks</namespace>
+	<files>
+		<folder>language</folder>
+<folder plugin="weblinks">services</folder>
+<folder>src</folder>
+<file>weblinks.xml</file>
+	</files>
+	<languages folder="administrator/language">
+		
+	</languages>
+</extension>

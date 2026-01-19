@@ -1,0 +1,55 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+
+			{
+				"name": "restrict_type",
+				"type": "dependency",
+				"title": "Apply Restrictions On",
+				"tooltip": "This determines restrictions rule to be applied on selected category or all categories of the page",
+				"default": "any_category",
+				"options": [
+					{
+						"title": "All Page Categories",
+						"value": "any_category"
+					},
+					{
+						"title": "Specific Page Categories",
+						"value": "restrict_specific",
+						"for": "data-restrict-specific"
+					}
+				]
+			},
+			{
+				"name": "restrict_in_category",
+				"type": "easysocialPageCategories",
+				"attributes": "data-restrict-specific",
+				"title": "Select Page Categories",
+				"tooltip": "Set the restrictions based on the selected page's categories",
+				"default": ""
+			},
+			{
+				"name": "total_submisssion",
+				"type": "text",
+				"title": "Total Pages",
+				"tooltip": "Set the total number of pages a user is allowed to create in EasySocial. <br><br> When restriction applied on 'specific page categories', the number of pages allowed is applied to each categories.",
+				"default": ""
+			},
+			{
+				"name": "statusPublished",
+				"type": "subscriptionstatus",
+				"title": "Publish Pages When Subscription:",
+				"tooltip": "Determine when should system publish the user's created pages that associated with the above selected page's categories based on user's subscription status.",
+				"default": ""
+			},
+			{
+				"name": "statusUnpublished",
+				"type": "subscriptionstatus",
+				"title": "UnPublish Pages When Subscription:",
+				"tooltip": "Determine when should system unpublish the user's created pages that associated with the above selected page's categories based on user's subscription status.",
+				"default": ""
+			}
+		]
+	}
+]

@@ -1,0 +1,21 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "modifier_mapping",
+				"type": "planAlias",
+				"title": "Points Modifier Mapping",
+				"tooltip": "You will need to map the plans on the site with the points modifier. If you enter 2, user will get 2x points in EasySocial.",
+				"default": ""
+			},
+			{
+				"name": "allow_stack",
+				"type": "toggler",
+				"title": "Enable Points Modifier Stacking",
+				"tooltip": "If enabled, system will stack/combine the point modifiers if user has more than one plans subscribed. <br><br>By default, this option is disabled and system will use the highest multiplier if user has multiple plans subscribed.",
+				"default": false
+			}
+		]
+	}
+]

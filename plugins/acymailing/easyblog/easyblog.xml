@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/plugin-install.dtd">
+<install type="plugin" version="1.5" method="upgrade" group="acymailing">
+	<name>EasyBlog integration for AcyMailing</name>
+	<creationDate>October 2010</creationDate>
+	<version>2.4.5</version>
+	<author>Acyba</author>
+	<authorEmail>dev@acyba.com</authorEmail>
+	<authorUrl>http://www.acyba.com</authorUrl>
+	<copyright>Copyright (C) 2009-2018 ACYBA SAS - All rights reserved..</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<description>This AcyMailing plugin enables you to include easyblog articles in AcyMailing</description>
+	<files>
+		<filename plugin="easyblog">easyblog.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<params addpath="/components/com_acymailing/params">
+		<param name="help" type="help" label="Help" description="Click on the help button to get some help" default="plugin-easyblog"/>
+		<param name="customtemplate" type="customtemplate" label="Custom template" description="Click on the Custom template button to create a custom layout that will override the default view" default="easyblog"/>
+		<param name="displayart" type="radio" default="all" label="Display articles" description="Select if you want to display all articles in the popup for article selection or only published articles">
+			<option value="all">All articles</option>
+			<option value="onlypub">Only published articles</option>
+		</param>
+		<param name="itemid" type="text" size="10" default="" label="Itemid" description="Specify the menu ID attached to EasyBlog, this Itemid will be added to your links"/>
+		<param name="contentaccess" type="radio" default="0" label="Content Access" description="If you use the automatic article insertion (via the categories tab), AcyMailing will only include articles having the selected access in your Newsletter">
+			<option value="0">Only public</option>
+			<option value="1">ACY_ALL</option>
+		</param>
+		<param name="maxheight" type="text" size="10" default="150" label="Max picture height" description="FIELD_DEFAULT"/>
+		<param name="maxwidth" type="text" size="10" default="150" label="Max picture width" description="FIELD_DEFAULT"/>
+		<param name="blockedcat" type="text" size="40" default="" label="Blocked categories" description="AcyMailing will not display articles belonging to these categories. You should enter each category ID separated by a comma."/>
+		<param name="frontendaccess" type="list" default="all" label="Front-end Access" description="You can restrict the access to this tag system on the Front-end">
+			<option value="all">Always display this tag system</option>
+			<option value="none">Don't display this tag system on the front-end</option>
+		</param>
+	</params>
+	<config>
+		<fields name="params" addfieldpath="/components/com_acymailing/params">
+			<fieldset name="basic">
+				<field name="help" type="help" label="Help" description="Click on the help button to get some help" default="plugin-easyblog"/>
+				<field name="customtemplate" type="customtemplate" label="Custom template" description="Click on the Custom template button to create a custom layout that will override the default view" default="easyblog"/>
+				<field name="displayart" type="radio" default="all" label="Display articles" description="Select if you want to display all articles in the popup for article selection or only published articles">
+					<option value="all">All articles</option>
+					<option value="onlypub">Only published articles</option>
+				</field>
+				<field name="itemid" type="text" size="10" default="" label="Itemid" description="Specify the menu ID attached to EasyBlog, this Itemid will be added to your links"/>
+				<field name="contentaccess" type="radio" default="0" label="Content Access" description="If you use the automatic article insertion (via the categories tab), AcyMailing will only include articles having the selected access in your Newsletter">
+					<option value="0">Only public</option>
+					<option value="1">ACY_ALL</option>
+				</field>
+				<field name="maxheight" type="text" size="10" default="150" label="Max picture height" description="FIELD_DEFAULT"/>
+				<field name="maxwidth" type="text" size="10" default="150" label="Max picture width" description="FIELD_DEFAULT"/>
+				<field name="blockedcat" type="text" size="40" default="" label="Blocked categories" description="AcyMailing will not display articles belonging to these categories. You should enter each category ID separated by a comma."/>
+				<field name="frontendaccess" type="list" default="all" label="Front-end Access" description="You can restrict the access to this tag system on the Front-end">
+					<option value="all">Always display this tag system</option>
+					<option value="none">Don't display this tag system on the front-end</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</install>

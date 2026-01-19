@@ -1,0 +1,14 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "storage_mapping",
+				"type": "planAlias",
+				"title": "Storage Limit Mapping",
+				"tooltip": "You will need to map the plans on the site with the maximum upload storage limit. Please specify the storage limit size in MB (Megabytes) unit.",
+				"default": ""
+			}
+		]
+	}
+]

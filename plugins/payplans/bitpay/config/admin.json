@@ -1,0 +1,21 @@
+[
+	{
+		"key": "app_params",
+		"items": [
+			{
+				"name": "api_token",
+				"type": "text",
+				"title": "COM_PAYPLANS_APP_BITPAY_API_KEY",
+				"tooltip": "COM_PAYPLANS_APP_BITPAY_API_KEY_DESC",
+				"default": ""
+			},
+			{
+				"name": "sandbox",
+				"type": "toggler",
+				"title": "COM_PAYPLANS_APP_BITPAY_SANDBOX",
+				"tooltip": "COM_PAYPLANS_APP_BITPAY_SANDBOX_DESC",
+				"default": false
+			}
+		]
+	}
+]

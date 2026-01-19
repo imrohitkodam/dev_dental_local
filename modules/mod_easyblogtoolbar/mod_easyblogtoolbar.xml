@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+	<name>EasyBlog - Toolbar</name>
+	<author>Stack Ideas Sdn Bhd</author>
+	<creationDate>13th May 2020</creationDate>
+	<copyright>Copyright 2009 - 2019 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License V2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.4.3</version>
+	<description><![CDATA[This module will display a EasyBlog's toolbar.]]>
+	</description>
+	<files>
+		<folder>tmpl</folder>
+		<filename module="mod_easyblogtoolbar">mod_easyblogtoolbar.php</filename>
+		<filename>mod_easyblogtoolbar.xml</filename>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/administrator/components/com_easyblog/elements">
+			<fieldset name="basic">
+				<field name="showHeader" type="boolean" default="0" label="MOD_EB_TOOLBAR_SHOW_HEADER" description="MOD_EB_TOOLBAR_SHOW_HEADER_DESC" />
+				<field name="showSearch" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_SEARCH" description="MOD_EB_TOOLBAR_SHOW_SEARCH_DESC" />
+				<field name="showHome" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_HOME" description="MOD_EB_TOOLBAR_SHOW_HOME_DESC" />
+				<field name="showTags" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_TAGS" description="MOD_EB_TOOLBAR_SHOW_TAGS_DESC" />
+				<field name="showCategories" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_CATEGORIES" description="MOD_EB_TOOLBAR_SHOW_CATEGORIES_DESC" />
+				<field name="showBloggers" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_BLOGGERS" description="MOD_EB_TOOLBAR_SHOW_BLOGGERS_DESC" />
+				<field name="showTeamblog" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_TEAMBLOG" description="MOD_EB_TOOLBAR_SHOW_TEAMBLOG_DESC" />
+				<field name="showArchives" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_ARCHIVES" description="MOD_EB_TOOLBAR_SHOW_ARCHIVES_DESC" />
+				<field name="showCalendar" type="boolean" default="1" label="MOD_EB_TOOLBAR_SHOW_CALENDAR" description="MOD_EB_TOOLBAR_SHOW_CALENDAR_DESC" />
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="radio" class="btn-group" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

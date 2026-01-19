@@ -1,0 +1,44 @@
+.ticket_body{
+padding-top: 10px;
+padding-bottom: 7px;
+}
+.ticket_details, .ticket_body{
+padding-left: 8px;
+}
+#event-map{
+height: 250px !important;
+margin: 5px 1px 1px;
+}
+.com_jticketing_align_center{
+text-align: center;
+}
+.box-style{
+padding: 10px;
+background: white;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+}
+.jt_event{
+margin-top: 20px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.jticketing-event-map{
+padding-bottom: 50px;
+}
+.event_img{
+height: 100%;
+width: 100%;
+object-fit: contain
+}
+.event_con{
+margin-top: 10px;
+margin-left: 20px;
+margin-right: 20px;
+}
+.tj_hide_btn{
+display: none;
+}
+.recording_btn{
+margin-bottom: 3%;
+}

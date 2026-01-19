@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<extension version = "3.0" type = "plugin" group = "tjevent" method = "upgrade">
+	<name>PLG_TJEVENT_JTEVENTS</name>
+	<author>Techjoomla</author>
+	<creationDate>10th Oct 2025</creationDate>
+	<copyright>Copyright (C) 2014 - 2025 Techjoomla. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>https://techjoomla.com</authorUrl>
+	<version>5.1.3</version>
+	<description>PLG_TJEVENTS_JTEVENT_DESC</description>
+
+	<files>
+		<file plugin="jtevents">jtevents.php</file>
+		<folder>jtevents</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+			<language tag="en-GB">en-GB.plg_tjevent_jtevents.ini</language>
+			<language tag="en-GB">en-GB.plg_tjevent_jtevents.sys.ini</language>
+	</languages>
+	<config name="params">
+		<fields name="params">
+			<fieldset name="basic" label="PLG_TJEVENTS_JTEVENT_DISPALY_DETAIL_VIEW" >
+				<field name="detail_page" type="radio"
+					label="PLG_TJEVENTS_JTEVENT_DISPALY_DETAIL_VIEW"
+					description="PLG_TJEVENTS_JTEVENT_DISPALY_DETAIL_VIEW_DESC"
+					class="inputbox radio btn-group" size="1" default="0">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="assessment" type="hidden" default="1"
+					label="PLG_TJEVENTS_JTEVENT_ASSESMENT_LABEL"
+					description="PLG_TJEVENTS_JTEVENT_ASSESMENT_LABEL_DESC"
+					class="btn-group">
+				</field>
+			</fieldset>
+			</fields>
+	</config>
+</extension>

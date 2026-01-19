@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="module" client ="site" method="upgrade">
+
+	<name>mod_jlikemylikes</name>
+	<author>Techjoomla</author>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>https://techjoomla.com</authorUrl>
+	<copyright>Copyright (C) 2010 - 2019 Techjoomla. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<creationDate>19th Jul 2019</creationDate>
+	<version>3.0.1</version>
+
+	<description>
+		Module to show the users favorite articles.
+	</description>
+
+	<languages folder="lang">
+		<language tag="en-GB">en-GB/en-GB.mod_jlikemylikes.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_jlikemylikes.sys.ini</language>
+	</languages>
+
+	<files>
+		<filename module="mod_jlikemylikes">mod_jlikemylikes.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<!-- Fields for Joomla 1.6.x and onwards -->
+	<config name="params">
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="MOD_SUFIX" description="MOD_SUFIX_DES" />
+				<field name="likeCount" type="text" default="5" label="MOD_JLIKE_COUNT" description="MOD_JLIKE_COUNT" />
+				<field
+					name="cache"
+					type="list"
+					default="0"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field name="DontshowAndMsgWhenEmpty" type="radio"  default="0" description="COM_JLIKE_HIDE_MSG_WHEN_NO_RESULT_DESC" label="COM_JLIKE_HIDE_MSG_WHEN_NO_RESULT"	>
+					<option value="1">COM_JLIKE_YES</option>
+					<option value="0">COM_JLIKE_NO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

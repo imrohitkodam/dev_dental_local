@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.9" type="plugin" group="system" method="upgrade">
+    <name>plg_system_ruleengine</name>
+    <author>Gemini</author>
+    <creationDate>August 2025</creationDate>
+    <copyright>Copyright (C) 2025. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.2.0</version>
+    <description>PLG_SYSTEM_RULEENGINE_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="ruleengine">ruleengine.php</filename>
+        <filename>helper.php</filename>
+        <folder>language</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="rules"
+                    type="subform"
+                    label="PLG_SYSTEM_RULEENGINE_RULES_LABEL"
+                    description="PLG_SYSTEM_RULEENGINE_RULES_DESC"
+                    multiple="true"
+                    layout="joomla.form.field.subform.repeatable-table"
+                    >
+                    <form>
+                        <field name="rule_name" type="text" label="PLG_SYSTEM_RULEENGINE_RULE_NAME_LABEL" hint="e.g., Enroll all users to Course 101"/>
+
+                        <!-- ACTION DEFINITION ONLY -->
+                        <field name="action_header" type="note" label="PLG_SYSTEM_RULEENGINE_ACTION_HEADER" class="h5 bg-light p-2" />
+                        <field
+                            name="action_type"
+                            type="list"
+                            label="PLG_SYSTEM_RULEENGINE_ACTION_TYPE_LABEL"
+                            default=""
+                            >
+                            <option value="">JSELECT</option>
+                            <option value="assign_group">PLG_SYSTEM_RULEENGINE_ACTION_ASSIGN_GROUP</option>
+                            <option value="assign_course">PLG_SYSTEM_RULEENGINE_ACTION_ASSIGN_COURSE</option>
+                        </field>
+                        <field name="action_group_id" type="text" label="PLG_SYSTEM_RULEENGINE_ACTION_GROUP_ID_LABEL" showon="action_type:assign_group" hint="e.g., 8"/>
+                        <field name="action_course_id" type="text" label="PLG_SYSTEM_RULEENGINE_ACTION_COURSE_ID_LABEL" showon="action_type:assign_course" hint="e.g., 101"/>
+                        <field name="action_course_due_days" type="number" label="PLG_SYSTEM_RULEENGINE_ACTION_COURSE_DUE_DAYS_LABEL" showon="action_type:assign_course" hint="Days from enrollment. Leave empty for no due date."/>
+
+                        <!-- CONDITIONS DEFINITION -->
+                        <field name="conditions_header" type="note" label="PLG_SYSTEM_RULEENGINE_CONDITIONS_HEADER" class="h5 bg-light p-2 mt-3" />
+                        <field
+                            name="conditions"
+                            type="subform"
+                            label="PLG_SYSTEM_RULEENGINE_CONDITIONS_LABEL"
+                            multiple="true"
+                            layout="joomla.form.field.subform.repeatable-table"
+                            >
+                            <form>
+                                <field
+                                    name="condition_type"
+                                    type="list"
+                                    label="PLG_SYSTEM_RULEENGINE_CONDITION_TYPE_LABEL"
+                                    >
+                                    <option value="">JSELECT</option>
+                                    <option value="user_group">PLG_SYSTEM_RULEENGINE_CONDITION_USER_GROUP</option>
+                                    <option value="reg_date_between">PLG_SYSTEM_RULEENGINE_CONDITION_REG_DATE_BETWEEN</option>
+                                    <option value="com_fields">PLG_SYSTEM_RULEENGINE_CONDITION_COM_FIELDS</option>
+                                </field>
+
+                                <!-- User Group Condition -->
+                                <field name="condition_user_group_id" type="text" label="PLG_SYSTEM_RULEENGINE_CONDITION_GROUP_ID_LABEL" showon="condition_type:user_group" hint="User must be in this group ID (e.g., 2)"/>
+
+                                <!-- Registration Date Condition -->
+                                <field name="condition_reg_date_start" type="calendar" label="PLG_SYSTEM_RULEENGINE_CONDITION_REG_DATE_START_LABEL" showon="condition_type:reg_date_between" />
+                                <field name="condition_reg_date_end" type="calendar" label="PLG_SYSTEM_RULEENGINE_CONDITION_REG_DATE_END_LABEL" showon="condition_type:reg_date_between" />
+
+                                <!-- Joomla Custom Field (com_fields) Condition -->
+                                <field name="condition_field_name" type="text" label="PLG_SYSTEM_RULEENGINE_CONDITION_FIELD_NAME_LABEL" showon="condition_type:com_fields" hint="e.g., designation"/>
+                                <field name="condition_field_value" type="text" label="PLG_SYSTEM_RULEENGINE_CONDITION_FIELD_VALUE_LABEL" showon="condition_type:com_fields" hint="e.g., Developer"/>
+                            </form>
+                        </field>
+                    </form>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
+
+

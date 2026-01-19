@@ -1,0 +1,7 @@
+{
+	"name": "PayuPl",
+	"element": "payupl",
+	"description": "PayuPl provide simple and safe solutions to the largest enterprises in Poland",
+	"documentation": "https://stackideas.com/docs/payplans/administrators/payment-methods/payu-poland",
+	"icon": "payu.svg"
+}
