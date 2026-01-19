@@ -1,0 +1,62 @@
+<?php
+/**
+* @package      PayPlans
+* @copyright    Copyright (C) Stack Ideas Sdn Bhd. All rights reserved.
+* @license      GNU/GPL, see LICENSE.php
+* PayPlans is free software. This version may have been modified pursuant
+* to the GNU General Public License, and as distributed it includes or
+* is derivative of works licensed under the GNU General Public License or
+* other free or open source software licenses.
+* See COPYRIGHT.php for copyright notices and details.
+*/
+defined('_JEXEC') or die('Unauthorized Access');
+
+class PPJomsocial
+{
+	protected $file = JPATH_ROOT . '/components/com_community/libraries/core.php';
+
+	/**
+	 * Determines if jomsocial exists
+	 *
+	 * @since	4.0.0
+	 * @access	public
+	 */
+	public function exists()
+	{
+		static $exists = null;
+
+		if (is_null($exists)) {
+			$enabled = JComponentHelper::isEnabled('com_community');
+			$exists = JFile::exists($this->file);
+
+			if (!$exists || !$enabled) {
+				return false;
+			}
+
+			require_once($this->file);
+		}
+
+		return $exists;
+	}
+
+	/**
+	 * Retrieves a list of jomsocial profiles
+	 *
+	 * @since	4.0.0
+	 * @access	public
+	 */
+	public function getProfiles()
+	{
+		static $profiles = null;
+
+		if (is_null($profiles)) {
+			$db = PP::db();
+			$query = 'SELECT ' . $db->qn('id') . ', ' . $db->qn('name') . ' FROM ' . $db->qn('#__community_profiles');
+			
+			$db->setQuery($query);
+			$profiles = $db->loadObjectList('id');
+		}
+
+		return $profiles;
+	}
+}

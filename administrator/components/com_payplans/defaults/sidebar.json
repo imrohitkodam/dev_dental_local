@@ -1,0 +1,513 @@
+[
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_DASHBOARD",
+		"link": "index.php?option=com_payplans&view=dashboard",
+		"icon": "fdi fa fa-home",
+		"access": "",
+		"view": "dashboard",
+		"active": "view"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_SETTINGS",
+		"link": "index.php?option=com_payplans&view=config",
+		"icon": "fdi fa fa-cog",
+		"access": "payplans.config",
+		"active": "layout",
+		"view": "config",
+		"childs": 
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_GENERAL",
+				"url": {
+					"view": "config",
+					"layout": "general"
+				}
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_INVOICES",
+				"url": {
+					"view": "config",
+					"layout": "invoices"
+				}
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_PLANS",
+				"url": {
+					"view": "config",
+					"layout": "plans"
+				}
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_DISCOUNTS",
+				"url": {
+					"view": "config",
+					"layout": "discounts"
+				}
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_LAYOUT",
+				"url": {
+					"view": "config",
+					"layout": "layout"
+				}
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_SYSTEM",
+				"url": {
+					"view": "config",
+					"layout": "system"
+				}
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SETTINGS_COUNTRIES",
+				"url": {
+					"view": "config",
+					"layout": "countries"
+				}
+			}	
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_ORDERS",
+		"icon": "fdi fa fa-shopping-cart",
+		"access": "payplans.orders",
+		"view": "subscription",
+		"active": "layout",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_SUBSCRIPTIONS",
+				"url": {
+					"view": "subscription",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"form",
+					"default"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_INVOICES",
+				"url": {
+					"view": "invoice",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"invoice",
+					"transaction"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_ORDERS_CUSTOM_DETAILS",
+				"url": {
+					"view": "subscription",
+					"layout": "customdetails"
+				},
+				"activeLayouts": [
+					"customdetails",
+					"customdetailsform"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_STATISTICS",
+		"link": "index.php?option=com_payplans&view=analytics",
+		"icon": "fdi far fa-chart-bar",
+		"access": "payplans.statistics",
+		"active": "layout",
+		"view": "analytics",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_STATISTICS_SALES",
+				"url": {
+					"view": "analytics",
+					"layout": "sales"
+				},
+				"activeLayouts": [
+					"sales"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_STATISTICS_GROWTH",
+				"url": {
+					"view": "analytics",
+					"layout": "growth"
+				},
+				"activeLayouts": [
+					"growth"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_STATISTICS_RENEWALS",
+				"url": {
+					"view": "analytics",
+					"layout": "renewals"
+				},
+				"activeLayouts": [
+					"renewals"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_STATISTICS_UPGRADES",
+				"url": {
+					"view": "analytics",
+					"layout": "upgrades"
+				},
+				"activeLayouts": [
+					"upgrades"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_STATISTICS_MEMBERS",
+				"url": {
+					"view": "analytics",
+					"layout": "members"
+				},
+				"activeLayouts": [
+					"members"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_PLANS",
+		"link": "index.php?option=com_payplans&view=plan",
+		"icon": "fdi fa fa-box-open",
+		"access": "payplans.plans",
+		"view": "plan",
+		"active": "layout",
+		"childs": [
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_PLAN",
+				"url": {
+					"view": "plan",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_GROUPS",
+				"url": {
+					"view": "group",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_UPGRADES",
+				"url": {
+					"view": "upgrades",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_RENEWALS",
+				"url": {
+					"view": "renewals",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_PLAN_PRICE_VARIATION",
+				"url": {
+					"view": "planpricevariations",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_ADDONS",
+				"url": {
+					"view": "addons",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_PLAN_ASSIGNMENT",
+				"url": {
+					"view": "assigns",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_ADVANCE_PRICING",
+				"url": {
+					"view": "advancedpricing",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_PLANS_LIMIT_SUBSCRIPTION",
+				"url": {
+					"view": "limitsubscription",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_DISCOUNTS",
+		"link": "index.php?option=com_payplans&view=discounts",
+		"icon": "fdi fa fa-tags",
+		"view": "discounts",
+		"active": "layout",
+		"access": "payplans.discounts",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_DISCOUNTS_DISCOUNT",
+				"url": {
+					"view": "discounts",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_DISCOUNTS_COUPON_GENERATOR",
+				"url": {
+					"view": "discounts",
+					"layout": "generator"
+				},
+				"activeLayouts": [
+					"generator"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_PAYMENT_METHOD",
+		"link": "index.php?option=com_payplans&view=gateways",
+		"icon" : "fdi far fa-credit-card",
+		"access": "payplans.gateways",
+		"view": "gateways",
+		"active": "layout"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_APPS",
+		"link": "index.php?option=com_payplans&view=app",
+		"icon": "fdi fa fa-hdd",
+		"access": "payplans.apps",
+		"view": "app",
+		"active": "layout"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_USERS",
+		"link": "index.php?option=com_payplans&view=user",
+		"icon": "fdi fa fa-user",
+		"access": "payplans.users",
+		"view": "user",
+		"active": "layout",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_USERS_USER",
+				"url": {
+					"view": "user",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_USERS_IMPORT",
+				"url": {
+					"view": "user",
+					"layout": "import"
+				},
+				"activeLayouts": [
+					"import"
+				]
+			},			
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_USERS_CUSTOM_DETAILS",
+				"url": {
+					"view": "user",
+					"layout": "customdetails"
+				},
+				"activeLayouts": [
+					"customdetails",
+					"customdetailsform"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_USERS_DOWNLOAD_REQUEST",
+				"url": {
+					"view": "user",
+					"layout": "downloads"
+				},
+				"activeLayouts": [
+					"downloads"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBAR_NOTIFICATIONS",
+		"link": "index.php?option=com_payplans&view=notifications",
+		"icon": "fdi fa fa-at",
+		"view": "notifications",
+		"access": "payplans.notifications",
+		"active": "layout",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_NOTIFICATIONS_NOTIFICATION",
+				"url": {
+					"view": "notifications",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default",
+					"form",
+					"create"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBAR_NOTIFICATIONS_TEMPLATES",
+				"url": {
+					"view": "notifications",
+					"layout": "templates"
+				},
+				"activeLayouts": [
+					"templates",
+					"editFile"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PP_SIDEBAR_EMAILS",
+		"link": "index.php?option=com_payplans&view=mailer",
+		"icon": "fdi far fa-envelope",
+		"view": "mailer",
+		"access": "payplans.mailer",
+		"active": "view"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBER_REFERRALS",
+		"link": "index.php?option=com_payplans&view=referrals",
+		"icon": "fdi fa fa-retweet",
+		"access": "payplans.referrals",
+		"view": "referrals",
+		"active": "view"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBER_LANGUAGES",
+		"link": "index.php?option=com_payplans&view=languages",
+		"icon": "fdi fa fa-language",
+		"access": "payplans.languages",
+		"view": "languages",
+		"active": "view"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBER_AUTOMATION",
+		"link": "index.php?option=com_payplans&view=automation",
+		"icon": "fdi fa fa-magic",
+		"access": "payplans.automation",
+		"view": "automation",
+		"active": "view"
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBER_LOGS",
+		"link": "index.php?option=com_payplans&view=log",
+		"icon": "fdi far fa-folder-open",
+		"access": "payplans.logs",
+		"view": "log",
+		"active": "layout",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBER_LOGS_AUDIT_LOG",
+				"url": {
+					"view": "log",
+					"layout": ""
+				},
+				"activeLayouts": [
+					"default"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBER_LOGS_PAYMENT_NOTIFICATIONS",
+				"url": {
+					"view": "log",
+					"layout": "payments"
+				},
+				"activeLayouts": [
+					"payments"
+				]
+			}
+		]
+	},
+	{
+		"title": "COM_PAYPLANS_SIDEBER_REPORTS",
+		"link": "index.php?option=com_payplans&view=reports",
+		"icon": "fdi far fa-file-excel",
+		"access": "payplans.reports",
+		"view": "reports",
+		"active": "layout",
+		"childs":
+		[
+			{
+				"title": "COM_PAYPLANS_SIDEBER_REPORTS_EXPORT",
+				"url": {
+					"view": "reports",
+					"layout": "export"
+				},
+				"activeLayouts": [
+					"export"
+				]
+			},
+			{
+				"title": "COM_PAYPLANS_SIDEBER_REPORTS_PDF_INVOICE",
+				"url": {
+					"view": "reports",
+					"layout": "pdfinvoice"
+				},
+				"activeLayouts": [
+					"pdfinvoice"
+				]
+			}
+		]
+	}
+]
+

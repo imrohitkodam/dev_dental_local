@@ -1,0 +1,23 @@
+/**
+* @package 		EasySocial
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license 		Proprietary Use License https://stackideas.com/licensing
+**/
+@import "config";
+@import "elements/variables";
+@import "patch/core";
+
+body {
+	@import "patch/joomla25";
+
+}
+
+body.com_easysocial {
+	@import "patch/joomla";
+
+}
+
+@{EasySocial} {
+	@import "patch/interface";
+	@import "patch/editors";
+}

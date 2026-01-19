@@ -1,0 +1,110 @@
+@media (max-width: 767px) {
+  #es {
+    margin: 0 -20px;
+  }
+  #es.es-window {
+    margin: 24px !important;
+  }
+  #es.es-window input,
+  #es.es-window select {
+    width: auto;
+  }
+  #es.es-window .app-table thead,
+  #es.es-window .app-table tfoot {
+    background-color: #f5f5f5;
+  }
+  #es.es-window .app-table > thead > tr > th:first-child,
+  #es.es-window .app-table > thead > tr > td:first-child,
+  #es.es-window .app-table > tbody > tr > th:first-child,
+  #es.es-window .app-table > tbody > tr > td:first-child,
+  #es.es-window .app-table > tfoot > tr > th:first-child,
+  #es.es-window .app-table > tfoot > tr > td:first-child,
+  #es.es-window .app-table > thead > tr > th:last-child,
+  #es.es-window .app-table > thead > tr > td:last-child,
+  #es.es-window .app-table > tbody > tr > th:last-child,
+  #es.es-window .app-table > tbody > tr > td:last-child,
+  #es.es-window .app-table > tfoot > tr > th:last-child,
+  #es.es-window .app-table > tfoot > tr > td:last-child {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  #es.es-window .app-filter-bar__cell:first-child {
+    border-bottom: 1px solid #ccc;
+  }
+  #es.es-window .app-filter-bar__cell:not(:first-child) {
+    border-top: none;
+  }
+  #es .sidebar {
+    display: block;
+    left: 0px;
+    position: absolute;
+    width: 50px;
+    background: white;
+  }
+  #es .sidebar .text {
+    display: none;
+  }
+  #es #sinav.accordion {
+    margin-bottom: 0;
+  }
+  #es #sinav > li > a:first-child {
+    padding: 2px 20px 5px 15px;
+  }
+  #es #sinav > li > a:first-child span {
+    display: none;
+  }
+  #es #sinav ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 49px;
+  }
+  #es #sinav ul > li a {
+    padding: 6px 8px 4px 18px;
+  }
+  #es #sinav ul > li span {
+    display: none;
+  }
+  #es .es-content {
+    display: block;
+    padding-left: 40px;
+  }
+  #es .row [class*="col-"] {
+    display: block;
+    width: 100%;
+  }
+  #es .version-widget {
+    display: none;
+  }
+  #es input,
+  #es select {
+    width: 94%;
+  }
+  #es .nav-tabs-icons > li {
+    width: 50%;
+  }
+  #es .tab-box.tab-box-alt .nav-tabs > li {
+    margin: -1px 0 -1px -1px;
+  }
+  #es .tab-box.tab-box-sidenav .tab-content {
+    display: block;
+  }
+  #es .tab-box.tab-box-sidenav .nav-tabs {
+    display: block;
+  }
+  #es .tab-box.tab-box-sidenav .nav-tabs > li {
+    float: left;
+    min-width: 50px;
+    width: 50%;
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+  }
+  #es .tab-box.tab-box-sidenav .nav-tabs > li.active > a {
+    border: 1px solid transparent;
+    border-top: 1px solid #7CC110;
+  }
+  #es .tab-box.tab-box-sidenav .nav-tabs > li > a {
+    border: 1px solid transparent;
+  }
+}

@@ -1,0 +1,120 @@
+#es .es-backend-module-wrap {
+  background-color: #5BC0DE;
+  color: #fff;
+  padding: 28px;
+  border-radius: 3px;
+}
+#es .es-mod {
+  padding: 16px;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #333;
+}
+#es .es-mod--info {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+#es .es-mod--success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+#es .es-mod + .es-mod {
+  margin-top: 16px;
+}
+#es .es-mod__title {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+#es .es-mod__bubble {
+  background-color: #FD746A;
+  color: #fff;
+  border-radius: 50%;
+  line-height: 1;
+  margin-left: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: normal;
+}
+#es .es-mod__list-item {
+  margin-bottom: 16px;
+}
+#es .es-mod__news-item {
+  background-color: #fff;
+  color: #333;
+  border-radius: 3px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+#es .es-mod__news-item-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+#es .es-mod__news-item-desc {
+  margin-top: 4px;
+  min-height: 100px;
+}
+#es .es-mod__news-item-desc img {
+  width: 120px;
+  margin-left: 16px;
+  border: 1px solid #d7d7d7;
+}
+#es .es-mod .o-empty {
+  min-height: 120px;
+}
+#es .mod-knowledge .o-empty {
+  display: none;
+}
+#es .es-mod-version {
+  color: #333;
+  border: 0;
+}
+#es .es-mod-version h4 {
+  font-size: 12px !important;
+}
+#es .btn-mod-primary {
+  color: #428bca;
+}
+#es .btn-mod-danger {
+  color: #d9534f;
+}
+#es .mod-state {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  margin-bottom: 16px;
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-evenly;
+  -ms-justify-content: space-evenly;
+  justify-content: space-evenly;
+}
+#es .mod-state__item {
+  font-size: 32px;
+  font-weight: bold;
+  width: 150px;
+  padding: 16px;
+  background-color: rgba(255,0,0,0.05);
+  line-height: 1;
+  height: 100%;
+  margin: 8px;
+  text-align: center;
+}
+#es .mod-state__item a {
+  color: #fff;
+}
+#es .mod-state__item a:hover {
+  background: none;
+}
+#es .mod-state__item-name {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  font-weight: normal;
+  margin-top: 8px;
+}

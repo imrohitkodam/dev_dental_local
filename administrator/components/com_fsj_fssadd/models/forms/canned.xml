@@ -1,0 +1,384 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<form>
+  <authorEmail>support@freestyle-joomla.com</authorEmail>
+  <author>Freestyle Joomla</author>
+  <copyright>(C) 2013 Freestyle Joomla. All rights reserved.</copyright>
+  <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html </license>
+  <authorUrl>http://www.freestyle-joomla.com</authorUrl>
+
+  <fieldset addfieldpath="/administrator/components/com_fsj_fssadd/models/fields" />
+  <fieldset addfieldpath="components/com_fsj_fssadd/models/fields" />
+  <fieldset addfieldpath="/libraries/fsj_core/html/field" />
+
+  <fieldset>
+	<field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+			readonly="true"  />
+
+	<field name="asset_id" type="hidden" filter="unset" />
+	
+	<field name="title" type="text" label="JGLOBAL_TITLE"
+			description="JGLOBAL_TITLE"
+			class="inputbox input-xxlarge input-large-text"
+			size="40"
+			required="true" />
+
+	<field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC" class="inputbox" size="45" />
+
+
+	<field name="state" type="list" label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC" class="inputbox"
+			filter="intval" size="1" default="1"
+		>
+	  <option value="1">
+		JPUBLISHED
+	  </option>
+	  <option value="0">
+		JUNPUBLISHED
+	  </option>
+	  <option value="2">
+		JARCHIVED
+	  </option>
+	  <option value="-2">
+		JTRASHED
+	  </option>
+	</field>
+
+
+
+
+
+
+
+
+
+	<field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL"
+			description="JFIELD_ACCESS_DESC" class="inputbox" size="1" />
+
+
+	<field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+			description="COM_CONTENT_FIELD_LANGUAGE_DESC" class="inputbox"
+		>
+	  <option value="*">JALL</option>
+	</field>
+
+
+
+		
+			<field
+			name="description"
+			type="fsjsceditor"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_DESCRIPTION"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjsceditor_style = "width:100%;"	
+						>	
+
+												</field>
+	
+		
+								<field name="notes" type="editor" class="inputbox"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_NOTES" description=""
+			filter="JComponentHelper::filterText" buttons="true"
+			 hide="readmore,pagebreak" 			default=""
+			 />
+				
+	
+		
+			<field
+			name="javascript"
+			type="fsjeditor"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_JAVASCRIPT"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjeditor_mode = "code"	
+										fsjeditor_codetype = "text/javascript"	
+										fsjeditor_width = "100"	
+						>	
+
+																										</field>
+	
+		
+			<field
+			name="css"
+			type="fsjeditor"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_CSS"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjeditor_mode = "code"	
+										fsjeditor_codetype = "text/css"	
+										fsjeditor_width = "100"	
+						>	
+
+																										</field>
+	
+		
+			<field
+			name="category"
+			type="fsjstring"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_CATEGORY"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjstring_size = "60"	
+										fsjstring_maxlength = "250"	
+										fsjstring_tmpl = ""	
+						>	
+
+																										</field>
+	
+		
+			<field
+			name="subject"
+			type="fsjstring"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_SUBJECT"
+			description=""
+			use_set=""
+			size=""
+			default="Re: {subject}"
+							class="input-xxlarge"
+									
+										fsjstring_size = "60"	
+										fsjstring_maxlength = "250"	
+										fsjstring_tmpl = ""	
+						>	
+
+																										</field>
+	
+		
+			<field
+			name="usestatus"
+			type="fsjyesno"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_USESTATUS"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+						>	
+
+					</field>
+	
+		
+			<field name="parsetype" type="list"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_PARSETYPE" description="" class="inputbox"
+			default="0"
+			>
+			<!-- AG_Field Object
+(
+    [id] => parsetype
+    [type] => combo
+    [list] => 0
+    [edit] => 0
+    [title] => FSJ_FSSADD_FORM_FSSADD_CANNED_PARSETYPE
+    [nowrap] => 
+    [width] => 
+    [listtile] => 
+    [default] => 0
+    [link] => 0
+    [sqlfield] => a.parsetype
+    [notinsql] => 0
+    [displayonly] => 0
+    [fromjoin] => 
+    [calc] => 0
+    [search] => 0
+    [align] => 
+    [custom] => 0
+    [help_style] => 
+    [exblock] => 
+    [filter_hide] => 0
+    [small] => 1
+    [class] => 
+    [multiple] => 
+    [desc] => 
+    [listtitle] => FSJ_FSSADD_FORM_FSSADD_CANNED_PARSETYPE
+    [use_set] => 
+    [size] => 
+    [combo] => AG_Combo Object
+        (
+            [default] => 
+            [options] => Array
+                (
+                    [0] => AG_Combo_Option Object
+                        (
+                            [id] => 0
+                            [value] => Internal Parser
+                        )
+
+                    [1] => AG_Combo_Option Object
+                        (
+                            [id] => 1
+                            [value] => Smarty
+                        )
+
+                )
+
+        )
+
+)
+ -->
+					<option value="0">Internal Parser</option>
+					<option value="1">Smarty</option>
+				
+		</field>
+		
+	
+		
+			<field name="showfor" type="list"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_SHOWFOR" description="" class="inputbox"
+			default="0"
+			>
+			<!-- AG_Field Object
+(
+    [id] => showfor
+    [type] => combo
+    [list] => 0
+    [edit] => 0
+    [title] => FSJ_FSSADD_FORM_FSSADD_CANNED_SHOWFOR
+    [nowrap] => 
+    [width] => 
+    [listtile] => 
+    [default] => 0
+    [link] => 0
+    [sqlfield] => a.showfor
+    [notinsql] => 0
+    [displayonly] => 0
+    [fromjoin] => 
+    [calc] => 0
+    [search] => 0
+    [align] => 
+    [custom] => 0
+    [help_style] => 
+    [exblock] => 
+    [filter_hide] => 0
+    [small] => 1
+    [class] => 
+    [multiple] => 
+    [desc] => 
+    [listtitle] => FSJ_FSSADD_FORM_FSSADD_CANNED_SHOWFOR
+    [use_set] => 
+    [size] => 
+    [combo] => AG_Combo Object
+        (
+            [default] => 
+            [options] => Array
+                (
+                    [0] => AG_Combo_Option Object
+                        (
+                            [id] => 0
+                            [value] => All
+                        )
+
+                    [1] => AG_Combo_Option Object
+                        (
+                            [id] => 1
+                            [value] => Users
+                        )
+
+                    [2] => AG_Combo_Option Object
+                        (
+                            [id] => 2
+                            [value] => Handlers
+                        )
+
+                )
+
+        )
+
+)
+ -->
+					<option value="0">All</option>
+					<option value="1">Users</option>
+					<option value="2">Handlers</option>
+				
+		</field>
+		
+	
+		
+			<field
+			name="newstatus"
+			type="fsjlookup"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_NEWSTATUS"
+			description=""
+			lu_table="#__fss_ticket_status"
+			lu_field="id"
+			lu_display="title"
+			lu_nested="0"
+			lu_sql=""
+			use_state="0"
+			state=""
+			use_set=""
+			onchange=""
+			readonly="0"
+		>
+							<option id="0">FSJ_DONT_CHANGE</option>
+					</field>
+
+	
+		
+			<field
+			name="statuslist"
+			type="fsjchecklist"
+			label=""
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjchecklist_sql = "SELECT title as display, id FROM #__fss_ticket_status ORDER BY ordering"	
+						>	
+
+												</field>
+	
+		
+			<field
+			name="frame_fields"
+			type="fsjframe"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_FRAME_FIELDS"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjframe_url = "index.php?option=com_fsj_fssadd&amp;view=canned_fields&amp;filter_canned_id=%ID%"	
+										fsjframe_only_if = "id"	
+										fsjframe_only_msg = "FSJ_FSSADD_CANNED_SAVE"	
+						>	
+
+																										</field>
+	
+		
+			<field
+			name="field_count"
+			type="fsjcount"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_FIELD_COUNT"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjcount_field = "canned_id"	
+										fsjcount_table = "fssadd_canned_field"	
+										fsjcount_display = "%COUNT% fields"	
+						>	
+
+																										</field>
+	
+
+  </fieldset>
+
+
+
+</form>

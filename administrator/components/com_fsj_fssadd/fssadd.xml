@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<com>
+  <require>
+    <autobuild>canned</autobuild>
+    <autobuild>canned_field</autobuild>
+    <autobuild>report</autobuild>
+  </require>
+  <name>
+    <item id="fssadd_canned">
+      <name>COM_FSJ_FSSADD_ITEMS_FSSADD_CANNED</name>
+      <names>COM_FSJ_FSSADD_ITEMS_FSSADD_CANNEDS</names>
+      <long_prefix id="fssadd.canned"/>
+    </item>
+    <item id="fssadd_report">
+      <name>COM_FSJ_FSSADD_ITEMS_FSSADD_REPORT</name>
+      <names>COM_FSJ_FSSADD_ITEMS_FSSADD_REPORTS</names>
+      <long_prefix id="fssadd.report"/>
+    </item>
+    <item id="fssadd_canned_field">
+      <name>COM_FSJ_FSSADD_ITEMS_FSSADD_CANNED_FIELD</name>
+      <names>COM_FSJ_FSSADD_ITEMS_FSSADD_CANNED_FIELDS</names>
+      <long_prefix id="fssadd.canned_field"/>
+    </item>
+  </name>
+  <image>com_fsj_fssadd</image>
+  <admin>
+    <section nonmenusection="1" name="Form Replies">
+      <item id="canned" icon="fssadd_canned">
+        <title>COM_FSJ_FSSADD_DATA_CANNED</title>
+        <description/>
+      </item>
+      <!--<item id="canned_config" icon="fssadd_settings" url="index.php?option=com_fsj_fssadd&amp;view=canned_config" component="fssadd">
+        <title>Plugin Setup</title>
+        <description></description>
+      </item>-->
+    </section>
+    <section nonmenusection="1" name="Report Builder">
+      <item id="report" icon="report">
+        <title>COM_FSJ_FSSADD_DATA_REPORT</title>
+        <description/>
+      </item>
+    </section>
+  </admin>
+  <tables>
+    <table name="canned" id="1" title="1" access="1" language="1" state="1" alias="1" asset_id="1" ordering="1">
+      <field name="description" type="text"/>
+      <field name="notes" type="text"/>
+      <field name="usestatus" type="int(11)"/>
+      <field name="subject" type="varchar(250)"/>
+      <field name="category" type="varchar(250)"/>
+      <field name="statuslist" type="varchar(250)"/>
+      <field name="newstatus" type="int(11)"/>
+      <field name="javascript" type="mediumtext"/>
+      <field name="css" type="mediumtext"/>
+      <field name="parsetype" type="int(11)"/>
+      <field name="showfor" type="int(11)"/>
+    </table>
+    <table name="canned_field" id="1" title="1" asset_id="1" alias="1" ordering="1">
+      <field name="canned_id" type="int(11)" default="1"/>
+      <field name="fieldtype" type="varchar(50)" default="string"/>
+      <field name="params" type="text"/>
+      <field name="tab" type="varchar(200)"/>
+      <field name="description" type="text"/>
+      <index name="idx_canned_id" fields="canned_id"/>
+    </table>
+    <table name="report" id="1" title="1" asset_id="1" alias="1" state="1">
+      <field name="description" type="text"/>
+      <field name="type" type="varchar(50)"/>
+      <field name="fielddata" type="mediumtext"/>
+      <field name="filterdata" type="mediumtext"/>
+      <field name="extradata" type="mediumtext"/>
+      <field name="options" type="mediumtext"/>
+    </table>
+  </tables>
+</com>

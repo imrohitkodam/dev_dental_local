@@ -1,0 +1,156 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<form>
+  <authorEmail>support@freestyle-joomla.com</authorEmail>
+  <author>Freestyle Joomla</author>
+  <copyright>(C) 2013 Freestyle Joomla. All rights reserved.</copyright>
+  <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html </license>
+  <authorUrl>http://www.freestyle-joomla.com</authorUrl>
+
+  <fieldset addfieldpath="/administrator/components/com_fsj_fssadd/models/fields" />
+  <fieldset addfieldpath="components/com_fsj_fssadd/models/fields" />
+  <fieldset addfieldpath="/libraries/fsj_core/html/field" />
+
+  <fieldset>
+	<field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+			description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+			readonly="true"  />
+
+	<field name="asset_id" type="hidden" filter="unset" />
+	
+	<field name="title" type="text" label="JGLOBAL_TITLE"
+			description="JGLOBAL_TITLE"
+			class="inputbox input-xxlarge input-large-text"
+			size="40"
+			required="true" />
+
+	<field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+			description="JFIELD_ALIAS_DESC" class="inputbox" size="45" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			<field
+			name="canned_id"
+			type="fsjlookup"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_FIELD_CANNED_ID"
+			description=""
+			lu_table="#__fsj_fssadd_canned"
+			lu_field="id"
+			lu_display="title"
+			lu_nested="0"
+			lu_sql=""
+			use_state="0"
+			state=""
+			use_set=""
+			onchange=""
+			readonly="0"
+		>
+					</field>
+
+	
+		
+			<field
+			name="tab"
+			type="fsjstring"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_FIELD_TAB"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjstring_size = "60"	
+										fsjstring_maxlength = "250"	
+										fsjstring_tmpl = ""	
+						>	
+
+																										</field>
+	
+		
+			<field
+			name="fieldtype"
+			type="fsjcftype"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_FIELD_FIELDTYPE"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjcftype_paramfield = "params"	
+										fsjcftype_class = "chzn-done testclass"	
+						>	
+
+																			</field>
+	
+		
+								<field name="params" type="editor" class="inputbox"
+			label="" description=""
+			filter="JComponentHelper::filterText" buttons="true"
+			 hide="readmore,pagebreak" 			default=""
+			 />
+				
+	
+		
+			<field
+			name="description"
+			type="fsjtext"
+			label="FSJ_FSSADD_FORM_FSSADD_CANNED_FIELD_DESCRIPTION"
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjtext_fullfield = ""	
+										fsjtext_introfield = ""	
+										fsjtext_readmore = "0"	
+										fsjtext_pagebreak = "0"	
+										fsjtext_image = "1"	
+										fsjtext_width = "550"	
+										fsjtext_height = "400"	
+										fsjtext_cols = "60"	
+										fsjtext_rows = "20"	
+										fsjtext_strip = "0"	
+										fsjtext_maxsize = "0"	
+										fsjtext_preformat = "0"	
+										fsjtext_divwidth = "0"	
+										fsjtext_divheight = "0"	
+										fsjtext_rawtoggle = ""	
+										fsjtext_htmledit = "1"	
+										fsjtext_style = ""	
+						>	
+
+																																																																																																																												</field>
+	
+		
+			<field
+			name="spacer"
+			type="fsjspacer"
+			label=""
+			description=""
+			use_set=""
+			size=""
+			default=""
+									
+										fsjspacer_height = "200"	
+						>	
+
+												</field>
+	
+
+  </fieldset>
+
+
+
+</form>

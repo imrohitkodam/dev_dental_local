@@ -1,0 +1,60 @@
+ ALTER TABLE  `#__jlike_todos` ADD COLUMN `created` TIMESTAMP NOT NULL AFTER  `sender_msg` ;
+ ALTER TABLE  `#__jlike_todos` ADD COLUMN `checked_out` INT(11) NOT NULL AFTER  `state` ;
+ ALTER TABLE  `#__jlike_annotations` ADD COLUMN `type` INT(11) NOT NULL AFTER  `note` ;
+
+
+CREATE TABLE `#__jlike_pathnode_graph` (
+  `pathnode_graph_id` int(11) NOT NULL AUTO_INCREMENT,
+  `path_id` int(11) NOT NULL DEFAULT '0' COMMENT 'context / path ',
+  `lft` int(11) NOT NULL DEFAULT '0',
+  `node` int(11) NOT NULL DEFAULT '0' COMMENT 'is content_id of jlike_content OR path_id of jlike_path table',
+  `rgt` int(11) NOT NULL DEFAULT '0',
+  `order` int(11) NOT NULL DEFAULT '0' COMMENT 'Display order',
+  `isPath` tinyint(11) NOT NULL DEFAULT '0' COMMENT 'if 1 = path and 0 = node',
+  `this_compulsory` tinyint(1) NOT NULL COMMENT 'Current/This is compulsory or not, 1 is compulsory 0 is optional',
+  `delay` int(11) NOT NULL,
+  `duration` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pathnode_graph_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+
+
+CREATE TABLE `#__jlike_paths` (
+  `path_id` int(11) NOT NULL AUTO_INCREMENT,
+  `path_title` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `alias` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `path_description` text CHARACTER SET latin1 NOT NULL,
+  `path_image` text CHARACTER SET latin1 NOT NULL,
+  `category_id` int(11) NOT NULL DEFAULT '0' COMMENT 'This will be Joomla Category',
+  `order` int(11) NOT NULL DEFAULT '0' COMMENT 'Display order',
+  `path_type` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '0' COMMENT 'identifier of path_type table',
+  `depth` tinyint(4) NOT NULL DEFAULT '0',
+  `params` text CHARACTER SET latin1 NOT NULL,
+  `state` int(11) NOT NULL DEFAULT '0' COMMENT 'Published/Unpublished',
+  `created_by` int(11) NOT NULL DEFAULT '0' COMMENT 'Created By user id',
+  `created_date` date DEFAULT NULL COMMENT 'Created date',
+  `modified_by` int(11) NOT NULL DEFAULT '0',
+  `modified_date` date DEFAULT NULL,
+  PRIMARY KEY (`path_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+
+
+CREATE TABLE `#__jlike_path_type` (
+  `path_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_title` varchar(255) NOT NULL,
+  `identifier` varchar(255) NOT NULL,
+  `params` text NOT NULL COMMENT 'Used to Define specific fields needed for this path type, specific actions on various events etc',
+  PRIMARY KEY (`path_type_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `#__jlike_path_user` (
+  `path_user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `path_id` int(11) DEFAULT '0' COMMENT 'jlike_paths PK',
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `status` varchar(50) NOT NULL DEFAULT 'I' COMMENT 'path completion status If C= Completed, I= Incompleted',
+  `subscribed_date` datetime NOT NULL,
+  `completed_date` datetime NOT NULL,
+  PRIMARY KEY (`path_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;

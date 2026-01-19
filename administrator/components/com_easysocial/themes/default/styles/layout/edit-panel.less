@@ -1,0 +1,67 @@
+@import "config";
+
+.es-edit-panel {
+	.flex-display(flex);
+	.flex-wrap(nowrap);
+	
+	background-color: #FAFAFA;
+	border: 1px solid @fd-ui-border-color;
+	border-radius: @fd-ui-radius;
+	// Layout control
+	&__side {
+		// width: 240px;
+		.flex(0 0 240px);
+	}
+	&__content {
+		border-left: 1px solid @fd-ui-border-color;
+		background-color: #fff;
+		.flex(1 1 auto);
+		// padding: @fd-base-spacing--lg;
+	}
+	&__form-wrap {
+		padding: @fd-base-spacing--lg;
+	}
+	&__heading {
+		line-height: 52px;
+		border-bottom: 1px solid @fd-ui-border-color;
+		padding: 0 @fd-base-spacing--lg;
+	}
+	// Side tabs elements
+	&__tabs {
+		margin:  0; /* [1] */
+		padding: 0; /* [1] */
+		list-style: none; /* [1] */
+		display: table; /* [2] */
+		table-layout: fixed; /* [3] */
+		width: 100%; /* [4] */
+		text-align: center;
+
+		font-size: @fd-base-font-size;
+		&-item {
+			display: block;
+			text-align: left;
+			color: @fd-ui-meta-color;
+			// border-right: 2px solid transparent;
+			position: relative;
+
+			&.active {
+				.es-edit-panel__tabs-link {
+					font-weight: bold;
+					background-color: #fff;
+				}	
+			}
+		}
+		&-link {
+			display: block;
+			// background-color: red;
+			color: @fd-ui-text-color;
+
+			line-height: 52px;
+			padding: 0 @fd-base-spacing--lg;
+			border-bottom: 1px solid @fd-ui-border-color;
+			&:hover {
+				background-color: #fff;
+			}
+		}
+	}
+}

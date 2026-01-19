@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- $Id: category.xml 21329 2011-05-11 04:15:59Z eddieajau $ -->
+<form>
+	<field
+		name="id"
+		type="text"
+		default="0"
+		label="JGLOBAL_FIELD_ID_LABEL"
+		description ="JGLOBAL_FIELD_ID_DESC"
+		class="readonly"
+		readonly="true"/>	
+
+	<field
+		name="category_id"
+		type="edocmancategory"
+		label="EDOCMAN_CATEGORY"
+		description="EDOCMAN_CATEGORY_OF_DOCUMENT"
+		class="inputbox chosen"
+		required="true"
+        action="true"
+		/>
+		
+	<field
+		name="extra_category_ids"
+		type="edocmancategory"
+		label="EDOCMAN_EXTRA_CATEGORY"
+		description="EDOCMAN_EXTRA_CATEGORY_DESC"
+		class="inputbox chosen"
+		required="false"
+		multiple="true"
+        action="true"
+	/>
+		
+	<field
+		name="title"
+		type="text"
+		label="JGLOBAL_TITLE"
+		description="JFIELD_TITLE_DESC"
+		class="inputbox"
+		size="40"
+		required="true"/>
+			
+	<field
+		name="alias"
+		type="text"
+		label="JFIELD_ALIAS_LABEL"
+		description="JFIELD_ALIAS_DESC"
+		class="inputbox"
+		size="40"/>
+
+	<field
+		name="document_version"
+		type="text"
+		label="EDOCMAN_VERSION"
+		description="EDOCMAN_VERSION_DESC"
+		class="input-small"
+		size="20"
+		required="false"/>
+	
+	<field
+		name="filename"
+		type="file"
+		label="EDOCMAN_FILE"
+		description="EDOCMAN_FILE_DESC"
+		class="inputbox"
+		hide_none="true"
+		hide_default="true"
+		size="60"/>
+		
+	<field
+		name="document_url"
+		type="url"
+		label="EDOCMAN_FILE_URL"
+		description="EDOCMAN_FILE_URL_DESC"
+		class="inputbox"
+		size="60"
+		/>	
+	
+	<field name="select_filename"
+	 type="edocmanfilelist" 
+	 default="" 	
+	 label="EDOCMAN_CHOOSE_A_FILE" 
+	 description="EDOCMAN_CHOOSE_A_FILE_DESC" 	 
+	 filter="" 
+	 exclude="" 
+	 stripext=""
+	 hide_default="true"
+	 
+	 />
+
+	 <field
+		name="view_url"
+		type="url"
+		label="EDOCMAN_VIEW_URL"
+		description="EDOCMAN_VIEW_URL_DESC"
+		class="inputbox"
+		size="60"
+		/>	
+										
+	<field
+		name="image"
+		type="file"
+		label="EDOCMAN_THUMBNAIL"
+		description="EDOCMAN_THUMBNAIL_DESC"
+		class="inputbox"
+		size="50"
+		accept="image/*"
+		/>
+
+	<field
+		name="accesspicker"
+		type="list"
+		class="inputbox accesspicker"
+		label="JFIELD_ACCESS_LABEL"
+		default="0"
+		description="">
+		<option value="0">EDOCMAN_PRESETS</option>
+		<option value="1">EDOCMAN_GROUPS</option>
+	</field>
+								
+	<field
+		name="access"
+		type="accesslevel"
+		label="JFIELD_ACCESS_LABEL"
+		description="JFIELD_ACCESS_DESC"
+		class="inputbox"/>	
+	
+	<field
+		name="groups"
+		type="usergroup"
+		multiple="true"
+		label="EDOCMAN_THIS_ITEM_CAN_BE_VIEW_BY"
+		description=""
+		class="chosen"/>
+	
+	<field
+		name="user_ids"
+		type="text"
+		label="EDOCMAN_USER_IDS"
+		description="EDOCMAN_USER_IDS_DOCUMENT_DESC"
+		class="inputbox"
+		size="32"/>
+	
+	<field name="group_ids" type="usergroup" label="EDOCMAN_GROUP_IDS" description="EDOCMAN_GROUP_IDS_DOCUMENT_DESC"  multiple="true" />
+				
+	<field
+		name="license_id"
+		type="edocmanlicense"
+		label="EDOCMAN_LICENSE"
+		description="EDOCMAN_LICENSE_DESC"
+		class="inputbox"/>	
+						
+	<field
+		name="published"
+		type="list"
+		class="inputbox"
+		default="1"
+		size="1"
+		label="JSTATUS"
+		description="JFIELD_PUBLISHED_DESC">
+		<option
+			value="1">
+			JPUBLISHED</option>
+		<option
+			value="0">
+			JUNPUBLISHED</option>		
+	</field>
+	
+	<field
+			name="language"
+			type="contentlanguage"
+			label="JFIELD_LANGUAGE_LABEL"
+			description="EDOCMAN_FIELD_LANGUAGE_DESC"
+			class="inputbox">
+			<option value="*">JALL</option>
+		</field>
+	
+	<field
+		name="indicators"
+		type="list"		
+		label="EDOCMAN_INDICATORS"
+		description="EDOCMAN_INDICATORS_DESC"		
+		required="false"
+		multiple="true"
+		size="2">
+		<option
+			value="hot">
+			EDOCMAN_HOT</option>
+		<option
+			value="featured">
+			EDOCMAN_FEATURED</option>		
+	</field>
+	
+	<field
+		name="tags"
+		type="text"
+		label="EDOCMAN_TAGS"
+		description="EDOCMAN_TAGS_DESC"
+		class="input-xxlarge"
+		size="60"/>
+				
+	<field
+		name="short_description"
+		type="editor"
+		label="EDOCMAN_SHORT_DESCRIPTION"
+		description="EDOCMAN_SHORT_DESCRIPTION_DESC"
+		class="inputbox"
+		filter="JComponentHelper::filterText"
+		width="100%"
+		height="150"		
+		buttons="true"
+		hide="readmore,pagebreak,module"/>	
+				
+	<field
+		name="description"
+		type="editor"
+		label="JGLOBAL_DESCRIPTION"
+		description="EDOCMAN_DESCRIPTION_DESC"
+		class="inputbox"
+		width="100%"
+		height="150"
+		filter="JComponentHelper::filterText"
+		buttons="true"
+		hide="readmore,pagebreak,module"/>
+
+	<field
+		name="document_history"
+		type="editor"
+		label="EDOCMAN_DOCUMENT_HISTORY_LABEL"
+		description="EDOCMAN_DOCUMENT_HISTORY_DESC"
+		class="inputbox"
+		width="100%"
+		height="150"
+		filter="JComponentHelper::filterText"
+		buttons="true"
+		hide="readmore,pagebreak,module,article"
+		/>
+		
+	<field
+		name="buttonspacer"
+		label="JGLOBAL_ACTION_PERMISSIONS_LABEL"
+		description="JGLOBAL_ACTION_PERMISSIONS_DESCRIPTION"
+		type="spacer" />
+	
+	<field
+		name="asset_id"
+		type="hidden"
+		filter="unset"/>
+		
+	<field
+		name="checked_out"
+		type="hidden"
+		filter="unset"/>
+
+	<field
+		name="checked_out_time"
+		type="hidden"
+		filter="unset"/>
+	
+	<field
+		name="metadesc"
+		type="textarea"
+		label="JFIELD_META_DESCRIPTION_LABEL"
+		description="JFIELD_META_DESCRIPTION_DESC"
+		rows="3"
+		cols="40"/>
+
+	<field
+		name="metakey"
+		type="textarea"
+		label="JFIELD_META_KEYWORDS_LABEL"
+		description="JFIELD_META_KEYWORDS_DESC"
+		rows="3"
+		cols="40"/>
+
+	<field
+		name="created_user_id"
+		type="user"
+		label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+		desc="JGLOBAL_FIELD_CREATED_BY_DESC"
+		/>
+				
+	<field name="created_time" type="calendar" label="JGLOBAL_CREATED_DATE"
+			class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />	
+
+	<field
+		name="modified_user_id"
+		type="user"
+		label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+		class="readonly"
+		readonly="true"
+		filter="unset"/>
+		
+	<field name="modified_time" type="calendar" label="JGLOBAL_FIELD_MODIFIED_LABEL"
+			class="inputbox" size="22"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+
+	<field name="publish_up" type="calendar"
+		   label="JGLOBAL_FIELD_PUBLISH_UP_LABEL" description="JGLOBAL_FIELD_PUBLISH_UP_DESC"
+		   format="%Y-%m-%d %H:%M:%S" size="22"
+		   filter="user_utc" />
+
+	<field name="publish_down" type="calendar"
+		   label="JGLOBAL_FIELD_PUBLISH_DOWN_LABEL" description="JGLOBAL_FIELD_PUBLISH_DOWN_DESC"
+		   format="%Y-%m-%d %H:%M:%S" size="22"
+		   filter="user_utc" />
+					
+	<field
+		name="hits"
+		type="text"
+		label="EDOCMAN_HITS"
+		description="EDOCMAN_HITS_DESC"
+		class="inputbox"
+		size="10"/>	
+		
+	<field
+		name="downloads"
+		type="text"
+		label="EDOCMAN_DOWNLOADS"
+		description="EDOCMAN_DOWNLOADS_DESC"
+		class="inputbox"
+		size="10"/>	
+		
+	<field
+		id="rules"
+		name="rules"
+		type="rules"
+		label="JFIELD_RULES_LABEL"
+		translate_label="false"
+		filter="rules"
+		validate="rules"
+		class="inputbox"
+		component="com_edocman"
+		section="document"/>
+	
+	<field
+		name="is_locked"
+		type="list"
+		class="inputbox"
+		default="0"
+		size="1"
+		label="Lock status"
+		description="Lock status of Document">
+		<option
+			value="0">
+			EDOCMAN_UNLOCKED</option>
+		<option
+			value="1">
+			EDOCMAN_LOCKED</option>
+	</field>
+
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="field_speaker" type="text" label="Speaker" size="50" description=""></field>			
+			<field name="field_hours" type="text" label="Number Hours" size="50" description=""></field>	
+		</fieldset>			
+	</fields>
+</form>

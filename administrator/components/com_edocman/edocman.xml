@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.11.6" method="upgrade">
+	<name>edocman</name>
+	<creationDate>2011-07-10</creationDate>
+	<copyright>Copyright (C) 2011 - 2019 Ossolution Team. All rights
+		reserved.
+	</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt
+	</license>
+	<author>Dang Thuc Dam</author>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<version>1.11.6</version>
+	<description>EDocman is the leading document and files download manager extension for Joomla</description>
+	<scriptfile>install.edocman.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<media destination="com_edocman" folder="media">
+		<filename>index.html</filename>
+		<folder>category</folder>
+		<folder>document</folder>
+	</media>
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>edocman.php</filename>
+		<filename>router.php</filename>
+		<folder>assets</folder>
+		<folder>view</folder>
+		<folder>views</folder>
+		<folder>model</folder>
+		<folder>controller</folder>
+		<folder>helper</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_edocman.ini</language>
+	</languages>
+	<administration>
+		<menu>COM_EDOCMAN</menu>
+		<submenu>
+			<menu link="option=com_edocman&amp;view=dashboard" view="dashboard" alt="Edocman/Files">EDOCMAN_DASHBOARD</menu>
+			<menu link="option=com_edocman&amp;view=categories" view="categories" alt="Edocman/Categories">EDOCMAN_CATEGORIES</menu>
+			<menu link="option=com_edocman&amp;view=documents" view="documents" alt="Edocman/Documents">EDOCMAN_DOCUMENTS</menu>
+			<menu link="option=com_edocman&amp;view=licenses" view="licenses" alt="Edocman/Licenses">EDOCMAN_LICENSES</menu>
+			<menu link="option=com_edocman&amp;view=upload" view="upload" alt="Edocman/Translation">EDOCMAN_BATCH_UPLOAD</menu>
+			<menu link="option=com_edocman&amp;view=import" view="import" alt="Edocman/Import">EDOCMAN_BULK_IMPORT</menu>
+			<menu link="option=com_edocman&amp;view=language" view="language" alt="Edocman/Translation">EDOCMAN_TRANSLATION</menu>
+			<menu link="option=com_edocman&amp;view=sefoptimize" view="sefoptimize" alt="Edocman/Sef Optimize">EDOCMAN_SEFOPTIMIZE</menu>
+			<menu link="option=com_edocman&amp;view=downloadlogs" view="downloadlogs" alt="Edocman/Download logs">EDOCMAN_DOWNLOADLOGS</menu>
+			<menu link="option=com_edocman&amp;view=configuration" view="configuration" alt="Edocman/Configuration">EDOCMAN_CONFIG</menu>
+		</submenu>
+		<files folder="administrator">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>htaccess.txt</filename>
+			<filename>index.html</filename>
+			<filename>edocman.php</filename>
+			<folder>assets</folder>
+			<folder>controller</folder>
+			<folder>model</folder>
+			<folder>sql</folder>
+			<folder>table</folder>
+			<folder>view</folder>
+			<folder>libraries</folder>
+		</files>
+		<languages folder="administrator">
+			<language tag="en-GB">language/en-GB.com_edocman.ini</language>
+			<language tag="en-GB">language/en-GB.com_edocman.sys.ini</language>
+		</languages>
+	</administration>
+</extension>

@@ -1,0 +1,1 @@
+ALTER TABLE `#__jticketing_events` CHANGE `jt_params` `jt_params` text DEFAULT NULL;

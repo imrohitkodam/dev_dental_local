@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fields name="main" label="Admin canned replies">
+
+    <fieldset name="main" label="">
+      <field
+				name="enable"
+				type="radio"
+				class="btn-group btn-group-yesno"
+				label="Enable 'Form Reply' button"
+				description="Enable 'Form Reply' button when showing a ticket"
+        default="1">
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+      </field>
+
+      <field
+				name="text"
+				type="string"
+				class="b"
+				label="Custom Label"
+				description="Enter text here to use a custom label"
+        default="">
+      </field>
+
+
+      <field
+				name="btnclass"
+				type="string"
+				class="b"
+				label="Button Class"
+				description=""
+        default="btn btn-default">
+      </field>
+
+      <field
+       name="hidereply"
+       type="radio"
+       class="btn-group btn-group-yesno"
+       label="Hide 'Post Reply' button"
+       description="Hide 'Post Reply' button"
+       default="0">
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+      </field>
+
+      <field
+       name="hideprivate"
+       type="radio"
+       class="btn-group btn-group-yesno"
+       label="Hide 'Add Private Comment' button"
+       description="Hide 'Add Private Comment' button"
+       default="0">
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+      </field>
+
+      <field
+         name="inlist"
+         type="radio"
+         class="btn-group btn-group-yesno"
+         label="Enable in 'Insert' dropdown"
+         description="Add canned replies to 'Insert' dropdown when replying to a ticket."
+         default="1">
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+      </field>
+
+    </fieldset>
+  </fields>
+
+</form>

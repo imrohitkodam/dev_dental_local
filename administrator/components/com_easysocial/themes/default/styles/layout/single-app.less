@@ -1,0 +1,47 @@
+@import "config";
+
+.es-single-app { // Override o-box
+	background-color: #fff;
+	position: relative;
+	
+	> div {
+		padding: @fd-base-spacing--lg;
+	}
+	// Ratings
+	.stars {
+		color: #ff8f13;
+	}
+	
+	&__btn-installed {
+		position: absolute;
+		top: @fd-base-spacing--lg;
+		right: @fd-base-spacing--lg;
+
+	}
+	&__title {
+		display: block;
+		font-weight: bold;
+		margin-bottom: @fd-base-spacing--sm;
+	}
+	&__meta {
+		color: @fd-ui-meta-color;
+		margin-bottom: @fd-base-spacing--sm;
+	}
+	&__desc {
+		margin-bottom: @fd-base-spacing;	
+	}
+	&__screen-list {
+		.flex-display(flex);
+		.flex-wrap(wrap);
+	}
+	&__screen-item {
+		padding: @fd-base-spacing; 
+		height: 200px;
+		background-size: cover;
+		.flex(0 0 320px);
+		margin: 0 @fd-base-spacing--lg @fd-base-spacing--lg 0;
+		border-radius: @fd-ui-radius;
+		border: 1px solid @fd-ui-border-color--l;
+		
+	}
+}

@@ -1,0 +1,44 @@
+.pp-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--pp-font-color);
+  background-color: var(--pp-bg); // Reset for nesting within parents with `background-color`.
+
+  th,
+  td {
+	padding: 1rem 1rem;
+	vertical-align: top;
+	border-top: 1px solid var(--pp-border-color);
+  }
+
+  thead th {
+	vertical-align: bottom;
+	border-bottom: 1px solid var(--pp-border-color);
+  }
+
+  tbody + tbody {
+	border-top: 1px solid var(--pp-border-color);
+  }
+}
+.pp-table--bordered-custom {
+  border: 1px solid var(--pp-border-color);
+
+  th,
+  td {
+	// border: 1px solid var(--pp-border-color);
+	border-top: none;
+  }
+
+  thead {
+	th,
+	td {
+	  border-bottom-width: 1px;
+	}
+  }
+}
+
+.pp-table--striped {
+  tbody tr:nth-of-type(odd) {
+	// background-color: $table-accent-bg;
+  }
+}

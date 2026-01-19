@@ -1,0 +1,318 @@
+#es {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f8f8f8;
+  font-size: 13px;
+  line-height: 1.538461538;
+}
+#es p {
+  font-size: 13px;
+  line-height: 1.538461538;
+}
+#es table {
+  border-collapse: collapse;
+}
+#es hr {
+  clear: both;
+}
+#es .dropdown > a {
+  outline: none !important;
+}
+#es .dropdown > a::-moz-focus-inner {
+  border: 0 !important;
+}
+#es .panel-title {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: normal;
+  margin: 0 0 0px;
+  padding: 0;
+  color: #626d7f;
+}
+#es .privacy-custom-menu {
+  position: absolute;
+  padding: 10px;
+  min-width: 350px;
+}
+#es .priority-1 {
+  color: #2aacd2;
+}
+#es .priority-2 {
+  color: #51a351;
+}
+#es .priority-3 {
+  color: #FBB450;
+}
+#es .priority-4 {
+  color: #EE5F5B;
+}
+#es .es-avatar {
+  line-height: 0;
+  display: inline-block;
+  border: 2px solid white;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.4);
+}
+#es .es-avatar img {
+  display: block;
+}
+#es .es-avatar-circle {
+  border-radius: 50%;
+}
+#es .es-avatar-circle img {
+  border-radius: 50%;
+}
+#es a.es-avatar {
+  color: transparent;
+}
+#es .es-avatar-lg {
+  width: 120px;
+  height: 120px;
+}
+#es .es-avatar-md {
+  width: 58px;
+  height: 58px;
+}
+#es .es-avatar-sm {
+  width: 32px;
+  height: 32px;
+}
+#es .btn-es {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+#es .btn-es:hover {
+  background-position: 0 0px;
+  border: 1px solid #BBB;
+}
+#es .btn-es-social {
+  border-radius: 10px;
+  font-size: 11px;
+  position: relative;
+  padding-left: 22px;
+}
+#es .btn-es-social:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../../../../../../media/com_easysocial/images/icons/icons-btn-social.png');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+#es .btn-es-facebook {
+  color: #fff !important;
+  background-color: #5692ce !important;
+  border-color: #2b6cb3 !important;
+}
+#es .btn-es-facebook:focus,
+#es .btn-es-facebook.focus {
+  color: #fff !important;
+  background-color: #3679bb !important;
+  border-color: #122e4c !important;
+}
+#es .btn-es-facebook:hover {
+  color: #fff !important;
+  background-color: #3679bb !important;
+  border-color: #1f4e82 !important;
+}
+#es .btn-es-facebook:active,
+#es .btn-es-facebook.active,
+.open > .dropdown-toggle#es .btn-es-facebook {
+  color: #fff !important;
+  background-color: #3679bb !important;
+  border-color: #1f4e82 !important;
+}
+#es .btn-es-facebook:active:hover,
+#es .btn-es-facebook:active:focus,
+#es .btn-es-facebook:active.focus,
+#es .btn-es-facebook.active:hover,
+#es .btn-es-facebook.active:focus,
+#es .btn-es-facebook.active.focus,
+.open > .dropdown-toggle#es .btn-es-facebook:hover,
+.open > .dropdown-toggle#es .btn-es-facebook:focus,
+.open > .dropdown-toggle#es .btn-es-facebook.focus {
+  color: #fff !important;
+  background-color: #2e679f !important;
+  border-color: #122e4c !important;
+}
+#es .btn-es-facebook:active,
+#es .btn-es-facebook.active,
+.open > .dropdown-toggle#es .btn-es-facebook {
+  background-image: none !important;
+}
+#es .btn-es-facebook.disabled,
+#es .btn-es-facebook.disabled:hover,
+#es .btn-es-facebook.disabled:focus,
+#es .btn-es-facebook.disabled.focus,
+#es .btn-es-facebook.disabled:active,
+#es .btn-es-facebook.disabled.active,
+#es .btn-es-facebook[disabled],
+#es .btn-es-facebook[disabled]:hover,
+#es .btn-es-facebook[disabled]:focus,
+#es .btn-es-facebook[disabled].focus,
+#es .btn-es-facebook[disabled]:active,
+#es .btn-es-facebook[disabled].active,
+fieldset[disabled] #es .btn-es-facebook,
+fieldset[disabled] #es .btn-es-facebook:hover,
+fieldset[disabled] #es .btn-es-facebook:focus,
+fieldset[disabled] #es .btn-es-facebook.focus,
+fieldset[disabled] #es .btn-es-facebook:active,
+fieldset[disabled] #es .btn-es-facebook.active {
+  background-color: #5692ce !important;
+  border-color: #2b6cb3 !important;
+}
+#es .btn-es-facebook .badge {
+  color: #5692ce !important;
+  background-color: #fff !important;
+}
+#es .btn-es-facebook:before {
+  background-position: 0 0;
+}
+#es .btn-es-twitter {
+  color: #fff !important;
+  background-color: #61cef4 !important;
+  border-color: #05b3f4 !important;
+}
+#es .btn-es-twitter:focus,
+#es .btn-es-twitter.focus {
+  color: #fff !important;
+  background-color: #31bff1 !important;
+  border-color: #025777 !important;
+}
+#es .btn-es-twitter:hover {
+  color: #fff !important;
+  background-color: #31bff1 !important;
+  border-color: #0487b8 !important;
+}
+#es .btn-es-twitter:active,
+#es .btn-es-twitter.active,
+.open > .dropdown-toggle#es .btn-es-twitter {
+  color: #fff !important;
+  background-color: #31bff1 !important;
+  border-color: #0487b8 !important;
+}
+#es .btn-es-twitter:active:hover,
+#es .btn-es-twitter:active:focus,
+#es .btn-es-twitter:active.focus,
+#es .btn-es-twitter.active:hover,
+#es .btn-es-twitter.active:focus,
+#es .btn-es-twitter.active.focus,
+.open > .dropdown-toggle#es .btn-es-twitter:hover,
+.open > .dropdown-toggle#es .btn-es-twitter:focus,
+.open > .dropdown-toggle#es .btn-es-twitter.focus {
+  color: #fff !important;
+  background-color: #11b5ee !important;
+  border-color: #025777 !important;
+}
+#es .btn-es-twitter:active,
+#es .btn-es-twitter.active,
+.open > .dropdown-toggle#es .btn-es-twitter {
+  background-image: none !important;
+}
+#es .btn-es-twitter.disabled,
+#es .btn-es-twitter.disabled:hover,
+#es .btn-es-twitter.disabled:focus,
+#es .btn-es-twitter.disabled.focus,
+#es .btn-es-twitter.disabled:active,
+#es .btn-es-twitter.disabled.active,
+#es .btn-es-twitter[disabled],
+#es .btn-es-twitter[disabled]:hover,
+#es .btn-es-twitter[disabled]:focus,
+#es .btn-es-twitter[disabled].focus,
+#es .btn-es-twitter[disabled]:active,
+#es .btn-es-twitter[disabled].active,
+fieldset[disabled] #es .btn-es-twitter,
+fieldset[disabled] #es .btn-es-twitter:hover,
+fieldset[disabled] #es .btn-es-twitter:focus,
+fieldset[disabled] #es .btn-es-twitter.focus,
+fieldset[disabled] #es .btn-es-twitter:active,
+fieldset[disabled] #es .btn-es-twitter.active {
+  background-color: #61cef4 !important;
+  border-color: #05b3f4 !important;
+}
+#es .btn-es-twitter .badge {
+  color: #61cef4 !important;
+  background-color: #fff !important;
+}
+#es .btn-es-twitter:before {
+  background-position: -16px 0;
+}
+#es .btn-es-linkedin {
+  color: #fff !important;
+  background-color: #6cb3d3 !important;
+  border-color: #4b97c3 !important;
+}
+#es .btn-es-linkedin:focus,
+#es .btn-es-linkedin.focus {
+  color: #fff !important;
+  background-color: #459fc7 !important;
+  border-color: #24516b !important;
+}
+#es .btn-es-linkedin:hover {
+  color: #fff !important;
+  background-color: #459fc7 !important;
+  border-color: #34769d !important;
+}
+#es .btn-es-linkedin:active,
+#es .btn-es-linkedin.active,
+.open > .dropdown-toggle#es .btn-es-linkedin {
+  color: #fff !important;
+  background-color: #459fc7 !important;
+  border-color: #34769d !important;
+}
+#es .btn-es-linkedin:active:hover,
+#es .btn-es-linkedin:active:focus,
+#es .btn-es-linkedin:active.focus,
+#es .btn-es-linkedin.active:hover,
+#es .btn-es-linkedin.active:focus,
+#es .btn-es-linkedin.active.focus,
+.open > .dropdown-toggle#es .btn-es-linkedin:hover,
+.open > .dropdown-toggle#es .btn-es-linkedin:focus,
+.open > .dropdown-toggle#es .btn-es-linkedin.focus {
+  color: #fff !important;
+  background-color: #368cb3 !important;
+  border-color: #24516b !important;
+}
+#es .btn-es-linkedin:active,
+#es .btn-es-linkedin.active,
+.open > .dropdown-toggle#es .btn-es-linkedin {
+  background-image: none !important;
+}
+#es .btn-es-linkedin.disabled,
+#es .btn-es-linkedin.disabled:hover,
+#es .btn-es-linkedin.disabled:focus,
+#es .btn-es-linkedin.disabled.focus,
+#es .btn-es-linkedin.disabled:active,
+#es .btn-es-linkedin.disabled.active,
+#es .btn-es-linkedin[disabled],
+#es .btn-es-linkedin[disabled]:hover,
+#es .btn-es-linkedin[disabled]:focus,
+#es .btn-es-linkedin[disabled].focus,
+#es .btn-es-linkedin[disabled]:active,
+#es .btn-es-linkedin[disabled].active,
+fieldset[disabled] #es .btn-es-linkedin,
+fieldset[disabled] #es .btn-es-linkedin:hover,
+fieldset[disabled] #es .btn-es-linkedin:focus,
+fieldset[disabled] #es .btn-es-linkedin.focus,
+fieldset[disabled] #es .btn-es-linkedin:active,
+fieldset[disabled] #es .btn-es-linkedin.active {
+  background-color: #6cb3d3 !important;
+  border-color: #4b97c3 !important;
+}
+#es .btn-es-linkedin .badge {
+  color: #6cb3d3 !important;
+  background-color: #fff !important;
+}
+#es .btn-es-linkedin:before {
+  background-position: -32px 0;
+}
+#es .btn-toolbar .btn-group {
+  display: inline-block;
+}
+#es .btn-micro {
+  font-size: 10px;
+  line-height: 8px;
+  padding: 1px 4px;
+}

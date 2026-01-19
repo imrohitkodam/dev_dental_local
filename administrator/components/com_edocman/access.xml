@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<access component="com_edocman">
+	<section name="component">
+		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
+		<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC" />
+		<action name="core.create" title="JACTION_CREATE" description="JACTION_CREATE_COMPONENT_DESC" />
+		<action name="core.delete" title="JACTION_DELETE" description="JACTION_DELETE_COMPONENT_DESC" />
+		<action name="core.edit" title="JACTION_EDIT" description="JACTION_EDIT_COMPONENT_DESC" />
+		<action name="core.edit.state" title="JACTION_EDITSTATE" description="JACTION_EDITSTATE_COMPONENT_DESC" />
+		<action name="core.edit.own" title="JACTION_EDITOWN" description="JACTION_EDITOWN_COMPONENT_DESC" />
+		<action name="edocman.deleteown" title="EDOCMAN_DELETEOWN" description="EDOCMAN_DELETEOWN_DESC" />
+		<action name="edocman.download" title="COM_EDOCMAN_DOWNLOAD" description="COM_EDOCMAN_DOWNLOAD_DESC" />
+		<action name="edocman.assign_documents_to_users" title="EDOCMAN_ASSIGN_DOCUMENT_TO_USERS" description="EDOCMAN_ASSIGN_DOCUMENT_TO_USERS_DESC" />
+	</section>	
+	<section name="category">		
+		<action name="core.create" title="JACTION_CREATE" description="COM_CATEGORIES_ACCESS_CREATE_DESC" />
+		<action name="core.delete" title="JACTION_DELETE" description="COM_CATEGORIES_ACCESS_DELETE_DESC" />
+		<action name="core.edit" title="JACTION_EDIT" description="COM_CATEGORIES_ACCESS_EDIT_DESC" />
+		<action name="core.edit.state" title="JACTION_EDITSTATE" description="COM_CATEGORIES_ACCESS_EDITSTATE_DESC" />
+		<action name="core.edit.own" title="JACTION_EDITOWN" description="COM_CATEGORIES_ACCESS_EDITOWN_DESC" />
+		<action name="edocman.download" title="EDOCMAN_DOWNLOAD" description="EDOCMAN_DOWNLOAD_DESC" />
+	</section>
+	<section name="document">		
+		<action name="core.delete" title="JACTION_DELETE" description="COM_CONTENT_ACCESS_DELETE_DESC" />
+		<action name="core.edit" title="JACTION_EDIT" description="COM_CONTENT_ACCESS_EDIT_DESC" />
+		<action name="core.edit.state" title="JACTION_EDITSTATE" description="COM_CONTENT_ACCESS_EDITSTATE_DESC" />
+		<action name="edocman.download" title="EDOCMAN_DOWNLOAD" description="EDOCMAN_DOWNLOAD_DESC" />
+	</section>
+</access>
