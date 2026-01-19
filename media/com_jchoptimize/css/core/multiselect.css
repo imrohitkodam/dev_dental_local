@@ -1,0 +1,31 @@
+/**
+ * JCH Optimize - Performs several front-end optimizations for fast downloads
+ *
+ *  @package   jchoptimize/core
+ *  @author    Samuel Marshall <samuel@jch-optimize.net>
+ *  @copyright Copyright (c) 2025 Samuel Marshall / JCH Optimize
+ *  @license   GNU/GPLv3, or later. See LICENSE file
+ *
+ *  If LICENSE file missing, see <http://www.gnu.org/licenses/>.
+ */
+
+.jch-multiselect-row {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.jch-multiselect-row .choices {
+    flex: 1 1 auto;
+    max-width: 80%;
+    margin-bottom: 0;
+}
+
+.jch-multiselect-row .jch-multiselect-add-button {
+    margin-left: .25rem;
+}
+
+.jch-flash {
+    outline: 2px solid #ffbf47;
+    transition: outline-color 1.2s ease;
+}

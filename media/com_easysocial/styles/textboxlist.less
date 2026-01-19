@@ -1,0 +1,42 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+//
+// Textboxlist
+// --------------------------------------------------
+@import "textboxlist/default";
+
+// #fd.es.textboxlist-autocomplete
+&.textboxlist-autocomplete {
+	.textboxlist-autocomplete();
+}
+
+#photo-list {
+
+	.clearfix();
+
+	.photo-item {
+
+		.box-sizing(border-box);
+		float: left;
+		width: 25%;
+		min-width: 96px;
+		min-height: 96px;
+		cursor: pointer;
+
+		i {
+			width: 100%;
+			height: 100%;
+			min-width: 96px;
+			min-height: 96px;
+			display: block;
+			background-repeat: none;
+			background-size: cover;
+			background-position: 50% 25%;
+			.transition(all .6s ease);
+		}
+	}
+}

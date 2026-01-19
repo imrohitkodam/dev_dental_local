@@ -1,0 +1,577 @@
+/**
+* @copyright	Copyright (C) 2009 - 2015 Ready Bytes Software Labs Pvt. Ltd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+* @package		RBInstaller
+* @subpackage	Backend
+* @contact 		support@readybytes.in
+*/
+
+
+.rbinstaller a:focus,
+.rbinstaller button:hover{
+	outline:none;
+}
+
+.rbinstaller .rb-loading{
+	background: url("../images/loading.gif") no-repeat;
+	height : 48px;
+	display:block;
+	background-position: center center;
+	background-size : contain;	
+}
+	
+.rbinstaller .powered-by{
+	background-color: #FAFAFA;
+	border-top: 1px dashed #D6D6D6;
+    margin-top: 10px;
+}
+
+.rbinstaller .margin-top-0{
+	margin-top: 0px;
+}
+
+.rbinstaller .padding-top-20{
+	padding-top: 20px;
+}
+
+.rbinstaller .search-bar .filters{
+	border-right: 1px solid #E1E1E1;    
+    height: 72px;    
+}
+
+.rbinstaller .search-bar .mycart{
+	border-right: 1px solid #E1E1E1;
+	border-left: 1px solid #E1E1E1;    
+    height: 72px;    
+}
+
+.rbinstaller .rbinstaller-container{
+	background: #F7F8F9;
+}
+
+.rbinstaller .header-title{		
+	margin: auto;
+	background: #333333;
+	padding: 30px 0px;
+	color: #FFFFFF;
+}
+
+.rbinstaller .rbinstaller-filter-bar-container{
+	background-color: #F2F8FF;
+    border-bottom: 1px solid #D1D1D1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);	
+    height:72px;    
+}
+
+.rbinstaller .rbinstaller-filter-bar{
+	max-width : 1200px;		
+	margin: auto;	
+}
+
+.rbinstaller .search-bar{
+	background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #D1D1D1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);	
+    height:72px;
+}
+
+.rbinstaller .search-bar .search-bar-container{
+	max-width : 1200px;		
+	margin: auto;	
+}
+
+.rbinstaller .item-container{
+	max-width : 1200px;
+	margin: auto;
+	margin-top:50px;
+
+}
+
+.rbinstaller .item-block{	
+    background-color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px #CCCCCC;
+    margin-top: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rbinstaller .item-header{
+	padding: 24px 16px;
+	font-size: 24px;
+    font-weight: bold;
+    height:	35px;
+}
+
+.rbinstaller .item-content{		
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;	
+	height: 208px;
+}
+
+.rbinstaller .item-content-alert{
+	position:relative;
+}
+
+.rbinstaller .item-content-front{
+	bottom: 0; 
+	left: 0; 
+	position: absolute; 
+	right: 0; 
+	top: 50px;
+	position:absolute;
+	width: 75%;
+	margin: 0px auto;
+	color:#F36506;	
+}
+
+.rbinstaller .item-content-back{
+	opacity: 0.15;	
+}
+
+.rbinstaller .item-footer{	
+    background-color: #333333;
+    overflow: hidden;
+    position: relative;
+    height:75px;  
+    border-radius: 0px 0px 5px 5px;  
+}
+
+.rbinstaller .item-footer-right{
+	float: right;
+    margin: 24px 16px 24px 0;
+}
+
+.rbinstaller .item-footer-left{
+	float: left;
+    margin: 24px 0 24px 16px;
+}
+
+.rbinstaller .item-footer-upper{
+	border-radius: 0px 0px 5px 5px;
+	background-color: #FFFFFF;
+    font-size: 24px;
+    height: 100%;
+    position: absolute;
+    transition: all 0.3s ease-in 0s;
+    -webkit-transition: all 0.3s ease-in 0s;
+	-o-transition: all 0.3s ease-in 0s;
+}
+
+.rbinstaller .item-block:hover .item-footer-upper {
+	transform:translate(0, -100%);	
+    -webkit-transform: translate(0,-100px);
+	-o-transform: translate(0,-100px);
+	transition: All .5s ease-out;	
+	-webkit-transition: All .5s ease-out;
+	-o-transition: All .5s ease-out;	
+}
+
+.rbinstaller .fa-check:before{
+	color: #FFFFFF;
+}
+
+.rbinstaller .fa-save:before {
+ 	color: #000000;   
+}
+
+.rbinstaller .fa-ban:before {
+ 	color: #999999;
+}
+
+.rbinstaller .item-block .active-installed{
+	background-color: #18BC9C;
+    color: #FFFFFF;
+}
+
+.rbinstaller .item-block .active-install{
+	background-color: #FFFF99;
+}
+
+.rbinstaller .item-block .active-upgradable{
+	color: white;
+	background-color: #FFAC40;
+}
+
+.rbinstaller .item-block .none-addedtocart{
+	color: white;
+	background-color: #3498DB;
+}
+
+.rbinstaller .item-block .not-available{
+	color: #999;
+	background-color: #F7F8F9;
+	text-shadow: 0px 1px white;
+}
+
+.rbinstaller .display-inline{
+	display : inline;
+}
+
+.rbinstaller .font-size-18{
+	font-size: 18px;
+}
+
+.rbinstaller .margin-top-2{
+	margin-top: 2%;
+}
+
+.rbinstaller .margin-top-5{
+	margin-top: 5%;
+}
+
+.rbinstaller .install-progress-bar{
+	width: 50%; 
+	margin-left:25%;
+}
+
+.rbinstaller .font-size-14{
+	font-size: 14px;
+}
+
+.rbinstaller .fullview-container{	
+	margin-left: 30px;
+}
+
+.rbinstaller-item-detail{
+	background-color: #333333; 
+	color:#FFFFFF;
+	font-size: 14px;
+}
+
+.rbinstaller .fullview-container .item-icon{
+	padding: 8px;
+	border: 5px solid #444;
+	margin-right: 16px;
+	background-color: #fff; 
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.5); 
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.5); 
+	box-shadow: 0 1px 1px rgba(0,0,0,.5); 
+	border: solid 5px #444;
+}
+
+.rbinstaller .fullview-container .item-icon img{
+	height: 48px;
+	width: 48px;
+}
+
+.rbinstaller .fullview-item-actions{
+ 	border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;    
+    margin-bottom: 0px;
+    height:70px; 
+}
+
+.rbinstaller .fullview-item-action{
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.rbinstaller .fullview-item-compatibility{
+	padding-left:.5cm;
+	height: inherit;
+}
+
+.rbinstaller-item-screenshot{
+	width:128px; 
+	height:128px;
+}
+.rbinstaller-item-hr{
+	border-top-color:#000000; 
+	border-bottom-color:#4A4A4A;
+}
+.rbinstaller .rbinstaller-item-hr1{
+	border-top-color:#000000; 
+	border-bottom-color:#333333;
+	width:90%;
+}
+
+.rbinstaller .fullview-description-block{
+	background-color:#212121;
+	padding-bottom: 16px;
+}
+
+.rbinstaller .fullview-description-content{
+	overflow-y: auto; 
+	max-height:300px;
+}
+ 
+.rbinstaller .fullview-arrow{
+   border-color: #303030 transparent;
+   border-style: solid;
+   border-width: 0 20px 20px;   
+   content: "";
+   display: block;   
+   width: 0;
+   margin: auto;
+}
+
+.rbinstaller .fullview-item-status{	
+    display: inline-block;
+    font-size: 1.1em;
+    margin-top: 15px;
+    padding: 5px 10px;
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px; 
+    border-radius: 3px; 
+    background-color: #222; 
+    -webkit-box-shadow: 0 1px #555; 
+    -moz-box-shadow: 0 1px #555; 
+    box-shadow: 0 1px #555;
+}
+
+.rbinstaller .fullview-container .fa-save:before {
+ 	color: #F8F06C;
+ }
+ .rbinstaller .fullview-status-active-install{
+ 	color: #F8F06C;
+ }
+
+.rbinstaller .fullview-container .fa-check:before {
+ 	color: #468847;
+ }
+  
+ .rbinstaller .fullview-status-active-installed{
+ 	color: #468847;
+ }
+ 
+ .rbinstaller .fullview-status-active-upgradable{
+ 	color: #F7981D;
+ }
+ 
+ .rbinstaller .fullview-status-none-addedtocart{
+ 	color: #3498DB;
+ }
+
+.rbinstaller .fullview-screenshots .thumbnail img{
+	width: 100%;
+	height: 110px;
+}
+
+.rbinstaller .fullview-screenshots .thumbnail {
+	border: 5px solid #444444;
+    border-radius: 3px;    
+    overflow: hidden;
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.rbinstaller .fullview-screenshots .thumbnail .fullview-icon-zoom{
+   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+    color: #FFFFFF;
+    cursor: pointer;    
+    left: 0;    
+    font-size: 16px;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 30% 40%;
+}
+
+.rbinstaller .fullview-screenshots .thumbnail:hover {
+    border-color: #CCCCCC;
+    opacity: .5;
+}
+
+.rbinstaller .fullview-screenshots .thumbnail:hover .fullview-icon-zoom {	
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.rbinstaller .nav-tabs.fullview-nav{
+	margin-right:0;
+	background:#333;
+	border-color:#000;
+	height: 100%;
+}
+
+.rbinstaller .nav-tabs.fullview-nav .active > a, 
+.rbinstaller .fullview-nav.nav-tabs .active > a:hover, 
+.rbinstaller .fullview-nav.nav-tabs .active > a:focus {  
+	background:#212121;
+	border-color:#000;	
+	border-right:0;
+	color: #F4F4F4;
+}
+
+.rbinstaller ul.fullview-nav li a{
+	color: #F4F4F4;
+	font-size: 18px;
+	line-height: 40px;
+	padding-left: 30px;
+}
+
+.rbinstaller ul.fullview-nav li a:hover {
+	text-decoration: underline;
+	background:#333;
+	border:0;
+	border-right: 1px solid black;	
+}
+
+.rbinstaller ul.fullview-nav li.active a:hover,
+.rbinstaller ul.fullview-nav li.active a:focus,
+.rbinstaller ul.fullview-nav li.active a:active {
+	outline:none;
+	background:#212121;
+	text-decoration: none;
+} 
+
+.rbinstaller .fullview-nav.nav-tabs > li > a:focus {
+	background-color:transparent;
+	border:0;			
+}
+
+.rbinstaller .fullview-nav.nav-tabs > li > a:hover,
+.rbinstaller .fullview-nav.nav-tabs > li > a:focus {
+	border-color: #000;
+}
+
+.rbinstaller #rbinstaller-modal-myapps{
+	min-width: 	960px;
+	margin-left: -480px;
+}
+
+.rbinstaller #rbinstaller-modal-myapps .item-status-inprocess{
+	color: #FFAC40;
+}
+
+.rbinstaller .myapps-header{
+	background-color: #F8F8F8;
+	margin-tp:0px;
+	line-height:40px;
+	font-weight:bold;
+	color: #6E6E6E;
+	border-top: 1px solid #D5D5D5;
+}
+
+.rbinstaller .myapps-header .myapps-header-block{	
+	border-right: 1px solid #D5D5D5;
+}
+
+.rbinstaller .myapps-footer{
+	text-align: left;
+	padding:0px;
+	height:35px;
+}
+.rbinstaller .myapps-footer .myapps-footer-block{	
+	border-left: 1px solid #D5D5D5;
+	padding-left: 10px;
+}
+
+
+.rbinstaller .fullview-compatibility{
+	height: inherit;
+	margin-right: 0px;
+}
+	
+.rbinstaller .compatibility-info{
+	height: 55px;
+	border-right: 1px solid #000000;	
+}
+
+.rbinstaller .compatibility-spectrum{
+	height: 15px;	
+	border-right: 1px solid #000000;
+}
+	
+.rbinstaller .compatibility-spectrum .progress{
+	margin-bottom: 0;
+	height: inherit;
+}
+
+.rbinstaller .version-selector{
+	padding-top: 16px;	
+	color: #FFFFFF;
+}
+
+.rbinstaller .version-selector select{
+	background-color: transparent;
+    border: 1px solid #000000;    
+    font-size: 14px;
+    color: #FFFFFF;    
+    width: 160px;
+}
+
+.rbinstaller .version-selector select option{
+	background-color: #303030;
+}
+
+.rbinstaller .margin-top-10{
+	margin-top : 10px;
+}
+
+.rbinstaller .remove-cart-item{
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.rbinstaller #rbinstaller-modal-gallery.modal {
+	width:800px;
+	margin-left:-400px;	
+}
+
+.rbinstaller #rbinstaller-modal-gallery .carousel-inner > .item > img, 
+.rbinstaller #rbinstaller-modal-gallery .carousel-inner > .item > a > img {
+    margin: 0 auto;
+}
+
+.rbinstaller #rbinstaller-modal-gallery .carousel-control{
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-radius: 0 0 0 0;
+    color: #333333;
+    font-size: 96px;
+    font-weight: 300;
+    margin-top: 0;
+ 	opacity: 0;
+}
+
+.rbinstaller #rbinstaller-modal-gallery:hover .carousel-control{
+ 	opacity: 1;
+}
+
+.rbinstaller #rbinstaller-modal-gallery .carousel-indicators li{
+    background-color: #EEEEEE;
+}
+
+.rbinstaller #rbinstaller-modal-gallery .carousel-indicators li.active {
+    background-color: #000000;
+}
+
+.rbinstaller .rbinstaller-item-detail .item-header-padding{	
+	padding: 16px;
+}
+
+.rbinstaller .rbinstaller-item-detail h1{
+	margin-top: 0;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.rbinstaller .rbinstaller-item-detail .muted{ 
+	text-shadow: 0 -1px rgba(0,0,0,.75);
+}
+
+.rbinstaller .rbinstaller-item-detail .separator{
+	font-size: 20px; 
+	color: #111; 
+	text-shadow: 1px 0 rgba(102,102,102,.75);
+	margin: 0 7px;
+}
+
+.rbinstaller .rbinstaller-item-detail .item-icon-remove{
+	color: #ccc; 
+	text-shadow: 0 1px rgba(0,0,0,.5);
+}
+
+.rbinstaller .rbinstaller-item-detail .item-icon-remove:hover{
+	text-decoration: none;
+	color:#fff;
+}
+
+.rbinstaller .container{
+	text-align: left;
+}

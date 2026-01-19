@@ -1,0 +1,35 @@
+[
+	{
+		"title"		: "APP_JTICKETMYEVENTS_PARAMS_PROFILE_GROUP",
+		"desc"		: "APP_JTICKETMYEVENTS_PARAMS_PROFILE_GROUP_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_JTICKETMYEVENTS_EVENTS_LIMIT",
+				"tooltip"	: "APP_JTICKETMYEVENTS_EVENTS_LIMIT_DESC",
+				"name"		: "total",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 9
+			},
+
+			{
+				"label"		: "APP_JTICKETMYEVENTS_PIN_WIDTH",
+				"tooltip"	: "APP_JTICKETMYEVENTS_PIN_WIDTH_DESC",
+				"name"		: "pin_width",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 145
+			},
+
+			{
+				"label"		: "APP_JTICKETMYEVENTS_PIN_PADDING",
+				"tooltip"	: "APP_JTICKETMYEVENTS_PIN_PADDING_DESC",
+				"name"		: "pin_padding",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 3
+			}
+		]
+	}
+]

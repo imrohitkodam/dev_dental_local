@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="apps" group="user">
+	<name>Events</name>
+	<author>TechJoomla</author>
+	<url>www.techjoomla.com</url>
+	<copyright>Copyright(C)2012-13 TechJoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<creationDate>18th Oct 2014</creationDate>
+	<version>2.2.3</version>
+	<description>APP_JTICKETMYEVENTS_APP_DESCRIPTION</description>
+	<core>false</core>
+	<element>jticketMyEvents</element>
+	<installable>true</installable>
+	<widget>false</widget>
+	<views>
+		<view type="embed">profile</view>
+	</views>
+
+	<files>
+		<folder>assets</folder>
+		<folder>config</folder>
+		<folder>hooks</folder>
+		<folder>models</folder>
+		<folder>themes</folder>
+		<folder>views</folder>
+		<file>jticketMyEvents.php</file>
+		<file>jticketMyEvents.xml</file>
+		<file>index.html</file>
+	</files>
+
+	<languages>
+		<language type="en-GB">en-GB.plg_app_user_jticketMyEvents.ini</language>
+		<language type="en-GB">en-GB.plg_app_user_jticketMyEvents.sys.ini</language>
+	</languages>
+	<updates>
+	</updates>
+</social>

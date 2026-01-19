@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="apps" group="user">
+	<name>Marketplaces Submission</name>
+	<element>marketplaces_submission</element>
+	<author>Stack Ideas Sdn Bhd</author>
+	<url>http://stackideas.com</url>
+	<created>3rd May 2021</created>
+	<version>4.0.7</version>
+	<copyright>Copyright (C) Stack Ideas Sdn Bhd</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<core>false</core>
+	<system>false</system>
+	<installable>false</installable>
+	<description><![CDATA[APP_USER_MARKETPLACES_SUBMISSION_APP_DESCRIPTION]]></description>
+	<files>
+		<folder>config</folder>
+		<file>marketplaces_submission.php</file>
+		<file>marketplaces_submission.xml</file>
+	</files>
+</social>

@@ -1,0 +1,106 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+//
+// es-login-box
+// --------------------------------------------------
+
+// .login-box-title {
+// 	font-weight: normal;
+// 	font-size: 22px;
+// 	margin-top: 20px;
+// 	text-align: center;
+// 	line-height: 34px;
+// }
+
+
+
+.es-login-box {
+	background-color: @fd-ui-shade;
+	// background-image: url('@{media_uri}/images/bg-register.jpg');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	border-radius: @fd-ui-radius;
+	padding: @fd-base-spacing--lg;
+	background-size: cover;
+	
+	&__msg {
+		color: @fd-ui-text-color;
+		padding: @fd-base-spacing--lg;
+		margin: 0 auto;
+		// width: 300px;
+	}
+	&__msg-title {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+	&__msg-desc {
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+	
+	&__form-wrap {
+		// padding: 28px;
+		
+		max-width: 360px;
+		min-width: 240px;
+		// float: right;
+		margin: @fd-base-spacing--lg auto;
+
+	}
+	&__form {
+		padding: 28px;
+		background-color: @fd-ui-bg;
+		border-radius: 10px;
+		margin-bottom: @fd-base-spacing--lg;
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+		
+	}
+	&__form-title {
+		font-size: @fd-base-font-size--xl;
+		font-weight: bold;
+		text-align: center;
+	}
+	&__form-subtitle {
+		font-size: @fd-base-font-size;
+		text-align: center;
+	}
+	&__rmb {
+		background-color: @fd-ui-shade;
+		padding: @fd-base-spacing--sm @fd-base-spacing;
+		margin-bottom: @fd-base-spacing--lg;
+	}
+	&__links {
+		text-align: center;
+		color: @fd-ui-text-color;
+		> a {
+			color: @fd-ui-text-color;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.es-signin-social {
+	margin-top: @fd-base-spacing;
+}
+
+// As dialog to override .es-login-box
+.es-login-box-dialog {
+	height: 100%;
+}
+
+// Responsive
+.w768 {
+	&.es-login-box {
+		
+	}
+}
+
+
+

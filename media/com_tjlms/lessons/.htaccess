@@ -1,0 +1,41 @@
+deny from all
+<Files *.flv>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.mp4>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.webm>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.aac>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.m4a>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.f4a>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.mp3>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.ogg>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.oga>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files *.pdf>
+    Order Allow,Deny
+    Allow from all
+</Files>

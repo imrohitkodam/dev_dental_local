@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="apps" group="user">
+  <name>My Ticket Purchases</name>
+  <author>TechJoomla</author>
+  <url>www.techjoomla.com</url>
+  <copyright>Copyright(C)2012-13 TechJoomla</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <creationDate>18th Oct 2014</creationDate>
+  <version>2.2.3</version>
+  <description>APP_JTICKET_BOUGHTTICKETS_APP_DESCRIPTION</description>
+  <core>false</core>
+  <element>jticket_boughttickets</element>
+  <installable>true</installable>
+  <widget>false</widget>
+  <views>
+    <view type="embed">profile</view>
+  </views>
+
+  <files>
+    <folder>assets</folder>
+    <folder>config</folder>
+    <folder>hooks</folder>
+    <folder>models</folder>
+    <folder>themes</folder>
+    <folder>views</folder>
+    <file>jticket_boughttickets.php</file>
+    <file>jticket_boughttickets.xml</file>
+    <file>index.html</file>
+  </files>
+  <languages>
+    <language type="en-GB">en-GB.plg_app_user_jticket_boughttickets.ini</language>
+    <language type="en-GB">en-GB.plg_app_user_jticket_boughttickets.sys.ini</language>
+  </languages>
+  <updates>
+    <version />
+    <patch />
+  </updates>
+</social>

@@ -1,0 +1,17 @@
+[
+	{
+		"title"		: "APP_JLIKEMYLIKES_PARAMS_PROFILE_GROUP",
+		"desc"		: "APP_JLIKEMYLIKES_PARAMS_PROFILE_GROUP_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_JLIKEMYLIKES_LIKES_LIMIT",
+				"tooltip"	: "APP_JLIKEMYLIKES_LIKES_LIMIT_DESC",
+				"name"		: "total",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 9
+			}
+		]
+	}
+]

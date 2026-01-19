@@ -1,0 +1,28 @@
+.smallcircularimages {
+    height: 64px;
+    width: 64px;
+}
+.dashboard-dropdown .chosen-container-single .chosen-single {
+ 
+    padding:0.3rem 0.4rem!important;
+    height: auto;
+
+}
+.view-widgets .chosen-container-single .chosen-single {
+ 
+    padding:0.3rem 0.4rem!important;
+    height: auto;
+
+}
+.view-widgets .container-main {
+ 
+   overflow: auto;
+
+}
+.view-dashboards .chosen-container-single .chosen-single{
+    border: 1px solid var(--template-bg-dark-20);
+    height: -webkit-fill-available;
+    line-height: 1.5!important;
+    padding: 0.5rem 1rem!important;
+    font-size: 1rem;
+}

@@ -1,0 +1,172 @@
+
+/** JavaScript Excludes **/
+div.jch-js-fieldset-children:only-child {
+    display: none;
+}
+
+.jch-js-excludes-container, .jch-js-excludes-header {
+    display: flex;
+    flex-direction: row;
+    clear: both;
+    width: 80%;
+    font-size: 13px;
+}
+
+.jch-js-excludes-container {
+    height: 30px;
+}
+.jch-js-excludes-header {
+    text-decoration: underline #aaaaaa;
+    text-underline-offset: 2px;
+}
+
+.jch-js-excludes-header .jch-js-ieo-header {
+    width: 90%;
+    border-right: 1px solid #aaaaaa;
+    padding-bottom: 3px;
+    text-align: right;
+}
+
+.jch-js-excludes-header .jch-js-dontmove-header {
+    width: 10%;
+    text-align: left;
+    overflow: visible;
+    white-space: nowrap;
+    padding-bottom: 3px;
+}
+
+.jch-js-excludes-container .jch-js-ieo,
+.jch-js-excludes-container .jch-js-anonymous,
+.jch-js-excludes-container .jch-js-gravity
+{
+    width: 10%;
+    border-right: 1px solid #aaaaaa;
+    text-align: center;
+}
+
+.jch-js-excludes-container .jch-js-ieo,
+.jch-js-excludes-container .jch-js-anonymous {
+    padding: 6px 0 4.5px;
+}
+
+.jch-js-excludes-container .jch-js-dontmove,
+.jch-js-excludes-container .jch-js-use-credentials,
+.jch-js-excludes-container .jch-js-cropwidth
+{
+    width: 10%;
+    text-align: center;
+}
+
+.jch-js-excludes-container .jch-js-dontmove,
+.jch-js-excludes-container .jch-js-use-credentials {
+    padding: 6px 0 4.5px
+}
+.jch-js-excludes-container .jch-js-excludes {
+    width: 80%;
+    text-align: right;
+    padding: 0 2px;
+    overflow: visible;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.jch-js-excludes-container .jch-js-excludes span, .jch-js-excludes-container span.has-select select {
+    color: #fff;
+    margin: 2px;
+    border: 0;
+    border-radius: .25rem;
+    margin-inline-end: 2px;
+    position: relative;
+    background-color: hsl(214, 40%, 20%) !important;
+    vertical-align: middle;
+    word-break: break-all;
+    box-sizing: border-box;
+    padding: 4px 5px 4px 5px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+   /* position: relative;
+    margin: 0 2px 3px 0;
+    padding: 2px 20px 2px 5px;
+    border: 1px solid #aaaaaa;
+    max-width: 100%;
+    border-radius: 3px;
+    background-color: #eeeeee;
+    background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+    background-size: 100% 19px;
+    background-repeat: repeat-x;
+    background-clip: padding-box;
+    box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+    color: #333333;
+    line-height: 17px;
+    cursor: default;
+    font-size: 13px;
+    font-weight: 400;
+    height: 23px;
+    white-space: nowrap;
+    display: inline-table;
+    box-sizing: border-box;
+    border-collapse: separate;*/
+}
+
+.jch-js-excludes-container span.has-select select {
+     padding: 1px;
+     margin: 2px 0;
+    height:25px;
+}
+
+.jch-js-excludes-container span.has-text-input:last-child {
+    text-align: left;
+    margin-top: 2px;
+}
+
+.jch-js-excludes-container span.has-text-input input[type="text"] {
+    margin: 0 0 3px 5px;
+    padding: 0 2px;
+    border-radius: 3px;
+    border: 1px solid #aaaaaa;
+    width: 70%;
+    height: 23px;
+}
+
+.jch-js-excludes-container .jch-js-excludes input {
+    display: none;
+}
+
+.jch-js-excludes .jch-multiselect-remove-button {
+    opacity: .75;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==);
+    background-size: 8px;
+    border-radius: 0;
+    width: 8px;
+    margin: 0 -4px 0 8px;
+    padding-left: 16px;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+    text-indent: -9999px;
+    appearance: none;
+    cursor: pointer;
+    background-color: #0000;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    text-transform: none;
+    border:0;
+    border-left: 1px solid #008fa1;
+
+ /*   position: absolute;
+    top: 4px;
+    right: 3px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url(../../../media/vendor/chosen/css/chosen-sprite.png) -42px 1px no-repeat;
+    font-size: 1px;
+    cursor: pointer;
+    border: none;*/
+}
+
+.jch-js-excludes .jch-multiselect-remove-button:hover {
+    opacity: 1;
+}

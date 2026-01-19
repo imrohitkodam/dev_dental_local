@@ -1,0 +1,988 @@
+.tjlms-wrapper select,
+.tjlms-wrapper input[type="text"],
+.tjlms-wrapper a.btn,
+.tjlms-wrapper .chzn-container .chzn-single,
+.tjlms-wrapper button,
+.tjlms-wrapper button.btn {
+    height: 35px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.tjlms-wrapper a.btn[disabled] {
+    pointer-events: none;
+}
+
+.tjlms-wrapper [data-id="filter-category"] .chzn-container {
+    max-width: 220px;
+}
+
+.tjBs3 .d-table {
+    width: 100%;
+}
+
+.tjBs3 .d-table-row {
+    display: table-row !important;
+}
+
+.tjlms-wrapper a,
+.tjBs3 .cursor-pointer {
+    cursor: pointer;
+}
+
+.tjBs3 .collapse {
+    display: none !important;
+}
+
+.tjBs3 .collapse.in {
+    display: block !important;
+}
+
+.tjlms-wrapper .chzn-container-single .chzn-single div b {
+    background: url('../../../media/jui/css/chosen-sprite.png') no-repeat 0 8px;
+}
+
+.tjlms-wrapper .input-append input[type="text"],
+.tjlms-wrapper .input-append button {
+    display: inline-block;
+}
+
+.tjlms-wrapper .input-append input {
+    font-size: 16px;
+}
+
+.tjlms-wrapper .input-append button {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.tjlms-wrapper .progress.progress-h10 {
+    height: 10px;
+}
+
+.tjlms-wrapper .tjlms-hr-dark {
+    border-top: 1px solid #aaa;
+}
+
+.tjlms-wrapper .tjlms-categories li a:hover {
+    color: #337ab7;
+}
+
+.tjlms-wrapper a:hover {
+    text-decoration: none;
+}
+
+.tjlms-wrapper .full-width-height {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.tjlms-wrapper .display-none {
+    display: none;
+}
+
+.tjlms-wrapper .overflow-visible {
+    overflow: visible;
+}
+
+.tjlms-wrapper .hasPopover {
+    display: block !important;
+}
+
+
+/* courses START*/
+
+.tjlmspin__thumbnail {
+    position: relative;
+}
+
+.tjlmspin__caption,
+.tjlmspin__caption_desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tjlmspin__position {
+    position: absolute;
+    top: 9px;
+    background: #FAF8F8;
+    padding: 0 5px;
+    color: #8b9fa5;
+    border: 1px solid #8b9fa5;
+}
+
+.tjlmspin .tjlmspin__price {
+    right: 9px;
+}
+
+.tjlmspin .tjlmspin__cat {
+    left: 9px;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tjlmslist {
+    width: 100%;
+}
+
+.tjlmslist .tjlmslist__image {
+    min-height: 100px;
+    position: relative;
+}
+
+.tjlmslist .tjlmslist__image .tjlmspin__price {
+    left: 9px;
+}
+
+.tjlmslist .thumbnail:hover,
+.tjlmspin .thumbnail:hover {
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 767px) {
+    .tjlmslist .tjlmslist__image {
+        width: 75px;
+        height: 55px;
+    }
+    .tmtBody {
+        overflow: visible !important;
+    }
+    .assesslesson .tjlms-lesson {
+        height: auto !important;
+    }
+}
+
+@media only screen and (min-width: 481px) {
+    .flex-row.row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .flex-row.row>[class*='col-'] {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .flex-row .thumbnail,
+    .flex-row .caption {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .flex-row .caption .tjlms_pin_desc {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+}
+
+
+/* courses END */
+
+
+/*Course STARTS*/
+
+@media only screen and (max-width: 767px) {
+    .tjlms-course-header .tjlms-course-header__img img {
+        width: 75px;
+    }
+    .tjlms_course_toc .lessons-module {
+        padding: 15px !important;
+    }
+}
+
+.tjlms-course-toc .panel-heading .panel-title:after,
+.tjlms-lesson__playlist .panel-heading .panel-title:after {
+    content: "\f107";
+    font-family: 'FontAwesome';
+    float: right;
+}
+
+.tjlms-course-toc .panel-heading.collapsed .panel-title:after,
+.tjlms-lesson__playlist .panel-heading.collapsed .panel-title:after {
+    content: "\f105";
+}
+
+.tjlms-course-toc .panel-group .panel {
+    box-shadow: unset;
+}
+
+.tjlms-course-toc .panel-group .panel-heading {
+    background-color: transparent;
+}
+
+.tjlms_horizontal_social_buttons span {
+    vertical-align: top !important
+}
+
+
+/*Course END*/
+
+
+/*lesson START*/
+
+#admin-close-button {
+    height: 45px;
+    padding: 5px 15px;
+    background-color: white;
+}
+
+.tjlms-lesson {
+    margin-top: 45px;
+}
+
+.tjlms-lesson .tjlms_lesson__player,
+.tmtBody {
+    overflow: hidden;
+}
+
+.tjlms-lesson.y-scroll {
+    overflow-y: auto;
+}
+
+.com_tjlms.view-lesson .window-mainbody {
+    padding: 0;
+}
+
+.tjlms-lesson #jlikeToolbar .playlist-toggle,
+.tjlms-lesson .tjlms-lesson__playlist-container {
+    background: #ccc;
+}
+
+.tjlms-lesson .tjlms-lesson__playlist-container {
+    overflow: auto;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.tjlms-lesson .tjlms-lesson__playlist-container .panel-collapse.in.collapse {
+    overflow: visible;
+}
+
+.tjlms-lesson .playlist-toggle.playlist-toggle--close .playlist__open-icon,
+.tjlms-lesson .playlist-toggle.playlist-toggle--close .playlist__open-text {
+    display: none;
+}
+
+.tjlms-lesson .playlist-toggle.playlist-toggle--close .playlist__close-icon {
+    display: block;
+}
+
+.tjlms-lesson .tjlms-lesson__playlist-container .tjlms-lesson__playlist {
+    background: #fff;
+}
+
+.tjlms-lesson .tjlms-lesson__playlist-container .tjlms-lesson__playlist__lesson {
+    border-bottom: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+    .tjlms-lesson .tjlms-lesson__toolbar-content {
+        overflow: auto;
+        height: 100%;
+        border-left: 2px solid #ccc !important;
+    }
+}
+
+
+/*Course Page moule title ARROW issue*/
+
+.panel-title.accordion-toggle a {
+    width: calc(100% - 20px);
+}
+
+
+/*lesson END*/
+
+@media (max-width: 400px) {
+    .tjlms-filters div#course_type_chzn,
+    .tjlms-filters select#course_type {
+        min-width: 100% !important;
+    }
+    .tjlms-filters #filter-bar input#filter_search {
+        width: calc(100% - 35px) !important;
+    }
+    .d-inline-block.valign-top select#category_filter,
+    .d-inline-block.valign-top div#category_filter_chzn,
+    .filter_search.d-inline-block.valign-top .btn-wrapper.input-append,
+    .filter_search.d-inline-block.valign-top+.d-inline-block.valign-top.form-group {
+        width: 100% !important;
+    }
+    .filter_search.d-inline-block.valign-top:first-child {
+        width: 100%;
+    }
+}
+
+
+/*Legacy issue with BS3*/
+
+.tjBs3 .row-fluid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#payment-info .gateways-options label#bycheck-lbl {
+    margin-right: 10px;
+}
+
+.full-width-height {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.popuphtml div#window-mainbody {
+    padding: 0;
+}
+
+.popuphtml,
+.popuphtml .fullheight {
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pull-right div#list_limit_chzn {
+    float: right;
+}
+
+.popuphtml .modal-footer {
+    width: calc(100vw - 20px) !important;
+    bottom: 0;
+    left: 0;
+    padding: 20px !important;
+    margin: 0;
+}
+
+.popuphtml .modal-content {
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+.tjmodal-enroll-title,
+.tjmodal-assign-title {
+    border-bottom: 1px solid #ccc;
+}
+
+#tjlms-assign .field-calendar:first-child {
+    margin-bottom: 5px;
+}
+
+.tjlms_lesson_screen #sbox-btn-close {
+    display: none;
+}
+
+#tjlms-assign .calendar-container table td {
+    padding: 8px !important;
+}
+
+#tjlms-assign .calendar-container button.js-btn {
+    padding: 6px 12px;
+}
+
+@media (min-width: 1200px) {
+    .popuphtml {
+        overflow: hidden;
+    }
+    .popuphtml .modal-footer {
+        position: absolute;
+    }
+    .modal-body.enroll-users {
+        height: calc(100% - 200px);
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content.tjlms-filters.fullheight,
+    div#recommend-table-container,
+    div#myTabContent {
+        height: auto !important;
+    }
+    .enroll-users {
+        max-height: 100% !important;
+    }
+    .popuphtml,
+    .popuphtml .fullheight {
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+    }
+}
+
+
+/*v1.3*/
+
+#tmt_test #jlikeToolbar_content {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+
+/*.btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    cursor: pointer;
+    border: solid transparent;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+    border-width: 0 0 100px 200px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-transform: translate(-300px, 0) scale(4);
+    direction: ltr;
+}*/
+
+.tmt_test__footer {
+    border-top: 1px solid #bbb;
+}
+
+.fileupload input[type="file"] {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#tmt_test .tmt-qno {
+    background-color: #eee;
+}
+
+#tmt_test .tmt-qno {
+    color: #555;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-size: 20px
+}
+
+.ques-no {
+    height: 40px;
+    line-height: 40px
+}
+
+#tmt_test .tmt-que-marks,
+.tmt-test-review .test-review-q-marks,
+.assessment-param__marks {
+    border: 1px solid #555;
+}
+
+.tmt_test__footer,
+.assessor-bottom-footer {
+    background-color: #fff;
+}
+
+.progress {
+    position: relative;
+}
+
+.progress .progress_bar_text,
+.process .process_bar_text {
+    position: static;
+    top: 0;
+    padding: 0 10px;
+    z-index: 1;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.progress .abort {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
+
+.tjBs3 .progress.course-progress {
+    height: 6px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.tmtBody {
+    background: #f8f8f8;
+}
+
+.tmtBody .tmt_test {
+    padding: 55px 0;
+}
+
+.tmtBody .quiz_content {
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+
+.tjlms-lesson-player .quiz_content {
+    max-height: calc(100vh - 50px);
+}
+
+.questions_container {
+    background: #fff;
+    border: 1px solid #cccccc;
+    box-shadow: 1px 1px 1px 1px #efefef;
+}
+
+
+/*for custom radio buttons and checkbox*/
+
+.test-question__answers .input-label {
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.test-question__answers input[type="radio"],
+.test-question__answers input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.test-question__answers span.radiobtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.test-question__answers input[type="radio"]:checked~.radiobtn,
+.test-question__answers input[type="checkbox"]:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+.test-question__answers input[type="radio"]~.radiobtn:after,
+.test-question__answers input[type="checkbox"]:checked~.checkmark:after {
+    display: block;
+}
+
+.test-question__answers .radiobtn:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.test-question__answers .radiobtn:after,
+.test-question__answers .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.test-question__answers .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+.test-question__answers .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.review-answer .input-label {
+    cursor: not-allowed;
+}
+
+.assessment-form_score label {
+    font-size: 20px;
+}
+
+.tjlms-lesson__toolbar-content {
+    position: relative;
+}
+
+.assessor-bottom-footer {
+    height: 70px;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.assessment-param__number {
+    color: #555;
+    background-color: #eee;
+    height: 30px;
+    width: 30px;
+    line-height: 28px;
+    border: 1px solid #ddd;
+}
+
+.review-block .label {
+    text-shadow: none;
+    line-height: 24px;
+    vertical-align: top;
+}
+
+@media print {
+    a[href]:after {
+        content: none !important;
+    }
+    .test-question__answers input[type="radio"],
+    .test-question__answers input[type="checkbox"] {
+        opacity: 1;
+    }
+}
+
+
+/*for custom radio buttons and checkbox end*/
+
+
+/*.progress_bar_text {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}*/
+
+.smallcircularimages {
+    height: 64px;
+    width: 64px;
+}
+
+
+/*Fixes for responsive*/
+
+.tjBs3 .form-inline .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+}
+
+#jlikeToolbar.open .jlike-container {
+    display: none;
+}
+
+.calendar-container {
+    max-width: 262px;
+}
+
+
+/*1.3.6*/
+
+
+/*toolbar*/
+
+#toolbar .btn {
+    line-height: 24px;
+    margin-right: 4px;
+    padding: 0 10px;
+}
+
+#system-message .alert .close {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+
+/* COURSE TOC */
+
+
+/* module, lessons css */
+
+.lesson_statusinfo {
+    padding-left: 50px !important;
+}
+
+.tjBs3 .tjlms-course-toc .panel-default>.panel-heading+.panel-collapse>.panel-body>.lessons-module_inner:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+.tjBs3 .tjlms-course-toc .panel-default>.panel-heading+.panel-collapse>.panel-body {
+    border-top: none !important;
+    padding: 5px 15px;
+}
+
+
+/* Sidebar module styling Changes */
+
+.com-tjlms.view-course .tjBs3 .panel-default>.panel-heading {
+    border: none !important;
+    text-transform: uppercase;
+    line-height: 20px;
+    font-weight: 600;
+    color: #232323;
+    letter-spacing: 0.5px;
+}
+
+.com-tjlms.view-course .tjBs3 .sidebar-module .panel-default>.panel-heading {
+    border-bottom: 1px solid #ddd !important;
+}
+
+.com-tjlms.view-course .tjBs3 .panel-default {
+    border-color: transparent;
+    box-shadow: unset;
+}
+
+.partition-line {
+    border-right: 1px solid #ddd;
+    padding-right: 30px !important;
+}
+
+
+
+/* CHECKOUT FLOW */
+
+
+/* Seperated Course-info section on Buy - Selectplans view */
+
+.course-info-inner {
+    border: 1px solid #ccc;
+    padding: 0 20px 25px;
+}
+
+
+/* Buy- Selectplans view */
+
+.tjlms-wrapper #coupon_plan_div input[type=text] {
+    width: 74% !important;
+}
+
+.view-buy .techjoomla-bootstrap .tjlms_steps_parent .tjlms-steps-ol li.active:after {
+    display: none;
+}
+
+.section-billing {
+    padding: 0 60px;
+}
+
+
+/* width, height required as its fuelux.min.css is affecting the design on this portion */
+
+#coursesubsplan_radio,
+.section-billing select,
+.view-buy .tjlms-wrapper .checkout-first-step-billing-info input[type=text],
+.view-buy .tjlms-wrapper .checkout-first-step-billing-info input[type=email],
+.view-buy .tjlms-wrapper .checkout-first-step-billing-info textarea,
+.tjlms-wrapper #coupon_plan_div input[type=text] {
+    width: 100% !important;
+    border: 1px solid #ddd;
+    height: 35px !important;
+    border-radius: 0;
+}
+
+
+/* white-colored box feel UI for the checkout and orders view  */
+
+.course-select-plan,
+.checkout-first-step-billing-info,
+.tjlms-checkout-steps,
+.payment-orders {
+    background-color: #fff;
+}
+
+body.com-tjlms.view-buy,
+body.view-orders {
+    background: #f1f1f1;
+}
+
+
+/* Buy - panel header specific styling (required) */
+
+.com-tjlms .techjoomla-bootstrap .tjlms_steps_parent .tjlms-steps-ol li .steps-title {
+    display: inline-block;
+    color: #b9b7b7;
+    text-transform: uppercase;
+    font-weight: 600;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.com-tjlms .techjoomla-bootstrap .tjlms_steps_parent .tjlms-steps-ol li.active {
+    background: transparent;
+    border: none;
+}
+
+.com-tjlms .techjoomla-bootstrap .tjlms_steps_parent .tjlms-steps-ol li.active .badge {
+    background-color: #337ab7;
+}
+
+.com-tjlms .techjoomla-bootstrap .tjlms_steps_parent .tjlms-steps-ol li .badge {
+    background-color: #b9b7b7;
+}
+
+.com-tjlms .techjoomla-bootstrap .tjlms_steps_parent .tjlms-steps-ol li {
+    padding-top: 15px!important;
+    padding-bottom: 20px!important;
+}
+
+
+/* COMMON USABLE CLASSES FOR SHIKA */
+
+.tjBs3 label {
+    font-weight: normal;
+}
+
+.section-line {
+    border-right: 2px solid #eee;
+}
+
+.tjBs3 .bg-lightgrey {
+    background-color: #C8CDB9;
+    border: 2px solid #C8CDB9;
+}
+
+.tjBs3 .justify-content-between {
+    -webkit-box-pack: justify !important;
+    -webkit-justify-content: space-between !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+}
+.modal-body.enroll-users {
+    overflow-y: unset;
+    height: auto;
+    max-height: unset;
+}
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+/* New Layout - PlainStyled-pin Layout CSS  */
+.tjlmspin__caption_title.tjlmspin__position {
+    background: transparent;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    margin: 0;
+    top: unset;
+    bottom: 0;
+    z-index: 1;
+}
+.tjlmspin.plainstylepin .tjlmspin__cat {
+    z-index: 1;
+}
+.pin-overlay:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 4px;
+    content: "";
+    background: rgba(96,96,96,0.7);
+}
+
+/* Course Tags CSS -version-34 */
+.course_tags div {
+    background: #faf8f8;
+    padding: 0 5px;
+    color: #8b9fa5;
+    border: 1px solid #8b9fa5;
+    margin: 0 2px;
+    max-width: 80px !important;
+    display: inline-block;
+    height: 20px;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*-- Vimeo Player width issue- Getting cut in Joomla basic templates --*/
+#shika_vimeoplayer iframe {
+    width: 100% !important;
+}
+
+.view-assessments .field-calendar .input-append {
+        margin-bottom: 0px !important;
+}
+
+/*------------------added by pallavi-------------------------*/
+.tjlms_toc_player {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.tjlms_toc_player iframe  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.tjBs3 .input-group {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.modal-body.enroll-users {
+    overflow-y: auto;
+   
+}
+.tjBs3 .modal-header {
+    padding: 5px 15px;
+}
+.gateways-options input[type="radio"]{
+    margin: 4px 4px 0;
+}
+.view-courses .tjlms-wrapper button, .tjlms-wrapper button.btn{
+    height: 45px;
+    border: 1px solid #ccc;
+}
+.view-courses .tjlms-wrapper input[type=text]{
+    height: 45px;  
+}
+
+.view-managelessons.chosen-container.chosen-container-single .chosen-single{
+   display: block; 
+}

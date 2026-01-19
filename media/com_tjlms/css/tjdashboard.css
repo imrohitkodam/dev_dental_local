@@ -1,0 +1,39 @@
+/*Dashboard START*/
+.statbox {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.statbox:first-child:before {
+    border-left: 0;
+}
+.statbox-items {
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+}
+.statbox-items .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.statbox-items .row .statbox.dashbs3{
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    background-color: #fff;
+}
+.statbox-items .row .statbox.dashbs3:before {
+    content: " ";
+    border-left: 2px solid #ccc;
+    margin-left: -15px;
+    height: 100%;
+    position: absolute;
+    top: -5px;
+}
+.tj-dashboard__activities-color,
+.tj-dashboard__sessions-color{
+	border: 1px solid;
+    width: 14px;
+    height: 14px;
+}
+/*dashboard END*/

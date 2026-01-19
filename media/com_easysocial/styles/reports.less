@@ -1,0 +1,42 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$reports - reports.less
+\*------------------------------------*/
+.es-reports {
+	.es-report { //li
+		display: block;
+		.clearfix();
+		clear: both;
+		+ .es-report {
+			margin-top: 30px;
+		}
+		.es-report-msg {
+			clear: both;
+			position: relative;
+			padding: 10px 20px;
+			margin-bottom: 16px;
+			border: 1px solid #dadada;
+			border-radius: 5px;
+			.arrow(7px, #faf3d6, bottom, 18px, auto, 0, rgba(0, 0, 0, 0.2));
+			#gradient > .vertical(#fdfae7, #faf3d6);
+		}
+		&.is-read {
+			.es-report-msg {
+				.arrow(7px, #f8f8f8, bottom, 18px, auto, 0, rgba(0, 0, 0, 0.2));
+				#gradient > .vertical(#f8f8f8, #f8f8f8);
+			}
+		}
+
+		.es-report-reporter {
+			font-size: 11px;
+			.es-report-username {
+				font-weight: bold;
+			}	
+		}
+	}//es-report
+}

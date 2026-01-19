@@ -1,0 +1,659 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+/*------------------------------------*\
+	$Variables.less
+\*------------------------------------*/
+
+// Wrapper
+@Foundry: ~"#es.ui"; // Jquery.UI
+@EasySocial: ~"#es";
+
+//
+// Variables
+// --------------------------------------------------
+
+// Global values
+// --------------------------------------------------
+// Main Color
+@esBackground: 			#fff; // main bg color fff
+@esColor: 				#666; // main text color 666
+@esBorder:			#d7d7d7; // main border color d7d7d7
+@esUnreadBackground: #f6fbff;
+@esSelectedBackground: #ffc; // light yellow
+
+@borderRadius: 			3px;
+@input-border-radius: 	@borderRadius;
+
+// BS 2 variables
+@black: #000;
+@white: #fff;
+@grayDarker: @gray-darker;            // #222
+@grayDark: @gray-dark;              // #333
+@grayLight: @gray-light;             // #999
+@grayLighter: @gray-lighter;           // #eee
+
+@btnBorder: #bbb;
+
+// Navbar (BS2)
+// -------------------------
+@navbarCollapseWidth:             979px;
+@navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
+
+@navbarHeight:                    40px;
+@navbarBackgroundHighlight:       #ffffff;
+@navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
+@navbarBorder:                    darken(@navbarBackground, 12%);
+
+@navbarText:                      #777;
+@navbarLinkColor:                 #777;
+@navbarLinkColorHover:            @grayDark;
+@navbarLinkColorActive:           @gray;
+@navbarLinkBackgroundHover:       transparent;
+@navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
+
+// Accent colors (BS2)
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Buttons (BS2)
+// -------------------------
+@btnBackground:                     @esBackground;
+
+@btnBackground:                     @white;
+@btnBackgroundHighlight:            darken(@white, 10%);
+@btnBorder:                         #bbb;
+
+@btnPrimaryBackground:              @linkColor;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #62c462;
+@btnSuccessBackgroundHighlight:     #51a351;
+
+@btnWarningBackground:              lighten(@orange, 15%);
+@btnWarningBackgroundHighlight:     @orange;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              #444;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+@btnTextShadow: 0 1px 1px rgba(0,0,0,.5);
+
+// Typography
+// -------------------------
+//http://css-tricks.com/sans-serif/
+@sansFontFamily:        'Lucida Grande', 'Gisha', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Arial, Verdana, sans-serif;
+@serifFontFamily:       serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          12px; // bs2
+// @font-size-base:          12px; // bs3 default 14px
+
+@baseLineHeight:        16px; // bs2
+
+
+@baseFontFamily:        @sansFontFamily;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+@esTextShadow: 0 1px 1px rgba(0,0,0,.55); // default 0
+@esTextShadowAlt: 0 1px 1px rgba(255,255,255,.55); // default 255
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+@fontSizeLarge:         16px; // ~18px
+@fontSizeSmall:         11px; // ~12px
+@fontSizeMini:          11px; // ~11px
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           0 6px;   // 22px
+
+@baseBorderRadius:      3px;
+@borderRadiusLarge:     4px;
+@borderRadiusSmall:     2px;
+
+// HR
+@hrBorder: darken(@esBorder, -10%);
+@hrBorderBottom: darken(@hrBorder, -8%);
+
+// Pagination
+// -------------------------
+@paginationBackground:                #fff;
+@paginationBorder:                    #ddd;
+@paginationActiveBackground:          #f5f5f5;
+@paginationColor: inherit;
+
+// TB-Buttons
+// ----------------
+@btnTextShadow: 0 1px 1px rgba(0,0,0,.1);
+@btnTextShadowAlt: 0 1px 1px rgba(255,255,255,.1);
+@btnTextShadowNone: 0 0px 0px rgba(255,255,255,.1);
+// ES-Buttons
+// -------------------------
+@btnEsTextShadow: 0 1px 1px rgba(0,0,0,.1);
+
+@btnEsPrimaryBackgroundHighlight: #3E85C3;
+@btnEsPrimaryBackground: #4E7FA8;
+@btnEsPrimaryBorder: #507BA3;
+
+@btnEsWarningBackgroundHighlight: #FF8323;
+@btnEsWarningBackground: #FF7103;
+@btnEsWarningBorder: #DE7220;
+
+@btnEsSuccessBackgroundHighlight: #52BC57;
+@btnEsSuccessBackground: #4CB150;
+@btnEsSuccessBorder: #4FA753;
+
+@btnEsDangerBackgroundHighlight: #F14F4C;
+@btnEsDangerBackground: #E83C38;
+@btnEsDangerBorder: #C8503B;
+
+@btnEsInfoBackgroundHighlight: #28B6F6;
+@btnEsInfoBackground: #028AD4;
+@btnEsInfoBorder: #018AD1;
+
+@btnEsInverseBackgroundHighlight: #78909C;
+@btnEsInverseBackground: darken(#78909C, 2%);
+@btnEsInverseBorder: #78909C;
+
+
+// Alert
+// ----------------
+
+@warningEsText:            	#fff;
+@warningEsBackground: 		@btnEsWarningBackground;
+@warningEsBorder:           darken(spin(@warningEsBackground, -1), 12%);
+
+@successEsText:             #fff;
+@successEsBackground: 		@btnEsSuccessBackground;
+@successEsBorder:           darken(spin(@successEsBackground, -10), 5%);
+
+@errorEsText:               #fff;
+@errorEsBackground: 		@btnEsDangerBackground;
+@errorEsBorder:             darken(spin(@errorEsBackground, -10), 3%);
+
+@infoEsText:                #fff;
+@infoEsBackground: 			@btnEsInfoBackground;
+@infoEsBorder:              darken(spin(@infoEsBackground, -10), 7%);
+
+// Forms
+// -------------------------
+@inputBackground:               @white;
+@inputBorder:                   #ccc;
+@inputBorderRadius:             3px;
+@inputDisabledBackground:       @grayLighter;
+@formActionsBackground:         #f5f5f5;
+@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@legendBorder: @esBorder;
+@legengColor: @esColor;
+
+// Dropdowns
+// -------------------------
+@dropdownCaret: @black;
+@dropdownBackground:            @white;
+@dropdownBorder:                rgba(0,0,0,.2);
+@dropdownDividerBackground:            #e5e5e5;
+
+@dropdownlinkColor:             @grayDark;
+@dropdownlinkColorHover:        @grayDark;
+@dropdownlinkColorActive:       @grayDark;
+
+@dropdownLinkBackgroundActive:  #E7EDF3;
+@dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+
+// Wells
+// -------------------------
+@wellBackground:                  #F5F5F5;
+
+// Priority
+// -------------------------
+@priority1: 				#2aacd2;
+@priority2: 				#51a351;
+@priority3: 				#FBB450;
+@priority4: 				#EE5F5B;
+
+
+// Privacy
+@esPrivacyBackground: @btnBackground;
+@esPrivacyBackgroundHighlight: @btnBackgroundHighlight;
+@esPrivacyActiveBackground: darken(@white, 9.5%); //e0e8f0
+@esPrivacyColor: #858585; //858585
+@esPrivacyBorder: #e1e1e1;
+@esPrivacyTextshadow: @btnEsTextShadow;
+@esPrivacyMenuActiveColor: darken(@white, 80%); //black
+
+
+// btn-group-yesno
+@esYesnoBackground: #e5e5e5;
+@esYesnoColor: #626262;
+@esYesnoBtnBackground: #c5c5c5;
+@esYesnoBtnActiveBackground: #fff;
+@esYesnoBtnBackgroundHighlight: #f2f2f2;
+@esYesnoBtnColor: #333;
+@esYesnoBtnBorder: #c5c5c5;
+@esYesnoBtnBorderBottom: #a7a7a7;
+@esYesnoActiveColor: #626262;
+@esYesnoTextShadow: 0 1px 1px rgba(255,255,255,.1);
+
+@esArrowBackground: #fff;
+
+
+// Modals
+@esModalColor: #666;
+@esModalBackground: #fff;
+@esModalBackdropBackground: #000;
+@esModalBorder: #c0c0c0;
+@esModalHeaderBackgroundHighlight: #f8f8f8;
+@esModalHeaderBackground: #ebebeb;
+@esModalFooterBackground: #f5f5f5;
+
+// Dialog
+@esDialogColor: #595959;
+@esDialogTitleColor: #333;
+@esDialogCloseColor: #bbb;
+
+// Datepicker
+@esDatePickerBackground: #fff;
+@esDatePickerColor: #636363;
+@esDatePickerBorder: #ccc;
+@esDatePickerHeaderBackgroundHighlight: #ececec;
+@esDatePickerHeaderBackground: #f8f8f8;
+@esDatePickerTdBorder: #aaa;
+
+// Avatar
+@esAvatarBackground: @esBackground;
+@esAvatarBorder: @esAvatarBackground;
+
+// Explorer
+@esExplorerBorder: #ccc;
+@esExplorerBackground: #EFEFEF;
+@esExplorerHeaderBtnColor: #555;
+@esExplorerHeaderIconColor: #B4B8C0;
+@esExplorerSideColor: #888;
+@esExplorerSideBackground: #fcfcfc;
+@esExplorerBrowserBackground: lighten(@blue, 60%);
+@esExplorerFileSelectededBackground: #3875D7;
+@esExplorerFileCheckedBackground: fadeout(@esExplorerFileSelectededBackground, 80%);
+@esExplorerFolderBackground: #3F4552;
+@esExplorerFolderColor: @white;
+@esExplorerFolderTextShadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+
+// Location
+@esLocationBackground: @esBackground;
+@esLocationColor: @esColor;
+@esLocationBorder: @esBorder;
+@esLocationSuggestionsBorder: darken(@esBackground, 20%); //ccc
+@esLocationSuggestionsActiveBackground: #E7EDF3;
+@esLocationTextboxBorder: @esLocationSuggestionsBorder;
+@esLocationImagePath: '@{media_uri}/images/map-bg.png';
+
+
+
+
+///////////////////////////
+// Variables ES 2.0
+///////////////////////////
+
+
+// Values based on 14px text and 1.428 line-height
+// Variable format should follow the `@component-modifier-state-property` order.
+
+// High-level base settings.
+@fd-base-font-family: Helvetica, Arial, sans-serif;;
+
+@fd-base-font-size-root: 13px; // 
+@fd-base-font-size--context: 14px; // 
+
+@fd-base-font-size: @fd-base-font-size-root; // 13px
+@fd-base-font-size--xs: @fd-base-font-size-root - 1; // 12px
+@fd-base-font-size--xl: @fd-base-font-size-root + 2; // 15px
+
+@fd-title-font-size: @fd-base-font-size--xl;
+
+
+//
+@fd-font-size-h1:            floor((@fd-base-font-size * 1.35)); // ~16px
+@fd-font-size-h2:            floor((@fd-base-font-size * 1.35)); // ~16px
+@fd-font-size-h3:            ceil((@fd-base-font-size * 1.15)); // ~14px
+@fd-font-size-h4:            ceil((@fd-base-font-size * 1.15)); // ~14px
+@fd-font-size-h5:            @fd-base-font-size;
+@fd-font-size-h6:            ceil((@fd-base-font-size * 0.85)); // ~12px
+
+
+@fd-blockquote-font-size:        floor((@fd-base-font-size * 1.35)); // ~16px
+
+// @fd-base-line-height: 20px; // 20px base on 14px font size
+//** Unit-less `line-height` for use in components like buttons.
+@fd-base-line-height:        1.538461538; // 20/13
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@fd-base-line-height--computed:    floor((@fd-base-font-size * @fd-base-line-height)); // ~20px
+
+@fd-base-bg-color: #fff;
+@fd-base-text-color: #333;
+
+
+
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+// Base on 8px
+@fd-base-spacing:           8px; // 8px
+@fd-base-spacing--xs:     @fd-base-spacing / 4; //  2px
+@fd-base-spacing--sm:    @fd-base-spacing / 2; //  4px
+@fd-base-spacing--lg:    @fd-base-spacing * 2; //  16px 
+@fd-base-spacing--xl:     @fd-base-spacing * 2.5; // 20px
+
+
+// @fd-padding-base-vertical: @fd-base-spacing--sm; // 6px
+// @fd-padding-base-horizontal: @fd-base-spacing; // 12px
+
+// @fd-padding-small-vertical: @fd-base-spacing--xs;
+// @fd-padding-small-horizontal: @fd-base-spacing--sm;
+
+// @half-spacing-unit: 12px;
+
+
+// Brand color
+@fd-brand-primary: #428bca; // blue
+@fd-brand-success: #39b54a; // green
+@fd-brand-danger: #d9534f; // red
+@fd-brand-default: #fff; // white
+@fd-brand-info: #5BC0DE; // cyan
+@fd-brand-warning: #EC971F; // orange
+
+
+// Brand Lighten
+@fd-brand-primary--l: lighten(@fd-brand-primary, 38%); // #cd3af2
+@fd-brand-success--l: lighten(@fd-brand-success, 38%);
+@fd-brand-danger--l: lighten(@fd-brand-danger, 38%);
+@fd-brand-default--l: lighten(@fd-brand-default, 38%);
+@fd-brand-info--l: lighten(@fd-brand-info, 26%);
+@fd-brand-warning--l: lighten(@fd-brand-warning, 32%);
+
+// Components UI
+//
+// Define common padding and border radius sizes and more. 
+// UI variables 
+
+
+@fd-ui-font-size: @fd-base-font-size;
+
+// For bright UI
+@fd-ui-bg: #fff;
+@fd-ui-shade: #f0f0f0;
+
+// state
+@fd-ui-bg--unread: #E9F2F9;
+@fd-ui-bg--active: #E9F2F9;
+@fd-ui-bg--answer: @state-success-bg;
+@fd-ui-bg--editing: #FFFCE9;
+@fd-ui-bg--hover: #f6f7f9;
+
+@fd-ui-text-color: #333;
+@fd-ui-meta-color: #888;
+
+@fd-ui-text-link-color: @fd-brand-primary;
+
+// For dark UI
+@fd-ui-bg--inverse: #222;
+@fd-ui-shade--inverse: #444;
+
+@fd-ui-text-color--inverse: #fff;
+@fd-ui-meta-color--inverse: #aaa;
+
+
+@fd-ui-border-width: 1px;
+@fd-ui-border-color: #ccc; // For non form element use #e1e1e1;
+@fd-ui-border-color--l: #e1e1e1;
+
+
+@fd-ui-radius: 3px;
+@fd-ui-radius--lg: 5px;
+@fd-ui-radius--sm: 2px;
+
+@fd-ui-line-height--lg:         4 / 3;
+@fd-ui-line-height--sm:         1.5;
+@fd-ui-line-height-computed: 1.5;
+
+
+@fd-navbar-bg: #222;
+@fd-navbar-border-color--top: @fd-navbar-bg;
+@fd-navbar-border-color--bottom: @fd-ui-border-color;
+@fd-navbar-footer-bg: @fd-ui-bg;
+@fd-navbar-link-bg--active: #424242;
+@fd-navbar-input-bg: #424242;
+@fd-navbar-input-color: #ccc;
+@fd-navbar-color: #555;
+@fd-navbar-radius: @fd-ui-radius;
+@fd-navbar-radius--sm: @fd-ui-radius--sm;
+@fd-navbar-icon-color: @fd-ui-bg;
+@fd-navbar-dropdown-hover-bg: #f6f7f9;
+
+
+
+//== Pagination
+//
+//##
+
+@fd-pagination-color:                     @fd-ui-meta-color;
+@fd-pagination-bg:                        @fd-ui-bg;
+@fd-pagination-border:                    @fd-ui-border-color;
+
+@fd-pagination-hover-color:               @fd-ui-text-color;
+@fd-pagination-hover-bg:                  @gray-lighter;
+@fd-pagination-hover-border:              @fd-ui-border-color;
+
+@fd-pagination-active-color:              @fd-ui-meta-color;
+@fd-pagination-active-bg:                 @fd-ui-shade;
+@fd-pagination-active-border:             @fd-ui-border-color;
+
+@fd-pagination-disabled-color:            @fd-ui-meta-color;
+@fd-pagination-disabled-bg:               @fd-ui-bg;
+@fd-pagination-disabled-border:           @fd-ui-border-color;
+
+
+// Buttons
+// @btn-border-width: 1px;
+// @btn-border-radius: @fd-ui-radius;
+// @btn-bg: @fd-brand-default;
+// @btn-padding-x: @fd-base-spacing;
+// @btn-padding-y: @fd-base-spacing--sm;
+
+// @btn-default-bg: @fd-brand-default;
+@btn-default-color: #333; // default #333
+// @btn-default-border-color: @fd-brand-default;
+
+@btn-es-default-color: @fd-ui-text-color;
+@btn-es-default-bg: #EDF0F2;
+@btn-es-default-bg-top: lighten(@btn-es-default-bg, 10%);
+@btn-es-default-border-color: @fd-ui-border-color;
+
+@btn-es-primary-color: @fd-brand-primary;
+@btn-es-primary-bg: @fd-brand-primary--l;
+@btn-es-primary-bg-top: lighten(@btn-es-primary-bg, 5%);
+@btn-es-primary-border-color: lighten(@fd-brand-primary, 25%);
+
+@btn-es-success-color: @fd-brand-success;
+@btn-es-success-bg: @fd-brand-success--l;
+@btn-es-success-bg-top: lighten(@btn-es-success-bg, 10%);
+@btn-es-success-border-color: lighten(@fd-brand-success, 25%);
+
+@btn-es-danger-color: @fd-brand-danger;
+@btn-es-danger-bg: @fd-brand-danger--l;
+@btn-es-danger-bg-top: lighten(@btn-es-danger-bg, 2%);
+@btn-es-danger-border-color: lighten(@fd-brand-danger, 25%);
+
+@btn-yesno-bg: #ddd;
+@btn-yesno-color: #333;
+@btn-yesno-border-color: #ccc;
+//== Labels
+//
+//##
+
+//** Default label background color
+@label-default-bg:            @gray-light;
+//** Primary label background color
+@label-primary-bg:            @fd-brand-primary;
+//** Success label background color
+@label-success-bg:            @fd-brand-success;
+//** Info label background color
+@label-info-bg:               @fd-brand-info;
+//** Warning label background color
+@label-warning-bg:            @fd-brand-warning;
+//** Danger label background color
+@label-danger-bg:             @fd-brand-danger;
+
+//** Clean label background color
+@label-clean-bg:             @fd-ui-bg;
+
+//** Default label text color
+@label-color:                 #fff;
+//** Default text color of a linked label
+@label-link-hover-color:      #fff;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+// @state-success-text:             darken(spin(@state-success-bg, -10), 35%);
+// @state-success-bg:               #62C970;
+// @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
+
+// @state-info-text:                darken(spin(@state-info-bg, -10), 37%);
+// @state-info-bg:                  #6EC3DD;
+// @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+
+// @state-warning-text:             darken(spin(@state-warning-bg, -10), 35%);
+// @state-warning-bg:               #FFD27F;
+// @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+
+// @state-danger-text:              darken(spin(@state-danger-bg, -10), 35%);
+// @state-danger-bg:                #ff8a80;
+// @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+
+@state-success-text:             #3c763d;
+@state-success-bg:               #dff0d8;
+@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
+
+@state-info-text:                #31708f;
+@state-info-bg:                  #d9edf7;
+@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:             #8a6d3b;
+@state-warning-bg:               #fcf8e3;
+@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text:              #a94442;
+@state-danger-bg:                #f2dede;
+@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+@alert-padding:               15px;
+@alert-border-radius:         @border-radius-base;
+@alert-link-font-weight:      bold;
+
+@alert-success-bg:            @state-success-bg;
+@alert-success-text:          @state-success-text;
+@alert-success-border:        @state-success-border;
+
+@alert-info-bg:               @state-info-bg;
+@alert-info-text:             @state-info-text;
+@alert-info-border:           @state-info-border;
+
+@alert-warning-bg:            @state-warning-bg;
+@alert-warning-text:          @state-warning-text;
+@alert-warning-border:        @state-warning-border;
+
+@alert-danger-bg:             @state-danger-bg;
+@alert-danger-text:           @state-danger-text;
+@alert-danger-border:         @state-danger-border;
+
+// // Panel
+// @panel-line-height: @fd-ui-line-height--sm;
+// @panel-bg: @fd-ui-bg;
+// @panel-border-radius: @fd-ui-radius;
+// @panel-body-padding: @fd-base-spacing;
+// @panel-heading-padding: @fd-base-spacing;
+// @panel-footer-padding: @fd-base-spacing;
+// @panel-footer-bg: @fd-ui-shade;
+// @panel-border: @fd-ui-border-width solid @fd-ui-border-color;
+
+// @panel-default-text:          @fd-ui-color;
+// @panel-default-border:        @fd-ui-border-color;
+// @panel-default-heading-bg:    @fd-ui-shade;
+
+
+//== Chart
+@fd-ui-chart-bg: #e2f5fd;
+@fd-ui-chart-text-color: @palette-grey-800;
+@fd-ui-chart-meta-color: @palette-grey-600;
+
+@o-radio-size: 16px;
+
+// Loader
+@fd-ui-loader-border-color: rgba(0,0,0,.1);
+
+// Form
+@fd-form-action-bg: #eceff1;
+
+@fd-input-color: @fd-ui-text-color;
+
+@fd-input-bg: @fd-ui-bg;
+@fd-input-bg--disabled: @fd-ui-shade;
+
+@fd-input-border: @fd-ui-border-color;
+
+@fd-input-border-radius: @fd-ui-radius;
+@fd-input-border-radius--lg: @fd-ui-radius--lg;
+@fd-input-border-radius--sm: @fd-ui-radius--sm;
+
+//** Border color for inputs on focus
+@fd-input-border-focus:             #66afe9;
+
+//** Placeholder text color
+@fd-input-color-placeholder:        #999;
+
+//** Default `.form-control` height
+@fd-input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+//** Large `.form-control` height
+@fd-input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+@fd-input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+//** `.form-group` margin
+@fd-form-group-margin-bottom:       @fd-base-spacing--lg;
+
+@fd-legend-color:                   @gray-dark;
+@fd-legend-border-color:            #e5e5e5;
+
+//** Background color for textual input addons
+@fd-input-group-addon-bg:           @fd-ui-shade;
+//** Border color for textual input addons
+@fd-input-group-addon-border-color: @fd-input-border;
+
+//** Disabled cursor for form controls and buttons.
+@fd-cursor-disabled:                not-allowed;

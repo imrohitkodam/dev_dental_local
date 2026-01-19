@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="apps" group="user">
+	<name>JFBConnect</name>
+	<element>jfbconnect</element>
+	<author>SourceCoast</author>
+	<url>http://www.sourcecoast.com</url>
+	<created>2018/04/20</created>
+    <version>7.0.0</version>
+    <copyright>Copyright (C) 2018 SourceCoast. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>Application for JFBConnect Open Graph actions</description>
+	<installable>true</installable>
+	<core>false</core>
+	<widget>false</widget>
+    <files>
+		<folder>assets</folder>
+        <file>index.html</file>
+		<file>jfbconnect.php</file>
+		<file>jfbconnect.xml</file>
+	</files>
+</social>

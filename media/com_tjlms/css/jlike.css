@@ -1,0 +1,101 @@
+.jlike_display_none {
+    display: none;
+}
+
+/*jlike starts*/
+#jlikeToolbar {
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px solid #BCBCBC;
+    background-color: #fff !important;
+    box-shadow: 0 3px 5px #ccc;
+    -moz-box-shadow: 0 3px 5px #ccc;
+    -webkit-box-shadow: 0 3px 5px #ccc;
+    color: #315264;
+}
+
+#jlikeToolbar .like-snippet-btn,
+#jlikeToolbar .toolbar_buttons{
+	background-color: transparent;
+	color: #315264;
+}
+
+#jlikeToolbar .jlike-container .like-snippet-btn
+{
+	border: 1px solid #ccc;
+	line-height: 24px;
+	padding: 3px 15px;
+	margin: 6px 6px 0px 0px;
+	font-size:14px;
+	text-align: center;
+	transition: all 100ms ease-in-out 0s;
+}
+
+#jlikeToolbar .jlike-container .like-snippet-btn.meunlike {
+	background: none repeat scroll 0 0 #778e0b;
+	box-sizing: border-box;
+	border: 1px solid #9bb387;
+	color: #FFF;
+}
+
+#jlikeToolbar .jlike-container .like-snippet-btn.meundislike {
+	background: none repeat scroll 0 0 #DD3636;
+	box-sizing: border-box;
+	border: 1px solid #DD3636;
+	color: #FFF;
+	text-align: center;
+}
+
+#jlikeToolbar .jlike-container .like-snippet-btn  .fa {
+    font-size: 14px;
+}
+
+#jlikeToolbar .toolbar_buttons  .fa {
+	font-size: 18px;
+}
+
+#jlikeToolbar .toolbar_buttons {
+    padding: 9px 15px;
+    cursor: pointer;
+    margin-left: -4px;
+    border-right: 1px solid #ccc;
+    display: inline-block;
+}
+
+#jlikeToolbar .toolbar_buttons.active{
+	background-color: #337ab7 !important;
+}
+
+
+#jlikeToolbar.resumeWindowPage .jlike-container {
+	display: none;
+}
+
+#jlikeToolbar.resumeWindowPage .toolbar_buttons:not([data-js-attr="jlikeToolbar-close"]):not([data-js-attr="tjlms-lesson__playlist-toggle"]){
+	display: none;
+}
+
+
+@media (max-width: 480px){
+	#jlikeToolbar .toolbar_buttons[data-ref]{
+		display: none;
+	}
+
+	#jlikeToolbar:not(.resumeWindowPage) .toolbar_buttons[data-ref="jliketoolbar-menu"]{
+		display: inline-block !important;
+		visibility: visible !important;
+	}
+
+	#jlikeToolbar.open .jlikeToolbar__buttons
+	{
+		position: absolute;
+		right: 0;
+		z-index: 9999;
+		background: #fff;
+	}
+
+	#jlikeToolbar.open  .toolbar_buttons[data-ref] {
+		display: inline-block;
+	}
+}
+

@@ -1,0 +1,436 @@
+/**
+ * @package         Conditional Content
+ * @version         5.5.7
+ * 
+ * @author          Peter van Westen <info@regularlabs.com>
+ * @link            https://regularlabs.com
+ * @copyright       Copyright © 2025 Regular Labs All Rights Reserved
+ * @license         GNU General Public License version 2 or later
+ */
+
+(function() {
+    'use strict';
+
+    window.RegularLabs = window.RegularLabs || {};
+
+    window.RegularLabs.ConditionalContentPopup = window.RegularLabs.ConditionalContentPopup || {
+        form          : null,
+        options       : {},
+        tag_characters: {},
+        group         : null,
+        tag_type      : '',
+
+        init: function() {
+            if ( ! parent.RegularLabs.ConditionalContentButton) {
+                document.querySelector('body').innerHTML = '<div class="alert alert-error">This page cannot function on its own.</div>';
+                return;
+            }
+
+            this.options = Joomla.getOptions ? Joomla.getOptions('rl_conditionalcontent_button', {}) : Joomla.optionsStorage.rl_conditionalcontent_button || {};
+            this.options.editor_name;
+
+            if ( ! this.options.editor_name) {
+                document.querySelector('body').innerHTML = 'No editor name found.';
+                return;
+            }
+
+            this.form = document.querySelector('[name="conditionalcontentForm"]');
+
+            this.tag_characters.start = this.options.tag_characters[0];
+            this.tag_characters.end   = this.options.tag_characters[1];
+
+            let previousDOM = this.form.innerHTML;
+
+            setInterval(() => {
+                const currentDOM = this.form.innerHTML;
+
+                if (currentDOM === previousDOM) {
+                    return;
+                }
+
+                this.updatePreview();
+            }, 250);
+        },
+
+        setInline: function() {
+            let use_inline            = this.form.use_inline;
+            let has_conditions        = this.form.has_conditions;
+            let rules_summary_content = document.querySelector('#rules_summary_content');
+            let rules_summary_message = document.querySelector('#rules_summary_message');
+
+            use_inline.value                = 1;
+            has_conditions.value            = 0;
+            rules_summary_content.innerHTML = '';
+
+            use_inline.dispatchEvent(new Event('change'));
+            has_conditions.dispatchEvent(new Event('change'));
+
+            rules_summary_message.classList.add('hidden');
+        },
+
+        insertText: function() {
+            parent.RegularLabs.ConditionalContentButton.insertText(this.options.editor_name);
+        },
+
+        updatePreview: function() {
+            const self = this;
+
+            const preview_code    = document.querySelector('#preview_code');
+            const preview_spinner = document.querySelector('#preview_spinner');
+
+            Regular.addClass(preview_code, 'hidden');
+            Regular.removeClass(preview_spinner, 'hidden');
+
+            const code             = this.generateCode(true);
+            preview_code.innerHTML = code;
+
+            parent.RegularLabs.ConditionalContentButton.setCode(this.generateCode());
+
+            Regular.addClass(preview_spinner, 'hidden');
+
+            if (code) {
+                Regular.removeClass(preview_code, 'hidden');
+            }
+        },
+
+        generateCode: function(preview = false) {
+            const self = this;
+
+            const form      = document.querySelector('[name="conditionalcontentForm"]');
+            const form_data = getFormData();
+            const tag       = form_data.tag_type === 'hide' ? this.options.tag_hide : this.options.tag_show;
+
+            const attributes        = getAttributes();
+            let content             = getContent(preview);
+            let alternative_content = getAlternativeContent(preview);
+
+            if (alternative_content.length > 0) {
+                content += wrapTag(tag + '-else', preview) + alternative_content;
+            }
+
+            return wrapTag(tag + ' ' + attributes, preview) + content + wrapTag('/' + tag, preview);
+
+            function wrapTag(string, use_style = false) {
+                const wrapped = self.tag_characters.start + string.trim() + self.tag_characters.end;
+
+                if ( ! use_style) {
+                    return wrapped;
+                }
+
+                return '<code class="rl-code rl-pre-wrap">' + wrapped + '</code>';
+            }
+
+            function getContent(name = 'content', trim_long = false) {
+                return getContentString('content', trim_long);
+            }
+
+            function getAlternativeContent(trim_long = false) {
+                return getContentString('content_alternative', trim_long);
+            }
+
+            function getContentString(name = 'content', trim_long = false) {
+                let content = form_data[name];
+
+                if (content === '<p></p>') {
+                    content = '';
+                }
+
+                if (preview && content.length > 100) {
+                    content = '...';
+                }
+
+                return content;
+            }
+
+            function getCondition() {
+                if (
+                    ! form_data.has_conditions
+                    || ! form_data.condition_id
+                    || ! parseInt(form_data.has_conditions)
+                    || ! parseInt(form_data.condition_id)
+                ) {
+                    return false;
+                }
+
+                let type = form_data.condition_type;
+
+                if ( ! type) {
+                    type = 'id';
+                }
+
+                return form_data['condition_' + type];
+            }
+
+            function getAttributes() {
+                let attributes  = {};
+                const condition = getCondition();
+
+                if (condition) {
+                    attributes.condition = condition;
+
+                    return convertToAttributes();
+                }
+
+                let types = {
+                    'menuitems'       : 'selection',
+                    'homepage'        : 'simple',
+                    'contentpagetypes': 'selection',
+                    'categories'      : 'selection',
+                    'date'            : 'date',
+                    'seasons'         : 'selection',
+                    'months'          : 'selection',
+                    'days'            : 'selection',
+                    'time'            : 'time',
+                    'articles'        : 'selection',
+                    'featured'        : 'simple',
+                    'article_status'  : 'selection',
+                    'article_date'    : 'date',
+                    'article_authors' : 'selection',
+                    'users'           : 'selection',
+                    'accesslevels'    : 'selection',
+                    'usergroups'      : 'selection',
+                    'languages'       : 'selection',
+                    'devices'         : 'selection',
+                    'ips'             : 'selection',
+                    'continents'      : 'selection',
+                    'countries'       : 'selection',
+                    'postalcodes'     : 'selection',
+                    'tags'            : 'selection',
+                    'components'      : 'selection',
+                    'templates'       : 'selection',
+                    'urls'            : 'selection',
+                    'php'             : 'selection',
+                };
+
+                Object.entries(types).forEach(([key, type]) => {
+                    const include = form_data[key];
+
+                    if ( ! include) {
+                        return;
+                    }
+
+                    switch (type) {
+                        case 'selection':
+                            addAttributeWithSelection(key, include);
+                            break;
+                        case 'date':
+                            addAttributeDate(key, include);
+                            break;
+                        case 'time':
+                            addAttributeTime(key, include);
+                            break;
+                        case 'simple':
+                            addAttributeSimple(key, include);
+                            break;
+                    }
+                });
+
+                setHasMultiple();
+
+                if (Object.entries(attributes).length > 1 && form_data.matching_method === 'any') {
+                    prependAttributeValue('matching_method', 'ANY');
+                }
+
+                return convertToAttributes();
+
+                function setHasMultiple() {
+                    let attribute_count = Object.entries(attributes).length;
+
+                    form.has_multiple_rules.value = attribute_count > 1 ? 1 : 0;
+                    form.has_multiple_rules.dispatchEvent(new Event('change'));
+                }
+
+                function prependAttributeValue(key, value) {
+                    key = key.replace('_', '-');
+
+                    attributes = {[key]: value, ...attributes};
+                }
+
+                function addAttributeValue(key, value) {
+                    key = key.replace('_', '-');
+
+                    attributes[key] = value;
+                }
+
+                function addAttributeSimple(key, include) {
+                    const value = (include === 'exclude' ? 'false' : 'true');
+
+                    addAttributeValue(key, value);
+                }
+
+                function addAttributeTime(key, include) {
+                    const comparison = form_data[key + '__comparison'];
+
+                    if (comparison !== 'between') {
+                        const time = form_data[key + '__time'];
+                        if ( ! time) {
+                            return;
+                        }
+
+                        const operator = (
+                            (comparison === 'before' && include === 'include')
+                            || (comparison === 'after' && include === 'exclude')
+                        ) ? '<' : '>';
+
+                        addAttributeValue(key, operator + time);
+
+                        return;
+                    }
+
+                    const from = form_data[key + '__from'];
+                    const to   = form_data[key + '__to'];
+
+                    if ( ! from && ! to) {
+                        return;
+                    }
+
+                    if ( ! from) {
+                        const operator = include === 'exclude' ? '>' : '<';
+
+                        addAttributeValue(key, operator + to);
+
+                        return;
+                    }
+
+                    if ( ! to) {
+                        const operator = include === 'exclude' ? '<' : '>';
+
+                        addAttributeValue(key, operator + from);
+
+                        return;
+                    }
+
+                    const value = (include === 'exclude' ? '!' : '') + from + ' to ' + to;
+
+                    addAttributeValue(key, value);
+                }
+
+                function addAttributeDate(key, include) {
+                    const type       = form_data[key + '__type'] ? form_data[key + '__type'] : key;
+                    const comparison = form_data[key + '__comparison'];
+
+                    if (comparison !== 'between') {
+                        const date = form_data[key + '__date'];
+                        if ( ! date) {
+                            return;
+                        }
+
+                        const operator = (
+                            (comparison === 'before' && include === 'include')
+                            || (comparison === 'after' && include === 'exclude')
+                        ) ? '<' : '>';
+
+                        addAttributeValue(type, operator + date);
+
+                        return;
+                    }
+
+                    const from = form_data[key + '__from'];
+                    const to   = form_data[key + '__to'];
+
+                    if ( ! from && ! to) {
+                        return;
+                    }
+
+                    if ( ! from) {
+                        const operator = include === 'exclude' ? '>' : '<';
+
+                        addAttributeValue(type, operator + to);
+
+                        return;
+                    }
+
+                    if ( ! to) {
+                        const operator = include === 'exclude' ? '<' : '>';
+
+                        addAttributeValue(type, operator + from);
+
+                        return;
+                    }
+
+                    const value = (include === 'exclude' ? '!' : '') + from + ' to ' + to;
+
+                    addAttributeValue(type, value);
+                }
+
+                function addAttributeWithSelection(key, include) {
+                    let selection = form_data[key + '__selection'];
+
+                    if (selection === undefined) {
+                        selection = form_data[key + '__selection[]'];
+                    }
+
+                    if (selection === undefined) {
+                        selection = '';
+                    }
+
+                    if (Array.isArray(selection)) {
+                        selection = selection.join(',');
+                    }
+
+                    const value = (include === 'exclude' ? '!' : '') + selection;
+
+                    addAttributeValue(key, value);
+                }
+
+                function convertToAttributes() {
+                    const parts = [];
+
+                    for (let key in attributes) {
+                        const value = attributes[key];
+
+                        if (typeof value !== 'object') {
+                            parts.push(key + '="' + value + '"');
+                            continue;
+                        }
+
+                        parts.push(Object.entries(value).map((key_value) => key_value[0] + '="' + key_value[1] + '"').join(' '));
+                    }
+
+                    return parts.join(' ');
+                }
+            }
+
+            function getFormData() {
+                const form_data = new FormData(form);
+
+                const object = {};
+
+                form_data.forEach((value, key) => {
+                    // Reflect.has in favor of: object.hasOwnProperty(key)
+                    if (Reflect.has(object, key)) {
+                        if ( ! Array.isArray(object[key])) {
+                            object[key] = [object[key]];
+                        }
+
+                        object[key].push(value);
+                        return;
+                    }
+
+                    const field = document.querySelector('[name="' + key + '"]');
+
+                    if (field.parentNode.nodeName === 'JOOMLA-EDITOR-CODEMIRROR') {
+                        let editor = Joomla.editors.instances[key];
+
+                        if (editor) {
+                            object[key] = editor.getValue();
+                            return;
+                        }
+
+                        editor = field.parentNode.querySelector('.CodeMirror');
+
+                        if (editor) {
+                            object[key] = editor.CodeMirror.getValue();
+                            return;
+                        }
+                    }
+
+                    object[key] = value;
+
+                });
+
+                return object;
+            }
+        },
+    };
+})();

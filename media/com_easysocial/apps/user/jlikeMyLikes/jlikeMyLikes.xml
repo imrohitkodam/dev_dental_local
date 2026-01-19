@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<social type="apps" group="user">
+
+	<name>My likes</name>
+
+	<author>Techjoomla</author>
+	<url>https://techjoomla.com</url>
+	<copyright>Copyright (C) 2010 - 2021 Techjoomla. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<creationDate>17th Mar 2021</creationDate>
+	<version>3.0.22</version>
+
+	<description>APP_JLIKEMYLIKES_APP_DESCRIPTION</description>
+
+	<core>false</core>
+	<element>jlikeMyLikes</element>
+	<installable>true</installable>
+	<widget>false</widget>
+	<views>
+		<view type="embed">profile</view>
+	</views>
+
+	<files>
+		<folder>assets</folder>
+		<folder>config</folder>
+		<folder>hooks</folder>
+		<folder>models</folder>
+		<folder>themes</folder>
+		<folder>views</folder>
+		<file>jlikeMyLikes.php</file>
+		<file>jlikeMyLikes.xml</file>
+		<file>index.html</file>
+	</files>
+
+	<languages>
+		<language type="en-GB">en-GB.plg_app_user_jlikeMyLikes.ini</language>
+	</languages>
+
+	<updates>
+	</updates>
+</social>

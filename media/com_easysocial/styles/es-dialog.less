@@ -1,0 +1,280 @@
+/** 
+* @package      EasySocial
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      Proprietary Use License https://stackideas.com/licensing
+**/
+
+
+@es-dialog-gutter: @fd-base-spacing;
+@es-dialog-header-size: 50px;
+@es-dialog-footer-size: 40px;
+@es-dialog-body-min-width: 320px;
+@es-dialog-body-min-height: 120px;
+@es-dialog-header-bg: @fd-ui-bg;
+@es-dialog-body-bg: @fd-ui-bg;
+@es-dialog-footer-bg: @fd-ui-bg;
+@es-dialog-border-color: @fd-ui-border-color;
+@es-dialog-border-radius: 3px;
+
+&.es-dialog {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: @zindex-dialog;
+	.transition(all .5s ease);
+	.transform_(scale(1.2));
+	opacity: 0;
+	background: transparent;
+
+	&.active {
+		.transform_(scale(1));
+		opacity: 1;
+	}
+
+	&.is-loading {
+		.no-transition();
+	}
+
+	&.is-failed {
+		.o-empty {
+			display: inline-block;
+			min-height: 80px;
+
+		}
+	}
+	.o-empty__icon {
+		font-size: 30px;
+	}
+	.o-empty__text {
+		font-size: @fd-base-font-size--xl;
+	}
+	.es-hint {
+		display: none;
+		background: @fd-ui-bg;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+
+	// Override .widget which elements from administrator
+	.widget {
+		border: none;
+	}
+	
+	// #5333 Make popover display on top of dialog
+	+ .o-popover--es {
+		z-index: @zindex-dialog + 1;
+	}
+}
+
+.es-dialog-modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	.transform_(translateX(-50%) translateY(-50%));
+
+	display: block;
+	border-radius: @es-dialog-border-radius;
+	.box-shadow(0 2px 3px rgba(0,0,0,0.2));
+	max-width: 100%;
+	max-height: 100%;
+	min-width: @es-dialog-body-min-width;
+	min-height: @es-dialog-header-size + @es-dialog-body-min-height;
+}
+
+&.es-dialog.has-footer {
+
+	.es-dialog-modal {
+		min-height: @es-dialog-header-size + @es-dialog-body-min-height + @es-dialog-footer-size;
+	}
+}
+
+&.is-mobile {
+	.es-dialog-header {
+		border-radius: 0;
+		text-align: center;
+		font-weight: 700;
+	}
+}
+
+.es-dialog-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: @es-dialog-header-size;
+	line-height: 38px;
+	z-index: 3;
+
+	background: @es-dialog-header-bg;
+	border: 1px solid @es-dialog-border-color;
+	border-bottom: none;
+	padding: @fd-base-spacing--sm @fd-base-spacing;
+	border-radius: @es-dialog-border-radius @es-dialog-border-radius 0 0;
+
+	&__grid {
+		.flex-display(flex);
+		.flex-wrap(wrap);
+		.align-items(center);
+		margin: 0;
+		padding: 0;
+	}
+	&__cell {
+		.flex(1 1 0);
+	}
+}
+
+.es-dialog-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: @es-dialog-footer-size;
+	z-index: 2;
+	display: none;
+
+	background: @es-dialog-footer-bg;
+	border: 1px solid @es-dialog-border-color;
+	border-top: none;
+	padding: @fd-base-spacing--sm @fd-base-spacing;
+	border-radius: 0 0 @es-dialog-border-radius @es-dialog-border-radius;
+}
+
+.es-dialog-body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+
+	border-top: @es-dialog-header-size solid transparent;
+	border-bottom: 0;
+
+}
+
+.es-dialog-container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+
+	// Without footer
+	background: @es-dialog-body-bg;
+	border: 1px solid @es-dialog-border-color;
+	border-radius: 0 0 @es-dialog-border-radius @es-dialog-border-radius;
+}
+
+&.is-loading {
+	.es-dialog-container {
+		overflow: hidden;
+	}
+}
+
+// With footer
+&.es-dialog.has-footer {
+
+	.es-dialog-body {
+		border-bottom: @es-dialog-footer-size solid transparent;
+	}
+
+	.es-dialog-container {
+		border-radius: 0;
+	}
+
+	.es-dialog-footer {
+		display: block;
+	}
+}
+
+.es-dialog-title {
+	font-size: @fd-base-font-size--xl;
+	font-weight: bold;
+}
+.es-dialog-back-button {
+	padding-right: @fd-base-spacing;
+	+ .es-dialog-header__cell { // es-dialog-title wrapper
+		text-align: center;
+	}
+}
+.es-dialog-back-button,
+.es-dialog-close-button {
+	color: #bbb;
+	font-size: @fd-base-font-size--xl;
+	cursor: pointer;
+	text-align: center;
+	.flex(0 0 auto);
+	&:hover {
+		color: #888;
+	}
+
+	i {
+		padding: 0 @es-dialog-gutter / 6 0 @es-dialog-gutter / 2;
+	}
+}
+
+.es-dialog-content {
+	position: relative;
+	padding: @fd-base-spacing--sm @fd-base-spacing;
+	font-size: @fd-base-font-size;
+	height: 100%;
+	* {
+		font-size: @fd-base-font-size;
+	}
+	
+}
+
+.es-dialog-footer-content {
+	text-align: right;
+}
+
+.es-dialog-error-message {
+	display: block;
+	font-weight: normal;
+}
+
+&.es-dialog.type-iframe {
+
+	.es-dialog-container {
+		overflow: hidden;
+	}
+
+	.es-dialog-content {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+	}
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+}
+
+&.is-mobile {
+	
+	&.es-dialog {
+		// Since it have to cover full screen good to bring it top
+		z-index: 2147483647;
+		width: 100%;
+		height: 100%;
+	}
+	.es-dialog-modal {
+		width: 100% !important; // Override inline style
+		height: 100% !important;
+		// height: 300px !important;
+		// left: 1%;
+	}
+	.es-dialog-body {
+		-webkit-overflow-scrolling: touch;
+		overflow-y: scroll;
+	}
+}

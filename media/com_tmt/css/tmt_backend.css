@@ -1,0 +1,174 @@
+@media (max-width: 480px) {
+	#tmt_questions .js-stools-container-bar .btn-wrapper .js-stools-btn-clear{
+		margin-top: -19px ;
+	}
+}
+
+.questions_count , .questions_marks , .rule_id , .pull_questions_count , .delete_button {
+      width:32px !important;
+}
+
+
+div.techjoomla-strapper .disabledradio{
+	pointer-events: none;
+	background: #ccc;
+	border-color: #bbb;
+	color: #000;
+}
+
+div.techjoomla-strapper .tmt-display-none{
+	display:none;
+}
+
+.new_rules{
+	margin-bottom: 5px;
+}
+
+#final_total_marks{
+	margin-bottom: 5px;
+}
+
+@media (min-width: 767px) {
+    div#tmt_test_form .rules-container .rule-template .btn.remove-rule {width: 30%;}
+    div#tmt_test_form .rules-container .rule-template .addButtons {width: 65%; float: left; margin-right: 5px;}
+    div#tmt_test_form .rules-container .rule-template select{width: 100% !important;}
+    div#tmt_test_form .rules-container .rule-template .row-fluid > .span1 input{float: left; width: 87%;}
+    div#tmt_test_form .rules-container .rule-template .row-fluid > .span1 input + span{float: left; width: 3%;}
+}
+
+.test_section .questions_container {
+	min-height: 10px;
+}
+.test_section .questions_container .section_question,
+.test-rules-questions .section_question {
+	border-bottom: 1px solid #eee;
+}
+
+.test_section .questions_container .section_question:last-child {
+	border-bottom: 0px;
+}
+
+.test-rules-questions .test-rules-questions-header {
+	border-bottom: 1px solid #aaa;
+}
+
+.test_section .accordion-group {
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+#questions .section-create {
+	border: 1px solid #ccc;
+}
+.questionbtn-group span {
+	color: #fff;
+}
+.radio input[type="radio"], 
+.checkbox input[type="checkbox"] {
+	 /* width: auto;  */
+}
+.tjmodal-body {
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+  overflow-x: clip;/*  added by pallavi*/
+}
+.test-rules .rules-container .rule-template .rule-question-available:after {
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	margin:0px 0px 0px 10px;
+	text-decoration:none;
+}
+
+.test-rules .rules-container .rule-template.rule-template--perfect  input,
+.test-rules .rules-container .rule-template.rule-template--perfect  select {
+	border: 1px solid #3c763d;
+}
+
+.test-rules .rules-container .rule-template.rule-template--perfect .rule-question-available:after { 
+   content: "\f164";
+   color: #3c763d;
+}
+
+.test-rules .rules-container .rule-template.rule-template--danger  input,
+.test-rules .rules-container .rule-template.rule-template--danger  select {
+	border: 1px solid #9d261d;
+}
+
+.test-rules .rules-container .rule-template.rule-template--danger .rule-question-available:after { 
+   content: "\f00d";
+   color: #9d261d;
+}
+
+.test-rules .rules-container .rule-template.rule-template--warning  input,
+.test-rules .rules-container .rule-template.rule-template--warning  select {
+	border: 1px solid #8a6d3b;
+}
+
+.test-rules .rules-container .rule-template.rule-template--warning .rule-question-available:after { 
+   content: "\f087";
+   color: #8a6d3b;
+}
+.rules-container .rule-template .rule-qcount-autopick {
+	margin-left: 0;
+}
+.answers-container textarea, .answers-container audio,
+#questionanswers .answer-media-selection>input:first-child {
+    width: 100%;
+}
+#questionanswers {
+/*	margin: 0 10px;*/
+}
+#tmt_question_form .answer-media-selection>input {
+    margin: 8px 0;
+    width: 100%;
+}
+#questionanswers .answers-container {
+    background: #eeeeee99;
+    border: 2px solid #ddd;
+}
+#questionanswers .answer-media-selection select {
+    width: auto;
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	/* STYLES GO HERE */ 
+	#questionanswers .answer-media-selection select {
+		width: 100%;
+	}
+}
+@media screen and (min-width : 1024px){
+	/* STYLES GO HERE */ 
+	#questionanswers .answer-media-selection select {
+		width: 100%;
+	}
+}
+
+/*v1.3.7*/
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly],span[disabled] {
+    cursor: not-allowed;
+    background-color: #eee;
+    pointer-events: none;
+}
+
+/*-------------added by pallavi-------------*/
+
+.form-control{
+	font-size: 14px!important;
+}
+
+.tmt-cancel-btn .btn{
+    border: 1px solid #00000059;
+    margin-left: 0.5rem;
+}
+.tmt-prev-btn .btn{
+    border: 1px solid #00000059;
+    margin-right: 0.5rem;
+}
+.que-ans-form  .tab-pane{
+	padding: 1rem;
+}
+.auto-question-btn .btn{
+	padding:5px;
+}

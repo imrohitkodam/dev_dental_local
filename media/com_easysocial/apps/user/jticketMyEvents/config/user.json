@@ -1,0 +1,17 @@
+[
+	{
+		"title"		: "APP_JTICKETMYEVENTS_PARAMS_PROFILE_GROUP",
+		"desc"		: "APP_JTICKETMYEVENTS_PARAMS_PROFILE_GROUP_DESC",
+		"fields"	:
+		[
+			{
+				"label"		: "APP_JTICKETMYEVENTS_EVENTS_LIMIT",
+				"tooltip"	: "APP_JTICKETMYEVENTS_EVENTS_LIMIT_DESC",
+				"name"		: "total",
+				"class"		: "input-mini center",
+				"type"		: "text",
+				"default"	: 9
+			}
+		]
+	}
+]
