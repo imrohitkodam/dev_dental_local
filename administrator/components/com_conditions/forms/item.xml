@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="RegularLabs\Library\Form\Field">
+    <fieldset>
+        <field name="id" type="Number"
+               default="0" class="readonly" readonly="true"
+               label="JGLOBAL_FIELD_ID_LABEL" />
+        <field name="name" type="Text"
+               default="" required="true"
+               label="JGLOBAL_TITLE" />
+        <field name="alias" type="Text"
+               size="45" default="" hint="JFIELD_ALIAS_PLACEHOLDER"
+               label="JFIELD_ALIAS_LABEL" />
+    </fieldset>
+
+    <fieldset name="details">
+        <field name="published" type="List"
+               default="1" size="1" class="form-select-color-state"
+               label="JSTATUS">
+            <option value="1">JPUBLISHED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+        <field name="description" type="Textarea"
+               height="160" default=""
+               label="JGLOBAL_DESCRIPTION" />
+        <field name="category" type="SimpleCategory"
+               default="" table="conditions"
+               label="JCATEGORY" />
+    </fieldset>
+
+    <fieldset name="rules">
+        <field name="has_multiple_groups" type="Hidden" default="0" />
+
+        <field name="match_all" type="Radio"
+               default="1" class="btn-group rl-btn-group"
+               label="RL_MATCHING_METHOD"
+               description="CON_MATCHING_METHOD_DESC,CON_ALL,CON_ALL_DESC,CON_ANY,CON_ANY_DESC"
+               showon="has_multiple_groups:1">
+            <option value="1" class="btn btn-outline-info">CON_ALL</option>
+            <option value="0" class="btn btn-outline-info">CON_ANY</option>
+        </field>
+
+        <field name="groups" type="Subform"
+               formsource="/administrator/components/com_conditions/forms/item_group.xml" multiple="true"
+               buttons="move,add,remove" add_button_text="CON_ADD_GROUP"
+               class="rl-subform rl-hide-main-buttons rl-move-add-button" />
+    </fieldset>
+</form>

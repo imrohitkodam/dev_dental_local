@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0.0" method="upgrade">
+	<name>com_easydiscuss</name>
+	<creationDate>25th May 2018</creationDate>
+	<author>Stack Ideas Sdn Bhd</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright 2009 - 2018 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<version>5.0.15</version>
+	<description>
+		EasyDiscuss is a Joomla! forum extension that allows users on your site to collaborate with one another.
+	</description>
+	<scriptfile>updater.php</scriptfile>
+	<administration>
+		<menu link="option=com_easydiscuss">COM_EASYDISCUSS</menu>
+		<submenu>
+			<menu view="settings">COM_EASYDISCUSS_ADMIN_MENU_SETTINGS</menu>
+			<menu view="posts">COM_EASYDISCUSS_MENU_DISCUSSIONS</menu>
+			<menu view="autoposting">COM_EASYDISCUSS_ADMIN_MENU_AUTOPOSTING</menu>
+			<menu view="categories">COM_EASYDISCUSS_ADMIN_MENU_CATEGORIES</menu>
+			<menu view="tags">COM_EASYDISCUSS_ADMIN_MENU_TAGS</menu>
+			<menu view="users">COM_EASYDISCUSS_ADMIN_MENU_USERS</menu>
+			<menu view="roles">COM_EASYDISCUSS_ADMIN_MENU_ROLES</menu>
+			<menu view="acls">COM_EASYDISCUSS_ADMIN_MENU_ACL</menu>
+			<menu view="reports">COM_EASYDISCUSS_ADMIN_MENU_REPORTS</menu>
+			<menu view="subscription">COM_EASYDISCUSS_ADMIN_MENU_SUBSCRIPTION</menu>
+			<menu view="badges">COM_EASYDISCUSS_ADMIN_MENU_BADGES</menu>
+			<menu view="points">COM_EASYDISCUSS_ADMIN_MENU_POINTS</menu>
+			<menu view="ranks">COM_EASYDISCUSS_ADMIN_MENU_RANKING</menu>
+			<menu view="customfields">COM_EASYDISCUSS_ADMIN_MENU_CUSTOMFIELDS</menu>
+			<menu view="themes">COM_EASYDISCUSS_ADMIN_MENU_THEMES</menu>
+			<menu view="languages">COM_EASYDISCUSS_ADMIN_MENU_LANGUAGES</menu>
+			<menu view="spools">COM_EASYDISCUSS_ADMIN_MENU_SPOOLS</menu>
+		</submenu>
+	</administration>
+	<updateservers>
+		<server type="extension" name="EasyDiscuss Update Site">https://stackideas.com/jupdates/manifest/easydiscuss</server>
+	</updateservers>
+</extension>

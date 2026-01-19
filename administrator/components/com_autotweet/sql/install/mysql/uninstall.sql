@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS `#__autotweet_advanced_attrs`;
+DROP TABLE IF EXISTS `#__autotweet_automator`;
+DROP TABLE IF EXISTS `#__autotweet_channels`;
+DROP TABLE IF EXISTS `#__autotweet_channeltypes`;
+DROP TABLE IF EXISTS `#__autotweet_feeds`;
+DROP TABLE IF EXISTS `#__autotweet_posts`;
+DROP TABLE IF EXISTS `#__autotweet_requests`;
+DROP TABLE IF EXISTS `#__autotweet_rules`;
+DROP TABLE IF EXISTS `#__autotweet_ruletypes`;
+DROP TABLE IF EXISTS `#__autotweet_targets`;
+DROP TABLE IF EXISTS `#__autotweet_sessions`;

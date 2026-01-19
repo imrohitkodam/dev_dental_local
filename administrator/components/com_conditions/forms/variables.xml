@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field name="key" type="Text"
+               required="true"
+               label="CON_KEY"
+               description="CON_KEY_DESC" />
+        <field name="default" type="Text"
+               label="CON_DEFAULT_VALUE"
+               description="CON_DEFAULT_VALUE_DESC" />
+        <field name="insert_in_tag" type="Radio"
+               class="btn-group rl-btn-group btn-group-md btn-group-yesno" default="1"
+               label="CON_INSERT_IN_TAG"
+               description="CON_INSERT_IN_TAG_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+    </fieldset>
+</form>

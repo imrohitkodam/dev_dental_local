@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4" type="component" method="upgrade">
+  <name>COM_ADVANCEDMODULES</name>
+  <description>COM_ADVANCEDMODULES_DESC</description>
+  <version>10.4.8</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <namespace path="src">RegularLabs\Component\AdvancedModules</namespace>
+  <scriptfile>script.install.php</scriptfile>
+  <administration>
+    <menu link="option=com_advancedmodules" img="class:regularlabs-advancedmodules">COM_ADVANCEDMODULES</menu>
+    <files folder="admin">
+      <filename>access.xml</filename>
+      <filename>config.xml</filename>
+      <filename>advancedmodules.xml</filename>
+      <folder>forms</folder>
+      <folder>helpers</folder>
+      <folder>language</folder>
+      <folder>layouts</folder>
+      <folder>services</folder>
+      <folder>src</folder>
+      <folder>tmpl</folder>
+    </files>
+  </administration>
+</extension>

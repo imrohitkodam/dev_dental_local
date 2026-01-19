@@ -1,0 +1,1 @@
+ALTER TABLE `#__autotweet_posts` CHANGE `org_url` `org_url` VARCHAR(512);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fields name="extra">
+    <fieldset name="category">
+      <field name="category" type="SimpleCategory" addfieldprefix="RegularLabs\Library\Form\Field" default="" table="advancedmodules" label="JCATEGORY" description="JGLOBAL_CHOOSE_CATEGORY_DESC"/>
+    </fieldset>
+    <fieldset name="hideempty">
+      <field name="hideempty" type="Radio" default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="AMM_HIDE_IF_EMPTY" description="AMM_HIDE_IF_EMPTY_DESC">
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+      </field>
+      <field name="@note__if_empty_html" type="OnlyPro" addfieldprefix="RegularLabs\Library\Form\Field" label="AMM_IF_EMPTY_HTML" description="AMM_IF_EMPTY_HTML_DESC"/>
+    </fieldset>
+    <fieldset name="notes">
+      <field name="notes" type="TextArea" rows="16" height="400" default="" show_insert_date_name="1" label="AMM_NOTES" hiddenLabel="true"/>
+    </fieldset>
+    <fieldset name="hidden">
+      <field name="access_level_saved" type="Hidden" default="1"/>
+    </fieldset>
+    <fieldset name="color">
+      <field name="color" type="Hidden" default=""/>
+    </fieldset>
+  </fields>
+</form>

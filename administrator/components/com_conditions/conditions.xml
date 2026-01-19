@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4" type="component" method="upgrade">
+  <name>COM_CONDITIONS</name>
+  <description>COM_CONDITIONS_DESC</description>
+  <version>25.11.2254</version>
+  <creationDate>November 2025</creationDate>
+  <author>Regular Labs (Peter van Westen)</author>
+  <authorEmail>info@regularlabs.com</authorEmail>
+  <authorUrl>https://regularlabs.com</authorUrl>
+  <copyright>Copyright © 2025 Regular Labs - All Rights Reserved</copyright>
+  <license>GNU General Public License version 2 or later</license>
+  <namespace path="src">RegularLabs\Component\Conditions</namespace>
+  <scriptfile>script.install.php</scriptfile>
+  <files folder="site">
+    <folder>src</folder>
+    <folder>tmpl</folder>
+  </files>
+  <administration>
+    <menu link="option=com_conditions" img="class:regularlabs-conditions">COM_CONDITIONS</menu>
+    <files folder="admin">
+      <file>access.xml</file>
+      <file>config.xml</file>
+      <file>conditions.xml</file>
+      <folder>forms</folder>
+      <folder>language</folder>
+      <folder>services</folder>
+      <folder>src</folder>
+      <folder>tmpl</folder>
+    </files>
+  </administration>
+  <media folder="media" destination="conditions">
+    <folder>js</folder>
+  </media>
+</extension>

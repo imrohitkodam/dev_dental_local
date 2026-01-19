@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0.0" method="upgrade">
+	<name>com_easysocial</name>
+	<creationDate>9th October 2018</creationDate>
+	<author>Stack Ideas Sdn Bhd</author>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>https://stackideas.com</authorUrl>
+	<copyright>Copyright 2009 - 2018 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<version>4.0.15</version>
+	<description>
+		EasySocial is a Social Network Extension For Joomla!
+	</description>
+	<scriptfile>updater.php</scriptfile>
+	<administration>
+		<menu link="option=com_easysocial" img="components/com_easysocial/themes/default/images/icons/16/easysocial.png">COM_EASYSOCIAL</menu>
+		<submenu>
+			<menu view="settings" img="components/com_easysocial/themes/default/images/icons/16/easysocial-settings.png">COM_EASYSOCIAL_MENU_SETTINGS</menu>
+			<menu view="users" img="components/com_easysocial/themes/default/images/icons/16/easysocial-users.png">COM_EASYSOCIAL_MENU_USERS</menu>
+			<menu view="themes" img="components/com_easysocial/themes/default/images/icons/16/easysocial-themes.png">COM_EASYSOCIAL_MENU_THEMES</menu>
+			<menu view="languages" img="components/com_easysocial/themes/default/images/icons/16/easysocial-languages.png">COM_EASYSOCIAL_MENU_LANGUAGES</menu>
+			<menu view="profiles" img="components/com_easysocial/themes/default/images/icons/16/easysocial-profiles.png">COM_EASYSOCIAL_MENU_PROFILES</menu>
+			<menu view="groups" img="components/com_easysocial/themes/default/images/icons/16/easysocial-groups.png">COM_EASYSOCIAL_MENU_GROUPS</menu>
+			<menu view="events" img="components/com_easysocial/themes/default/images/icons/16/easysocial-events.png">COM_EASYSOCIAL_MENU_EVENTS</menu>
+			<menu view="pages" img="components/com_easysocial/themes/default/images/icons/16/easysocial-pages.png">COM_EASYSOCIAL_MENU_PAGES</menu>
+			<menu view="albums" img="components/com_easysocial/themes/default/images/icons/16/easysocial-albums.png">COM_EASYSOCIAL_MENU_ALBUMS</menu>
+			<menu view="videos" img="components/com_easysocial/themes/default/images/icons/16/easysocial-videos.png">COM_EASYSOCIAL_MENU_VIDEOS</menu>
+			<menu view="audios" img="components/com_easysocial/themes/default/images/icons/16/easysocial-audios.png">COM_EASYSOCIAL_MENU_AUDIOS</menu>
+			<menu view="privacy" img="components/com_easysocial/themes/default/images/icons/16/easysocial-privacy.png">COM_EASYSOCIAL_MENU_PRIVACY</menu>
+			<menu view="points" img="components/com_easysocial/themes/default/images/icons/16/easysocial-points.png">COM_EASYSOCIAL_MENU_POINTS</menu>
+			<menu view="polls" img="components/com_easysocial/themes/default/images/icons/16/easysocial-polls.png">COM_EASYSOCIAL_MENU_POLLS</menu>
+			<menu view="alerts" img="components/com_easysocial/themes/default/images/icons/16/easysocial-alerts.png">COM_EASYSOCIAL_MENU_ALERTS</menu>
+			<menu view="badges" img="components/com_easysocial/themes/default/images/icons/16/easysocial-badges.png">COM_EASYSOCIAL_MENU_BADGES</menu>
+			<menu view="apps" img="components/com_easysocial/themes/default/images/icons/16/easysocial-apps.png">COM_EASYSOCIAL_MENU_APPS</menu>
+			<menu view="reports" img="components/com_easysocial/themes/default/images/icons/16/easysocial-reports.png">COM_EASYSOCIAL_MENU_REPORTS</menu>
+			<menu view="stream" img="components/com_easysocial/themes/default/images/icons/16/easysocial-stream.png">COM_EASYSOCIAL_MENU_STREAM</menu>
+			<menu view="mailer" img="components/com_easysocial/themes/default/images/icons/16/easysocial-emails.png">COM_EASYSOCIAL_MENU_EMAIL_ACTIVITIES</menu>
+			<menu view="migrators" img="components/com_easysocial/themes/default/images/icons/16/easysocial-migrators.png">COM_EASYSOCIAL_MENU_MIGRATORS</menu>
+		</submenu>
+	</administration>
+	<updateservers>
+		<server type="extension" name="EasySocial Update Site">https://stackideas.com/jupdates/manifest/easysocial</server>
+	</updateservers>
+</extension>

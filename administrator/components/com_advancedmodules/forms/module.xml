@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset addfieldprefix="RegularLabs\Component\AdvancedModules\Administrator\Field">
+    <field name="id" type="number" label="JGLOBAL_FIELD_ID_LABEL" default="0" readonly="true"/>
+    <field name="title" type="text" label="JGLOBAL_TITLE" size="40" maxlength="100" required="true"/>
+    <field name="note" type="text" label="JGLOBAL_DESCRIPTION" description="AMM_DESCRIPTION_DESC" maxlength="255" size="40"/>
+    <field name="module" type="hidden" label="COM_MODULES_FIELD_MODULE_LABEL" readonly="readonly" size="20"/>
+    <field name="showtitle" type="radio" label="COM_MODULES_FIELD_SHOWTITLE_LABEL" layout="joomla.form.field.radio.switcher" default="1">
+      <option value="0">JHIDE</option>
+      <option value="1">JSHOW</option>
+    </field>
+    <field name="published" type="list" label="JSTATUS" class="form-select-color-state" default="1" size="1" validate="options">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="client_id" type="hidden" label="COM_MODULES_FIELD_CLIENT_ID_LABEL" readonly="true" size="1"/>
+    <field name="position" type="ModulesPositionedit" label="COM_MODULES_FIELD_POSITION_LABEL" default="" maxlength="50" client="site"/>
+    <field name="access" type="hidden"/>
+    <field name="ordering" type="moduleorder" label="JFIELD_ORDERING_LABEL" linked="position"/>
+    <field name="content" type="editor" label="COM_MODULES_FIELD_CONTENT_LABEL" buttons="true" filter="\Joomla\CMS\Component\ComponentHelper::filterText" hide="readmore,pagebreak,module"/>
+    <field name="language" type="hidden" default="*"/>
+    <field name="asset_id" type="hidden" filter="unset"/>
+    <field name="rules" type="Rules" label="JCONFIG_PERMISSIONS_LABEL" filter="rules" validate="rules" hiddenLabel="true" component="com_modules" section="component"/>
+  </fieldset>
+  <fieldset name="conditions">
+    <field name="@load_language_conditions" type="LoadLanguage" extension="com_conditions"/>
+    <field name="@conditions" type="Condition" addfieldprefix="RegularLabs\Component\Conditions\Administrator\Form\Field" extension="com_advancedmodules" table="modules" name_column="title" text_no_conditions="AMM_MESSAGE_NO_CONDITIONS" enable="                     menu__menu_item,                     menu__home_page,                     date__date,                     content__page_type,                     content__category,                     content__article__id,                     content__article__featured,                     content__article__status,                     content__article__date,                     content__article__author,                     content__article__content_keyword,                     content__article__meta_keyword,                     visitor__access_level,                     visitor__user_group,                     visitor__language,                     agent__device,                     agent__os,                     agent__browser,                     agent__browser_mobile,                     other__tag,                     other__component,                     other__template,                     other__url,                     other__condition"/>
+  </fieldset>
+</form>

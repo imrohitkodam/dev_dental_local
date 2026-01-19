@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldprefix="RegularLabs\Library\Form\Field">
+    <fieldset name="options"
+              label="JOPTIONS">
+        <field name="@load_script_admin-form" type="LoadMedia"
+               filetype="script" file="regularlabs.admin-form" />
+        <field name="@load_script_descriptions" type="LoadMedia"
+               filetype="script" file="regularlabs.admin-form-descriptions" />
+        <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs" />
+        <field name="use_categories" type="Radio"
+               default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="RL_USE_CATEGORIES"
+               description="RL_USE_CATEGORIES_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="use_colors" type="Radio"
+               default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="RL_USE_COLORS"
+               description="RL_USE_COLORS_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="main_colors" type="TextArea"
+               rows="4"
+               default="none,#c0c6cf,#000000,#dc2a28,#fb6b14,#ffa813,#eac90a,#18a047,#0f9aa4,#115dda,#761bda,#d319a4"
+               label="RL_COLORS"
+               description="RL_COLORS_DESC"
+               showon="use_colors:1" />
+
+        <field name="disabled_rule_types" type="Checkboxes"
+               default="0"
+               class="rl-form-checkboxes-not-inline rl-form-checkboxes-set-parent-classes rl-form-checkboxes-style-disabled"
+               label="CON_DISABLED_RULE_TYPES"
+               description="CON_DISABLED_RULE_TYPES_DESC">
+            <group label="CON_MENU_ITEMS">
+                <option value="menu__menu_item">CON_MENU_ITEMS</option>
+                <option value="menu__home_page">CON_HOME_PAGE</option>
+            </group>
+
+            <group label="CON_DATE_TIME">
+                <option value="date__date">CON_DATE</option>
+                <option value="date__season">CON_SEASONS</option>
+                <option value="date__month">CON_MONTHS</option>
+                <option value="date__day">CON_DAYS</option>
+                <option value="date__time">CON_TIME</option>
+            </group>
+
+            <group label="CON_JOOMLA_CONTENT">
+                <option value="content__page_type">CON_PAGE_TYPES</option>
+                <option value="content__category">CON_CATEGORIES</option>
+                <option value="content__article__id">CON_ARTICLES</option>
+                <option value="content__article__featured">CON_ARTICLE_FEATURED</option>
+                <option value="content__article__status">CON_ARTICLE_STATUS</option>
+                <option value="content__article__date">CON_ARTICLE_DATE</option>
+                <option value="content__article__author">CON_ARTICLE_AUTHORS</option>
+                <option value="content__article__content_keyword">CON_ARTICLE_CONTENT_KEYWORDS</option>
+                <option value="content__article__meta_keyword">CON_ARTICLE_META_KEYWORDS</option>
+                <option value="content__article__field">CON_ARTICLE_FIELD</option>
+            </group>
+
+            <group label="CON_VISITORS">
+                <option value="visitor__user">CON_USERS</option>
+                <option value="visitor__access_level">CON_ACCESS_LEVELS</option>
+                <option value="visitor__user_group">CON_USER_GROUPS</option>
+                <option value="visitor__language">CON_LANGUAGES</option>
+
+                <option value="agent__device">CON_DEVICES</option>
+                <option value="agent__os">CON_OS</option>
+                <option value="agent__browser">CON_BROWSERS</option>
+                <option value="agent__browser_mobile">CON_MOBILE_BROWSERS</option>
+                <option value="visitor__ip">CON_IPS</option>
+            </group>
+
+            <group label="CON_GEOLOCATION">
+                <option value="geo__continent">CON_CONTINENTS</option>
+                <option value="geo__country">CON_COUNTRIES</option>
+                <option value="geo__region">CON_REGIONS</option>
+                <option value="geo__postal_code">CON_POSTAL_CODES</option>
+            </group>
+
+            <group label="CON_MISCELLANEOUS">
+                <option value="other__tag">CON_TAGS</option>
+                <option value="other__component">CON_COMPONENTS</option>
+                <option value="other__template">CON_TEMPLATES</option>
+                <option value="other__url">CON_URLS</option>
+                <option value="other__php">CON_PHP</option>
+                <option value="other__condition">CON_OTHER_CONDITION</option>
+            </group>
+
+            <group label="CON_3RD_PARTY_EXTENSIONS">
+                <option value="hikashop">CON_HIKASHOP</option>
+                <option value="flexicontent">CON_FLEXICONTENT</option>
+                <option value="zoo">CON_ZOO</option>
+            </group>
+        </field>
+    </fieldset>
+
+    <fieldset name="action_logs"
+              label="RL_USER_ACTION_LOGS">
+        <field name="enable_actionlog" type="Radio"
+               default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="RL_ENABLE_ACTIONLOG"
+               description="RL_ENABLE_ACTIONLOG_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="actionlog_events" type="Checkboxes"
+               multiple="true" default="create,update,delete,change_state"
+               checked="create,update,delete,change_state" class="rl-form-checkboxes-not-inline"
+               label="RL_ACTIONLOG_EVENTS"
+               description="RL_ACTIONLOG_EVENTS_DESC"
+               showon="enable_actionlog:1">
+            <option value="create">RL_ACTION_CREATE</option>
+            <option value="update">RL_ACTION_UPDATE</option>
+            <option value="delete">RL_ACTION_DELETE</option>
+            <option value="change_state">RL_ACTION_CHANGE_STATE</option>
+        </field>
+    </fieldset>
+
+    <fieldset name="permissions"
+              label="JCONFIG_PERMISSIONS_LABEL"
+              description="JCONFIG_PERMISSIONS_DESC">
+        <field name="rules" type="Rules"
+               label="JCONFIG_PERMISSIONS_LABEL" filter="rules" validate="rules"
+               component="com_conditions" section="component" />
+    </fieldset>
+</config>

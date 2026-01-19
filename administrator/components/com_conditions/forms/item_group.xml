@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="RegularLabs\Library\Form\Field">
+    <fieldset addfieldprefix="RegularLabs\Component\Conditions\Administrator\Form\Field">
+        <field name="has_multiple_rules" type="Hidden" value="0" />
+
+        <field name="match_all" type="Radio"
+               default="1" class="btn-group rl-btn-group"
+               label="RL_MATCHING_METHOD"
+               description="CON_MATCHING_METHOD_DESC,CON_ALL,CON_ALL_DESC,CON_ANY,CON_ANY_DESC"
+               showon="has_multiple_rules:1">
+            <option value="1" class="btn btn-outline-info">CON_ALL</option>
+            <option value="0" class="btn btn-outline-info">CON_ANY</option>
+        </field>
+
+        <field name="rules" type="ConditionRules"
+               formsource="/administrator/components/com_conditions/forms/item_rule.xml" multiple="true"
+               buttons="move,add,remove" add_button_text="CON_ADD_RULE"
+               class="rl-subform rl-hide-main-buttons rl-move-add-button" />
+    </fieldset>
+</form>

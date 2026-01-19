@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="RegularLabs\Library\Form\Field">
+    <fieldset name="types" addfieldprefix="RegularLabs\Component\Conditions\Administrator\Form\Field">
+        <field name="type" type="Groupedlist"
+               default=""
+               label="CON_SELECT_A_RULE_TYPE" hiddenLabel="true">
+            <option value="">- %s -,CON_SELECT_A_RULE_TYPE</option>
+            <option value="-1" disabled="true">&amp;nbsp;</option>
+
+            <group label="CON_MENU_ITEMS">
+                <option value="menu__menu_item" class="check_enabled">CON_MENU_ITEMS</option>
+                <option value="menu__home_page" class="check_enabled">CON_HOME_PAGE</option>
+            </group>
+
+            <group label="CON_DATE_TIME">
+                <option value="date__date" class="check_enabled">CON_DATE</option>
+                <option value="date__season" class="check_enabled">CON_SEASONS</option>
+                <option value="date__month" class="check_enabled">CON_MONTHS</option>
+                <option value="date__day" class="check_enabled">CON_DAYS</option>
+                <option value="date__time" class="check_enabled">CON_TIME</option>
+            </group>
+
+            <group label="CON_JOOMLA_CONTENT">
+                <option value="content__page_type" class="check_enabled">CON_PAGE_TYPES</option>
+                <option value="content__category" class="check_enabled">CON_CATEGORIES</option>
+                <option value="content__article__id" class="check_enabled">CON_ARTICLES</option>
+                <option value="content__article__featured" class="check_enabled">CON_ARTICLE_FEATURED</option>
+                <option value="content__article__status" class="check_enabled">CON_ARTICLE_STATUS</option>
+                <option value="content__article__date" class="check_enabled">CON_ARTICLE_DATE</option>
+                <option value="content__article__author" class="check_enabled">CON_ARTICLE_AUTHORS</option>
+                <option value="content__article__content_keyword" class="check_enabled">CON_ARTICLE_CONTENT_KEYWORDS
+                </option>
+                <option value="content__article__meta_keyword" class="check_enabled">CON_ARTICLE_META_KEYWORDS</option>
+                <option value="content__article__field" class="check_enabled">CON_ARTICLE_FIELD</option>
+            </group>
+
+            <group label="CON_VISITORS">
+                <option value="visitor__user" class="check_enabled">CON_USERS</option>
+                <option value="visitor__access_level" class="check_enabled">CON_ACCESS_LEVELS</option>
+                <option value="visitor__user_group" class="check_enabled">CON_USER_GROUPS</option>
+                <option value="visitor__language" class="check_enabled">CON_LANGUAGES</option>
+                <option value="agent__device" class="check_enabled">CON_DEVICES</option>
+                <option value="agent__os" class="check_enabled">CON_OS</option>
+                <option value="agent__browser" class="check_enabled">CON_BROWSERS</option>
+                <option value="agent__browser_mobile" class="check_enabled">CON_MOBILE_BROWSERS</option>
+                <option value="visitor__ip" class="check_enabled">CON_IPS</option>
+            </group>
+
+            <group label="CON_GEOLOCATION">
+                <option value="geo__continent" class="check_enabled">CON_CONTINENTS</option>
+                <option value="geo__country" class="check_enabled">CON_COUNTRIES</option>
+                <option value="geo__region" class="check_enabled">CON_REGIONS</option>
+                <option value="geo__postal_code" class="check_enabled">CON_POSTAL_CODES</option>
+            </group>
+
+            <group label="CON_MISCELLANEOUS">
+                <option value="other__tag" class="check_enabled">CON_TAGS</option>
+                <option value="other__component" class="check_enabled">CON_COMPONENTS</option>
+                <option value="other__template" class="check_enabled">CON_TEMPLATES</option>
+                <option value="other__url" class="check_enabled">CON_URLS</option>
+                <option value="other__php" class="check_enabled">CON_PHP</option>
+                <option value="other__condition" class="check_enabled">CON_OTHER_CONDITION</option>
+            </group>
+
+            <!--            <group label="CON_EASYBLOG">-->
+            <!--                <option value="easyblog__page_type" class="check_enabled" group_name="CON_EASYBLOG">CON_PAGE_TYPES</option>-->
+            <!--                <option value="easyblog__tag" class="check_enabled" group_name="CON_EASYBLOG">CON_TAGS</option>-->
+            <!--                <option value="easyblog__item" class="check_enabled" group_name="CON_EASYBLOG">CON_ITEMS</option>-->
+            <!--                <option value="easyblog__tag" class="check_enabled" group_name="CON_EASYBLOG">CON_TAGS</option>-->
+            <!--                <option value="easyblog__keyword" class="check_enabled" group_name="CON_EASYBLOG">CON_KEYWORDS</option>-->
+            <!--            </group>-->
+
+            <group label="CON_FLEXICONTENT">
+                <option value="flexicontent__page_type" class="check_enabled" group_name="CON_FLEXICONTENT">CON_PAGE_TYPES</option>
+                <option value="flexicontent__tag" class="check_enabled" group_name="CON_FLEXICONTENT">CON_TAGS</option>
+                <option value="flexicontent__type" class="check_enabled" group_name="CON_FLEXICONTENT">CON_TYPES</option>
+            </group>
+
+            <group label="CON_HIKASHOP">
+                <option value="hikashop__page_type" class="check_enabled" group_name="CON_HIKASHOP">CON_PAGE_TYPES</option>
+                <option value="hikashop__category" class="check_enabled" group_name="CON_HIKASHOP">CON_CATEGORIES</option>
+                <option value="hikashop__item" class="check_enabled" group_name="CON_HIKASHOP">CON_PRODUCTS</option>
+            </group>
+
+            <group label="CON_ZOO">
+                <option value="zoo__page_type" class="check_enabled" group_name="CON_ZOO">CON_PAGE_TYPES</option>
+                <option value="zoo__category" class="check_enabled" group_name="CON_ZOO">CON_CATEGORIES</option>
+                <option value="zoo__item" class="check_enabled" group_name="CON_ZOO">RL_ITEMS</option>
+            </group>
+        </field>
+
+        <field name="@showon__exclude__a" type="ShowOn" value="type!:" />
+        <field name="exclude" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md rl-exclude-field"
+               label="">
+            <option value="0" class="btn btn-outline-success">CON_INCLUDE</option>
+            <option value="1" class="btn btn-outline-danger">CON_EXCLUDE</option>
+        </field>
+        <field name="@showon__exclude__b" type="ShowOn" />
+
+        <!-- MENU ITEMS -->
+        <field name="@showon__menu__menu_item__a" type="ShowOn" value="type:menu__menu_item" />
+        <field name="menu__menu_item" type="MenuItems"
+               multiple="true" default=""
+               label="CON_MENU_ITEMS"
+               hiddenLabel="true" />
+        <field name="menu__menu_item__include_children" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_INCLUDE_CHILD_ITEMS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+            <option value="2" class="btn btn-outline-info">CON_ONLY</option>
+        </field>
+        <field name="@showon__menu__menu_item__include_children__a" type="ShowOn"
+               value="menu__menu_item__include_children:1,2" />
+        <field name="@note__menu__menu_item__include_children" type="Note"
+               class="rl-alert alert alert-warning"
+               text="CON_INCLUDE_CHILD_ITEMS_MENU_ITEMS_DESC" />
+        <field name="@showon__menu__menu_item__include_children__b" type="ShowOn" />
+        <field name="@showon__menu__menu_item__b" type="ShowOn" />
+
+        <!-- HOMEPAGE -->
+        <field name="@showon__menu__home_page__a" type="ShowOn" value="type:menu__home_page" />
+        <field name="menu__home_page" type="Hidden" value="1" />
+        <field name="@note__menu__home_page" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_HOME_PAGE_DESC" />
+        <field name="@showon__menu__home_page__b" type="ShowOn" />
+
+        <!-- DATE -->
+        <!-- DATE :: DATE -->
+        <field name="@showon__date__date__a" type="ShowOn" value="type:date__date" />
+        <field name="date__date" type="Hidden" value="1" />
+        <field name="date__date__comparison" type="Radio"
+               default="after" class="btn-group rl-btn-group btn-group-md"
+               label="">
+            <option value="before" class="btn btn-outline-info">CON_DATE_BEFORE</option>
+            <option value="after" class="btn btn-outline-info">CON_DATE_AFTER</option>
+            <option value="between" class="btn btn-outline-info">CON_DATE_BETWEEN</option>
+        </field>
+
+        <field name="@showon__date__date__before_after__a" type="ShowOn" value="date__date__comparison!:between" />
+        <field name="date__date__date" type="Calendar"
+               showtime="true" filter="none" format="%Y-%m-%d %H:%M"
+               default=""
+               label="" />
+        <field name="@showon__date__date__before_after__b" type="ShowOn" />
+
+        <field name="@showon__date__date__between__a" type="ShowOn" value="date__date__comparison:between" />
+        <field name="date__date__from" type="Calendar"
+               showtime="true" filter="none" format="%Y-%m-%d %H:%M"
+               default=""
+               label="CON_DATE_FROM" />
+        <field name="date__date__to" type="Calendar"
+               showtime="true" filter="none" format="%Y-%m-%d %H:%M"
+               default=""
+               label="CON_DATE_TO" />
+        <field name="date__date__recurring" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_DATE_RECURRING"
+               description="CON_DATE_RECURRING_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__date__date__between__b" type="ShowOn" />
+
+        <field name="@showon__date__date__b" type="ShowOn" />
+
+        <!-- DATE :: SEASONS -->
+        <field name="@showon__date__season__a" type="ShowOn" value="type:date__season" />
+        <field name="date__season" type="List"
+               multiple="true" default="" layout="joomla.form.field.list-fancy-select"
+               label="CON_SEASONS" hiddenLabel="true">
+            <option value="winter">CON_WINTER</option>
+            <option value="spring">CON_SPRING</option>
+            <option value="summer">CON_SUMMER</option>
+            <option value="fall">CON_FALL</option>
+        </field>
+        <field name="date__season__hemisphere" type="Radio"
+               default="northern" class="btn-group rl-btn-group btn-group-md"
+               label="CON_HEMISPHERE">
+            <option value="northern">CON_NORTHERN</option>
+            <option value="southern">CON_SOUTHERN</option>
+            <option value="australia">CON_AUSTRALIA</option>
+        </field>
+        <field name="@showon__date__season__b" type="ShowOn" />
+
+        <!-- DATE :: MONTHS -->
+        <field name="@showon__date__month__a" type="ShowOn" value="type:date__month" />
+        <field name="date__month" type="List"
+               multiple="true" default="" layout="joomla.form.field.list-fancy-select"
+               label="CON_MONTHS" hiddenLabel="true">
+            <option value="1">JANUARY</option>
+            <option value="2">FEBRUARY</option>
+            <option value="3">MARCH</option>
+            <option value="4">APRIL</option>
+            <option value="5">MAY</option>
+            <option value="6">JUNE</option>
+            <option value="7">JULY</option>
+            <option value="8">AUGUST</option>
+            <option value="9">SEPTEMBER</option>
+            <option value="10">OCTOBER</option>
+            <option value="11">NOVEMBER</option>
+            <option value="12">DECEMBER</option>
+        </field>
+        <field name="@showon__date__month__b" type="ShowOn" />
+
+        <!-- DATE :: DAYS -->
+        <field name="@showon__date__day__a" type="ShowOn" value="type:date__day" />
+        <field name="date__day" type="List"
+               multiple="true" default="" layout="joomla.form.field.list-fancy-select"
+               label="CON_DAYS" hiddenLabel="true">
+            <option value="1">MONDAY</option>
+            <option value="2">TUESDAY</option>
+            <option value="3">WEDNESDAY</option>
+            <option value="4">THURSDAY</option>
+            <option value="5">FRIDAY</option>
+            <option value="6">SATURDAY</option>
+            <option value="7">SUNDAY</option>
+        </field>
+        <field name="@showon__date__day__b" type="ShowOn" />
+
+        <!-- DATE :: TIME -->
+        <field name="@showon__date__time__a" type="ShowOn" value="type:date__time" />
+        <field name="date__time" type="Hidden" value="1" />
+        <field name="date__time__comparison" type="Radio"
+               default="after" class="btn-group rl-btn-group btn-group-md"
+               label="">
+            <option value="before" class="btn btn-outline-info">CON_DATE_BEFORE</option>
+            <option value="after" class="btn btn-outline-info">CON_DATE_AFTER</option>
+            <option value="between" class="btn btn-outline-info">CON_DATE_BETWEEN</option>
+        </field>
+
+        <field name="@showon__date__time__before_after__a" type="ShowOn" value="date__time__comparison!:between" />
+        <field name="date__time__time" type="Text"
+               size="10" default="0:00" class="rl-w-5em text-right"
+               label="" />
+        <field name="@showon__date__time__before_after__b" type="ShowOn" />
+
+        <field name="@showon__date__time__between__a" type="ShowOn" value="date__time__comparison:between" />
+        <field name="date__time__from" type="Text"
+               size="10" default="0:00" class="rl-w-5em text-right"
+               label="CON_DATE_FROM" />
+        <field name="date__time__to" type="Text"
+               size="10" default="0:00" class="rl-w-5em text-right"
+               label="CON_DATE_TO" />
+        <field name="@showon__date__time__between__b" type="ShowOn" />
+        <field name="@showon__date__time__b" type="ShowOn" />
+
+        <!-- DATE (footer) -->
+        <field name="@showon__date__a" type="ShowOn"
+               value="type:date__date[OR]type:date__season[OR]type:date__month[OR]type:date__day[OR]type:date__time" />
+        <field name="@note__date" type="Note"
+               class="rl-alert alert alert-warning"
+               text="CON_DATE_TIME_DESC" />
+        <field name="@note__date__current" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_CURRENT_DATE,[date:Y-m-d H:i]" />
+        <field name="@showon__date__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT -->
+        <field name="@load_language_content" type="LoadLanguage" extension="com_content" />
+        <field name="@load_language_content_sys" type="LoadLanguage" extension="com_content.sys" />
+
+        <!-- JOOMLA CONTENT :: PAGE TYPES -->
+        <field name="@showon__content__page_type__a" type="ShowOn" value="type:content__page_type" />
+        <field name="content__page_type" type="List"
+               multiple="true" default=""
+               layout="joomla.form.field.list-fancy-select"
+               label="CON_PAGE_TYPES" hiddenLabel="true">
+            <option value="archive">COM_CONTENT_ARCHIVE_VIEW_DEFAULT_TITLE</option>
+            <option value="article">COM_CONTENT_ARTICLE_VIEW_DEFAULT_TITLE</option>
+            <option value="categories">COM_CONTENT_CATEGORIES_VIEW_DEFAULT_TITLE</option>
+            <option value="categoryblog">COM_CONTENT_CATEGORY_VIEW_BLOG_TITLE</option>
+            <option value="category">COM_CONTENT_CATEGORY_VIEW_DEFAULT_TITLE</option>
+            <option value="featured">COM_CONTENT_FEATURED_VIEW_DEFAULT_TITLE</option>
+            <option value="form">COM_CONTENT_FORM_VIEW_DEFAULT_TITLE</option>
+        </field>
+        <field name="@showon__content__page_type__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: CATEGORIES -->
+        <field name="@showon__content__category__a" type="ShowOn" value="type:content__category" />
+        <field name="content__category" type="ContentCategories"
+               multiple="true" default=""
+               label="CON_CATEGORIES"
+               hiddenLabel="true" />
+        <field name="content__category__include_children" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_INCLUDE_CHILD_ITEMS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+            <option value="2" class="btn btn-outline-info">CON_ONLY</option>
+        </field>
+        <field name="content__category__page_types" type="Checkboxes"
+               default="categories,articles"
+               label="CON_PAGE_TYPES">
+            <option value="categories">RL_CATEGORIES</option>
+            <option value="articles">RL_ARTICLES</option>
+            <option value="others">RL_OTHERS</option>
+        </field>
+        <field name="@showon__content__category__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLES -->
+        <field name="@showon__content__article__id__a" type="ShowOn" value="type:content__article__id" />
+        <field name="content__article__id" type="ContentArticles"
+               multiple="true" default=""
+               label="CON_ARTICLES"
+               hiddenLabel="true" />
+        <field name="@showon__content__article__id__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE FEATURED -->
+        <field name="@showon__content__article__featured__a" type="ShowOn" value="type:content__article__featured" />
+        <field name="content__article__featured" type="Hidden" value="1" />
+        <field name="@showon__content__article__featured__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE PUBLISH STATE -->
+        <field name="@showon__content__article__status__a" type="ShowOn" value="type:content__article__status" />
+        <field name="content__article__status" type="List"
+               multiple="true" default="1"
+               layout="joomla.form.field.list-fancy-select"
+               label="CON_ARTICLE_STATUS" hiddenLabel="true">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+        <field name="@showon__content__article__status__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE DATE -->
+        <field name="@showon__content__article__date__a" type="ShowOn" value="type:content__article__date" />
+        <field name="content__article__date" type="List"
+               default="created" layout="joomla.form.field.list-fancy-select"
+               label="CON_ARTICLE_DATE" hiddenLabel="true">
+            <option value="created">COM_CONTENT_FIELD_CREATED_LABEL</option>
+            <option value="modified">JGLOBAL_FIELD_MODIFIED_LABEL</option>
+            <option value="publish_up">COM_CONTENT_FIELD_PUBLISH_UP_LABEL</option>
+            <option value="publish_down">COM_CONTENT_FIELD_PUBLISH_DOWN_LABEL</option>
+        </field>
+        <field name="content__article__date__comparison" type="Radio"
+               default="after" class="btn-group rl-btn-group btn-group-md"
+               label="">
+            <option value="before" class="btn btn-outline-info">CON_DATE_BEFORE</option>
+            <option value="after" class="btn btn-outline-info">CON_DATE_AFTER</option>
+            <option value="between" class="btn btn-outline-info">CON_DATE_BETWEEN</option>
+        </field>
+
+        <field name="@showon__content__article__date__before_after__a" type="ShowOn"
+               value="content__article__date__comparison!:between" />
+        <field name="content__article__date__date" type="Calendar"
+               showtime="true" filter="none"
+               format="%Y-%m-%d %H:%M" default=""
+               label="" />
+        <field name="@showon__content__article__date__before_after__b" type="ShowOn" />
+
+        <field name="@showon__content__article__date__between__a" type="ShowOn"
+               value="content__article__date__comparison:between" />
+        <field name="content__article__date__from" type="Calendar"
+               showtime="true" filter="none"
+               format="%Y-%m-%d %H:%M" default=""
+               label="CON_DATE_FROM" />
+        <field name="content__article__date__to" type="Calendar"
+               showtime="true" filter="none"
+               format="%Y-%m-%d %H:%M" default=""
+               label="CON_DATE_TO" />
+        <field name="content__article__date__recurring" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_DATE_RECURRING"
+               description="CON_DATE_RECURRING_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__content__article__date__between__b" type="ShowOn" />
+        <field name="@showon__content__article__date__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE AUTHORS -->
+        <field name="@showon__content__article__author__a" type="ShowOn" value="type:content__article__author" />
+        <field name="content__article__author" type="Users"
+               multiple="true" show_current="true" default=""
+               label="CON_ARTICLE_AUTHORS" hiddenLabel="true" />
+        <field name="@showon__content__article__author__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE CONTENT KEYWORDS -->
+        <field name="@showon__content__article__content_keyword__a" type="ShowOn"
+               value="type:content__article__content_keyword" />
+        <field name="content__article__content_keyword" type="Textarea"
+               default=""
+               label="CON_ARTICLE_CONTENT_KEYWORDS"
+               hiddenLabel="true" />
+        <field name="@note__article_content_keywords" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_COMMA_SEPARATED_DESC" />
+        <field name="content__article__content_keyword__case_sensitive" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="RL_CASE_SENSITIVE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__content__article__content_keyword__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE META KEYWORDS -->
+        <field name="@showon__content__article__meta_keyword__a" type="ShowOn"
+               value="type:content__article__meta_keyword" />
+        <field name="content__article__meta_keyword" type="Textarea"
+               default=""
+               label="CON_ARTICLE_META_KEYWORDS"
+               hiddenLabel="true" />
+        <field name="@note__content__article__meta_keyword" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_COMMA_SEPARATED_DESC" />
+        <field name="content__article__meta_keyword__case_sensitive" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="RL_CASE_SENSITIVE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__content__article__meta_keyword__b" type="ShowOn" />
+
+        <!-- JOOMLA CONTENT :: ARTICLE FIELDS -->
+        <field name="@showon__content__article__field__a" type="ShowOn" value="type:content__article__field" />
+        <field name="content__article__field" type="Hidden" value="1" />
+        <field name="content__article__field__field" type="Field"
+               context="com_content.article"
+               label="CON_ARTICLE_FIELD" hiddenLabel="true" />
+        <field name="content__article__field__comparison" type="List"
+               default="equals" class="w-auto"
+               label="CON_COMPARISON" hiddenLabel="true">
+            <option value="equals">CON_COMPARISON_EQUALS</option>
+            <option value="not_equals">CON_COMPARISON_NOT_EQUALS</option>
+            <option value="contains">CON_COMPARISON_CONTAINS</option>
+            <option value="contains_one">CON_COMPARISON_CONTAINS_ONE</option>
+            <option value="not_contains">CON_COMPARISON_NOT_CONTAINS</option>
+            <option value="begins_with">CON_COMPARISON_BEGINS_WITH</option>
+            <option value="ends_with">CON_COMPARISON_ENDS_WITH</option>
+            <option value="less_than">CON_COMPARISON_LESS_THAN</option>
+            <option value="greater_than">CON_COMPARISON_GREATER_THAN</option>
+            <option value="empty">CON_COMPARISON_EMPTY</option>
+            <option value="regex">CON_COMPARISON_REGEX</option>
+        </field>
+        <field name="content__article__field__value" type="Text"
+               default=""
+               label="CON_FIELD_VALUE" hiddenLabel="true"
+               hint="CON_FIELD_VALUE"
+               showon="content__article__field__comparison!:empty" />
+        <field name="@showon__content__article__field__b" type="ShowOn" />
+
+        <!-- USERS -->
+        <field name="@showon__visitor__user__a" type="ShowOn" value="type:visitor__user" />
+        <field name="visitor__user" type="Users"
+               multiple="true" default=""
+               label="CON_USERS" hiddenLabel="true" />
+        <field name="@showon__visitor__user__b" type="ShowOn" />
+
+        <!-- ACCESS LEVEL -->
+        <field name="@showon__visitor__access_level__a" type="ShowOn" value="type:visitor__access_level" />
+        <field name="visitor__access_level" type="AccessLevels"
+               multiple="true" default=""
+               label="CON_ACCESS_LEVELS"
+               hiddenLabel="true" />
+        <field name="visitor__access_level__match_all" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_MATCH_ALL"
+               description="CON_MATCH_ALL_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__visitor__access_level__b" type="ShowOn" />
+
+        <!-- USER GROUPS -->
+        <field name="@showon__visitor__user_group__a" type="ShowOn" value="type:visitor__user_group" />
+        <field name="visitor__user_group" type="UserGroups"
+               multiple="true" notregistered="1" default=""
+               label="CON_USER_GROUPS" hiddenLabel="true" />
+        <field name="visitor__user_group__match_all" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_MATCH_ALL"
+               description="CON_MATCH_ALL_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__visitor__user_group__match_all__a" type="ShowOn"
+               value="visitor__user_group__match_all:0" />
+        <field name="visitor__user_group__include_children" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_INCLUDE_CHILD_ITEMS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+            <option value="2" class="btn btn-outline-info">CON_ONLY</option>
+        </field>
+        <field name="@showon__visitor__user_group__match_all__b" type="ShowOn" />
+        <field name="@showon__visitor__user_group__b" type="ShowOn" />
+
+        <!-- LANGUAGES -->
+        <field name="@showon__visitor__language__a" type="ShowOn" value="type:visitor__language" />
+        <field name="visitor__language" type="Languages"
+               multiple="true" default=""
+               label="CON_LANGUAGES"
+               hiddenLabel="true" />
+        <field name="@showon__visitor__language__b" type="ShowOn" />
+
+        <!-- DEVICES -->
+        <field name="@showon__agent__device__a" type="ShowOn" value="type:agent__device" />
+        <field name="agent__device" type="List"
+               multiple="true" default="" layout="joomla.form.field.list-fancy-select"
+               label="CON_DEVICES" hiddenLabel="true">
+            <option value="desktop">CON_DEVICES_DESKTOP</option>
+            <option value="tablet">CON_DEVICES_TABLET</option>
+            <option value="mobile">CON_DEVICES_MOBILE</option>
+        </field>
+        <field name="@note__agent__device" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_DEVICES_DESC" />
+        <field name="@showon__agent__device__b" type="ShowOn" />
+
+        <!-- OPERATING SYSTEMS -->
+        <field name="@showon__agent__os__a" type="ShowOn" value="type:agent__os" />
+        <field name="agent__os" type="Agents"
+               group="os" multiple="true" default=""
+               label="CON_OS" hiddenLabel="true" />
+        <field name="@note__agent__os" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_OS_DESC" />
+        <field name="@showon__agent__os__b" type="ShowOn" />
+
+        <!-- BROWSERS -->
+        <field name="@showon__agent__browser__a" type="ShowOn" value="type:agent__browser" />
+        <field name="agent__browser" type="Agents"
+               group="browser" multiple="true" default=""
+               label="CON_BROWSERS"
+               hiddenLabel="true" />
+        <field name="@note__agent__browser" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_BROWSERS_DESC" />
+        <field name="@showon__agent__browser__b" type="ShowOn" />
+
+        <!-- MOBILE BROWSERS -->
+        <field name="@showon__agent__browser_mobile__a" type="ShowOn" value="type:agent__browser_mobile" />
+        <field name="agent__browser_mobile" type="Agents"
+               group="mobile" multiple="true" default=""
+               condition="Agent__Browser"
+               label="CON_MOBILE_BROWSERS" hiddenLabel="true" />
+        <field name="@note__agent__browser_mobile" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_BROWSERS_DESC" />
+        <field name="@showon__agent__browser_mobile__b" type="ShowOn" />
+
+        <!-- GEO LOCATION -->
+        <field name="has_geoip_library" type="IsInstalled"
+               extension="geoip" extension_type="library" />
+        <field name="@showon__geo__1a" type="ShowOn"
+               value="type:geo__continent[OR]type:geo__country[OR]type:geo__region[OR]type:geo__postal_code" />
+        <field name="@note__geo__no_geoip_library" type="Note"
+               class="rl-alert alert alert-danger"
+               text="CON_GEO_NO_GEOIP_LIBRARY,&lt;a href=&quot;https://regularlabs.com/geoip&quot; class=&quot;btn btn-sm btn-success&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;"
+               showon="has_geoip_library:0" />
+        <field name="@showon__geo__1b" type="ShowOn" />
+
+        <!-- IPS -->
+        <field name="@showon__visitor__ip__a" type="ShowOn" value="type:visitor__ip" />
+        <field name="visitor__ip" type="Textarea"
+               default=""
+               label="CON_IPS" hiddenLabel="true" />
+        <field name="@note__visitor__ip" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_IPS_DESC" />
+        <field name="@showon__visitor__ip__b" type="ShowOn" />
+
+        <!-- GEO LOCATION :: CONTINENTS -->
+        <field name="@showon__geo__continent__a" type="ShowOn" value="type:geo__continent" />
+        <field name="geo__continent" type="Geo"
+               group="continents" multiple="true" default=""
+               label="CON_CONTINENTS"
+               hiddenLabel="true" />
+        <field name="@showon__geo__continent__b" type="ShowOn" />
+
+        <!-- GEO LOCATION :: COUNTRIES -->
+        <field name="@showon__geo__country__a" type="ShowOn" value="type:geo__country" />
+        <field name="geo__country" type="Geo"
+               group="countries" multiple="true" default=""
+               label="CON_COUNTRIES"
+               hiddenLabel="true" />
+        <field name="@showon__geo__country__b" type="ShowOn" />
+
+        <!-- GEO LOCATION :: REGIONS -->
+        <field name="@showon__geo__region__a" type="ShowOn" value="type:geo__region" />
+        <field name="geo__region" type="Geo"
+               group="regions" multiple="true" default=""
+               label="CON_REGIONS"
+               hiddenLabel="true" />
+        <field name="@showon__geo__region__b" type="ShowOn" />
+
+        <!-- GEO LOCATION :: POSTAL CODES -->
+        <field name="@showon__geo__postal_code__a" type="ShowOn" value="type:geo__postal_code" />
+        <field name="geo__postal_code" type="Textarea"
+               default=""
+               label="CON_POSTAL_CODES" hiddenLabel="true" />
+        <field name="@note__geogeo__postal_code" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_POSTAL_CODES_DESC,&lt;a href=&quot;https://www.maxmind.com/en/locate-my-ip-address/&quot; target=&quot;_blank&quot;&gt;,&lt;/a&gt;" />
+        <field name="@showon__geo__postal_code__b" type="ShowOn" />
+
+        <!-- GEO LOCATION (footer) -->
+        <field name="@showon__geo__2a" type="ShowOn"
+               value="type:geo__continent[OR]type:geo__country[OR]type:geo__region[OR]type:geo__postal_code" />
+        <field name="@note__geo__info" type="GeoInformation"
+               showon="has_geoip_library:1" />
+        <field name="@note__geo" type="Note"
+               class="rl-alert alert alert-warning"
+               text="CON_GEO_DESC" />
+        <field name="@note__geo__has_geoip_library" type="Note"
+               class="text-muted"
+               text="CON_GEO_GEOIP_COPYRIGHT_DESC,&lt;a href=&quot;http://www.maxmind.com&quot; target=&quot;_blank&quot;&gt;http://www.maxmind.com&lt;/a&gt;"
+               showon="has_geoip_library:1" />
+        <field name="@showon__geo__2b" type="ShowOn" />
+
+        <!-- TAGS -->
+        <field name="@showon__other__tag__a" type="ShowOn" value="type:other__tag" />
+        <field name="other__tag" type="Tags"
+               multiple="true" default=""
+               label="CON_TAGS" hiddenLabel="true" />
+        <field name="other__tag__match_all" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_MATCH_ALL"
+               description="CON_MATCH_ALL_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__other__tag__match_all__a" type="ShowOn" value="other__tag__match_all:0" />
+        <field name="other__tag__include_children" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_INCLUDE_CHILD_ITEMS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+            <option value="2" class="btn btn-outline-info">CON_ONLY</option>
+        </field>
+        <field name="@showon__other__tag__match_all__b" type="ShowOn" />
+        <field name="@showon__other__tag__b" type="ShowOn" />
+
+        <!-- COMPONENTS -->
+        <field name="@showon__other__component__a" type="ShowOn" value="type:other__component" />
+        <field name="other__component" type="Components"
+               multiple="true" admin="true" show_content="true" default=""
+               label="CON_COMPONENTS" hiddenLabel="true" />
+        <field name="@showon__other__component__b" type="ShowOn" />
+
+        <!-- TEMPLATES -->
+        <field name="@showon__other__template__a" type="ShowOn" value="type:other__template" />
+        <field name="other__template" type="Templates"
+               multiple="true" default=""
+               label="CON_TEMPLATES"
+               hiddenLabel="true" />
+        <field name="@showon__other__template__b" type="ShowOn" />
+
+        <!-- URLS -->
+        <field name="@showon__other__url__a" type="ShowOn" value="type:other__url" />
+        <field name="other__url" type="Textarea"
+               default=""
+               label="CON_URLS" hiddenLabel="true" />
+        <field name="@note__other__url" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_URLS_DESC" />
+        <field name="other__url__case_sensitive" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="RL_CASE_SENSITIVE">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="other__url__regex" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_REGULAR_EXPRESSIONS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="@showon__other__url__regex__a" type="ShowOn" value="other__url__regex:1" />
+        <field name="@note__other__url__regex" type="Note"
+               class="rl-alert alert alert-warning"
+               text="CON_URL_PARTS_REGEX" />
+        <field name="@showon__other__url__regex__b" type="ShowOn" />
+        <field name="@showon__other__url__b" type="ShowOn" />
+
+        <!-- PHP -->
+        <field name="@showon__other__php__a" type="ShowOn" value="type:other__php" />
+        <field name="other__php" type="Editor"
+               editor="codemirror" syntax="php"
+               height="120" default=""
+               label="CON_PHP"
+               hiddenLabel="true" />
+        <field name="@note__other__php" type="Note"
+               class="rl-alert alert alert-info rl-alert-light"
+               text="CON_PHP_DESC,&lt;pre>return ( $user->name == 'Peter van Westen' );&lt;/pre>" />
+        <field name="@showon__other__php__b" type="ShowOn" />
+
+        <!-- OTHER CONDITION SET -->
+        <field name="@showon__other__condition__a" type="ShowOn" value="type:other__condition" />
+        <field name="other__condition" type="ConditionSelection"
+               default=""
+               label="CON_OTHER_CONDITION"
+               hiddenLabel="true" />
+        <field name="@showon__other__condition__b" type="ShowOn" />
+
+
+        <!--        &lt;!&ndash; EASYBLOG &ndash;&gt;-->
+        <!--        <field name="@has_easyblog" type="IsInstalled" extension="easyblog" />-->
+        <!--        <field name="@showon__easyblog__a" type="ShowOn" value="@has_easyblog:1" />-->
+        <!--        <field name="@load_language_easyblog_sys" type="LoadLanguage" extension="com_easyblog.sys" />-->
+
+        <!--        &lt;!&ndash; EASYBLOG :: PAGE TYPES &ndash;&gt;-->
+        <!--        <field name="@showon__easyblog__page_type__a" type="ShowOn" value="type:easyblog__page_type" />-->
+        <!--        <field name="easyblog__page_type" type="List"-->
+        <!--               multiple="true" default=""-->
+        <!--               layout="joomla.form.field.list-fancy-select"-->
+        <!--               label="CON_PAGE_TYPES" hiddenLabel="true">-->
+        <!--            <option value="archive">COM_EASYBLOG_MENU_ARCHIVE_LAYOUT</option>-->
+        <!--            <option value="blogger">COM_EASYBLOG_MENU_BLOGGERS_LAYOUT</option>-->
+        <!--            <option value="categories">COM_EASYBLOG_MENU_CATEGORIES_LAYOUT</option>-->
+        <!--            <option value="dashboard">COM_EASYBLOG_MENU_DASHBOARD_LAYOUT</option>-->
+        <!--            <option value="entry">COM_EASYBLOG_MENU_ENTRY_LAYOUT</option>-->
+        <!--            <option value="featured">COM_EASYBLOG_MENU_FEATURED_LAYOUT</option>-->
+        <!--            <option value="grid">COM_EASYBLOG_GRID_MENU_LAYOUT</option>-->
+        <!--            <option value="latest">COM_EASYBLOG_MENU_FRONTPAGE_LAYOUT</option>-->
+        <!--            <option value="login">COM_EASYBLOG_MENU_LOGIN</option>-->
+        <!--            <option value="magazine">COM_EASYBLOG_MAGAZINE_MENU_LAYOUT</option>-->
+        <!--            <option value="myblog">COM_EASYBLOG_MENU_MYBLOG_LAYOUT</option>-->
+        <!--            <option value="search">COM_EASYBLOG_MENU_SEARCH_LAYOUT</option>-->
+        <!--            <option value="subscription">COM_EASYBLOG_MENU_SUBSCRIPTION_LAYOUT</option>-->
+        <!--            <option value="tags">COM_EASYBLOG_MENU_TAGS_LAYOUT</option>-->
+        <!--            <option value="teamblog">COM_EASYBLOG_MENU_TEAMBLOG_LAYOUT</option>-->
+        <!--        </field>-->
+        <!--        <field name="@showon__easyblog__page_type__b" type="ShowOn" />-->
+
+        <!--        &lt;!&ndash; EASYBLOG :: CATEGORIES &ndash;&gt;-->
+        <!--        <field name="@showon__easyblog__category__a" type="ShowOn" value="type:easyblog__category" />-->
+        <!--        <field name="easyblog__category" type="EasyblogCategories"-->
+        <!--               multiple="true" default=""-->
+        <!--               label="CON_CATEGORIES"-->
+        <!--               hiddenLabel="true" />-->
+        <!--        <field name="easyblog__category__include_children" type="Radio"-->
+        <!--               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"-->
+        <!--               label="CON_INCLUDE_CHILD_ITEMS">-->
+        <!--            <option value="0">JNO</option>-->
+        <!--            <option value="1">JYES</option>-->
+        <!--            <option value="2" class="btn btn-outline-info">CON_ONLY</option>-->
+        <!--        </field>-->
+        <!--        <field name="easyblog__category__page_types" type="Checkboxes"-->
+        <!--               default="categories,items"-->
+        <!--               label="CON_PAGE_TYPES">-->
+        <!--            <option value="categories">RL_CATEGORIES</option>-->
+        <!--            <option value="items">RL_PRODUCTS</option>-->
+        <!--        </field>-->
+        <!--        <field name="@showon__easyblog__category__b" type="ShowOn" />-->
+
+        <!--        &lt;!&ndash; EASYBLOG :: ITEMS &ndash;&gt;-->
+        <!--        <field name="@showon__easyblog__item__a" type="ShowOn" value="type:easyblog__item" />-->
+        <!--        <field name="easyblog__item" type="EasyblogItems"-->
+        <!--               multiple="true" default=""-->
+        <!--               label="CON_ARTICLES"-->
+        <!--               hiddenLabel="true" />-->
+        <!--        <field name="@showon__easyblog__item__b" type="ShowOn" />-->
+
+        <!--        <field name="@showon__easyblog__b" type="ShowOn" />-->
+
+        <!-- FLEXICONTENT -->
+        <field name="@has_flexicontent" type="IsInstalled" extension="flexicontent" />
+        <field name="@showon__flexicontent__a" type="ShowOn" value="@has_flexicontent:1" />
+        <field name="@load_language_flexicontent_sys" type="LoadLanguage" extension="com_flexicontent.sys" />
+
+        <!-- FLEXICONTENT :: PAGE TYPES -->
+        <field name="@showon__flexicontent__page_type__a" type="ShowOn" value="type:flexicontent__page_type" />
+        <field name="flexicontent__page_type" type="List"
+               multiple="true" default=""
+               layout="joomla.form.field.list-fancy-select"
+               label="CON_PAGE_TYPES" hiddenLabel="true">
+            <option value="category_author">FLEXICONTENT_AUTHORED_ITEMS</option>
+            <option value="category_mcats">FLEXICONTENT_MCATS</option>
+            <option value="category">FLEXICONTENT_CATEGORY</option>
+            <option value="item">FLEXICONTENT_ITEM</option>
+            <option value="category_favs">FLEXICONTENT_FAVOURED_CATVIEW</option>
+            <option value="favourites">FLEXICONTENT_FAVOURED_LEGACY_VIEW</option>
+            <option value="category_myitems">FLEXICONTENT_MYITEMS</option>
+            <option value="search">FLEXICONTENT_SEARCH_VIEW</option>
+            <option value="category_tags">FLEXICONTENT_TAGGED_CATVIEW</option>
+            <option value="tags">FLEXICONTENT_TAGGED_LEGACY_VIEW</option>
+        </field>
+        <field name="@showon__flexicontent__page_type__b" type="ShowOn" />
+
+        <!-- FLEXICONTENT :: TAGS -->
+        <field name="@showon__flexicontent__tag__a" type="ShowOn" value="type:flexicontent__tag" />
+        <field name="flexicontent__tag" type="FlexicontentTags"
+               multiple="true" default=""
+               label="CON_TAGS"
+               hiddenLabel="true" />
+        <field name="flexicontent__tag__page_types" type="Checkboxes"
+               default="tags,items"
+               label="CON_PAGE_TYPES">
+            <option value="tags">CON_TAGS</option>
+            <option value="items">CON_ITEMS</option>
+        </field>
+        <field name="@showon__flexicontent__tag__b" type="ShowOn" />
+
+        <!-- FLEXICONTENT :: TYPES -->
+        <field name="@showon__flexicontent__type__a" type="ShowOn" value="type:flexicontent__type" />
+        <field name="flexicontent__type" type="FlexicontentTypes"
+               multiple="true" default=""
+               label="CON_TYPES"
+               hiddenLabel="true" />
+        <field name="@showon__flexicontent__type__b" type="ShowOn" />
+
+        <field name="@showon__flexicontent__b" type="ShowOn" />
+
+
+        <!-- HIKASHOP -->
+        <field name="@has_hikashop" type="IsInstalled" extension="hikashop" />
+        <field name="@showon__hikashop__a" type="ShowOn" value="@has_hikashop:1" />
+        <field name="@load_language_hikashop_sys" type="LoadLanguage" extension="com_hikashop.sys" />
+
+        <!-- HIKASHOP :: PAGE TYPES -->
+        <field name="@showon__hikashop__page_type__a" type="ShowOn" value="type:hikashop__page_type" />
+        <field name="hikashop__page_type" type="List"
+               multiple="true" default=""
+               layout="joomla.form.field.list-fancy-select"
+               label="CON_PAGE_TYPES" hiddenLabel="true">
+            <option value="address">COM_HIKASHOP_ADDRESS_VIEW_DEFAULT_TITLE</option>
+            <option value="category">COM_HIKASHOP_CATEGORY_VIEW_DEFAULT_TITLE</option>
+            <option value="checkout">COM_HIKASHOP_CHECKOUT_VIEW_DEFAULT_TITLE</option>
+            <option value="order">COM_HIKASHOP_ORDER_VIEW_DEFAULT_TITLE</option>
+            <option value="product_contact">COM_HIKASHOP_CONTACT_VIEW_DEFAULT_TITLE</option>
+            <option value="product">COM_HIKASHOP_PRODUCT_VIEW_DEFAULT_TITLE</option>
+            <option value="product_show">COM_HIKASHOP_PRODUCT_FORM_VIEW_DEFAULT_TITLE</option>
+            <option value="user_cpanel">COM_HIKASHOP_USER_PANEL_VIEW_DEFAULT_TITLE</option>
+            <option value="user">COM_HIKASHOP_USER_VIEW_DEFAULT_TITLE</option>
+            <option value="user_downloads">COM_HIKASHOP_DOWNLOADS_VIEW_DEFAULT_TITLE</option>
+        </field>
+        <field name="@showon__hikashop__page_type__b" type="ShowOn" />
+
+        <!-- HIKASHOP :: CATEGORIES -->
+        <field name="@showon__hikashop__category__a" type="ShowOn" value="type:hikashop__category" />
+        <field name="hikashop__category" type="HikashopCategories"
+               multiple="true" default=""
+               label="CON_CATEGORIES"
+               hiddenLabel="true" />
+        <field name="hikashop__category__include_children" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_INCLUDE_CHILD_ITEMS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+            <option value="2" class="btn btn-outline-info">CON_ONLY</option>
+        </field>
+        <field name="hikashop__category__page_types" type="Checkboxes"
+               default="categories,items"
+               label="CON_PAGE_TYPES">
+            <option value="categories">RL_CATEGORIES</option>
+            <option value="items">RL_PRODUCTS</option>
+        </field>
+        <field name="@showon__hikashop__category__b" type="ShowOn" />
+
+        <!-- HIKASHOP :: PRODUCTS -->
+        <field name="@showon__hikashop__item__a" type="ShowOn" value="type:hikashop__item" />
+        <field name="hikashop__item" type="HikashopItems"
+               multiple="true" default=""
+               label="CON_ARTICLES"
+               hiddenLabel="true" />
+        <field name="@showon__hikashop__item__b" type="ShowOn" />
+
+        <field name="@showon__hikashop__b" type="ShowOn" />
+
+        <!-- ZOO -->
+        <field name="@has_zoo" type="IsInstalled" extension="zoo" />
+        <field name="@showon__zoo__a" type="ShowOn" value="@has_zoo:1" />
+        <field name="@load_language_zoo_sys" type="LoadLanguage" extension="com_zoo.sys" />
+
+        <!-- ZOO :: PAGE TYPES -->
+        <field name="@showon__zoo__page_type__a" type="ShowOn" value="type:zoo__page_type" />
+        <field name="zoo__page_type" type="List"
+               multiple="true" default=""
+               layout="joomla.form.field.list-fancy-select"
+               label="CON_PAGE_TYPES" hiddenLabel="true">
+            <option value="category">CATEGORY</option>
+            <option value="item">ITEM</option>
+            <option value="frontpage">FRONTPAGE</option>
+            <option value="mysubmissions">MY SUBMISSIONS</option>
+            <option value="submissions">SUBMISSION</option>
+        </field>
+        <field name="@showon__zoo__page_type__b" type="ShowOn" />
+
+        <!-- ZOO :: CATEGORIES -->
+        <field name="@showon__zoo__category__a" type="ShowOn" value="type:zoo__category" />
+        <field name="zoo__category" type="ZooCategories"
+               multiple="true" default=""
+               label="CON_CATEGORIES"
+               hiddenLabel="true" />
+        <field name="zoo__category__include_children" type="Radio"
+               default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno"
+               label="CON_INCLUDE_CHILD_ITEMS">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+            <option value="2" class="btn btn-outline-info">CON_ONLY</option>
+        </field>
+        <field name="zoo__category__page_types" type="Checkboxes"
+               default="categories,items"
+               label="CON_PAGE_TYPES">
+            <option value="categories">RL_CATEGORIES</option>
+            <option value="items">RL_ITEMS</option>
+        </field>
+        <field name="@showon__zoo__category__b" type="ShowOn" />
+
+        <!-- ZOO :: PRODUCTS -->
+        <field name="@showon__zoo__item__a" type="ShowOn" value="type:zoo__item" />
+        <field name="zoo__item" type="ZooItems"
+               multiple="true" default=""
+               label="RL_ITEMS"
+               hiddenLabel="true" />
+        <field name="@showon__zoo__item__b" type="ShowOn" />
+
+        <field name="@showon__zoo__b" type="ShowOn" />
+    </fieldset>
+</form>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldprefix="RegularLabs\Library\Form\Field">
+  <fieldset name="default" label="COM_MODULES_GENERAL">
+    <field name="@load_script_descriptions" type="LoadMedia" filetype="script" file="regularlabs.admin-form-descriptions"/>
+    <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs"/>
+    <field name="@load_language_modules" type="LoadLanguage" extension="com_modules"/>
+    <field name="@load_language_regularlabs" type="LoadLanguage" extension="plg_system_regularlabs"/>
+    <field name="list_title" type="List" default="0" label="AMM_LIST_TITLE" description="AMM_LIST_TITLE_DESC">
+      <option value="0">ADVANCEDMODULEMANAGER</option>
+      <option value="1">COM_MODULES</option>
+    </field>
+    <field name="default_ordering" type="list" default="a.title ASC" label="RL_DEFAULT_ORDERING" description="RL_DEFAULT_ORDERING_DESC">
+      <option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+      <option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+      <option value="a.published ASC">JSTATUS_ASC</option>
+      <option value="a.published DESC">JSTATUS_DESC</option>
+      <option value="a.title ASC">JGLOBAL_TITLE_ASC</option>
+      <option value="a.title DESC">JGLOBAL_TITLE_DESC</option>
+      <option value="a.position ASC">COM_MODULES_HEADING_POSITION_ASC</option>
+      <option value="a.position DESC">COM_MODULES_HEADING_POSITION_DESC</option>
+      <option value="name ASC">COM_MODULES_HEADING_MODULE_ASC</option>
+      <option value="name DESC">COM_MODULES_HEADING_MODULE_DESC</option>
+      <option value="amm.color ASC">RL_HEADING_COLOR_ASC</option>
+      <option value="amm.color DESC">RL_HEADING_COLOR_DESC</option>
+      <option value="amm.category ASC">RL_HEADING_CATEGORY_ASC</option>
+      <option value="amm.category DESC">RL_HEADING_CATEGORY_DESC</option>
+      <option value="ag.title ASC">JGRID_HEADING_ACCESS_ASC</option>
+      <option value="ag.title DESC">JGRID_HEADING_ACCESS_DESC</option>
+      <option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+      <option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+    </field>
+    <field name="default_state" type="List" default="1" class="form-select-color-state" label="AMM_DEFAULT_STATE" description="AMM_DEFAULT_STATE_DESC">
+      <option value="0">JUNPUBLISHED</option>
+      <option value="1">JPUBLISHED</option>
+    </field>
+    <field name="show_switch" type="Radio" default="0" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="AMM_SHOW_SWITCH" description="AMM_SHOW_SWITCH_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="show_update_notification" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_SHOW_UPDATE_NOTIFICATION" description="RL_SHOW_UPDATE_NOTIFICATION_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@show_copyright" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_SHOW_COPYRIGHT" description="RL_SHOW_COPYRIGHT_DESC">
+      <option value="0" disabled="disabled">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@note__show_copyright" type="OnlyPro" label="---" description=""/>
+  </fieldset>
+  <fieldset name="features" label="RL_FEATURES">
+    <field name="use_categories" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_USE_CATEGORIES" description="RL_USE_CATEGORIES_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="use_colors" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_USE_COLORS" description="RL_USE_COLORS_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="main_colors" type="TextArea" rows="4" default="none,#c0c6cf,#000000,#dc2a28,#fb6b14,#ffa813,#eac90a,#18a047,#0f9aa4,#115dda,#761bda,#d319a4" label="RL_COLORS" description="RL_COLORS_DESC" showon="use_colors:1"/>
+    <field name="use_pre_post_html" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="AMM_USE_PRE_POST_HTML" description="AMM_USE_PRE_POST_HTML_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="use_hideempty" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="AMM_USE_HIDE_IF_EMPTY" description="AMM_USE_HIDE_IF_EMPTY_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="@note__use_extra_fields" type="OnlyPro" label="AMM_USE_EXTRA_FIELDS" description="AMM_USE_EXTRA_FIELDS_DESC"/>
+    <field name="show_note" type="List" default="name" label="AMM_SHOW_DESCRIPTION_IN_LIST" description="AMM_SHOW_DESCRIPTION_IN_LIST_DESC">
+      <option value="none">JNO</option>
+      <option value="tooltip">RL_TOOLTIP</option>
+      <option value="name">AMM_NAME_COLUMN</option>
+      <option value="column">AMM_EXTRA_COLUMN</option>
+    </field>
+    <field name="use_notes" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="AMM_USE_NOTES_TAB" description="AMM_USE_NOTES_TAB_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+  </fieldset>
+  <fieldset name="tag_syntax" label="RL_TAG_SYNTAX">
+    <field name="@note__remove_tags" type="Note" class="rl-alert alert alert-info rl-alert-light" text="AMM_REMOVE_TAGS_DESC"/>
+    <field name="@note__remove_tags_free" type="OnlyPro"/>
+  </fieldset>
+  <fieldset name="action_logs" label="RL_USER_ACTION_LOGS">
+    <field name="enable_actionlog" type="Radio" default="1" class="btn-group rl-btn-group btn-group-md btn-group-yesno" label="RL_ENABLE_ACTIONLOG" description="RL_ENABLE_ACTIONLOG_DESC">
+      <option value="0">JNO</option>
+      <option value="1">JYES</option>
+    </field>
+    <field name="actionlog_events" type="Checkboxes" multiple="true" default="create,update,delete,change_state" checked="create,update,delete,change_state" class="rl-form-checkboxes-not-inline" label="RL_ACTIONLOG_EVENTS" description="RL_ACTIONLOG_EVENTS_DESC" showon="enable_actionlog:1">
+      <option value="create">RL_ACTION_CREATE</option>
+      <option value="update">RL_ACTION_UPDATE</option>
+      <option value="delete">RL_ACTION_DELETE</option>
+      <option value="change_state">RL_ACTION_CHANGE_STATE</option>
+    </field>
+  </fieldset>
+  <fieldset name="notice_permissions" label="JCONFIG_PERMISSIONS_LABEL">
+    <field name="@note__rules" type="Note" class="rl-alert alert alert-info rl-alert-light" text="AMM_USE_CORE_RULES,&lt;a href=&quot;index.php?option=com_config&amp;view=component&amp;component=com_modules#permissions&quot;&gt;,&lt;/a&gt;"/>
+  </fieldset>
+</config>
